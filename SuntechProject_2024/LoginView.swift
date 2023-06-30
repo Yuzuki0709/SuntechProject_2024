@@ -11,6 +11,8 @@ struct LoginView: View {
     @State private var emailText: String = ""
     @State private var passwordText: String = ""
     
+    private let width: CGFloat = UIScreen.main.bounds.width
+    
     var body: some View {
         ZStack {
             background()
@@ -58,7 +60,7 @@ struct LoginView: View {
             SecureField("Password", text: $passwordText)
                 .textFieldStyle(.roundedBorder)
         }
-        .frame(width: UIScreen.main.bounds.width * 0.8)
+        .frame(width: width * 0.8)
     }
     
     private func loginButton() -> some View {
@@ -67,7 +69,7 @@ struct LoginView: View {
         } label: {
             Text("Login")
                 .font(.system(size: 18))
-                .frame(width: UIScreen.main.bounds.width * 0.8, height: 70)
+                .frame(width: width * 0.8, height: 70)
                 .background(Color.subColor)
                 .foregroundColor(.white)
                 .cornerRadius(10)
