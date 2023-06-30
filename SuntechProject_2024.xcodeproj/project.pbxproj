@@ -15,6 +15,7 @@
 		A232E18A2A4F140A007599E5 /* SuntechProject_2024UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232E1892A4F140A007599E5 /* SuntechProject_2024UITests.swift */; };
 		A232E18C2A4F140A007599E5 /* SuntechProject_2024UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232E18B2A4F140A007599E5 /* SuntechProject_2024UITestsLaunchTests.swift */; };
 		A232E1992A4F14A9007599E5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232E1982A4F14A9007599E5 /* LoginView.swift */; };
+		A232E19C2A4F1545007599E5 /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = A232E19B2A4F1545007599E5 /* RswiftLibrary */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A232E19C2A4F1545007599E5 /* RswiftLibrary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,8 +146,12 @@
 			buildRules = (
 			);
 			dependencies = (
+				A232E19E2A4F156B007599E5 /* PBXTargetDependency */,
 			);
 			name = SuntechProject_2024;
+			packageProductDependencies = (
+				A232E19B2A4F1545007599E5 /* RswiftLibrary */,
+			);
 			productName = SuntechProject_2024;
 			productReference = A232E16B2A4F1407007599E5 /* SuntechProject_2024.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +224,9 @@
 				Base,
 			);
 			mainGroup = A232E1622A4F1407007599E5;
+			packageReferences = (
+				A232E19A2A4F1545007599E5 /* XCRemoteSwiftPackageReference "R.swift" */,
+			);
 			productRefGroup = A232E16C2A4F1407007599E5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -295,6 +304,10 @@
 			isa = PBXTargetDependency;
 			target = A232E16A2A4F1407007599E5 /* SuntechProject_2024 */;
 			targetProxy = A232E1862A4F140A007599E5 /* PBXContainerItemProxy */;
+		};
+		A232E19E2A4F156B007599E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = A232E19D2A4F156B007599E5 /* RswiftGenerateInternalResources */;
 		};
 /* End PBXTargetDependency section */
 
@@ -587,6 +600,29 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A232E19A2A4F1545007599E5 /* XCRemoteSwiftPackageReference "R.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mac-cain13/R.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A232E19B2A4F1545007599E5 /* RswiftLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A232E19A2A4F1545007599E5 /* XCRemoteSwiftPackageReference "R.swift" */;
+			productName = RswiftLibrary;
+		};
+		A232E19D2A4F156B007599E5 /* RswiftGenerateInternalResources */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "plugin:RswiftGenerateInternalResources";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A232E1632A4F1407007599E5 /* Project object */;
 }
