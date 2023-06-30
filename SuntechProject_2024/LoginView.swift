@@ -17,9 +17,13 @@ struct LoginView: View {
         ZStack {
             background()
             
-            VStack(spacing: 10) {
+            VStack(spacing: 30) {
                 headerLogo()
-                    .padding()
+                appDescription()
+                
+                Spacer()
+                    .frame(height: 10)
+                
                 inputLoginInfo()
                 
                 Spacer()
@@ -49,6 +53,11 @@ struct LoginView: View {
             .font(.system(size: 18, weight: .bold))
             .foregroundColor(.white)
         }
+    }
+    
+    private func appDescription() -> some View {
+        Text("--- 学内生徒専用アプリ ---")
+            .foregroundColor(.white)
     }
     
     private func inputLoginInfo() -> some View {
