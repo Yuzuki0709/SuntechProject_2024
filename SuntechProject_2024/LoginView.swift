@@ -15,9 +15,15 @@ struct LoginView: View {
         ZStack {
             background()
             
-            VStack {
+            VStack(spacing: 10) {
                 headerLogo()
+                    .padding()
                 inputLoginInfo()
+                
+                Spacer()
+                    .frame(height: 100)
+                
+                loginButton()
             }
             .padding()
         }
@@ -51,6 +57,20 @@ struct LoginView: View {
             
             SecureField("Password", text: $passwordText)
                 .textFieldStyle(.roundedBorder)
+        }
+        .frame(width: UIScreen.main.bounds.width * 0.8)
+    }
+    
+    private func loginButton() -> some View {
+        Button {
+            
+        } label: {
+            Text("Login")
+                .font(.system(size: 18))
+                .frame(width: UIScreen.main.bounds.width * 0.8, height: 70)
+                .background(Color.subColor)
+                .foregroundColor(.white)
+                .cornerRadius(10)
         }
     }
 }
