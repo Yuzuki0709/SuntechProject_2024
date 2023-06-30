@@ -77,7 +77,7 @@ struct LoginView: View {
             
         } label: {
             Text("Login")
-                .font(.system(size: 18))
+                .font(.system(size: 18, weight: .semibold))
                 .frame(width: width * 0.8, height: 70)
                 .background(Color.subColor)
                 .foregroundColor(.white)
