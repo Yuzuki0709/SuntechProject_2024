@@ -11,12 +11,31 @@ struct LoginView: View {
     var body: some View {
         ZStack {
             background()
+            
+            VStack {
+               headerLogo()
+            }
         }
     }
     
     private func background() -> some View {
         Color.mainColor
             .ignoresSafeArea()
+    }
+    
+    private func headerLogo() -> some View {
+        HStack(spacing: 10) {
+            Text("STC")
+                .font(.system(size: 50, weight: .bold))
+                .foregroundColor(.white)
+            
+            VStack(alignment: .leading) {
+                Text("サンテクノカレッジ")
+                Text("Suntechno College")
+            }
+            .font(.system(size: 18, weight: .bold))
+            .foregroundColor(.white)
+        }
     }
 }
 
