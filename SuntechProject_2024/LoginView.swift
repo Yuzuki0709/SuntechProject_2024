@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct LoginView: View {
+    @State private var emailText: String = ""
+    @State private var passwordText: String = ""
+    
     var body: some View {
         ZStack {
             background()
             
             VStack {
-               headerLogo()
+                headerLogo()
+                inputLoginInfo()
             }
+            .padding()
         }
     }
     
@@ -35,6 +40,17 @@ struct LoginView: View {
             }
             .font(.system(size: 18, weight: .bold))
             .foregroundColor(.white)
+        }
+    }
+    
+    private func inputLoginInfo() -> some View {
+        VStack(spacing: 20) {
+            TextField("E-mail", text: $emailText)
+                .textFieldStyle(.roundedBorder)
+                .keyboardType(.emailAddress)
+            
+            SecureField("Password", text: $passwordText)
+                .textFieldStyle(.roundedBorder)
         }
     }
 }
