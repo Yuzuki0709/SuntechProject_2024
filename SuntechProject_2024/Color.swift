@@ -9,4 +9,5 @@ import SwiftUI
 
 extension Color {
     static let mainColor = Color(R.color.mainColor.name)
+    static let subColor = Color(R.color.subColor.name)
 }
