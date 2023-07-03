@@ -17,15 +17,15 @@
 		A232E1992A4F14A9007599E5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232E1982A4F14A9007599E5 /* LoginView.swift */; };
 		A232E19C2A4F1545007599E5 /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = A232E19B2A4F1545007599E5 /* RswiftLibrary */; };
 		A232E1A32A4F16CD007599E5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232E1A22A4F16CD007599E5 /* Color.swift */; };
+		A29C1D652A5288000045FFE2 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A29C1D642A5288000045FFE2 /* Alamofire */; };
+		A29C1D672A5288350045FFE2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D662A5288350045FFE2 /* LoginViewModel.swift */; };
+		A29C1D692A5289AF0045FFE2 /* SuntechAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D682A5289AF0045FFE2 /* SuntechAPIClient.swift */; };
 		A29C1D6E2A528C420045FFE2 /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D6D2A528C420045FFE2 /* UserType.swift */; };
 		A29C1D712A528C6C0045FFE2 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D702A528C6C0045FFE2 /* Student.swift */; };
 		A29C1D732A528CE10045FFE2 /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D722A528CE10045FFE2 /* Department.swift */; };
 		A29C1D762A528D2B0045FFE2 /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D752A528D2B0045FFE2 /* Teacher.swift */; };
 		A29C1D7D2A528FAE0045FFE2 /* Loggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D7C2A528FAE0045FFE2 /* Loggable.swift */; };
 		A29C1D872A529F840045FFE2 /* LoginUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D862A529F840045FFE2 /* LoginUser.swift */; };
-		A29C1D652A5288000045FFE2 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A29C1D642A5288000045FFE2 /* Alamofire */; };
-		A29C1D672A5288350045FFE2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D662A5288350045FFE2 /* LoginViewModel.swift */; };
-		A29C1D692A5289AF0045FFE2 /* SuntechAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D682A5289AF0045FFE2 /* SuntechAPIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,14 +58,14 @@
 		A232E18B2A4F140A007599E5 /* SuntechProject_2024UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuntechProject_2024UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A232E1982A4F14A9007599E5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A232E1A22A4F16CD007599E5 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		A29C1D662A5288350045FFE2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		A29C1D682A5289AF0045FFE2 /* SuntechAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuntechAPIClient.swift; sourceTree = "<group>"; };
 		A29C1D6D2A528C420045FFE2 /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
 		A29C1D702A528C6C0045FFE2 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		A29C1D722A528CE10045FFE2 /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
 		A29C1D752A528D2B0045FFE2 /* Teacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
 		A29C1D7C2A528FAE0045FFE2 /* Loggable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loggable.swift; sourceTree = "<group>"; };
 		A29C1D862A529F840045FFE2 /* LoginUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUser.swift; sourceTree = "<group>"; };
-		A29C1D662A5288350045FFE2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		A29C1D682A5289AF0045FFE2 /* SuntechAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuntechAPIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,13 +118,12 @@
 		A232E16D2A4F1407007599E5 /* SuntechProject_2024 */ = {
 			isa = PBXGroup;
 			children = (
+				A29C1D8E2A52DF720045FFE2 /* UI */,
 				A29C1D8A2A52A07E0045FFE2 /* Extension */,
 				A29C1D882A52A0560045FFE2 /* Model */,
+				A29C1D8F2A52DF7B0045FFE2 /* LoginView */,
 				A232E16E2A4F1407007599E5 /* SuntechProject_2024App.swift */,
 				A232E1702A4F1407007599E5 /* ContentView.swift */,
-				A232E1982A4F14A9007599E5 /* LoginView.swift */,
-				A29C1D662A5288350045FFE2 /* LoginViewModel.swift */,
-				A29C1D682A5289AF0045FFE2 /* SuntechAPIClient.swift */,
 				A232E1722A4F140A007599E5 /* Assets.xcassets */,
 				A232E1742A4F140A007599E5 /* Preview Content */,
 			);
@@ -159,6 +158,7 @@
 		A29C1D882A52A0560045FFE2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A29C1D912A52DF8C0045FFE2 /* SuntechAPI */,
 				A29C1D8B2A52A08C0045FFE2 /* LoginUser */,
 			);
 			path = Model;
@@ -183,6 +183,30 @@
 				A29C1D7C2A528FAE0045FFE2 /* Loggable.swift */,
 			);
 			path = LoginUser;
+			sourceTree = "<group>";
+		};
+		A29C1D8E2A52DF720045FFE2 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		A29C1D8F2A52DF7B0045FFE2 /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				A232E1982A4F14A9007599E5 /* LoginView.swift */,
+				A29C1D662A5288350045FFE2 /* LoginViewModel.swift */,
+			);
+			path = LoginView;
+			sourceTree = "<group>";
+		};
+		A29C1D912A52DF8C0045FFE2 /* SuntechAPI */ = {
+			isa = PBXGroup;
+			children = (
+				A29C1D682A5289AF0045FFE2 /* SuntechAPIClient.swift */,
+			);
+			path = SuntechAPI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
