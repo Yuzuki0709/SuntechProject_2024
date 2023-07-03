@@ -31,6 +31,7 @@
 		A29C1D9A2A5301200045FFE2 /* WeekTimetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D992A5301200045FFE2 /* WeekTimetable.swift */; };
 		A29C1D9F2A5302960045FFE2 /* TimetableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D9E2A5302960045FFE2 /* TimetableView.swift */; };
 		A29C1DA32A53036A0045FFE2 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = A29C1DA22A53036A0045FFE2 /* FSCalendar */; };
+		A29C1DA52A5303940045FFE2 /* FSCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1DA42A5303940045FFE2 /* FSCalendarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		A29C1D972A5300750045FFE2 /* DayTimetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTimetable.swift; sourceTree = "<group>"; };
 		A29C1D992A5301200045FFE2 /* WeekTimetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTimetable.swift; sourceTree = "<group>"; };
 		A29C1D9E2A5302960045FFE2 /* TimetableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableView.swift; sourceTree = "<group>"; };
+		A29C1DA42A5303940045FFE2 /* FSCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSCalendarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 			children = (
 				A29C1D8F2A52DF7B0045FFE2 /* LoginView */,
 				A29C1D9E2A5302960045FFE2 /* TimetableView.swift */,
+				A29C1DA42A5303940045FFE2 /* FSCalendarView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				A232E1712A4F1407007599E5 /* ContentView.swift in Sources */,
 				A29C1D872A529F840045FFE2 /* LoginUser.swift in Sources */,
 				A29C1D7D2A528FAE0045FFE2 /* Loggable.swift in Sources */,
+				A29C1DA52A5303940045FFE2 /* FSCalendarView.swift in Sources */,
 				A29C1D732A528CE10045FFE2 /* Department.swift in Sources */,
 				A29C1D932A52FF7E0045FFE2 /* Class.swift in Sources */,
 				A29C1D672A5288350045FFE2 /* LoginViewModel.swift in Sources */,
