@@ -17,4 +17,15 @@ final class LoginViewModel: ObservableObject {
     init(suntechAPIClient: SuntechAPIClientProtocol = SuntechAPIClient()) {
         self.suntechAPIClient = suntechAPIClient
     }
+    
+    func login() {
+        suntechAPIClient.login(email: emailText, password: passwordText) { result in
+            switch result {
+            case .success(let loginUser):
+                print(loginUser)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }

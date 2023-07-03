@@ -72,7 +72,7 @@ struct LoginView: View {
     
     private func loginButton() -> some View {
         Button {
-            
+            viewModel.login()
         } label: {
             Text("Login")
                 .font(.system(size: 18, weight: .semibold))
