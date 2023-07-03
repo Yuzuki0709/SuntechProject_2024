@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum UserType {
+enum UserType: Codable {
     case student
     case teacher
 }
