@@ -29,6 +29,7 @@
 		A29C1D932A52FF7E0045FFE2 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D922A52FF7E0045FFE2 /* Class.swift */; };
 		A29C1D982A5300750045FFE2 /* DayTimetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D972A5300750045FFE2 /* DayTimetable.swift */; };
 		A29C1D9A2A5301200045FFE2 /* WeekTimetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D992A5301200045FFE2 /* WeekTimetable.swift */; };
+		A29C1D9F2A5302960045FFE2 /* TimetableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D9E2A5302960045FFE2 /* TimetableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		A29C1D922A52FF7E0045FFE2 /* Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
 		A29C1D972A5300750045FFE2 /* DayTimetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTimetable.swift; sourceTree = "<group>"; };
 		A29C1D992A5301200045FFE2 /* WeekTimetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTimetable.swift; sourceTree = "<group>"; };
+		A29C1D9E2A5302960045FFE2 /* TimetableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,10 +126,9 @@
 		A232E16D2A4F1407007599E5 /* SuntechProject_2024 */ = {
 			isa = PBXGroup;
 			children = (
-				A29C1D8E2A52DF720045FFE2 /* UI */,
 				A29C1D8A2A52A07E0045FFE2 /* Extension */,
 				A29C1D882A52A0560045FFE2 /* Model */,
-				A29C1D8F2A52DF7B0045FFE2 /* LoginView */,
+				A29C1D8E2A52DF720045FFE2 /* UI */,
 				A232E16E2A4F1407007599E5 /* SuntechProject_2024App.swift */,
 				A232E1702A4F1407007599E5 /* ContentView.swift */,
 				A232E1722A4F140A007599E5 /* Assets.xcassets */,
@@ -195,6 +196,8 @@
 		A29C1D8E2A52DF720045FFE2 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				A29C1D8F2A52DF7B0045FFE2 /* LoginView */,
+				A29C1D9E2A5302960045FFE2 /* TimetableView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A29C1D9F2A5302960045FFE2 /* TimetableView.swift in Sources */,
 				A232E1992A4F14A9007599E5 /* LoginView.swift in Sources */,
 				A29C1D712A528C6C0045FFE2 /* Student.swift in Sources */,
 				A29C1D6E2A528C420045FFE2 /* UserType.swift in Sources */,
