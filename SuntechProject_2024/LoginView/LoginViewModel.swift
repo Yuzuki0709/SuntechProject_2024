@@ -13,6 +13,7 @@ final class LoginViewModel: ObservableObject {
     @Published var passwordText: String = ""
     @Published var isLoading: Bool = false
     @Published var loginUser: LoginUser? = nil
+    @Published var error: Error? = nil
     
     private let suntechAPIClient: SuntechAPIClientProtocol
     
@@ -27,7 +28,7 @@ final class LoginViewModel: ObservableObject {
             case .success(let loginUser):
                 self?.loginUser = loginUser
             case .failure(let error):
-                print(error)
+                self?.error = error as Error
             }
             self?.isLoading = false
         }

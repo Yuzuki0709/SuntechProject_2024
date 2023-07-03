@@ -31,6 +31,11 @@ struct LoginView: View {
             }
             .padding()
         }
+        .alert("エラーが発生しました", isPresented: .constant(viewModel.error != nil)) {
+            Button("OK") { viewModel.error = nil }
+        } message: {
+            Text("メールアドレスとパスワードを再入力してください。")
+        }
         .overlay {
             if viewModel.isLoading {
                 ZStack {
