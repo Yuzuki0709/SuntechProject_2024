@@ -19,12 +19,14 @@ final class SuntechAPIClient: SuntechAPIClientProtocol {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         
+        let path = "/api/login"
+        
         let parameter = [
             "email": email,
             "password": password
         ]
         
-        AF.request(baseURL, parameters: parameter)
+        AF.request(baseURL + path, parameters: parameter)
             .responseDecodable(of: LoginUser.self, decoder: decoder) { response in
                 completion(response.result)
             }
