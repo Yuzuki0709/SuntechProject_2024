@@ -25,6 +25,7 @@
 		A29C1D872A529F840045FFE2 /* LoginUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D862A529F840045FFE2 /* LoginUser.swift */; };
 		A29C1D652A5288000045FFE2 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A29C1D642A5288000045FFE2 /* Alamofire */; };
 		A29C1D672A5288350045FFE2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D662A5288350045FFE2 /* LoginViewModel.swift */; };
+		A29C1D692A5289AF0045FFE2 /* SuntechAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D682A5289AF0045FFE2 /* SuntechAPIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		A29C1D7C2A528FAE0045FFE2 /* Loggable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loggable.swift; sourceTree = "<group>"; };
 		A29C1D862A529F840045FFE2 /* LoginUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUser.swift; sourceTree = "<group>"; };
 		A29C1D662A5288350045FFE2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		A29C1D682A5289AF0045FFE2 /* SuntechAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuntechAPIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				A232E1702A4F1407007599E5 /* ContentView.swift */,
 				A232E1982A4F14A9007599E5 /* LoginView.swift */,
 				A29C1D662A5288350045FFE2 /* LoginViewModel.swift */,
+				A29C1D682A5289AF0045FFE2 /* SuntechAPIClient.swift */,
 				A232E1722A4F140A007599E5 /* Assets.xcassets */,
 				A232E1742A4F140A007599E5 /* Preview Content */,
 			);
@@ -331,6 +334,7 @@
 				A29C1D7D2A528FAE0045FFE2 /* Loggable.swift in Sources */,
 				A29C1D732A528CE10045FFE2 /* Department.swift in Sources */,
 				A29C1D672A5288350045FFE2 /* LoginViewModel.swift in Sources */,
+				A29C1D692A5289AF0045FFE2 /* SuntechAPIClient.swift in Sources */,
 				A232E16F2A4F1407007599E5 /* SuntechProject_2024App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
