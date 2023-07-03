@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State private var emailText: String = ""
-    @State private var passwordText: String = ""
-    
+    @StateObject private var viewModel = LoginViewModel()
     private let width: CGFloat = UIScreen.main.bounds.width
     
     var body: some View {
@@ -32,6 +30,21 @@ struct LoginView: View {
                 loginButton()
             }
             .padding()
+        }
+        .alert("エラーが発生しました", isPresented: .constant(viewModel.error != nil)) {
+            Button("OK") { viewModel.error = nil }
+        } message: {
+            Text("メールアドレスとパスワードを再入力してください。")
+        }
+        .overlay {
+            if viewModel.isLoading {
+                ZStack {
+                    Color.black
+                        .ignoresSafeArea()
+                        .opacity(0.3)
+                    ProgressView()
+                }
+            }
         }
     }
     
@@ -62,11 +75,11 @@ struct LoginView: View {
     
     private func inputLoginInfo() -> some View {
         VStack(spacing: 20) {
-            TextField("E-mail", text: $emailText)
+            TextField("E-mail", text: $viewModel.emailText)
                 .textFieldStyle(.roundedBorder)
                 .keyboardType(.emailAddress)
             
-            SecureField("Password", text: $passwordText)
+            SecureField("Password", text: $viewModel.passwordText)
                 .textFieldStyle(.roundedBorder)
         }
         .frame(width: width * 0.8)
@@ -74,7 +87,7 @@ struct LoginView: View {
     
     private func loginButton() -> some View {
         Button {
-            
+            viewModel.login()
         } label: {
             Text("Login")
                 .font(.system(size: 18, weight: .semibold))

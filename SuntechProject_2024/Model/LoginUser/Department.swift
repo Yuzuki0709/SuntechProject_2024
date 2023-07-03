@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Department: Codable {
+enum Department: String, Codable {
     case C
     case M
     case S
