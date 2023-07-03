@@ -11,4 +11,10 @@ import SwiftUI
 final class LoginViewModel: ObservableObject {
     @Published var emailText: String = ""
     @Published var passwordText: String = ""
+    
+    private let suntechAPIClient: SuntechAPIClientProtocol
+    
+    init(suntechAPIClient: SuntechAPIClientProtocol = SuntechAPIClient()) {
+        self.suntechAPIClient = suntechAPIClient
+    }
 }
