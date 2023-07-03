@@ -18,6 +18,7 @@
 		A232E19C2A4F1545007599E5 /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = A232E19B2A4F1545007599E5 /* RswiftLibrary */; };
 		A232E1A32A4F16CD007599E5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232E1A22A4F16CD007599E5 /* Color.swift */; };
 		A29C1D6E2A528C420045FFE2 /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D6D2A528C420045FFE2 /* UserType.swift */; };
+		A29C1D712A528C6C0045FFE2 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D702A528C6C0045FFE2 /* Student.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		A232E1982A4F14A9007599E5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A232E1A22A4F16CD007599E5 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		A29C1D6D2A528C420045FFE2 /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
+		A29C1D702A528C6C0045FFE2 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				A232E16E2A4F1407007599E5 /* SuntechProject_2024App.swift */,
 				A232E1702A4F1407007599E5 /* ContentView.swift */,
 				A29C1D6D2A528C420045FFE2 /* UserType.swift */,
+				A29C1D702A528C6C0045FFE2 /* Student.swift */,
 				A232E1A22A4F16CD007599E5 /* Color.swift */,
 				A232E1982A4F14A9007599E5 /* LoginView.swift */,
 				A232E1722A4F140A007599E5 /* Assets.xcassets */,
@@ -276,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A232E1992A4F14A9007599E5 /* LoginView.swift in Sources */,
+				A29C1D712A528C6C0045FFE2 /* Student.swift in Sources */,
 				A29C1D6E2A528C420045FFE2 /* UserType.swift in Sources */,
 				A232E1A32A4F16CD007599E5 /* Color.swift in Sources */,
 				A232E1712A4F1407007599E5 /* ContentView.swift in Sources */,
