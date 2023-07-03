@@ -164,11 +164,9 @@
 		A29C1D882A52A0560045FFE2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A29C1D9C2A5301E10045FFE2 /* Timetable */,
 				A29C1D912A52DF8C0045FFE2 /* SuntechAPI */,
 				A29C1D8B2A52A08C0045FFE2 /* LoginUser */,
-				A29C1D922A52FF7E0045FFE2 /* Class.swift */,
-				A29C1D972A5300750045FFE2 /* DayTimetable.swift */,
-				A29C1D992A5301200045FFE2 /* WeekTimetable.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -216,6 +214,16 @@
 				A29C1D682A5289AF0045FFE2 /* SuntechAPIClient.swift */,
 			);
 			path = SuntechAPI;
+			sourceTree = "<group>";
+		};
+		A29C1D9C2A5301E10045FFE2 /* Timetable */ = {
+			isa = PBXGroup;
+			children = (
+				A29C1D922A52FF7E0045FFE2 /* Class.swift */,
+				A29C1D972A5300750045FFE2 /* DayTimetable.swift */,
+				A29C1D992A5301200045FFE2 /* WeekTimetable.swift */,
+			);
+			path = Timetable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
