@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State private var emailText: String = ""
-    @State private var passwordText: String = ""
-    
+    @StateObject private var viewModel = LoginViewModel()
     private let width: CGFloat = UIScreen.main.bounds.width
     
     var body: some View {
@@ -62,11 +60,11 @@ struct LoginView: View {
     
     private func inputLoginInfo() -> some View {
         VStack(spacing: 20) {
-            TextField("E-mail", text: $emailText)
+            TextField("E-mail", text: $viewModel.emailText)
                 .textFieldStyle(.roundedBorder)
                 .keyboardType(.emailAddress)
             
-            SecureField("Password", text: $passwordText)
+            SecureField("Password", text: $viewModel.passwordText)
                 .textFieldStyle(.roundedBorder)
         }
         .frame(width: width * 0.8)
