@@ -12,6 +12,7 @@ final class LoginViewModel: ObservableObject {
     @Published var emailText: String = ""
     @Published var passwordText: String = ""
     @Published var isLoading: Bool = false
+    @Published var loginUser: LoginUser? = nil
     
     private let suntechAPIClient: SuntechAPIClientProtocol
     
@@ -24,7 +25,7 @@ final class LoginViewModel: ObservableObject {
         suntechAPIClient.login(email: emailText, password: passwordText) { [weak self] result in
             switch result {
             case .success(let loginUser):
-                print(loginUser)
+                self?.loginUser = loginUser
             case .failure(let error):
                 print(error)
             }
