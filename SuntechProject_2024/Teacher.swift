@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Teacher: Codable {
+struct Teacher: Loggable {
     let id: String
     let name: String
     let password: String
