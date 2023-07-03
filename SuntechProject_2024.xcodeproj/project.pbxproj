@@ -30,6 +30,7 @@
 		A29C1D982A5300750045FFE2 /* DayTimetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D972A5300750045FFE2 /* DayTimetable.swift */; };
 		A29C1D9A2A5301200045FFE2 /* WeekTimetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D992A5301200045FFE2 /* WeekTimetable.swift */; };
 		A29C1D9F2A5302960045FFE2 /* TimetableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D9E2A5302960045FFE2 /* TimetableView.swift */; };
+		A29C1DA32A53036A0045FFE2 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = A29C1DA22A53036A0045FFE2 /* FSCalendar */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A232E19C2A4F1545007599E5 /* RswiftLibrary in Frameworks */,
+				A29C1DA32A53036A0045FFE2 /* FSCalendar in Frameworks */,
 				A29C1D652A5288000045FFE2 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,6 +251,7 @@
 			packageProductDependencies = (
 				A232E19B2A4F1545007599E5 /* RswiftLibrary */,
 				A29C1D642A5288000045FFE2 /* Alamofire */,
+				A29C1DA22A53036A0045FFE2 /* FSCalendar */,
 			);
 			productName = SuntechProject_2024;
 			productReference = A232E16B2A4F1407007599E5 /* SuntechProject_2024.app */;
@@ -325,6 +328,7 @@
 			packageReferences = (
 				A232E19A2A4F1545007599E5 /* XCRemoteSwiftPackageReference "R.swift" */,
 				A29C1D632A5288000045FFE2 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				A29C1DA12A5303690045FFE2 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 			);
 			productRefGroup = A232E16C2A4F1407007599E5 /* Products */;
 			projectDirPath = "";
@@ -730,6 +734,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		A29C1DA12A5303690045FFE2 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -746,6 +758,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A29C1D632A5288000045FFE2 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		A29C1DA22A53036A0045FFE2 /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A29C1DA12A5303690045FFE2 /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
