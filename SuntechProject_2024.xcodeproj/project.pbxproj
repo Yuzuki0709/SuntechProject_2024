@@ -112,15 +112,10 @@
 		A232E16D2A4F1407007599E5 /* SuntechProject_2024 */ = {
 			isa = PBXGroup;
 			children = (
+				A29C1D8A2A52A07E0045FFE2 /* Extension */,
+				A29C1D882A52A0560045FFE2 /* Model */,
 				A232E16E2A4F1407007599E5 /* SuntechProject_2024App.swift */,
 				A232E1702A4F1407007599E5 /* ContentView.swift */,
-				A29C1D6D2A528C420045FFE2 /* UserType.swift */,
-				A29C1D702A528C6C0045FFE2 /* Student.swift */,
-				A29C1D7C2A528FAE0045FFE2 /* Loggable.swift */,
-				A29C1D752A528D2B0045FFE2 /* Teacher.swift */,
-				A29C1D862A529F840045FFE2 /* LoginUser.swift */,
-				A29C1D722A528CE10045FFE2 /* Department.swift */,
-				A232E1A22A4F16CD007599E5 /* Color.swift */,
 				A232E1982A4F14A9007599E5 /* LoginView.swift */,
 				A232E1722A4F140A007599E5 /* Assets.xcassets */,
 				A232E1742A4F140A007599E5 /* Preview Content */,
@@ -151,6 +146,35 @@
 				A232E18B2A4F140A007599E5 /* SuntechProject_2024UITestsLaunchTests.swift */,
 			);
 			path = SuntechProject_2024UITests;
+			sourceTree = "<group>";
+		};
+		A29C1D882A52A0560045FFE2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A29C1D8B2A52A08C0045FFE2 /* LoginUser */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A29C1D8A2A52A07E0045FFE2 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A232E1A22A4F16CD007599E5 /* Color.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		A29C1D8B2A52A08C0045FFE2 /* LoginUser */ = {
+			isa = PBXGroup;
+			children = (
+				A29C1D862A529F840045FFE2 /* LoginUser.swift */,
+				A29C1D6D2A528C420045FFE2 /* UserType.swift */,
+				A29C1D702A528C6C0045FFE2 /* Student.swift */,
+				A29C1D752A528D2B0045FFE2 /* Teacher.swift */,
+				A29C1D722A528CE10045FFE2 /* Department.swift */,
+				A29C1D7C2A528FAE0045FFE2 /* Loggable.swift */,
+			);
+			path = LoginUser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
