@@ -22,6 +22,7 @@
 		A29C1D732A528CE10045FFE2 /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D722A528CE10045FFE2 /* Department.swift */; };
 		A29C1D762A528D2B0045FFE2 /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D752A528D2B0045FFE2 /* Teacher.swift */; };
 		A29C1D7D2A528FAE0045FFE2 /* Loggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D7C2A528FAE0045FFE2 /* Loggable.swift */; };
+		A29C1D872A529F840045FFE2 /* LoginUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D862A529F840045FFE2 /* LoginUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		A29C1D722A528CE10045FFE2 /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
 		A29C1D752A528D2B0045FFE2 /* Teacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
 		A29C1D7C2A528FAE0045FFE2 /* Loggable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loggable.swift; sourceTree = "<group>"; };
+		A29C1D862A529F840045FFE2 /* LoginUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				A29C1D702A528C6C0045FFE2 /* Student.swift */,
 				A29C1D7C2A528FAE0045FFE2 /* Loggable.swift */,
 				A29C1D752A528D2B0045FFE2 /* Teacher.swift */,
+				A29C1D862A529F840045FFE2 /* LoginUser.swift */,
 				A29C1D722A528CE10045FFE2 /* Department.swift */,
 				A232E1A22A4F16CD007599E5 /* Color.swift */,
 				A232E1982A4F14A9007599E5 /* LoginView.swift */,
@@ -293,6 +296,7 @@
 				A232E1A32A4F16CD007599E5 /* Color.swift in Sources */,
 				A29C1D762A528D2B0045FFE2 /* Teacher.swift in Sources */,
 				A232E1712A4F1407007599E5 /* ContentView.swift in Sources */,
+				A29C1D872A529F840045FFE2 /* LoginUser.swift in Sources */,
 				A29C1D7D2A528FAE0045FFE2 /* Loggable.swift in Sources */,
 				A29C1D732A528CE10045FFE2 /* Department.swift in Sources */,
 				A232E16F2A4F1407007599E5 /* SuntechProject_2024App.swift in Sources */,
