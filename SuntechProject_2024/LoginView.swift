@@ -31,6 +31,16 @@ struct LoginView: View {
             }
             .padding()
         }
+        .overlay {
+            if viewModel.isLoading {
+                ZStack {
+                    Color.black
+                        .ignoresSafeArea()
+                        .opacity(0.3)
+                    ProgressView()
+                }
+            }
+        }
     }
     
     private func background() -> some View {
