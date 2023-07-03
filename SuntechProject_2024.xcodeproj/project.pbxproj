@@ -19,6 +19,7 @@
 		A232E1A32A4F16CD007599E5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232E1A22A4F16CD007599E5 /* Color.swift */; };
 		A29C1D6E2A528C420045FFE2 /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D6D2A528C420045FFE2 /* UserType.swift */; };
 		A29C1D712A528C6C0045FFE2 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D702A528C6C0045FFE2 /* Student.swift */; };
+		A29C1D732A528CE10045FFE2 /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D722A528CE10045FFE2 /* Department.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		A232E1A22A4F16CD007599E5 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		A29C1D6D2A528C420045FFE2 /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
 		A29C1D702A528C6C0045FFE2 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		A29C1D722A528CE10045FFE2 /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				A232E1702A4F1407007599E5 /* ContentView.swift */,
 				A29C1D6D2A528C420045FFE2 /* UserType.swift */,
 				A29C1D702A528C6C0045FFE2 /* Student.swift */,
+				A29C1D722A528CE10045FFE2 /* Department.swift */,
 				A232E1A22A4F16CD007599E5 /* Color.swift */,
 				A232E1982A4F14A9007599E5 /* LoginView.swift */,
 				A232E1722A4F140A007599E5 /* Assets.xcassets */,
@@ -283,6 +286,7 @@
 				A29C1D6E2A528C420045FFE2 /* UserType.swift in Sources */,
 				A232E1A32A4F16CD007599E5 /* Color.swift in Sources */,
 				A232E1712A4F1407007599E5 /* ContentView.swift in Sources */,
+				A29C1D732A528CE10045FFE2 /* Department.swift in Sources */,
 				A232E16F2A4F1407007599E5 /* SuntechProject_2024App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
