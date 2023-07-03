@@ -23,6 +23,7 @@
 		A29C1D762A528D2B0045FFE2 /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D752A528D2B0045FFE2 /* Teacher.swift */; };
 		A29C1D7D2A528FAE0045FFE2 /* Loggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D7C2A528FAE0045FFE2 /* Loggable.swift */; };
 		A29C1D872A529F840045FFE2 /* LoginUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D862A529F840045FFE2 /* LoginUser.swift */; };
+		A29C1D652A5288000045FFE2 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A29C1D642A5288000045FFE2 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A232E19C2A4F1545007599E5 /* RswiftLibrary in Frameworks */,
+				A29C1D652A5288000045FFE2 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +198,7 @@
 			name = SuntechProject_2024;
 			packageProductDependencies = (
 				A232E19B2A4F1545007599E5 /* RswiftLibrary */,
+				A29C1D642A5288000045FFE2 /* Alamofire */,
 			);
 			productName = SuntechProject_2024;
 			productReference = A232E16B2A4F1407007599E5 /* SuntechProject_2024.app */;
@@ -271,6 +274,7 @@
 			mainGroup = A232E1622A4F1407007599E5;
 			packageReferences = (
 				A232E19A2A4F1545007599E5 /* XCRemoteSwiftPackageReference "R.swift" */,
+				A29C1D632A5288000045FFE2 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = A232E16C2A4F1407007599E5 /* Products */;
 			projectDirPath = "";
@@ -662,6 +666,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		A29C1D632A5288000045FFE2 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -673,6 +685,11 @@
 		A232E19D2A4F156B007599E5 /* RswiftGenerateInternalResources */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = "plugin:RswiftGenerateInternalResources";
+		};
+		A29C1D642A5288000045FFE2 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A29C1D632A5288000045FFE2 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
