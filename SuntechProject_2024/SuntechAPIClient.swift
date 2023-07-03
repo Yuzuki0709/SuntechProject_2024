@@ -6,11 +6,27 @@
 //
 
 import Foundation
+import Alamofire
 
 public protocol SuntechAPIClientProtocol {
-    
+    func login(email: String, password: String, completion: @escaping ((Result<LoginUser, AFError>) -> ()))
 }
 
-final class SuntechAPIClient {
+final class SuntechAPIClient: SuntechAPIClientProtocol {
+    let baseURL = "https://proj-r.works"
     
+    func login(email: String, password: String, completion: @escaping (Result<LoginUser, AFError>) -> ()) {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        
+        let parameter = [
+            "email": email,
+            "password": password
+        ]
+        
+        AF.request(baseURL, parameters: parameter)
+            .responseDecodable(of: LoginUser.self, decoder: decoder) { response in
+                completion(response.result)
+            }
+    }
 }
