@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LoginUser: Decodable {
+public struct LoginUser: Decodable {
     let type: UserType
     let user: Loggable
     
@@ -16,7 +16,7 @@ struct LoginUser: Decodable {
         case user
     }
     
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.type = try container.decode(UserType.self, forKey: .type)
         
