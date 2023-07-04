@@ -48,6 +48,17 @@ struct TimetableView: View {
             }
         }
     }
+    
+    private func weekTimetableRow(weekTimetable: WeekTimetable) -> some View {
+        HStack {
+            dayTimetableRow(dayTimetables: weekTimetable.monday)
+            dayTimetableRow(dayTimetables: weekTimetable.tuesday)
+            dayTimetableRow(dayTimetables: weekTimetable.wednesday)
+            dayTimetableRow(dayTimetables: weekTimetable.thursday)
+            dayTimetableRow(dayTimetables: weekTimetable.friday)
+        }
+        .frame(maxWidth: .infinity)
+    }
 }
 
 struct TimetableView_Previews: PreviewProvider {
