@@ -12,39 +12,46 @@ struct LoginView: View {
     private let width: CGFloat = UIScreen.main.bounds.width
     
     var body: some View {
-        ZStack {
-            background()
-            
-            VStack(spacing: 30) {
-                headerLogo()
-                appDescription()
-                
-                Spacer()
-                    .frame(height: 10)
-                
-                inputLoginInfo()
-                
-                Spacer()
-                    .frame(height: 100)
-                
-                loginButton()
-            }
-            .padding()
-        }
-        .alert("エラーが発生しました", isPresented: .constant(viewModel.error != nil)) {
-            Button("OK") { viewModel.error = nil }
-        } message: {
-            Text("メールアドレスとパスワードを再入力してください。")
-        }
-        .overlay {
-            if viewModel.isLoading {
-                ZStack {
-                    Color.black
-                        .ignoresSafeArea()
-                        .opacity(0.3)
-                    ProgressView()
+        NavigationView {
+            ZStack {
+                NavigationLink(destination: TimetableView(),
+                               isActive: .constant(viewModel.loginUser != nil)) {
+                    EmptyView()
                 }
+                
+                background()
+                
+                VStack(spacing: 30) {
+                    headerLogo()
+                    appDescription()
+                    
+                    Spacer()
+                        .frame(height: 10)
+                    
+                    inputLoginInfo()
+                    
+                    Spacer()
+                        .frame(height: 100)
+                    
+                    loginButton()
+                }
+                .padding()
             }
+            .alert("エラーが発生しました", isPresented: .constant(viewModel.error != nil)) {
+                Button("OK") { viewModel.error = nil }
+            } message: {
+                Text("メールアドレスとパスワードを再入力してください。")
+            }
+            .overlay {
+                if viewModel.isLoading {
+                    ZStack {
+                        Color.black
+                            .ignoresSafeArea()
+                            .opacity(0.3)
+                        ProgressView()
+                    }
+                }
+        }
         }
     }
     
