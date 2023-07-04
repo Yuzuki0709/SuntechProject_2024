@@ -29,6 +29,25 @@ struct TimetableView: View {
         .foregroundColor(.white)
         .background(Color.mainColor)
     }
+    
+    private func dayTimetableRow(dayTimetables: [DayTimetable]) -> some View {
+        LazyVGrid(columns: [GridItem(.flexible())], spacing: 10) {
+            ForEach(1..<5, id: \.self) { num in
+                let timetable = dayTimetables
+                    .filter { $0.period1 == num || $0.period2 == num }
+                    .first
+                
+                if let timetable = timetable {
+                    classRow(classData: timetable.classData)
+                } else {
+                    Rectangle()
+                        .stroke(lineWidth: 1)
+                        .foregroundColor(.gray.opacity(0.4))
+                        .frame(height: 90)
+                }
+            }
+        }
+    }
 }
 
 struct TimetableView_Previews: PreviewProvider {
