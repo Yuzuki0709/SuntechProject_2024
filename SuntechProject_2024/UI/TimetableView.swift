@@ -13,6 +13,11 @@ struct TimetableView: View {
             VStack {
                 FSCalendarViewRepresentable(bounds: geometry.frame(in: .local))
                     .frame(height: 100)
+                
+                weekTimetableRow(weekTimetable: sampleWeekTimetable)
+                    .padding()
+                
+                Spacer()
             }
         }
     }
