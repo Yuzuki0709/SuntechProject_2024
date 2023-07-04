@@ -16,6 +16,19 @@ struct TimetableView: View {
             }
         }
     }
+    
+    private func classRow(classData: Class) -> some View {
+        VStack(alignment: .leading) {
+            Text(classData.name)
+                .font(.system(size: 12))
+            Text(classData.teacher.name)
+                .font(.system(size: 10))
+        }
+        .frame(height: 90)
+        .frame(maxWidth: .infinity)
+        .foregroundColor(.white)
+        .background(Color.mainColor)
+    }
 }
 
 struct TimetableView_Previews: PreviewProvider {
