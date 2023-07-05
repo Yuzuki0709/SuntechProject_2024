@@ -10,6 +10,7 @@ import SwiftUI
 
 final class TimetableViewModel: ObservableObject {
     @Published private(set) var weekTimetable: WeekTimetable?
+    @Published private(set) var isLoading: Bool = false
     
     private let suntechAPIClient: SuntechAPIClientProtocol
     
@@ -20,6 +21,9 @@ final class TimetableViewModel: ObservableObject {
     func fetchWeekTimetable() {
         guard let currentUser = LoginUserInfo.shared.currentUser else { return }
         guard let student = currentUser.user as? Student else { return }
+        
+        isLoading = true
+        
         suntechAPIClient.fetchWeekTimetable(studentId: student.id, password: student.password) { [weak self] result in
             switch result {
             case .success(let weekTimetable):
@@ -27,6 +31,8 @@ final class TimetableViewModel: ObservableObject {
             case .failure(let error):
                 print(error)
             }
+            
+            self?.isLoading = false
         }
     }
 }
