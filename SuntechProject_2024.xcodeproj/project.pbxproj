@@ -211,8 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				A29C1D8F2A52DF7B0045FFE2 /* LoginView */,
-				A29C1D9E2A5302960045FFE2 /* TimetableView.swift */,
-				A29C1DB22A54EE3C0045FFE2 /* TimetableViewModel.swift */,
+				A29C1DB52A54F6E50045FFE2 /* TimetableView */,
 				A29C1DA42A5303940045FFE2 /* FSCalendarView.swift */,
 				A29C1DA92A53087F0045FFE2 /* FSCalendarViewRepresentable.swift */,
 			);
@@ -244,6 +243,15 @@
 				A29C1D992A5301200045FFE2 /* WeekTimetable.swift */,
 			);
 			path = Timetable;
+			sourceTree = "<group>";
+		};
+		A29C1DB52A54F6E50045FFE2 /* TimetableView */ = {
+			isa = PBXGroup;
+			children = (
+				A29C1D9E2A5302960045FFE2 /* TimetableView.swift */,
+				A29C1DB22A54EE3C0045FFE2 /* TimetableViewModel.swift */,
+			);
+			path = TimetableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
