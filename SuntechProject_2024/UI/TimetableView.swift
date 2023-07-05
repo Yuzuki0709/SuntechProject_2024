@@ -15,9 +15,11 @@ struct TimetableView: View {
                 FSCalendarViewRepresentable(bounds: geometry.frame(in: .local))
                     .frame(height: 100)
                 
-                weekTimetableRow(weekTimetable: sampleWeekTimetable)
-                    .padding()
-                
+                if let weekTimetable = viewModel.weekTimetable {
+                    weekTimetableRow(weekTimetable: weekTimetable)
+                        .padding()
+                }
+               
                 Spacer()
             }
         }
