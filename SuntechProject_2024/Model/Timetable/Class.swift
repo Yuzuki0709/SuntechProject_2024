@@ -13,4 +13,9 @@ public struct Class: Identifiable, Codable {
     public let teacher: Teacher
     public let creditsCount: Int
     public let timeCount: Int
+    
+    public var isRequired: Bool {
+        let index = id.index(id.startIndex, offsetBy: 5) // 前から6文字目が必須かどうか
+        return id[index] == "0"
+    }
 }
