@@ -44,7 +44,13 @@ struct TimetableView: View {
         .frame(height: 90)
         .frame(maxWidth: .infinity)
         .foregroundColor(.white)
-        .background(Color.mainColor)
+        .background {
+            if classData.isRequired {
+                return Color.mainColor
+            } else {
+                return Color.electiveSubjectColor
+            }
+        }
     }
     
     private func dayTimetableRow(dayTimetables: [DayTimetable]) -> some View {
