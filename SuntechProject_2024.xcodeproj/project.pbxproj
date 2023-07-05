@@ -29,6 +29,12 @@
 		A29C1D932A52FF7E0045FFE2 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D922A52FF7E0045FFE2 /* Class.swift */; };
 		A29C1D982A5300750045FFE2 /* DayTimetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D972A5300750045FFE2 /* DayTimetable.swift */; };
 		A29C1D9A2A5301200045FFE2 /* WeekTimetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D992A5301200045FFE2 /* WeekTimetable.swift */; };
+		A29C1D9F2A5302960045FFE2 /* TimetableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D9E2A5302960045FFE2 /* TimetableView.swift */; };
+		A29C1DA32A53036A0045FFE2 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = A29C1DA22A53036A0045FFE2 /* FSCalendar */; };
+		A29C1DA52A5303940045FFE2 /* FSCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1DA42A5303940045FFE2 /* FSCalendarView.swift */; };
+		A29C1DA72A5304A00045FFE2 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1DA62A5304A00045FFE2 /* UIColor.swift */; };
+		A29C1DAA2A53087F0045FFE2 /* FSCalendarViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1DA92A53087F0045FFE2 /* FSCalendarViewRepresentable.swift */; };
+		A29C1DAE2A53B0CD0045FFE2 /* LoginUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1DAD2A53B0CD0045FFE2 /* LoginUserInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +78,11 @@
 		A29C1D922A52FF7E0045FFE2 /* Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
 		A29C1D972A5300750045FFE2 /* DayTimetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTimetable.swift; sourceTree = "<group>"; };
 		A29C1D992A5301200045FFE2 /* WeekTimetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTimetable.swift; sourceTree = "<group>"; };
+		A29C1D9E2A5302960045FFE2 /* TimetableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableView.swift; sourceTree = "<group>"; };
+		A29C1DA42A5303940045FFE2 /* FSCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSCalendarView.swift; sourceTree = "<group>"; };
+		A29C1DA62A5304A00045FFE2 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		A29C1DA92A53087F0045FFE2 /* FSCalendarViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSCalendarViewRepresentable.swift; sourceTree = "<group>"; };
+		A29C1DAD2A53B0CD0045FFE2 /* LoginUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +91,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A232E19C2A4F1545007599E5 /* RswiftLibrary in Frameworks */,
+				A29C1DA32A53036A0045FFE2 /* FSCalendar in Frameworks */,
 				A29C1D652A5288000045FFE2 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -124,10 +136,9 @@
 		A232E16D2A4F1407007599E5 /* SuntechProject_2024 */ = {
 			isa = PBXGroup;
 			children = (
-				A29C1D8E2A52DF720045FFE2 /* UI */,
 				A29C1D8A2A52A07E0045FFE2 /* Extension */,
 				A29C1D882A52A0560045FFE2 /* Model */,
-				A29C1D8F2A52DF7B0045FFE2 /* LoginView */,
+				A29C1D8E2A52DF720045FFE2 /* UI */,
 				A232E16E2A4F1407007599E5 /* SuntechProject_2024App.swift */,
 				A232E1702A4F1407007599E5 /* ContentView.swift */,
 				A232E1722A4F140A007599E5 /* Assets.xcassets */,
@@ -167,6 +178,7 @@
 				A29C1D9C2A5301E10045FFE2 /* Timetable */,
 				A29C1D912A52DF8C0045FFE2 /* SuntechAPI */,
 				A29C1D8B2A52A08C0045FFE2 /* LoginUser */,
+				A29C1DAD2A53B0CD0045FFE2 /* LoginUserInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -175,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				A232E1A22A4F16CD007599E5 /* Color.swift */,
+				A29C1DA62A5304A00045FFE2 /* UIColor.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -195,6 +208,10 @@
 		A29C1D8E2A52DF720045FFE2 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				A29C1D8F2A52DF7B0045FFE2 /* LoginView */,
+				A29C1D9E2A5302960045FFE2 /* TimetableView.swift */,
+				A29C1DA42A5303940045FFE2 /* FSCalendarView.swift */,
+				A29C1DA92A53087F0045FFE2 /* FSCalendarViewRepresentable.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -246,6 +263,7 @@
 			packageProductDependencies = (
 				A232E19B2A4F1545007599E5 /* RswiftLibrary */,
 				A29C1D642A5288000045FFE2 /* Alamofire */,
+				A29C1DA22A53036A0045FFE2 /* FSCalendar */,
 			);
 			productName = SuntechProject_2024;
 			productReference = A232E16B2A4F1407007599E5 /* SuntechProject_2024.app */;
@@ -322,6 +340,7 @@
 			packageReferences = (
 				A232E19A2A4F1545007599E5 /* XCRemoteSwiftPackageReference "R.swift" */,
 				A29C1D632A5288000045FFE2 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				A29C1DA12A5303690045FFE2 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 			);
 			productRefGroup = A232E16C2A4F1407007599E5 /* Products */;
 			projectDirPath = "";
@@ -365,7 +384,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A29C1D9F2A5302960045FFE2 /* TimetableView.swift in Sources */,
 				A232E1992A4F14A9007599E5 /* LoginView.swift in Sources */,
+				A29C1DAE2A53B0CD0045FFE2 /* LoginUserInfo.swift in Sources */,
 				A29C1D712A528C6C0045FFE2 /* Student.swift in Sources */,
 				A29C1D6E2A528C420045FFE2 /* UserType.swift in Sources */,
 				A232E1A32A4F16CD007599E5 /* Color.swift in Sources */,
@@ -375,9 +396,12 @@
 				A232E1712A4F1407007599E5 /* ContentView.swift in Sources */,
 				A29C1D872A529F840045FFE2 /* LoginUser.swift in Sources */,
 				A29C1D7D2A528FAE0045FFE2 /* Loggable.swift in Sources */,
+				A29C1DA52A5303940045FFE2 /* FSCalendarView.swift in Sources */,
 				A29C1D732A528CE10045FFE2 /* Department.swift in Sources */,
+				A29C1DA72A5304A00045FFE2 /* UIColor.swift in Sources */,
 				A29C1D932A52FF7E0045FFE2 /* Class.swift in Sources */,
 				A29C1D672A5288350045FFE2 /* LoginViewModel.swift in Sources */,
+				A29C1DAA2A53087F0045FFE2 /* FSCalendarViewRepresentable.swift in Sources */,
 				A29C1D692A5289AF0045FFE2 /* SuntechAPIClient.swift in Sources */,
 				A232E16F2A4F1407007599E5 /* SuntechProject_2024App.swift in Sources */,
 			);
@@ -726,6 +750,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		A29C1DA12A5303690045FFE2 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -742,6 +774,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A29C1D632A5288000045FFE2 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		A29C1DA22A53036A0045FFE2 /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A29C1DA12A5303690045FFE2 /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

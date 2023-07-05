@@ -27,6 +27,7 @@ final class LoginViewModel: ObservableObject {
             switch result {
             case .success(let loginUser):
                 self?.loginUser = loginUser
+                LoginUserInfo.shared.setUserInfo(loginUser)
             case .failure(let error):
                 self?.error = error as Error
             }
