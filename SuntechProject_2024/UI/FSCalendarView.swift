@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 import FSCalendar
 
 class FSCalendarView: UIView {
@@ -19,6 +20,8 @@ class FSCalendarView: UIView {
         fsCalendar.appearance.titleWeekendColor = .clear
         fsCalendar.appearance.todayColor = .mainColor
         fsCalendar.appearance.selectionColor = .clear
+        fsCalendar.appearance.headerTitleColor = UIColor(Color(R.color.timetable.calendarTextColor))
+        fsCalendar.appearance.weekdayTextColor = UIColor(Color(R.color.timetable.calendarTextColor))
         fsCalendar.allowsSelection = false
         
         // 土曜日と日曜日を非表示

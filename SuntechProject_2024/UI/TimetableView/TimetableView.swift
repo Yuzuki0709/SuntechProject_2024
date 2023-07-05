@@ -11,28 +11,38 @@ struct TimetableView: View {
     @StateObject private var viewModel = TimetableViewModel()
     var body: some View {
         GeometryReader { geometry in
-            VStack {
-                FSCalendarViewRepresentable(bounds: geometry.frame(in: .local))
-                    .frame(height: 100)
+            ZStack {
+                Color(R.color.timetable.backgroundColor)
+                    .ignoresSafeArea()
                 
-                if let weekTimetable = viewModel.weekTimetable {
-                    weekTimetableRow(weekTimetable: weekTimetable)
-                        .padding()
-                        .overlay {
-                            if viewModel.isLoading {
-                                ProgressView()
-                                    .frame(width: 100, height: 100)
+                VStack {
+                    FSCalendarViewRepresentable(bounds: geometry.frame(in: .local))
+                        .frame(height: 100)
+                    
+                    if let weekTimetable = viewModel.weekTimetable {
+                        weekTimetableRow(weekTimetable: weekTimetable)
+                            .padding()
+                            .overlay {
+                                if viewModel.isLoading {
+                                    ProgressView()
+                                        .frame(width: 100, height: 100)
+                                }
                             }
-                        }
+                    }
+                    
+                    Spacer()
                 }
-               
-                Spacer()
             }
         }
-        .navigationBarBackButtonHidden(true)
         .onAppear {
             viewModel.fetchWeekTimetable()
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationTitle("時間割")
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbarBackground(.visible, for: .navigationBar)
+        .toolbarBackground(Color.mainColor, for: .navigationBar)
+        .toolbarColorScheme(ColorScheme.dark, for: .navigationBar)
     }
     
     private func classRow(classData: Class) -> some View {
