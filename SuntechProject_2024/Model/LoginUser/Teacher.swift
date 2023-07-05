@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct Teacher: Loggable {
-    let id: String
-    let name: String
-    let password: String
-    let emailAddress: String
+public struct Teacher: Loggable {
+    public let id: String
+    public let name: String
+    public let password: String
+    public let emailAddress: String
 }

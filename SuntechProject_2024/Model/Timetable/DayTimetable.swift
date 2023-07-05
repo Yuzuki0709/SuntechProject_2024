@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct DayTimetable: Identifiable, Codable {
-    let id: UUID = UUID()
-    let period1: Int
-    let period2: Int?
-    let classData: Class
+public struct DayTimetable: Identifiable, Codable {
+    public let id: UUID = UUID()
+    public let period1: Int
+    public let period2: Int?
+    public let classData: Class
     
     enum CodingKeys: String, CodingKey {
         case period1, period2

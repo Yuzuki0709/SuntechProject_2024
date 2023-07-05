@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct WeekTimetable: Identifiable, Codable {
-    let id: UUID = UUID()
-    let monday: [DayTimetable]
-    let tuesday: [DayTimetable]
-    let wednesday: [DayTimetable]
-    let thursday: [DayTimetable]
-    let friday: [DayTimetable]
+public struct WeekTimetable: Identifiable, Codable {
+    public let id: UUID = UUID()
+    public let monday: [DayTimetable]
+    public let tuesday: [DayTimetable]
+    public let wednesday: [DayTimetable]
+    public let thursday: [DayTimetable]
+    public let friday: [DayTimetable]
     
     enum CodingKeys: String, CodingKey {
         case monday = "Monday"
