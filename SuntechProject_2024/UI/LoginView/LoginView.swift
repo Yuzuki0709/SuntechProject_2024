@@ -51,13 +51,17 @@ struct LoginView: View {
                         ProgressView()
                     }
                 }
-        }
+            }
         }
     }
     
     private func background() -> some View {
-        Color.mainColor
-            .ignoresSafeArea()
+        LinearGradient(
+            gradient: Gradient(colors: [.mainColor, Color(R.color.login.backgroundColor)]),
+            startPoint: .top,
+            endPoint: .bottom
+        )
+        .ignoresSafeArea()
     }
     
     private func headerLogo() -> some View {

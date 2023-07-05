@@ -29,6 +29,7 @@ struct TimetableView: View {
                 Spacer()
             }
         }
+        .navigationBarBackButtonHidden(true)
         .onAppear {
             viewModel.fetchWeekTimetable()
         }
