@@ -51,7 +51,7 @@ struct LoginView: View {
                         ProgressView()
                     }
                 }
-        }
+            }
         }
     }
     
