@@ -35,6 +35,7 @@
 		A29C1DA72A5304A00045FFE2 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1DA62A5304A00045FFE2 /* UIColor.swift */; };
 		A29C1DAA2A53087F0045FFE2 /* FSCalendarViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1DA92A53087F0045FFE2 /* FSCalendarViewRepresentable.swift */; };
 		A29C1DAE2A53B0CD0045FFE2 /* LoginUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1DAD2A53B0CD0045FFE2 /* LoginUserInfo.swift */; };
+		A29C1DB32A54EE3C0045FFE2 /* TimetableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1DB22A54EE3C0045FFE2 /* TimetableViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		A29C1DA62A5304A00045FFE2 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		A29C1DA92A53087F0045FFE2 /* FSCalendarViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSCalendarViewRepresentable.swift; sourceTree = "<group>"; };
 		A29C1DAD2A53B0CD0045FFE2 /* LoginUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserInfo.swift; sourceTree = "<group>"; };
+		A29C1DB22A54EE3C0045FFE2 /* TimetableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +212,7 @@
 			children = (
 				A29C1D8F2A52DF7B0045FFE2 /* LoginView */,
 				A29C1D9E2A5302960045FFE2 /* TimetableView.swift */,
+				A29C1DB22A54EE3C0045FFE2 /* TimetableViewModel.swift */,
 				A29C1DA42A5303940045FFE2 /* FSCalendarView.swift */,
 				A29C1DA92A53087F0045FFE2 /* FSCalendarViewRepresentable.swift */,
 			);
@@ -388,6 +391,7 @@
 				A232E1992A4F14A9007599E5 /* LoginView.swift in Sources */,
 				A29C1DAE2A53B0CD0045FFE2 /* LoginUserInfo.swift in Sources */,
 				A29C1D712A528C6C0045FFE2 /* Student.swift in Sources */,
+				A29C1DB32A54EE3C0045FFE2 /* TimetableViewModel.swift in Sources */,
 				A29C1D6E2A528C420045FFE2 /* UserType.swift in Sources */,
 				A232E1A32A4F16CD007599E5 /* Color.swift in Sources */,
 				A29C1D9A2A5301200045FFE2 /* WeekTimetable.swift in Sources */,
