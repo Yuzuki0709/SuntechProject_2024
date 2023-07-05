@@ -40,7 +40,7 @@ final class SuntechAPIClient: SuntechAPIClientProtocol {
         let path = "/api/timetable"
         
         let parameter = [
-            "student_id": studentId
+            "student_id": "\"\(studentId)\""
         ]
         
         AF.request(baseURL + path, parameters: parameter)
