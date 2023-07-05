@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TimetableView: View {
+    @StateObject private var viewModel = TimetableViewModel()
     var body: some View {
         GeometryReader { geometry in
             VStack {
@@ -19,6 +20,9 @@ struct TimetableView: View {
                 
                 Spacer()
             }
+        }
+        .onAppear {
+            viewModel.fetchWeekTimetable()
         }
     }
     

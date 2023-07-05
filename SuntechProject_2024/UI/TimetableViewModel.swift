@@ -16,4 +16,17 @@ final class TimetableViewModel: ObservableObject {
     init(suntechAPIClient: SuntechAPIClientProtocol = SuntechAPIClient()) {
         self.suntechAPIClient = suntechAPIClient
     }
+    
+    func fetchWeekTimetable() {
+        guard let currentUser = LoginUserInfo.shared.currentUser else { return }
+        guard let student = currentUser.user as? Student else { return }
+        suntechAPIClient.fetchWeekTimetable(studentId: student.id, password: student.password) { result in
+            switch result {
+            case .success(let weekTimetable):
+                print(weekTimetable)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }
