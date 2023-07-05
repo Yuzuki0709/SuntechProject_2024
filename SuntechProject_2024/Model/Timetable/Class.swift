@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct Class: Identifiable, Codable {
-    let id: String
-    let name: String
-    let teacher: Teacher
-    let creditsCount: Int
-    let timeCount: Int
+public struct Class: Identifiable, Codable {
+    public let id: String
+    public let name: String
+    public let teacher: Teacher
+    public let creditsCount: Int
+    public let timeCount: Int
 }

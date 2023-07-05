@@ -8,17 +8,29 @@
 import SwiftUI
 
 struct TimetableView: View {
+    @StateObject private var viewModel = TimetableViewModel()
     var body: some View {
         GeometryReader { geometry in
             VStack {
                 FSCalendarViewRepresentable(bounds: geometry.frame(in: .local))
                     .frame(height: 100)
                 
-                weekTimetableRow(weekTimetable: sampleWeekTimetable)
-                    .padding()
-                
+                if let weekTimetable = viewModel.weekTimetable {
+                    weekTimetableRow(weekTimetable: weekTimetable)
+                        .padding()
+                        .overlay {
+                            if viewModel.isLoading {
+                                ProgressView()
+                                    .frame(width: 100, height: 100)
+                            }
+                        }
+                }
+               
                 Spacer()
             }
+        }
+        .onAppear {
+            viewModel.fetchWeekTimetable()
         }
     }
     

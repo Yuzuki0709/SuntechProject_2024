@@ -10,6 +10,7 @@ import Alamofire
 
 public protocol SuntechAPIClientProtocol {
     func login(email: String, password: String, completion: @escaping ((Result<LoginUser, AFError>) -> ()))
+    func fetchWeekTimetable(studentId: String, password: String, completion: @escaping ((Result<WeekTimetable, AFError>) -> ()))
 }
 
 final class SuntechAPIClient: SuntechAPIClientProtocol {
@@ -28,6 +29,22 @@ final class SuntechAPIClient: SuntechAPIClientProtocol {
         
         AF.request(baseURL + path, parameters: parameter)
             .responseDecodable(of: LoginUser.self, decoder: decoder) { response in
+                completion(response.result)
+            }
+    }
+    
+    func fetchWeekTimetable(studentId: String, password: String, completion: @escaping (Result<WeekTimetable, AFError>) -> ()) {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        
+        let path = "/api/timetable"
+        
+        let parameter = [
+            "student_id": "\"\(studentId)\""
+        ]
+        
+        AF.request(baseURL + path, parameters: parameter)
+            .responseDecodable(of: WeekTimetable.self, decoder: decoder) { response in
                 completion(response.result)
             }
     }
