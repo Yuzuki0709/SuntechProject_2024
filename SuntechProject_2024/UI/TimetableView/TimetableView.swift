@@ -25,14 +25,19 @@ struct TimetableView: View {
                             }
                         }
                 }
-               
+                
                 Spacer()
             }
         }
-        .navigationBarBackButtonHidden(true)
         .onAppear {
             viewModel.fetchWeekTimetable()
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationTitle("時間割")
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbarBackground(.visible, for: .navigationBar)
+        .toolbarBackground(Color.mainColor, for: .navigationBar)
+        .toolbarColorScheme(ColorScheme.dark, for: .navigationBar)
     }
     
     private func classRow(classData: Class) -> some View {
