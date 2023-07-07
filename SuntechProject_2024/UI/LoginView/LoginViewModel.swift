@@ -15,6 +15,8 @@ final class LoginViewModel: ObservableObject {
     @Published var loginUser: LoginUser? = nil
     @Published var error: Error? = nil
     
+    private var failureCount: Int = 0
+    
     private let suntechAPIClient: SuntechAPIClientProtocol
     
     init(suntechAPIClient: SuntechAPIClientProtocol = SuntechAPIClient()) {
@@ -28,9 +30,11 @@ final class LoginViewModel: ObservableObject {
             switch result {
             case .success(let loginUser):
                 self.loginUser = loginUser
+                self.failureCount = 0
                 LoginUserInfo.shared.setUserInfo(loginUser, password: self.passwordText)
             case .failure(let error):
                 self.error = error as Error
+                self.failureCount += 1
             }
             self.isLoading = false
         }
