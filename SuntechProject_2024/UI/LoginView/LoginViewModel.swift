@@ -36,8 +36,24 @@ final class LoginViewModel: ObservableObject {
             case .failure(let error):
                 self.error = error as Error
                 self.failureCount += 1
+                self.handleLoginFailure()
             }
             self.isLoading = false
+        }
+    }
+    
+    private func handleLoginFailure() {
+        switch failureCount {
+        case 4:
+            lockoutDuration = Calendar.current.date(byAdding: .minute, value: 1, to: Date())
+        case 5:
+            lockoutDuration = Calendar.current.date(byAdding: .minute, value: 10, to: Date())
+        case 6:
+            lockoutDuration = Calendar.current.date(byAdding: .minute, value: 30, to: Date())
+        case (7...100):
+            lockoutDuration = Calendar.current.date(byAdding: .hour, value: 1, to: Date())
+        default:
+            lockoutDuration = nil
         }
     }
 }
