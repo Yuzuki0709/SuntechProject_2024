@@ -24,14 +24,15 @@ final class LoginViewModel: ObservableObject {
     func login() {
         isLoading = true
         suntechAPIClient.login(email: emailText, password: passwordText) { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case .success(let loginUser):
-                self?.loginUser = loginUser
-                LoginUserInfo.shared.setUserInfo(loginUser)
+                self.loginUser = loginUser
+                LoginUserInfo.shared.setUserInfo(loginUser, password: self.passwordText)
             case .failure(let error):
-                self?.error = error as Error
+                self.error = error as Error
             }
-            self?.isLoading = false
+            self.isLoading = false
         }
     }
 }

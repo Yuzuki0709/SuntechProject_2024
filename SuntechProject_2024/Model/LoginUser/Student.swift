@@ -12,6 +12,5 @@ struct Student: Loggable {
     let name: String
     let departmentId: Department
     let entranceYear: Int
-    let password: String
     let emailAddress: String
 }

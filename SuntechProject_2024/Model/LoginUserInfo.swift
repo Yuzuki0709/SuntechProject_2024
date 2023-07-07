@@ -11,13 +11,18 @@ final class LoginUserInfo {
     static let shared = LoginUserInfo()
     
     private var _currentUser: LoginUser?
+    private var _password: String?
     var currentUser: LoginUser? {
         _currentUser
+    }
+    var password: String? {
+        _password
     }
     
     private init() {}
     
-    func setUserInfo(_ user: LoginUser) {
+    func setUserInfo(_ user: LoginUser, password: String) {
         self._currentUser = user
+        self._password = password
     }
 }

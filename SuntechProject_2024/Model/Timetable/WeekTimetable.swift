@@ -36,7 +36,6 @@ let sampleWeekTimetable = WeekTimetable(
                         teacher: Teacher(
                             id: "F-0004",
                             name: "杉田 勝実",
-                            password: "password",
                             emailAddress: "sugita@suntech.jp"),
                         creditsCount: 4,
                         timeCount: 60)),
@@ -49,7 +48,6 @@ let sampleWeekTimetable = WeekTimetable(
                         teacher: Teacher(
                             id: "F-0007",
                             name: "保坂　修治",
-                            password: "password",
                             emailAddress: "hosaka@suntech.jp"),
                         creditsCount: 4,
                         timeCount: 60))
@@ -63,7 +61,6 @@ let sampleWeekTimetable = WeekTimetable(
                         teacher: Teacher(
                             id: "F-0008",
                             name: "山本　芳彦",
-                            password: "password",
                             emailAddress: "yoshi@suntech.jp"),
                         creditsCount: 4,
                         timeCount: 60))
@@ -77,7 +74,6 @@ let sampleWeekTimetable = WeekTimetable(
                         teacher: Teacher(
                             id: "F-0006",
                             name: "深澤　克朗",
-                            password: "password",
                             emailAddress: "fuka@suntech.jp"),
                         creditsCount: 4,
                         timeCount: 60))
@@ -91,7 +87,6 @@ let sampleWeekTimetable = WeekTimetable(
                         teacher: Teacher(
                             id: "P-0024",
                             name: "八巻　栄家",
-                            password: "password",
                             emailAddress: "yamaki@suntech.jp"),
                         creditsCount: 4,
                         timeCount: 60))
