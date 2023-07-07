@@ -9,6 +9,6 @@ import Foundation
 
 protocol Loggable: Codable {
     var id: String { get }
-    var password: String { get }
+    var name: String { get }
     var emailAddress: String { get }
 }

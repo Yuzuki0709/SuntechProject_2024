@@ -10,6 +10,5 @@ import Foundation
 public struct Teacher: Loggable {
     public let id: String
     public let name: String
-    public let password: String
     public let emailAddress: String
 }
