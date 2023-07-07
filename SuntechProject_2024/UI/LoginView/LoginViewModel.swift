@@ -16,6 +16,7 @@ final class LoginViewModel: ObservableObject {
     @Published var error: Error? = nil
     
     private var failureCount: Int = 0
+    private var lockoutDuration: Date?
     
     private let suntechAPIClient: SuntechAPIClientProtocol
     
