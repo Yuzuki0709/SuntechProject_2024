@@ -19,12 +19,13 @@ final class TimetableViewModel: ObservableObject {
     }
     
     func fetchWeekTimetable() {
-        guard let currentUser = LoginUserInfo.shared.currentUser else { return }
-        guard let student = currentUser.user as? Student else { return }
+        guard let currentUser = LoginUserInfo.shared.currentUser,
+              let password = LoginUserInfo.shared.password,
+              let student = currentUser.user as? Student else { return }
         
         isLoading = true
         
-        suntechAPIClient.fetchWeekTimetable(studentId: student.id, password: student.password) { [weak self] result in
+        suntechAPIClient.fetchWeekTimetable(studentId: student.id, password: password) { [weak self] result in
             switch result {
             case .success(let weekTimetable):
                 self?.weekTimetable = weekTimetable

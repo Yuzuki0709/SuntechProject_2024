@@ -15,6 +15,9 @@ final class LoginUserInfo {
     var currentUser: LoginUser? {
         _currentUser
     }
+    var password: String? {
+        _password
+    }
     
     private init() {}
     
