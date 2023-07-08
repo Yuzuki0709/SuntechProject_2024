@@ -8,13 +8,56 @@
 import SwiftUI
 
 struct ClassDetailView: View {
+    let classData: Class
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            classDetailInfo()
+        }
+        .navigationTitle("授業詳細")
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbarBackground(.visible, for: .navigationBar)
+        .toolbarBackground(Color.mainColor, for: .navigationBar)
+        .toolbarColorScheme(ColorScheme.dark, for: .navigationBar)
+    }
+    
+    private func classDetailInfo() -> some View {
+        VStack(alignment: .leading, spacing: 15) {
+            classDetailInfoRow(headerText: "授業名",
+                               contentText: classData.name)
+            classDetailInfoRow(headerText: "教授",
+                               contentText: classData.teacher.name)
+            classDetailInfoRow(headerText: "単位数",
+                               contentText: "\(classData.creditsCount)")
+            classDetailInfoRow(headerText: "期間",
+                               contentText: classData.term.rawValue)
+            classDetailInfoRow(headerText: "必選",
+                               contentText: classData.isRequired ? "必修" : "選択")
+        }
+    }
+    
+    private func classDetailInfoRow(headerText: String, contentText: String) -> some View {
+        VStack(alignment: .leading, spacing: 5) {
+            Text(headerText)
+                .font(.system(size: 14))
+                .foregroundColor(.gray)
+            Text(contentText)
+                .font(.system(size: 20))
+        }
     }
 }
 
 struct ClassDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ClassDetailView()
+        NavigationView {
+            ClassDetailView(classData: Class(
+                id: "23C4110-0238",
+                name: "量子コンピューティング",
+                teacher: Teacher(
+                    id: "F-0004",
+                    name: "杉田 勝実",
+                    emailAddress: "sugita@suntech.jp"),
+                creditsCount: 4,
+                timeCount: 60))
+        }
     }
 }
