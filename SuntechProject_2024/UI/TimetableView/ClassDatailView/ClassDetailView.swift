@@ -10,14 +10,23 @@ import SwiftUI
 struct ClassDetailView: View {
     let classData: Class
     var body: some View {
-        VStack {
-            classDetailInfo()
+        ZStack {
+            background()
+            
+            VStack {
+                classDetailInfo()
+            }
         }
         .navigationTitle("授業詳細")
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(.visible, for: .navigationBar)
         .toolbarBackground(Color.mainColor, for: .navigationBar)
         .toolbarColorScheme(ColorScheme.dark, for: .navigationBar)
+    }
+    
+    private func background() -> some View {
+        Color(R.color.timetable.backgroundColor)
+            .ignoresSafeArea()
     }
     
     private func classDetailInfo() -> some View {
