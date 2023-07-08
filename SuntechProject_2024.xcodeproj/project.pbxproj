@@ -36,6 +36,7 @@
 		A29C1DAA2A53087F0045FFE2 /* FSCalendarViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1DA92A53087F0045FFE2 /* FSCalendarViewRepresentable.swift */; };
 		A29C1DAE2A53B0CD0045FFE2 /* LoginUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1DAD2A53B0CD0045FFE2 /* LoginUserInfo.swift */; };
 		A29C1DB32A54EE3C0045FFE2 /* TimetableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1DB22A54EE3C0045FFE2 /* TimetableViewModel.swift */; };
+		A29C1DFA2A59AA4E0045FFE2 /* ClassDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1DF92A59AA4E0045FFE2 /* ClassDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		A29C1DA92A53087F0045FFE2 /* FSCalendarViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSCalendarViewRepresentable.swift; sourceTree = "<group>"; };
 		A29C1DAD2A53B0CD0045FFE2 /* LoginUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserInfo.swift; sourceTree = "<group>"; };
 		A29C1DB22A54EE3C0045FFE2 /* TimetableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableViewModel.swift; sourceTree = "<group>"; };
+		A29C1DF92A59AA4E0045FFE2 /* ClassDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,8 +252,17 @@
 			children = (
 				A29C1D9E2A5302960045FFE2 /* TimetableView.swift */,
 				A29C1DB22A54EE3C0045FFE2 /* TimetableViewModel.swift */,
+				A29C1DF52A59AA290045FFE2 /* ClassDatailView */,
 			);
 			path = TimetableView;
+			sourceTree = "<group>";
+		};
+		A29C1DF52A59AA290045FFE2 /* ClassDatailView */ = {
+			isa = PBXGroup;
+			children = (
+				A29C1DF92A59AA4E0045FFE2 /* ClassDetailView.swift */,
+			);
+			path = ClassDatailView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -401,6 +412,7 @@
 				A29C1D712A528C6C0045FFE2 /* Student.swift in Sources */,
 				A29C1DB32A54EE3C0045FFE2 /* TimetableViewModel.swift in Sources */,
 				A29C1D6E2A528C420045FFE2 /* UserType.swift in Sources */,
+				A29C1DFA2A59AA4E0045FFE2 /* ClassDetailView.swift in Sources */,
 				A232E1A32A4F16CD007599E5 /* Color.swift in Sources */,
 				A29C1D9A2A5301200045FFE2 /* WeekTimetable.swift in Sources */,
 				A29C1D982A5300750045FFE2 /* DayTimetable.swift in Sources */,
