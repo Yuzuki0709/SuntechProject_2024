@@ -52,6 +52,25 @@ struct LoginView: View {
                     }
                 }
             }
+            .overlay {
+                if viewModel.isLock {
+                    ZStack {
+                        Color.black
+                            .ignoresSafeArea()
+                            .opacity(0.6)
+                        
+                        VStack {
+                            Text("現在ログインできません")
+                                .font(.title2)
+                                .padding()
+                            Text("\(viewModel.lockoutDurationDiffMinuteNow + 1)分後にやり直してください")
+                                .font(.title3)
+                        }
+                        .foregroundColor(.white)
+                    }
+                    .background(.ultraThinMaterial)
+                }
+            }
         }
     }
     
@@ -87,10 +106,12 @@ struct LoginView: View {
     private func inputLoginInfo() -> some View {
         VStack(spacing: 20) {
             TextField("E-mail", text: $viewModel.emailText)
+                .disabled(viewModel.isLock)
                 .textFieldStyle(.roundedBorder)
                 .keyboardType(.emailAddress)
             
             SecureField("Password", text: $viewModel.passwordText)
+                .disabled(viewModel.isLock)
                 .textFieldStyle(.roundedBorder)
         }
         .frame(width: width * 0.8)
@@ -107,6 +128,7 @@ struct LoginView: View {
                 .foregroundColor(.white)
                 .cornerRadius(10)
         }
+        .disabled(viewModel.isLock)
     }
 }
 

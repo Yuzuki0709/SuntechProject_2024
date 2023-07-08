@@ -14,11 +14,35 @@ final class LoginViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var loginUser: LoginUser? = nil
     @Published var error: Error? = nil
+    @Published var isLock: Bool = false
+    @Published var lockoutDurationDiffMinuteNow: Int = 0
+    
+    private var failureCount: Int = 0
+    private var lockoutDuration: Date? {
+        didSet {
+            if let lockoutDuration = lockoutDuration {
+                isLock = lockoutDuration > Date()
+                if isLock {
+                    scheduleUnlockTimer(for: lockoutDuration)
+                    startUpdateLockoutDurationTimer()
+                }
+            } else {
+                isLock = false
+                cancelUnlockTimer()
+            }
+        }
+    }
+    private var unlockTimer: Timer?
+    private var updateLockoutDurationTimer: Timer?
     
     private let suntechAPIClient: SuntechAPIClientProtocol
     
     init(suntechAPIClient: SuntechAPIClientProtocol = SuntechAPIClient()) {
         self.suntechAPIClient = suntechAPIClient
+    }
+    
+    deinit {
+        stopUpdateLockoutDurationTimer()
     }
     
     func login() {
@@ -28,11 +52,69 @@ final class LoginViewModel: ObservableObject {
             switch result {
             case .success(let loginUser):
                 self.loginUser = loginUser
+                self.failureCount = 0
                 LoginUserInfo.shared.setUserInfo(loginUser, password: self.passwordText)
             case .failure(let error):
                 self.error = error as Error
+                self.failureCount += 1
+                self.handleLoginFailure()
             }
             self.isLoading = false
         }
+    }
+    
+    private func handleLoginFailure() {
+        switch failureCount {
+        case 4:
+            lockoutDuration = Calendar.current.date(byAdding: .minute, value: 1, to: Date())
+        case 5:
+            lockoutDuration = Calendar.current.date(byAdding: .minute, value: 10, to: Date())
+        case 6:
+            lockoutDuration = Calendar.current.date(byAdding: .minute, value: 30, to: Date())
+        case (7...):
+            lockoutDuration = Calendar.current.date(byAdding: .hour, value: 1, to: Date())
+        default:
+            lockoutDuration = nil
+        }
+    }
+    
+    private func scheduleUnlockTimer(for unlockTime: Date) {
+        cancelUnlockTimer()
+        let timer = Timer(fire: unlockTime, interval: 0, repeats: false) { [weak self] _ in
+            self?.unlockTimerFired()
+            self?.stopUpdateLockoutDurationTimer()
+        }
+        RunLoop.main.add(timer, forMode: .common)
+        unlockTimer = timer
+    }
+    
+    private func cancelUnlockTimer() {
+        unlockTimer?.invalidate()
+        unlockTimer = nil
+    }
+    
+    private func unlockTimerFired() {
+        lockoutDuration = nil
+    }
+    
+    private func startUpdateLockoutDurationTimer() {
+        updateLockoutDurationDiffMinuteNow()
+        updateLockoutDurationTimer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { [weak self] _ in
+            self?.updateLockoutDurationDiffMinuteNow()
+        }
+    }
+    
+    private func stopUpdateLockoutDurationTimer() {
+        updateLockoutDurationTimer?.invalidate()
+        updateLockoutDurationTimer = nil
+    }
+    
+    private func updateLockoutDurationDiffMinuteNow() {
+        guard let lockoutDuration = lockoutDuration else {
+            lockoutDurationDiffMinuteNow = 0
+            return
+        }
+        let diffMinute = Calendar.current.dateComponents([.minute], from: Date(), to: lockoutDuration).minute ?? 0
+        lockoutDurationDiffMinuteNow = max(0, diffMinute)
     }
 }
