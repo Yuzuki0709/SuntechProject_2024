@@ -14,9 +14,18 @@ final class LoginViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var loginUser: LoginUser? = nil
     @Published var error: Error? = nil
+    @Published var isLock: Bool = false
     
     private var failureCount: Int = 0
-    private var lockoutDuration: Date?
+    private var lockoutDuration: Date? {
+        didSet {
+            if lockoutDuration != nil {
+                isLock = true
+            } else {
+                isLock = false
+            }
+        }
+    }
     
     private let suntechAPIClient: SuntechAPIClientProtocol
     
