@@ -16,6 +16,11 @@ final class LoginViewModel: ObservableObject {
     @Published var error: Error? = nil
     @Published var isLock: Bool = false
     
+    var lockoutDurationDiffMinuteNow: Int {
+        guard let lockoutDuration  = lockoutDuration else { return 0 }
+        return Int(lockoutDuration.timeIntervalSince(Date.now) / 60)
+    }
+    
     private var failureCount: Int = 0
     private var lockoutDuration: Date? {
         didSet {
