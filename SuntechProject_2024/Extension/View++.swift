@@ -6,3 +6,16 @@
 //
 
 import SwiftUI
+
+extension View {
+    func halfModal<Sheet: View>(
+        isShow: Binding<Bool>,
+        @ViewBuilder sheet: @escaping () -> Sheet,
+        onClose: @escaping () -> ()
+    ) -> some View {
+        return self
+            .background(
+                HalfModalSheetViewController(sheet: sheet(), isShow: isShow, onClose: onClose)
+            )
+    }
+}
