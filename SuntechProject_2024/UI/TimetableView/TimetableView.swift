@@ -46,20 +46,22 @@ struct TimetableView: View {
     }
     
     private func classRow(classData: Class) -> some View {
-        VStack(alignment: .leading) {
-            Text(classData.name)
-                .font(.system(size: 12))
-            Text(classData.teacher.name)
-                .font(.system(size: 10))
-        }
-        .frame(height: 90)
-        .frame(maxWidth: .infinity)
-        .foregroundColor(.white)
-        .background {
-            if classData.isRequired {
-                return Color.mainColor
-            } else {
-                return Color.electiveSubjectColor
+        NavigationLink(destination: ClassDetailView(classData: classData)) {
+            VStack(alignment: .leading) {
+                Text(classData.name)
+                    .font(.system(size: 12))
+                Text(classData.teacher.name)
+                    .font(.system(size: 10))
+            }
+            .frame(height: 90)
+            .frame(maxWidth: .infinity)
+            .foregroundColor(.white)
+            .background {
+                if classData.isRequired {
+                    Color.mainColor
+                } else {
+                    Color.electiveSubjectColor
+                }
             }
         }
     }
