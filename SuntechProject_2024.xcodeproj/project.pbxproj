@@ -20,6 +20,7 @@
 		A28113382A5BC1690037E35C /* View++.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113372A5BC1690037E35C /* View++.swift */; };
 		A28113422A5BD71A0037E35C /* AttendanceStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113412A5BD71A0037E35C /* AttendanceStatusView.swift */; };
 		A28113452A5BE58A0037E35C /* AttendanceStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113442A5BE58A0037E35C /* AttendanceStatus.swift */; };
+		A28113482A5BE7A90037E35C /* AttendanceLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113472A5BE7A90037E35C /* AttendanceLog.swift */; };
 		A29C1D652A5288000045FFE2 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A29C1D642A5288000045FFE2 /* Alamofire */; };
 		A29C1D672A5288350045FFE2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D662A5288350045FFE2 /* LoginViewModel.swift */; };
 		A29C1D692A5289AF0045FFE2 /* SuntechAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D682A5289AF0045FFE2 /* SuntechAPIClient.swift */; };
@@ -76,6 +77,7 @@
 		A28113372A5BC1690037E35C /* View++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View++.swift"; sourceTree = "<group>"; };
 		A28113412A5BD71A0037E35C /* AttendanceStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatusView.swift; sourceTree = "<group>"; };
 		A28113442A5BE58A0037E35C /* AttendanceStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatus.swift; sourceTree = "<group>"; };
+		A28113472A5BE7A90037E35C /* AttendanceLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceLog.swift; sourceTree = "<group>"; };
 		A29C1D662A5288350045FFE2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		A29C1D682A5289AF0045FFE2 /* SuntechAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuntechAPIClient.swift; sourceTree = "<group>"; };
 		A29C1D6D2A528C420045FFE2 /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				A28113442A5BE58A0037E35C /* AttendanceStatus.swift */,
+				A28113472A5BE7A90037E35C /* AttendanceLog.swift */,
 			);
 			path = AttendanceStatus;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				A29C1D982A5300750045FFE2 /* DayTimetable.swift in Sources */,
 				A29C1D762A528D2B0045FFE2 /* Teacher.swift in Sources */,
 				A232E1712A4F1407007599E5 /* ContentView.swift in Sources */,
+				A28113482A5BE7A90037E35C /* AttendanceLog.swift in Sources */,
 				A29C1D872A529F840045FFE2 /* LoginUser.swift in Sources */,
 				A29C1D7D2A528FAE0045FFE2 /* Loggable.swift in Sources */,
 				A29C1DA52A5303940045FFE2 /* FSCalendarView.swift in Sources */,
