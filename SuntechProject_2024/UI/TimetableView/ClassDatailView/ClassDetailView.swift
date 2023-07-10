@@ -14,8 +14,12 @@ struct ClassDetailView: View {
             background()
             
             VStack {
+                Spacer()
                 classDetailInfo()
+                Spacer()
+                goButtons()
             }
+            .padding()
         }
         .navigationTitle("授業詳細")
         .navigationBarTitleDisplayMode(.inline)
@@ -51,6 +55,40 @@ struct ClassDetailView: View {
                 .foregroundColor(.gray)
             Text(contentText)
                 .font(.system(size: 20))
+        }
+    }
+    
+    private func goButtons() -> some View {
+        VStack(spacing: 15) {
+            Button {
+                
+            } label: {
+                Text("出席情報を確認")
+            }
+            .frame(width: 200, height: 50)
+            .foregroundColor(.white)
+            .background(Color.mainColor)
+            .cornerRadius(20)
+            
+            Button {
+                
+            } label: {
+                Text("ClassRoomへ")
+            }
+            .frame(width: 200, height: 50)
+            .foregroundColor(.white)
+            .background(Color.mainColor)
+            .cornerRadius(20)
+            
+            Button {
+                
+            } label: {
+                Text("授業評価を見る")
+            }
+            .frame(width: 200, height: 50)
+            .foregroundColor(.white)
+            .background(Color.mainColor)
+            .cornerRadius(20)
         }
     }
 }
