@@ -10,7 +10,58 @@ import SwiftUI
 struct AttendanceStatusView: View {
     let classData: Class
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            countButtons()
+        }
+    }
+    
+    private func countButtons() -> some View {
+        HStack(spacing: 50) {
+            VStack {
+                Button {
+                    
+                } label: {
+                    Text("0")
+                }
+                .frame(width: 50, height: 50)
+                .background(Color(R.color.attendanceStatus.attendance))
+                .foregroundColor(.white)
+                .clipShape(Circle())
+                Text("出席")
+                    .foregroundColor(.gray)
+            }
+            
+            VStack {
+                Button {
+                    
+                } label: {
+                    Text("0")
+                }
+                .frame(width: 50, height: 50)
+                .background(Color(R.color.attendanceStatus.absence))
+                .foregroundColor(.white)
+                .clipShape(Circle())
+                
+                Text("欠席")
+                    .foregroundColor(.gray)
+            }
+            
+            VStack {
+                Button {
+                    
+                } label: {
+                    Text("0")
+                }
+                .frame(width: 50, height: 50)
+                .background(Color(R.color.attendanceStatus.lateness))
+                .foregroundColor(.white)
+                .clipShape(Circle())
+                
+                Text("遅刻")
+                    .foregroundColor(.gray)
+            }
+            
+        }
     }
 }
 
