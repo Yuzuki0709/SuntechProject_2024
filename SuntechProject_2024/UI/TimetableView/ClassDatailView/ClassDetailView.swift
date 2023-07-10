@@ -22,7 +22,7 @@ struct ClassDetailView: View {
             }
             .padding()
             .sheet(isPresented: $isShowAttendanceSheet) {
-                
+                AttendanceStatusView(classData: classData)
             }
         }
         .navigationTitle("授業詳細")

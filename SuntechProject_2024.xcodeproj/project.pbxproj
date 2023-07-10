@@ -18,6 +18,7 @@
 		A232E19C2A4F1545007599E5 /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = A232E19B2A4F1545007599E5 /* RswiftLibrary */; };
 		A232E1A32A4F16CD007599E5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232E1A22A4F16CD007599E5 /* Color.swift */; };
 		A28113382A5BC1690037E35C /* View++.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113372A5BC1690037E35C /* View++.swift */; };
+		A28113422A5BD71A0037E35C /* AttendanceStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113412A5BD71A0037E35C /* AttendanceStatusView.swift */; };
 		A29C1D652A5288000045FFE2 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A29C1D642A5288000045FFE2 /* Alamofire */; };
 		A29C1D672A5288350045FFE2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D662A5288350045FFE2 /* LoginViewModel.swift */; };
 		A29C1D692A5289AF0045FFE2 /* SuntechAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D682A5289AF0045FFE2 /* SuntechAPIClient.swift */; };
@@ -72,6 +73,7 @@
 		A232E1982A4F14A9007599E5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A232E1A22A4F16CD007599E5 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		A28113372A5BC1690037E35C /* View++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View++.swift"; sourceTree = "<group>"; };
+		A28113412A5BD71A0037E35C /* AttendanceStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatusView.swift; sourceTree = "<group>"; };
 		A29C1D662A5288350045FFE2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		A29C1D682A5289AF0045FFE2 /* SuntechAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuntechAPIClient.swift; sourceTree = "<group>"; };
 		A29C1D6D2A528C420045FFE2 /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				A29C1DF92A59AA4E0045FFE2 /* ClassDetailView.swift */,
+				A28113412A5BD71A0037E35C /* AttendanceStatusView.swift */,
 				A29C1DFB2A5BBD7D0045FFE2 /* HalfModalSheetViewController.swift */,
 			);
 			path = ClassDatailView;
@@ -420,6 +423,7 @@
 				A29C1DB32A54EE3C0045FFE2 /* TimetableViewModel.swift in Sources */,
 				A29C1D6E2A528C420045FFE2 /* UserType.swift in Sources */,
 				A29C1DFA2A59AA4E0045FFE2 /* ClassDetailView.swift in Sources */,
+				A28113422A5BD71A0037E35C /* AttendanceStatusView.swift in Sources */,
 				A232E1A32A4F16CD007599E5 /* Color.swift in Sources */,
 				A29C1D9A2A5301200045FFE2 /* WeekTimetable.swift in Sources */,
 				A29C1D982A5300750045FFE2 /* DayTimetable.swift in Sources */,
