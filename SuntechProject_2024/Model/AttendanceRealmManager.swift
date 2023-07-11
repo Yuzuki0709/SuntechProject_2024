@@ -8,10 +8,11 @@
 import Foundation
 import RealmSwift
 
-final class AttendanceRealmManager {
+final class AttendanceRealmManager: ObservableObject {
     static let shared = AttendanceRealmManager()
     
     private var localRealm: Realm?
+    @Published var classAttendances: [ClassAttendance] = []
     
     init() {
         openRealm()
