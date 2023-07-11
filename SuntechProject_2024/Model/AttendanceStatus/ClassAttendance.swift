@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct ClassAttendance {
-    let classId: String
-    let logs: [AttendanceLog] = []
+final class ClassAttendance: Object, ObjectKeyIdentifiable {
+    @Persisted var classId: String
+    @Persisted var logs: List<AttendanceLog> = List<AttendanceLog>()
 }

@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct AttendanceLog {
-    let date: Date
-    let status: AttendanceStatus
+final class AttendanceLog: Object {
+    @Persisted var date: Date
+    @Persisted var status: AttendanceStatus
 }

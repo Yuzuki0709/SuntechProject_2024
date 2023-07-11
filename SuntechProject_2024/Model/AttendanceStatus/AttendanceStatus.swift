@@ -6,9 +6,13 @@
 //
 
 import Foundation
+import RealmSwift
 
 enum AttendanceStatus: String {
     case attendance = "出席"
     case absence = "欠席"
     case lateness = "遅刻"
 }
+
+extension AttendanceStatus: CaseIterable {}
+extension AttendanceStatus: PersistableEnum {}
