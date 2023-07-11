@@ -41,4 +41,8 @@ final class AttendanceRealmManager: ObservableObject {
             classAttendances.append(classAttendance)
         }
     }
+    
+    func isExisting(classId: String) -> Bool {
+        return classAttendances.contains(where: { $0.classId == classId })
+    }
 }
