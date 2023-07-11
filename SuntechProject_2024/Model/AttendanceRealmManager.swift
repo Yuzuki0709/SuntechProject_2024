@@ -47,7 +47,7 @@ final class AttendanceRealmManager: ObservableObject {
     }
     
     func addClassAttendance(classId: String) {
-        guard isExisting(classId: classId),
+        guard !isExisting(classId: classId),
               let localRealm = localRealm else { return }
         
         do {
@@ -63,5 +63,21 @@ final class AttendanceRealmManager: ObservableObject {
         } catch {
             print(error)
         }
+    }
+    
+    func getClassAttendance(classId: String) -> ClassAttendance? {
+        guard isExisting(classId: classId),
+              let localRealm = localRealm else { return nil }
+        
+        do {
+            try localRealm.write {
+                let predicate = NSPredicate(format: "classId == %@", classId)
+                return localRealm.objects(ClassAttendance.self).filter(predicate).first
+            }
+        } catch {
+            print(error)
+        }
+        
+        return nil
     }
 }
