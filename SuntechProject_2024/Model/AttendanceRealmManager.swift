@@ -45,4 +45,23 @@ final class AttendanceRealmManager: ObservableObject {
     func isExisting(classId: String) -> Bool {
         return classAttendances.contains(where: { $0.classId == classId })
     }
+    
+    func addClassAttendance(classId: String) {
+        guard isExisting(classId: classId),
+              let localRealm = localRealm else { return }
+        
+        do {
+            try localRealm.write {
+                let newClassAttendance = ClassAttendance(value: [
+                    "classId": classId,
+                    "logs": []
+                ])
+                
+                localRealm.add(classAttendances)
+                getClassAttendances()
+            }
+        } catch {
+            print(error)
+        }
+    }
 }
