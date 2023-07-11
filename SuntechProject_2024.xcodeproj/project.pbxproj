@@ -22,6 +22,8 @@
 		A28113452A5BE58A0037E35C /* AttendanceStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113442A5BE58A0037E35C /* AttendanceStatus.swift */; };
 		A28113482A5BE7A90037E35C /* AttendanceLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113472A5BE7A90037E35C /* AttendanceLog.swift */; };
 		A281134B2A5BE7F60037E35C /* ClassAttendance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A281134A2A5BE7F60037E35C /* ClassAttendance.swift */; };
+		A281CAC72A5CED2B004663C4 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = A281CAC62A5CED2B004663C4 /* Realm */; };
+		A281CAC92A5CED2B004663C4 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A281CAC82A5CED2B004663C4 /* RealmSwift */; };
 		A29C1D652A5288000045FFE2 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A29C1D642A5288000045FFE2 /* Alamofire */; };
 		A29C1D672A5288350045FFE2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D662A5288350045FFE2 /* LoginViewModel.swift */; };
 		A29C1D692A5289AF0045FFE2 /* SuntechAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D682A5289AF0045FFE2 /* SuntechAPIClient.swift */; };
@@ -108,6 +110,8 @@
 			files = (
 				A232E19C2A4F1545007599E5 /* RswiftLibrary in Frameworks */,
 				A29C1DA32A53036A0045FFE2 /* FSCalendar in Frameworks */,
+				A281CAC72A5CED2B004663C4 /* Realm in Frameworks */,
+				A281CAC92A5CED2B004663C4 /* RealmSwift in Frameworks */,
 				A29C1D652A5288000045FFE2 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,6 +316,8 @@
 				A232E19B2A4F1545007599E5 /* RswiftLibrary */,
 				A29C1D642A5288000045FFE2 /* Alamofire */,
 				A29C1DA22A53036A0045FFE2 /* FSCalendar */,
+				A281CAC62A5CED2B004663C4 /* Realm */,
+				A281CAC82A5CED2B004663C4 /* RealmSwift */,
 			);
 			productName = SuntechProject_2024;
 			productReference = A232E16B2A4F1407007599E5 /* SuntechProject_2024.app */;
@@ -389,6 +395,7 @@
 				A232E19A2A4F1545007599E5 /* XCRemoteSwiftPackageReference "R.swift" */,
 				A29C1D632A5288000045FFE2 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				A29C1DA12A5303690045FFE2 /* XCRemoteSwiftPackageReference "FSCalendar" */,
+				A281CAC52A5CED2B004663C4 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = A232E16C2A4F1407007599E5 /* Products */;
 			projectDirPath = "";
@@ -798,6 +805,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		A281CAC52A5CED2B004663C4 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		A29C1D632A5288000045FFE2 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -825,6 +840,16 @@
 		A232E19D2A4F156B007599E5 /* RswiftGenerateInternalResources */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = "plugin:RswiftGenerateInternalResources";
+		};
+		A281CAC62A5CED2B004663C4 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A281CAC52A5CED2B004663C4 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		A281CAC82A5CED2B004663C4 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A281CAC52A5CED2B004663C4 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 		A29C1D642A5288000045FFE2 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
