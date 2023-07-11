@@ -16,6 +16,7 @@ final class AttendanceRealmManager: ObservableObject {
     
     init() {
         openRealm()
+        getClassAttendances()
     }
     
     private func openRealm() {
@@ -26,6 +27,18 @@ final class AttendanceRealmManager: ObservableObject {
             localRealm = try Realm()
         } catch {
             print("Error opening Realm: \(error)")
+        }
+    }
+    
+    private func getClassAttendances() {
+        guard let localRealm = localRealm else { return }
+        let allClassAttendaces = localRealm.objects(ClassAttendance.self).sorted(byKeyPath: "classId")
+        
+        classAttendances = []
+        
+        for classAttendance in allClassAttendaces {
+            guard !classAttendance.isInvalidated else { continue }
+            classAttendances.append(classAttendance)
         }
     }
 }
