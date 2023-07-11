@@ -9,6 +9,7 @@ import Foundation
 import RealmSwift
 
 final class AttendanceLog: Object {
+    @Persisted var id: UUID = UUID()
     @Persisted var date: Date
     @Persisted var status: AttendanceStatus
 }
