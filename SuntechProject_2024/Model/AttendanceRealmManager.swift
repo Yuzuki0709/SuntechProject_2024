@@ -10,7 +10,7 @@ import RealmSwift
 
 final class AttendanceRealmManager: ObservableObject {
     
-    private var localRealm: Realm?
+    @Published private var localRealm: Realm?
     @Published var classAttendances: [ClassAttendance] = []
     
     init() {

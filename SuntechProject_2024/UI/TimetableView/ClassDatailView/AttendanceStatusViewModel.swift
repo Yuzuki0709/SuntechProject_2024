@@ -7,31 +7,36 @@
 
 import SwiftUI
 import Foundation
+import Combine
 
 final class AttendanceStatusViewModel: ObservableObject {
-    private let classData: Class
-    private let realmManager: AttendanceRealmManager
+    @Published private var realmManager: AttendanceRealmManager = .init()
+    @Published private(set) var attendanceCount: Int = 0
+    @Published private(set) var absenceCount: Int = 0
+    @Published private(set) var latenessCount: Int = 0
     
-    var attendanceCount: Int {
-        guard let classAttendance = realmManager.getClassAttendance(classId: classData.id) else { return 0 }
-        return classAttendance.logs.filter { $0.status == .attendance }.count
-    }
+    private var classData: Class
+    private var cancellables = Set<AnyCancellable>()
     
-    var absenceCount: Int {
-        guard let classAttendance = realmManager.getClassAttendance(classId: classData.id) else { return 0 }
-        
-        return classAttendance.logs.filter { $0.status == .absence }.count
-    }
-    
-    var latenessCount: Int {
-        guard let classAttendance = realmManager.getClassAttendance(classId: classData.id) else { return 0 }
-        
-        return classAttendance.logs.filter { $0.status == .lateness }.count
-    }
-    
-    init(classData: Class, realmManager: AttendanceRealmManager = AttendanceRealmManager()) {
+    init(classData: Class) {
         self.classData = classData
-        self.realmManager = realmManager
+        
+        realmManager.$classAttendances
+            .compactMap { [unowned self] _ in self.realmManager.getClassAttendance(classId: self.classData.id) }
+            .sink(receiveValue: { [weak self] classAttendance in
+                self?.attendanceCount = classAttendance.attendanceCount
+                self?.absenceCount = classAttendance.absenceCount
+                self?.latenessCount = classAttendance.latenessCount
+            })
+            .store(in: &cancellables)
+    }
+    
+    func isExistClass() -> Bool {
+        return realmManager.isExisting(classId: classData.id)
+    }
+    
+    func addClassAttendance() {
+        realmManager.addClassAttendance(classId: classData.id)
     }
     
     func addAttendanceLog(status: AttendanceStatus) {

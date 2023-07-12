@@ -8,26 +8,12 @@
 import SwiftUI
 
 struct AttendanceStatusView: View {
-    let classData: Class
+    var classData: Class
+    @StateObject private var viewModel: AttendanceStatusViewModel
     
-    @StateObject var realmManager = AttendanceRealmManager()
-    
-    var attendanceCount: Int {
-        guard let classAttendance = realmManager.getClassAttendance(classId: classData.id) else { return 0 }
-        
-        return classAttendance.logs.filter { $0.status == .attendance }.count
-    }
-    
-    var absenceCount: Int {
-        guard let classAttendance = realmManager.getClassAttendance(classId: classData.id) else { return 0 }
-        
-        return classAttendance.logs.filter { $0.status == .absence }.count
-    }
-    
-    var latenessCount: Int {
-        guard let classAttendance = realmManager.getClassAttendance(classId: classData.id) else { return 0 }
-        
-        return classAttendance.logs.filter { $0.status == .lateness }.count
+    init(classData: Class) {
+        self.classData = classData
+        self._viewModel = StateObject(wrappedValue: AttendanceStatusViewModel(classData: classData))
     }
     
     var body: some View {
@@ -36,8 +22,8 @@ struct AttendanceStatusView: View {
         }
         .onAppear {
             // 授業情報が登録されていなかったら、登録する
-            if !realmManager.isExisting(classId: classData.id) {
-                realmManager.addClassAttendance(classId: classData.id)
+            if !viewModel.isExistClass() {
+                viewModel.addClassAttendance()
             }
         }
     }
@@ -46,11 +32,9 @@ struct AttendanceStatusView: View {
         HStack(spacing: 50) {
             VStack {
                 Button {
-                    realmManager.addAttendanceLog(classId: classData.id,
-                                                                   status: .attendance,
-                                                                   date: Date())
+                    viewModel.addAttendanceLog(status: .attendance)
                 } label: {
-                    Text("\(attendanceCount)")
+                    Text("\(viewModel.attendanceCount)")
                 }
                 .frame(width: 50, height: 50)
                 .background(Color(R.color.attendanceStatus.attendance))
@@ -62,11 +46,9 @@ struct AttendanceStatusView: View {
             
             VStack {
                 Button {
-                    realmManager.addAttendanceLog(classId: classData.id,
-                                                                   status: .absence,
-                                                                   date: Date())
+                    viewModel.addAttendanceLog(status: .absence)
                 } label: {
-                    Text("\(absenceCount)")
+                    Text("\(viewModel.absenceCount)")
                 }
                 .frame(width: 50, height: 50)
                 .background(Color(R.color.attendanceStatus.absence))
@@ -79,11 +61,9 @@ struct AttendanceStatusView: View {
             
             VStack {
                 Button {
-                    realmManager.addAttendanceLog(classId: classData.id,
-                                                                   status: .lateness,
-                                                                   date: Date())
+                    viewModel.addAttendanceLog(status: .lateness)
                 } label: {
-                    Text("\(latenessCount)")
+                    Text("\(viewModel.latenessCount)")
                 }
                 .frame(width: 50, height: 50)
                 .background(Color(R.color.attendanceStatus.lateness))
