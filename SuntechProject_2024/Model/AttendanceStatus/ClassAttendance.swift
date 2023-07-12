@@ -11,4 +11,16 @@ import RealmSwift
 final class ClassAttendance: Object, ObjectKeyIdentifiable {
     @Persisted var classId: String
     @Persisted var logs: List<AttendanceLog> = List<AttendanceLog>()
+    
+    var attendanceCount: Int {
+        return logs.filter { $0.status == .attendance }.count
+    }
+    
+    var absenceCount: Int {
+        return logs.filter { $0.status == .absence }.count
+    }
+    
+    var latenessCount: Int {        
+        return logs.filter { $0.status == .lateness }.count
+    }
 }
