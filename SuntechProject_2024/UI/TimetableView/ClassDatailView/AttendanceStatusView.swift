@@ -13,6 +13,12 @@ struct AttendanceStatusView: View {
         VStack {
             countButtons()
         }
+        .onAppear {
+            // 授業情報が登録されていなかったら、登録する
+            if !AttendanceRealmManager.shared.isExisting(classId: classData.id) {
+                AttendanceRealmManager.shared.addClassAttendance(classId: classData.id)
+            }
+        }
     }
     
     private func countButtons() -> some View {
