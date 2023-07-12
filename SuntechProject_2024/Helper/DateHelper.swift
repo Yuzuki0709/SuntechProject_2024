@@ -16,3 +16,10 @@ final class DateHelper {
         return formatter
     }
 }
+
+extension DateHelper {
+    static func formatToString(date: Date, format: String) -> String {
+        formatter.dateFormat = format
+        return formatter.string(from: date)
+    }
+}
