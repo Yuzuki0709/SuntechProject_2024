@@ -33,5 +33,9 @@ final class AttendanceStatusViewModel: ObservableObject {
         self.classData = classData
         self.realmManager = realmManager
     }
+    
+    func addAttendanceLog(status: AttendanceStatus) {
+        realmManager.addAttendanceLog(classId: classData.id, status: status, date: Date())
+    }
 }
 
