@@ -57,7 +57,7 @@ final class AttendanceRealmManager: ObservableObject {
                     "logs": []
                 ])
                 
-                localRealm.add(classAttendances)
+                localRealm.add(newClassAttendance)
                 getClassAttendances()
             }
         } catch {
