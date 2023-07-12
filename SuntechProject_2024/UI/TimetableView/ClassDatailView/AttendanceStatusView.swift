@@ -9,6 +9,25 @@ import SwiftUI
 
 struct AttendanceStatusView: View {
     let classData: Class
+    
+    var attendanceCount: Int {
+        guard let classAttendance = AttendanceRealmManager.shared.getClassAttendance(classId: classData.id) else { return 0 }
+        
+        return classAttendance.logs.filter { $0.status == .attendance }.count
+    }
+    
+    var absenceCount: Int {
+        guard let classAttendance = AttendanceRealmManager.shared.getClassAttendance(classId: classData.id) else { return 0 }
+        
+        return classAttendance.logs.filter { $0.status == .absence }.count
+    }
+    
+    var latenessCount: Int {
+        guard let classAttendance = AttendanceRealmManager.shared.getClassAttendance(classId: classData.id) else { return 0 }
+        
+        return classAttendance.logs.filter { $0.status == .lateness }.count
+    }
+    
     var body: some View {
         VStack {
             countButtons()
@@ -27,7 +46,7 @@ struct AttendanceStatusView: View {
                 Button {
                     
                 } label: {
-                    Text("0")
+                    Text("\(attendanceCount)")
                 }
                 .frame(width: 50, height: 50)
                 .background(Color(R.color.attendanceStatus.attendance))
@@ -41,7 +60,7 @@ struct AttendanceStatusView: View {
                 Button {
                     
                 } label: {
-                    Text("0")
+                    Text("\(absenceCount)")
                 }
                 .frame(width: 50, height: 50)
                 .background(Color(R.color.attendanceStatus.absence))
@@ -56,7 +75,7 @@ struct AttendanceStatusView: View {
                 Button {
                     
                 } label: {
-                    Text("0")
+                    Text("\(latenessCount)")
                 }
                 .frame(width: 50, height: 50)
                 .background(Color(R.color.attendanceStatus.lateness))
