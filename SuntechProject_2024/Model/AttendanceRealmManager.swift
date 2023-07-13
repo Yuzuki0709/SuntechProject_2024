@@ -89,4 +89,19 @@ final class AttendanceRealmManager: ObservableObject {
             print(error)
         }
     }
+    
+    func deleteAttendanceLog(_ log: AttendanceLog) {
+        guard let localRealm = localRealm else { return }   
+        do {
+            try localRealm.write {
+                let predicate = NSPredicate(format: "id == %@", log.id)
+                guard let deleteLog = localRealm.objects(AttendanceLog.self).filter(predicate).first else { return }
+                localRealm.delete(deleteLog)
+                
+                getClassAttendances()
+            }
+        } catch {
+            print(error)
+        }
+    }
 }
