@@ -8,13 +8,13 @@
 import Foundation
 
 final class DateHelper {
-    private static var formatter: DateFormatter {
+    private static var formatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.calendar = Calendar(identifier: .gregorian)
         formatter.locale = Locale(identifier: "ja_JP")
         
         return formatter
-    }
+    }()
 }
 
 extension DateHelper {

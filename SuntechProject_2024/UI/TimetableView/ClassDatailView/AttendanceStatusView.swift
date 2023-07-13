@@ -17,9 +17,13 @@ struct AttendanceStatusView: View {
     }
     
     var body: some View {
-        VStack {
+        VStack(spacing: 20) {
             countButtons()
+                .padding()
+            
+            attendanceLogList()
         }
+        .padding()
         .onAppear {
             // 授業情報が登録されていなかったら、登録する
             if !viewModel.isExistClass() {
@@ -75,6 +79,19 @@ struct AttendanceStatusView: View {
             }
             
         }
+    }
+    
+    private func attendanceLogList() -> some View {
+        List {
+            ForEach(viewModel.attendanceLogs) { log in
+                HStack {
+                    Text(DateHelper.formatToString(date: log.date, format: "yyyy-MM-dd"))
+                    Spacer()
+                    Text(log.status.rawValue)
+                }
+            }
+        }
+        .listStyle(.plain)
     }
 }
 
