@@ -17,17 +17,22 @@ struct AttendanceStatusView: View {
     }
     
     var body: some View {
-        VStack(spacing: 20) {
-            countButtons()
-                .padding()
+        ZStack {
+            Color(R.color.attendanceStatus.backgroundColor)
+                .ignoresSafeArea()
             
-            attendanceLogList()
-        }
-        .padding()
-        .onAppear {
-            // 授業情報が登録されていなかったら、登録する
-            if !viewModel.isExistClass() {
-                viewModel.addClassAttendance()
+            VStack(spacing: 20) {
+                countButtons()
+                    .padding()
+                
+                attendanceLogList()
+            }
+            .padding()
+            .onAppear {
+                // 授業情報が登録されていなかったら、登録する
+                if !viewModel.isExistClass() {
+                    viewModel.addClassAttendance()
+                }
             }
         }
     }
