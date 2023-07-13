@@ -18,8 +18,8 @@ struct AttendanceStatusView: View {
     
     var body: some View {
         ZStack {
-            Color(R.color.attendanceStatus.backgroundColor)
-                .ignoresSafeArea()
+            
+            background()
             
             VStack(spacing: 20) {
                 countButtons()
@@ -35,6 +35,11 @@ struct AttendanceStatusView: View {
                 }
             }
         }
+    }
+    
+    private func background() -> some View {
+        Color(R.color.attendanceStatus.backgroundColor)
+            .ignoresSafeArea()
     }
     
     private func countButtons() -> some View {
