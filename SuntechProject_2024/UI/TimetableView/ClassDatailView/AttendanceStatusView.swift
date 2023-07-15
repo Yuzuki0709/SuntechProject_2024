@@ -19,7 +19,14 @@ struct AttendanceStatusView: View {
     var body: some View {
         ZStack {
             background()
-            VStack(spacing: 20) {
+            VStack(spacing: 10) {
+                Capsule()
+                    .fill(Color.secondary)
+                    .opacity(0.5)
+                    .frame(width: 80, height: 3)
+                    .padding(.top, 10)
+
+                Spacer()
                 countButtons()
                 attendanceLogList()
             }
@@ -57,15 +64,26 @@ struct AttendanceStatusView: View {
             ForEach(viewModel.attendanceLogs) { log in
                 HStack {
                     Text(DateHelper.formatToString(date: log.date, format: "yyyy-MM-dd"))
+                        .font(.system(size: 15))
                     Spacer()
                     Text(log.status.rawValue)
+                        .font(.system(size: 12))
+                        .foregroundColor(.white)
+                        .padding(.vertical, 4)
+                        .padding(.horizontal, 8)
+                        .background {
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(log.status.color)
+                        }
                 }
+                .padding(.vertical, 4)
             }
             .onDelete { indexSet in
                 guard let index = indexSet.first else { return }
                 viewModel.deleteAttendanceLog(log: viewModel.attendanceLogs[index])
             }
         }
+        .cornerRadius(8)
         .listStyle(.plain)
     }
     
