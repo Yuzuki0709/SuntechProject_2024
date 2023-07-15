@@ -44,5 +44,9 @@ final class AttendanceStatusViewModel: ObservableObject {
     func addAttendanceLog(status: AttendanceStatus) {
         realmManager.addAttendanceLog(classId: classData.id, status: status, date: Date())
     }
+    
+    func deleteAttendanceLog(log: AttendanceLog) {
+        realmManager.deleteAttendanceLog(log)
+    }
 }
 

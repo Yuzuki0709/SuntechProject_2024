@@ -100,6 +100,10 @@ struct AttendanceStatusView: View {
                     Text(log.status.rawValue)
                 }
             }
+            .onDelete { indexSet in
+                guard let index = indexSet.first else { return }
+                viewModel.deleteAttendanceLog(log: viewModel.attendanceLogs[index])
+            }
         }
         .listStyle(.plain)
     }
