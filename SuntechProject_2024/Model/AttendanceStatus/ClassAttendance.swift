@@ -23,4 +23,8 @@ final class ClassAttendance: Object, ObjectKeyIdentifiable {
     var latenessCount: Int {        
         return logs.filter { $0.status == .lateness }.count
     }
+    
+    var officialAbsenceCount: Int {
+        return logs.filter { $0.status == .officialAbsence }.count
+    }
 }

@@ -14,6 +14,7 @@ final class AttendanceStatusViewModel: ObservableObject {
     @Published private(set) var attendanceCount: Int = 0
     @Published private(set) var absenceCount: Int = 0
     @Published private(set) var latenessCount: Int = 0
+    @Published private(set) var officialAbsenceCount: Int = 0
     @Published private(set) var attendanceLogs: [AttendanceLog] = []
     
     private var classData: Class
@@ -28,6 +29,7 @@ final class AttendanceStatusViewModel: ObservableObject {
                 self?.attendanceCount = classAttendance.attendanceCount
                 self?.absenceCount = classAttendance.absenceCount
                 self?.latenessCount = classAttendance.latenessCount
+                self?.officialAbsenceCount = classAttendance.officialAbsenceCount
                 self?.attendanceLogs = Array(classAttendance.logs)
             })
             .store(in: &cancellables)
