@@ -18,13 +18,9 @@ struct AttendanceStatusView: View {
     
     var body: some View {
         ZStack {
-            
             background()
-            
             VStack(spacing: 20) {
                 countButtons()
-                    .padding()
-                
                 attendanceLogList()
             }
             .padding()
@@ -43,52 +39,17 @@ struct AttendanceStatusView: View {
     }
     
     private func countButtons() -> some View {
-        HStack(spacing: 50) {
-            VStack {
-                Button {
-                    viewModel.addAttendanceLog(status: .attendance)
-                } label: {
-                    Text("\(viewModel.attendanceCount)")
+        HStack(spacing: 30) {
+            ForEach(AttendanceStatus.allCases, id: \.rawValue) { status in
+                VStack {
+                    attendanceButton(status: status)
+                    Text(status.rawValue)
+                        .foregroundColor(.gray)
+                        .font(.system(size: 13))
                 }
-                .frame(width: 50, height: 50)
-                .background(Color(R.color.attendanceStatus.attendance))
-                .foregroundColor(.white)
-                .clipShape(Circle())
-                Text("出席")
-                    .foregroundColor(.gray)
             }
-            
-            VStack {
-                Button {
-                    viewModel.addAttendanceLog(status: .absence)
-                } label: {
-                    Text("\(viewModel.absenceCount)")
-                }
-                .frame(width: 50, height: 50)
-                .background(Color(R.color.attendanceStatus.absence))
-                .foregroundColor(.white)
-                .clipShape(Circle())
-                
-                Text("欠席")
-                    .foregroundColor(.gray)
-            }
-            
-            VStack {
-                Button {
-                    viewModel.addAttendanceLog(status: .lateness)
-                } label: {
-                    Text("\(viewModel.latenessCount)")
-                }
-                .frame(width: 50, height: 50)
-                .background(Color(R.color.attendanceStatus.lateness))
-                .foregroundColor(.white)
-                .clipShape(Circle())
-                
-                Text("遅刻")
-                    .foregroundColor(.gray)
-            }
-            
         }
+        .padding()
     }
     
     private func attendanceLogList() -> some View {
@@ -106,6 +67,43 @@ struct AttendanceStatusView: View {
             }
         }
         .listStyle(.plain)
+    }
+    
+    private func attendanceButton(status: AttendanceStatus) -> some View {
+        Button {
+            viewModel.addAttendanceLog(status: status)
+        } label: {
+            switch status {
+            case .attendance:
+                Text("\(viewModel.attendanceCount)")
+            case .absence:
+                Text("\(viewModel.absenceCount)")
+            case .lateness:
+                Text("\(viewModel.latenessCount)")
+            case .officialAbsence:
+                Text("\(viewModel.officialAbsenceCount)")
+            }
+        }
+        .frame(width: 50, height: 50)
+        .background(status.color)
+        .foregroundColor(.white)
+        .clipShape(Circle())
+        .contentShape(Circle())
+    }
+}
+
+private extension AttendanceStatus {
+    var color: Color {
+        switch self {
+        case .attendance:
+            return Color(R.color.attendanceStatus.attendance)
+        case .absence:
+            return Color(R.color.attendanceStatus.absence)
+        case .lateness:
+            return Color(R.color.attendanceStatus.lateness)
+        case .officialAbsence:
+            return Color(R.color.attendanceStatus.officialAbsence)
+        }
     }
 }
 
