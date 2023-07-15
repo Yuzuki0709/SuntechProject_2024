@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ClassDetailView: View {
     let classData: Class
+    @State private var isShowAttendanceSheet: Bool = false
     var body: some View {
         ZStack {
             background()
@@ -20,6 +21,9 @@ struct ClassDetailView: View {
                 goButtons()
             }
             .padding()
+            .sheet(isPresented: $isShowAttendanceSheet) {
+                AttendanceStatusView(classData: classData)
+            }
         }
         .navigationTitle("授業詳細")
         .navigationBarTitleDisplayMode(.inline)
@@ -61,7 +65,7 @@ struct ClassDetailView: View {
     private func goButtons() -> some View {
         VStack(spacing: 15) {
             Button {
-                
+                isShowAttendanceSheet = true
             } label: {
                 Text("出席情報を確認")
             }
