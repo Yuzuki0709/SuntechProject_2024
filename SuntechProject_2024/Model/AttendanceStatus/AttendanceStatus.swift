@@ -11,7 +11,8 @@ import RealmSwift
 enum AttendanceStatus: String {
     case attendance = "出席"
     case absence = "欠席"
-    case lateness = "遅刻"
+    case lateness = "遅刻/早退"
+    case officialAbsence = "公欠"
 }
 
 extension AttendanceStatus: CaseIterable {}
