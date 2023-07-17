@@ -42,16 +42,7 @@ struct LoginView: View {
             } message: {
                 Text("メールアドレスとパスワードを再入力してください。")
             }
-            .overlay {
-                if viewModel.isLoading {
-                    ZStack {
-                        Color.black
-                            .ignoresSafeArea()
-                            .opacity(0.3)
-                        ProgressView()
-                    }
-                }
-            }
+            .loading(viewModel.isLoading)
             .overlay {
                 if viewModel.isLock {
                     ZStack {

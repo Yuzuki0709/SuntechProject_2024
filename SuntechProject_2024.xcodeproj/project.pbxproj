@@ -10,6 +10,7 @@
 		A2133D612A64FE8E00C5B24A /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2133D602A64FE8E00C5B24A /* NavigationBarModifier.swift */; };
 		A2133D682A65033200C5B24A /* NavigationBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2133D672A65033200C5B24A /* NavigationBackButton.swift */; };
 		A2133D6A2A65061700C5B24A /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2133D692A65061700C5B24A /* CustomNavigationBar.swift */; };
+		A2133D732A6573C900C5B24A /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2133D722A6573C800C5B24A /* ActivityIndicator.swift */; };
 		A232E16F2A4F1407007599E5 /* SuntechProject_2024App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232E16E2A4F1407007599E5 /* SuntechProject_2024App.swift */; };
 		A232E1732A4F140A007599E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A232E1722A4F140A007599E5 /* Assets.xcassets */; };
 		A232E1762A4F140A007599E5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A232E1752A4F140A007599E5 /* Preview Assets.xcassets */; };
@@ -73,6 +74,7 @@
 		A2133D602A64FE8E00C5B24A /* NavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
 		A2133D672A65033200C5B24A /* NavigationBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBackButton.swift; sourceTree = "<group>"; };
 		A2133D692A65061700C5B24A /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
+		A2133D722A6573C800C5B24A /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		A232E16B2A4F1407007599E5 /* SuntechProject_2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuntechProject_2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A232E16E2A4F1407007599E5 /* SuntechProject_2024App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuntechProject_2024App.swift; sourceTree = "<group>"; };
 		A232E1722A4F140A007599E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				A2133D602A64FE8E00C5B24A /* NavigationBarModifier.swift */,
 				A2133D672A65033200C5B24A /* NavigationBackButton.swift */,
 				A2133D692A65061700C5B24A /* CustomNavigationBar.swift */,
+				A2133D722A6573C800C5B24A /* ActivityIndicator.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -534,6 +537,7 @@
 				A28113422A5BD71A0037E35C /* AttendanceStatusView.swift in Sources */,
 				A232E1A32A4F16CD007599E5 /* Color.swift in Sources */,
 				A29C1D9A2A5301200045FFE2 /* WeekTimetable.swift in Sources */,
+				A2133D732A6573C900C5B24A /* ActivityIndicator.swift in Sources */,
 				A29C1D982A5300750045FFE2 /* DayTimetable.swift in Sources */,
 				A281CAD42A5EED6A004663C4 /* DateHelper.swift in Sources */,
 				A281CACE2A5E2CEF004663C4 /* AttendanceStatusViewModel.swift in Sources */,
