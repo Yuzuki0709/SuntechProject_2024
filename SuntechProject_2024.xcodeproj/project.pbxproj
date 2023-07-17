@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A2133D612A64FE8E00C5B24A /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2133D602A64FE8E00C5B24A /* NavigationBarModifier.swift */; };
+		A2133D682A65033200C5B24A /* NavigationBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2133D672A65033200C5B24A /* NavigationBackButton.swift */; };
 		A232E16F2A4F1407007599E5 /* SuntechProject_2024App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232E16E2A4F1407007599E5 /* SuntechProject_2024App.swift */; };
 		A232E1732A4F140A007599E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A232E1722A4F140A007599E5 /* Assets.xcassets */; };
 		A232E1762A4F140A007599E5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A232E1752A4F140A007599E5 /* Preview Assets.xcassets */; };
@@ -69,6 +70,7 @@
 
 /* Begin PBXFileReference section */
 		A2133D602A64FE8E00C5B24A /* NavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
+		A2133D672A65033200C5B24A /* NavigationBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBackButton.swift; sourceTree = "<group>"; };
 		A232E16B2A4F1407007599E5 /* SuntechProject_2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuntechProject_2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A232E16E2A4F1407007599E5 /* SuntechProject_2024App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuntechProject_2024App.swift; sourceTree = "<group>"; };
 		A232E1722A4F140A007599E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				A2133D602A64FE8E00C5B24A /* NavigationBarModifier.swift */,
+				A2133D672A65033200C5B24A /* NavigationBackButton.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				A29C1D982A5300750045FFE2 /* DayTimetable.swift in Sources */,
 				A281CAD42A5EED6A004663C4 /* DateHelper.swift in Sources */,
 				A281CACE2A5E2CEF004663C4 /* AttendanceStatusViewModel.swift in Sources */,
+				A2133D682A65033200C5B24A /* NavigationBackButton.swift in Sources */,
 				A29C1D762A528D2B0045FFE2 /* Teacher.swift in Sources */,
 				A28113482A5BE7A90037E35C /* AttendanceLog.swift in Sources */,
 				A29C1D872A529F840045FFE2 /* LoginUser.swift in Sources */,
