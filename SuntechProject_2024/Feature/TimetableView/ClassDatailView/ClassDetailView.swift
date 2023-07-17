@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ClassDetailView: View {
+    @Environment (\.dismiss) var dismiss
+    
     let classData: Class
     @State private var isShowAttendanceSheet: Bool = false
     var body: some View {
@@ -28,6 +30,7 @@ struct ClassDetailView: View {
         .navigationTitle("授業詳細")
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarColor(UIColor(Color(R.color.mainColor)))
+        .navigationBackButton(color: .white) { dismiss() }
     }
     
     private func background() -> some View {

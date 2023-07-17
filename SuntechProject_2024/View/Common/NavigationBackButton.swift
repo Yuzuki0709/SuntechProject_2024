@@ -31,7 +31,7 @@ struct NavigationBackButton: ViewModifier {
                     .frame(width: 12, height: 18)
                     .font(Font.title3.bold())
                     
-                Text("Back")
+                Text("戻る")
                     
             }
             .foregroundColor(.white)

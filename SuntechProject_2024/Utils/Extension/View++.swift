@@ -22,4 +22,8 @@ extension View {
     func navigationBarColor(_ backgroundColor: UIColor?) -> some View {
         self.modifier(NavigationBarModifer(backgroundColor: backgroundColor))
     }
+    
+    func navigationBackButton(color: Color, onTap: @escaping (() -> Void)) -> some View {
+        self.modifier(NavigationBackButton(color: color, onTap: onTap))
+    }
 }
