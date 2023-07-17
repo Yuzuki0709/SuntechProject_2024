@@ -147,6 +147,8 @@
 			isa = PBXGroup;
 			children = (
 				A2133D5F2A64FE4A00C5B24A /* Common */,
+				A2133D6C2A65073000C5B24A /* TimetableView */,
+				A2133D712A6555ED00C5B24A /* ClassDetailView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -176,6 +178,41 @@
 				A29C1D912A52DF8C0045FFE2 /* SuntechAPI */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		A2133D6C2A65073000C5B24A /* TimetableView */ = {
+			isa = PBXGroup;
+			children = (
+				A29C1DA42A5303940045FFE2 /* FSCalendarView.swift */,
+				A29C1DA92A53087F0045FFE2 /* FSCalendarViewRepresentable.swift */,
+			);
+			path = TimetableView;
+			sourceTree = "<group>";
+		};
+		A2133D6E2A6555A900C5B24A /* AttendanceStatusView */ = {
+			isa = PBXGroup;
+			children = (
+				A28113412A5BD71A0037E35C /* AttendanceStatusView.swift */,
+				A281CACD2A5E2CEF004663C4 /* AttendanceStatusViewModel.swift */,
+			);
+			path = AttendanceStatusView;
+			sourceTree = "<group>";
+		};
+		A2133D702A6555C500C5B24A /* ClassDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				A29C1DF92A59AA4E0045FFE2 /* ClassDetailView.swift */,
+				A2133D6E2A6555A900C5B24A /* AttendanceStatusView */,
+			);
+			path = ClassDetailView;
+			sourceTree = "<group>";
+		};
+		A2133D712A6555ED00C5B24A /* ClassDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				A29C1DFB2A5BBD7D0045FFE2 /* HalfModalSheetViewController.swift */,
+			);
+			path = ClassDetailView;
 			sourceTree = "<group>";
 		};
 		A232E1622A4F1407007599E5 = {
@@ -296,8 +333,7 @@
 			children = (
 				A29C1D8F2A52DF7B0045FFE2 /* LoginView */,
 				A29C1DB52A54F6E50045FFE2 /* TimetableView */,
-				A29C1DA42A5303940045FFE2 /* FSCalendarView.swift */,
-				A29C1DA92A53087F0045FFE2 /* FSCalendarViewRepresentable.swift */,
+				A2133D702A6555C500C5B24A /* ClassDetailView */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -334,20 +370,8 @@
 			children = (
 				A29C1D9E2A5302960045FFE2 /* TimetableView.swift */,
 				A29C1DB22A54EE3C0045FFE2 /* TimetableViewModel.swift */,
-				A29C1DF52A59AA290045FFE2 /* ClassDatailView */,
 			);
 			path = TimetableView;
-			sourceTree = "<group>";
-		};
-		A29C1DF52A59AA290045FFE2 /* ClassDatailView */ = {
-			isa = PBXGroup;
-			children = (
-				A29C1DF92A59AA4E0045FFE2 /* ClassDetailView.swift */,
-				A28113412A5BD71A0037E35C /* AttendanceStatusView.swift */,
-				A281CACD2A5E2CEF004663C4 /* AttendanceStatusViewModel.swift */,
-				A29C1DFB2A5BBD7D0045FFE2 /* HalfModalSheetViewController.swift */,
-			);
-			path = ClassDatailView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
