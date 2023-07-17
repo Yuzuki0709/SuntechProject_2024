@@ -18,4 +18,8 @@ extension View {
                 HalfModalSheetViewController(sheet: sheet(), isShow: isShow, onClose: onClose)
             )
     }
+    
+    func navigationBarColor(_ backgroundColor: UIColor?) -> some View {
+        self.modifier(NavigationBarModifer(backgroundColor: backgroundColor))
+    }
 }

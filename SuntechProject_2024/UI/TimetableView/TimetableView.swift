@@ -40,9 +40,7 @@ struct TimetableView: View {
         .navigationBarBackButtonHidden(true)
         .navigationTitle("時間割")
         .navigationBarTitleDisplayMode(.inline)
-        .toolbarBackground(.visible, for: .navigationBar)
-        .toolbarBackground(Color.mainColor, for: .navigationBar)
-        .toolbarColorScheme(ColorScheme.dark, for: .navigationBar)
+        .navigationBarColor(UIColor(Color(R.color.mainColor)))
     }
     
     private func classRow(classData: Class) -> some View {

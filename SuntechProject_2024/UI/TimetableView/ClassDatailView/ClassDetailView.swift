@@ -27,9 +27,7 @@ struct ClassDetailView: View {
         }
         .navigationTitle("授業詳細")
         .navigationBarTitleDisplayMode(.inline)
-        .toolbarBackground(.visible, for: .navigationBar)
-        .toolbarBackground(Color.mainColor, for: .navigationBar)
-        .toolbarColorScheme(ColorScheme.dark, for: .navigationBar)
+        .navigationBarColor(UIColor(Color(R.color.mainColor)))
     }
     
     private func background() -> some View {
