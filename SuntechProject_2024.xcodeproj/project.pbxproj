@@ -161,8 +161,17 @@
 			isa = PBXGroup;
 			children = (
 				A29C1D8A2A52A07E0045FFE2 /* Extension */,
+				A281CAD02A5EED60004663C4 /* Helper */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		A2133D662A6502AF00C5B24A /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A29C1D912A52DF8C0045FFE2 /* SuntechAPI */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		A232E1622A4F1407007599E5 = {
@@ -188,14 +197,14 @@
 		A232E16D2A4F1407007599E5 /* SuntechProject_2024 */ = {
 			isa = PBXGroup;
 			children = (
-				A281CAD02A5EED60004663C4 /* Helper */,
 				A29C1D882A52A0560045FFE2 /* Model */,
 				A2133D5E2A64FE4000C5B24A /* View */,
 				A29C1D8E2A52DF720045FFE2 /* Feature */,
+				A2133D662A6502AF00C5B24A /* API */,
+				A2133D622A64FEB800C5B24A /* Utils */,
 				A232E16E2A4F1407007599E5 /* SuntechProject_2024App.swift */,
 				A232E1702A4F1407007599E5 /* ContentView.swift */,
 				A232E1722A4F140A007599E5 /* Assets.xcassets */,
-				A2133D622A64FEB800C5B24A /* Utils */,
 				A232E1742A4F140A007599E5 /* Preview Content */,
 			);
 			path = SuntechProject_2024;
@@ -249,7 +258,6 @@
 			children = (
 				A28113432A5BE5740037E35C /* AttendanceStatus */,
 				A29C1D9C2A5301E10045FFE2 /* Timetable */,
-				A29C1D912A52DF8C0045FFE2 /* SuntechAPI */,
 				A29C1D8B2A52A08C0045FFE2 /* LoginUser */,
 				A29C1DAD2A53B0CD0045FFE2 /* LoginUserInfo.swift */,
 				A281CACB2A5CED62004663C4 /* AttendanceRealmManager.swift */,
