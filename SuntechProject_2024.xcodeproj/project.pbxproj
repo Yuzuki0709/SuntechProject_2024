@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A2133D612A64FE8E00C5B24A /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2133D602A64FE8E00C5B24A /* NavigationBarModifier.swift */; };
 		A232E16F2A4F1407007599E5 /* SuntechProject_2024App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232E16E2A4F1407007599E5 /* SuntechProject_2024App.swift */; };
 		A232E1712A4F1407007599E5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232E1702A4F1407007599E5 /* ContentView.swift */; };
 		A232E1732A4F140A007599E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A232E1722A4F140A007599E5 /* Assets.xcassets */; };
@@ -68,6 +69,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A2133D602A64FE8E00C5B24A /* NavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
 		A232E16B2A4F1407007599E5 /* SuntechProject_2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuntechProject_2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A232E16E2A4F1407007599E5 /* SuntechProject_2024App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuntechProject_2024App.swift; sourceTree = "<group>"; };
 		A232E1702A4F1407007599E5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -139,6 +141,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A2133D5E2A64FE4000C5B24A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A2133D5F2A64FE4A00C5B24A /* Common */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A2133D5F2A64FE4A00C5B24A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A2133D602A64FE8E00C5B24A /* NavigationBarModifier.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		A232E1622A4F1407007599E5 = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +183,7 @@
 				A281CAD02A5EED60004663C4 /* Helper */,
 				A29C1D8A2A52A07E0045FFE2 /* Extension */,
 				A29C1D882A52A0560045FFE2 /* Model */,
+				A2133D5E2A64FE4000C5B24A /* View */,
 				A29C1D8E2A52DF720045FFE2 /* UI */,
 				A232E16E2A4F1407007599E5 /* SuntechProject_2024App.swift */,
 				A232E1702A4F1407007599E5 /* ContentView.swift */,
@@ -466,6 +485,7 @@
 				A281CACC2A5CED63004663C4 /* AttendanceRealmManager.swift in Sources */,
 				A28113452A5BE58A0037E35C /* AttendanceStatus.swift in Sources */,
 				A29C1D6E2A528C420045FFE2 /* UserType.swift in Sources */,
+				A2133D612A64FE8E00C5B24A /* NavigationBarModifier.swift in Sources */,
 				A29C1DFA2A59AA4E0045FFE2 /* ClassDetailView.swift in Sources */,
 				A28113422A5BD71A0037E35C /* AttendanceStatusView.swift in Sources */,
 				A232E1A32A4F16CD007599E5 /* Color.swift in Sources */,
