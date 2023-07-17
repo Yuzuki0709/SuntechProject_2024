@@ -191,7 +191,7 @@
 				A281CAD02A5EED60004663C4 /* Helper */,
 				A29C1D882A52A0560045FFE2 /* Model */,
 				A2133D5E2A64FE4000C5B24A /* View */,
-				A29C1D8E2A52DF720045FFE2 /* UI */,
+				A29C1D8E2A52DF720045FFE2 /* Feature */,
 				A232E16E2A4F1407007599E5 /* SuntechProject_2024App.swift */,
 				A232E1702A4F1407007599E5 /* ContentView.swift */,
 				A232E1722A4F140A007599E5 /* Assets.xcassets */,
@@ -280,7 +280,7 @@
 			path = LoginUser;
 			sourceTree = "<group>";
 		};
-		A29C1D8E2A52DF720045FFE2 /* UI */ = {
+		A29C1D8E2A52DF720045FFE2 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
 				A29C1D8F2A52DF7B0045FFE2 /* LoginView */,
@@ -288,7 +288,7 @@
 				A29C1DA42A5303940045FFE2 /* FSCalendarView.swift */,
 				A29C1DA92A53087F0045FFE2 /* FSCalendarViewRepresentable.swift */,
 			);
-			path = UI;
+			path = Feature;
 			sourceTree = "<group>";
 		};
 		A29C1D8F2A52DF7B0045FFE2 /* LoginView */ = {
