@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CustomNavigationBar: ViewModifier {
-    let title: Text
+    let title: String
     let color: Color
     
     func body(content: Content) -> some View {

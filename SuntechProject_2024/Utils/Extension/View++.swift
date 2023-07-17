@@ -19,6 +19,10 @@ extension View {
             )
     }
     
+    func customNavigationBar(title: String, color: Color) -> some View {
+        self.modifier(CustomNavigationBar(title: title, color: color))
+    }
+    
     func navigationBarColor(_ backgroundColor: UIColor?) -> some View {
         self.modifier(NavigationBarModifer(backgroundColor: backgroundColor))
     }

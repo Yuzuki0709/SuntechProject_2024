@@ -27,9 +27,7 @@ struct ClassDetailView: View {
                 AttendanceStatusView(classData: classData)
             }
         }
-        .navigationTitle("授業詳細")
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationBarColor(UIColor(Color(R.color.mainColor)))
+        .customNavigationBar(title: "授業詳細", color: Color(R.color.mainColor))
         .navigationBackButton(color: .white) { dismiss() }
     }
     

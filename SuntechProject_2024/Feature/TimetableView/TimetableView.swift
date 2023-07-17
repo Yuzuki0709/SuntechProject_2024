@@ -38,9 +38,7 @@ struct TimetableView: View {
             viewModel.fetchWeekTimetable()
         }
         .navigationBarBackButtonHidden(true)
-        .navigationTitle("時間割")
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationBarColor(UIColor(Color(R.color.mainColor)))
+        .customNavigationBar(title: "時間割", color: Color(R.color.mainColor))
     }
     
     private func classRow(classData: Class) -> some View {
