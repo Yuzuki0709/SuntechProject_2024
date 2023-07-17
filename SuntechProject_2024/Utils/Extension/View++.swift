@@ -30,4 +30,12 @@ extension View {
     func navigationBackButton(color: Color, onTap: @escaping (() -> Void)) -> some View {
         self.modifier(NavigationBackButton(color: color, onTap: onTap))
     }
+    
+    func backgroundColor(color: Color) -> some View {
+        ZStack {
+            color
+                .ignoresSafeArea()
+            self
+        }
+    }
 }

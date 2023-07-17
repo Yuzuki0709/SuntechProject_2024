@@ -13,27 +13,20 @@ struct ClassDetailView: View {
     let classData: Class
     @State private var isShowAttendanceSheet: Bool = false
     var body: some View {
-        ZStack {
-            background()
-            
-            VStack {
-                Spacer()
-                classDetailInfo()
-                Spacer()
-                goButtons()
-            }
-            .padding()
-            .sheet(isPresented: $isShowAttendanceSheet) {
-                AttendanceStatusView(classData: classData)
-            }
+        
+        VStack {
+            Spacer()
+            classDetailInfo()
+            Spacer()
+            goButtons()
         }
+        .padding()
+        .sheet(isPresented: $isShowAttendanceSheet) {
+            AttendanceStatusView(classData: classData)
+        }
+        .backgroundColor(color: Color(R.color.timetable.backgroundColor))
         .customNavigationBar(title: "授業詳細", color: Color(R.color.mainColor))
         .navigationBackButton(color: .white) { dismiss() }
-    }
-    
-    private func background() -> some View {
-        Color(R.color.timetable.backgroundColor)
-            .ignoresSafeArea()
     }
     
     private func classDetailInfo() -> some View {

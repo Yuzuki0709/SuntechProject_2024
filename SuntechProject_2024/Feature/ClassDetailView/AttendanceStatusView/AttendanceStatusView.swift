@@ -17,27 +17,25 @@ struct AttendanceStatusView: View {
     }
     
     var body: some View {
-        ZStack {
-            background()
-            VStack(spacing: 10) {
-                Capsule()
-                    .fill(Color.secondary)
-                    .opacity(0.5)
-                    .frame(width: 80, height: 3)
-                    .padding(.top, 10)
-
-                Spacer()
-                countButtons()
-                attendanceLogList()
-            }
-            .padding()
-            .onAppear {
-                // 授業情報が登録されていなかったら、登録する
-                if !viewModel.isExistClass() {
-                    viewModel.addClassAttendance()
-                }
+        VStack(spacing: 10) {
+            Capsule()
+                .fill(Color.secondary)
+                .opacity(0.5)
+                .frame(width: 80, height: 3)
+                .padding(.top, 10)
+            
+            Spacer()
+            countButtons()
+            attendanceLogList()
+        }
+        .padding()
+        .onAppear {
+            // 授業情報が登録されていなかったら、登録する
+            if !viewModel.isExistClass() {
+                viewModel.addClassAttendance()
             }
         }
+        .backgroundColor(color: Color(R.color.attendanceStatus.backgroundColor))
     }
     
     private func background() -> some View {
