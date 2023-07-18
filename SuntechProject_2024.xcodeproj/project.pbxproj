@@ -54,6 +54,7 @@
 		A2E118F42A66B1D3005901EB /* AppCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E118F32A66B1D3005901EB /* AppCompatible.swift */; };
 		A2E118F72A66B29C005901EB /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E118F62A66B29C005901EB /* AppStyle.swift */; };
 		A2E118F92A66B2DC005901EB /* CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E118F82A66B2DC005901EB /* CornerRadius.swift */; };
+		A2E118FB2A66B40B005901EB /* SpaceLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E118FA2A66B40B005901EB /* SpaceLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,7 @@
 		A2E118F32A66B1D3005901EB /* AppCompatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCompatible.swift; sourceTree = "<group>"; };
 		A2E118F62A66B29C005901EB /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
 		A2E118F82A66B2DC005901EB /* CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadius.swift; sourceTree = "<group>"; };
+		A2E118FA2A66B40B005901EB /* SpaceLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -390,6 +392,7 @@
 				A2E118F32A66B1D3005901EB /* AppCompatible.swift */,
 				A2E118F62A66B29C005901EB /* AppStyle.swift */,
 				A2E118F82A66B2DC005901EB /* CornerRadius.swift */,
+				A2E118FA2A66B40B005901EB /* SpaceLayout.swift */,
 			);
 			path = AppCompatible;
 			sourceTree = "<group>";
@@ -558,6 +561,7 @@
 				A29C1D9A2A5301200045FFE2 /* WeekTimetable.swift in Sources */,
 				A2133D732A6573C900C5B24A /* ActivityIndicator.swift in Sources */,
 				A29C1D982A5300750045FFE2 /* DayTimetable.swift in Sources */,
+				A2E118FB2A66B40B005901EB /* SpaceLayout.swift in Sources */,
 				A281CAD42A5EED6A004663C4 /* DateHelper.swift in Sources */,
 				A281CACE2A5E2CEF004663C4 /* AttendanceStatusViewModel.swift in Sources */,
 				A2133D682A65033200C5B24A /* NavigationBackButton.swift in Sources */,
