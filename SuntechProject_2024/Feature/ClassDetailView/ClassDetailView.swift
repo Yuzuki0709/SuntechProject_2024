@@ -12,19 +12,17 @@ struct ClassDetailView: View {
     
     let classData: Class
     @State private var isShowAttendanceSheet: Bool = false
+    
     var body: some View {
-        
-        VStack {
-            Spacer()
+        VStack(spacing: .app.space.spacingXL) {
             classDetailInfo()
-            Spacer()
             goButtons()
         }
         .padding()
         .sheet(isPresented: $isShowAttendanceSheet) {
             AttendanceStatusView(classData: classData)
         }
-        .backgroundColor(color: Color(R.color.timetable.backgroundColor))
+        .backgroundColor(color: Color(R.color.attendanceStatus.backgroundColor))
         .customNavigationBar(title: "授業詳細", color: Color(R.color.mainColor))
         .navigationBackButton(color: .white) { dismiss() }
     }
@@ -33,24 +31,32 @@ struct ClassDetailView: View {
         VStack(alignment: .leading, spacing: .app.space.spacingS) {
             classDetailInfoRow(headerText: "授業名",
                                contentText: classData.name)
+            Divider()
             classDetailInfoRow(headerText: "教授",
                                contentText: classData.teacher.name)
+            Divider()
             classDetailInfoRow(headerText: "単位数",
                                contentText: "\(classData.creditsCount)")
+            Divider()
             classDetailInfoRow(headerText: "期間",
                                contentText: classData.term.rawValue)
+            Divider()
             classDetailInfoRow(headerText: "必選",
                                contentText: classData.isRequired ? "必修" : "選択")
         }
+        .padding(.vertical, .app.space.spacingM)
+        .padding(.horizontal, .app.space.spacingXXXL)
+        .background(Color.white)
+        .cornerRadius(.app.corner.radiusM)
     }
     
     private func classDetailInfoRow(headerText: String, contentText: String) -> some View {
         VStack(alignment: .leading, spacing: .app.space.spacingXXS) {
             Text(headerText)
-                .font(.system(size: 14))
+                .font(.system(size: 10))
                 .foregroundColor(.gray)
             Text(contentText)
-                .font(.system(size: 20))
+                .font(.system(size: 14))
         }
     }
     
