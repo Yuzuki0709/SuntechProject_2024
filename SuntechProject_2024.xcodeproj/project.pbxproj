@@ -55,6 +55,7 @@
 		A2E118F72A66B29C005901EB /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E118F62A66B29C005901EB /* AppStyle.swift */; };
 		A2E118F92A66B2DC005901EB /* CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E118F82A66B2DC005901EB /* CornerRadius.swift */; };
 		A2E118FB2A66B40B005901EB /* SpaceLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E118FA2A66B40B005901EB /* SpaceLayout.swift */; };
+		A2E118FF2A66CF5F005901EB /* ClassDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E118FE2A66CF5F005901EB /* ClassDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,7 @@
 		A2E118F62A66B29C005901EB /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
 		A2E118F82A66B2DC005901EB /* CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadius.swift; sourceTree = "<group>"; };
 		A2E118FA2A66B40B005901EB /* SpaceLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceLayout.swift; sourceTree = "<group>"; };
+		A2E118FE2A66CF5F005901EB /* ClassDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				A29C1DF92A59AA4E0045FFE2 /* ClassDetailView.swift */,
+				A2E118FE2A66CF5F005901EB /* ClassDetailViewModel.swift */,
 				A2133D6E2A6555A900C5B24A /* AttendanceStatusView */,
 			);
 			path = ClassDetailView;
@@ -560,6 +563,7 @@
 				A232E1A32A4F16CD007599E5 /* Color.swift in Sources */,
 				A29C1D9A2A5301200045FFE2 /* WeekTimetable.swift in Sources */,
 				A2133D732A6573C900C5B24A /* ActivityIndicator.swift in Sources */,
+				A2E118FF2A66CF5F005901EB /* ClassDetailViewModel.swift in Sources */,
 				A29C1D982A5300750045FFE2 /* DayTimetable.swift in Sources */,
 				A2E118FB2A66B40B005901EB /* SpaceLayout.swift in Sources */,
 				A281CAD42A5EED6A004663C4 /* DateHelper.swift in Sources */,
