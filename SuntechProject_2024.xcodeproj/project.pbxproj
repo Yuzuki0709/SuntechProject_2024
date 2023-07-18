@@ -53,6 +53,7 @@
 		A29C1DFC2A5BBD7D0045FFE2 /* HalfModalSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1DFB2A5BBD7D0045FFE2 /* HalfModalSheetViewController.swift */; };
 		A2E118F42A66B1D3005901EB /* AppCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E118F32A66B1D3005901EB /* AppCompatible.swift */; };
 		A2E118F72A66B29C005901EB /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E118F62A66B29C005901EB /* AppStyle.swift */; };
+		A2E118F92A66B2DC005901EB /* CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E118F82A66B2DC005901EB /* CornerRadius.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 		A29C1DFB2A5BBD7D0045FFE2 /* HalfModalSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalSheetViewController.swift; sourceTree = "<group>"; };
 		A2E118F32A66B1D3005901EB /* AppCompatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCompatible.swift; sourceTree = "<group>"; };
 		A2E118F62A66B29C005901EB /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
+		A2E118F82A66B2DC005901EB /* CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadius.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -387,6 +389,7 @@
 			children = (
 				A2E118F32A66B1D3005901EB /* AppCompatible.swift */,
 				A2E118F62A66B29C005901EB /* AppStyle.swift */,
+				A2E118F82A66B2DC005901EB /* CornerRadius.swift */,
 			);
 			path = AppCompatible;
 			sourceTree = "<group>";
@@ -569,6 +572,7 @@
 				A29C1D672A5288350045FFE2 /* LoginViewModel.swift in Sources */,
 				A29C1DAA2A53087F0045FFE2 /* FSCalendarViewRepresentable.swift in Sources */,
 				A29C1D692A5289AF0045FFE2 /* SuntechAPIClient.swift in Sources */,
+				A2E118F92A66B2DC005901EB /* CornerRadius.swift in Sources */,
 				A232E16F2A4F1407007599E5 /* SuntechProject_2024App.swift in Sources */,
 				A29C1DFC2A5BBD7D0045FFE2 /* HalfModalSheetViewController.swift in Sources */,
 			);
