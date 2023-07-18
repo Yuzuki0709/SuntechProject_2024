@@ -9,4 +9,6 @@ import SwiftUI
 
 public enum AppStyle {}
 
-
+public extension Extension where Base == CGFloat {
+    static let corner = AppStyle.CornerRadius()
+}
