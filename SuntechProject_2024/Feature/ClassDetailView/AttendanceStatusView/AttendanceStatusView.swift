@@ -17,12 +17,12 @@ struct AttendanceStatusView: View {
     }
     
     var body: some View {
-        VStack(spacing: 10) {
+        VStack(spacing: .app.space.spacingXS) {
             Capsule()
                 .fill(Color.secondary)
                 .opacity(0.5)
                 .frame(width: 80, height: 3)
-                .padding(.top, 10)
+                .padding(.top, .app.space.spacingXS)
             
             Spacer()
             countButtons()
@@ -44,7 +44,7 @@ struct AttendanceStatusView: View {
     }
     
     private func countButtons() -> some View {
-        HStack(spacing: 30) {
+        HStack(spacing: .app.space.spacingL) {
             ForEach(AttendanceStatus.allCases, id: \.rawValue) { status in
                 VStack {
                     attendanceButton(status: status)
@@ -67,21 +67,21 @@ struct AttendanceStatusView: View {
                     Text(log.status.rawValue)
                         .font(.system(size: 12))
                         .foregroundColor(.white)
-                        .padding(.vertical, 4)
-                        .padding(.horizontal, 8)
+                        .padding(.vertical, .app.space.spacingXXS)
+                        .padding(.horizontal, .app.space.spacingXS)
                         .background {
-                            RoundedRectangle(cornerRadius: 8)
+                            RoundedRectangle(cornerRadius: .app.corner.radiusS)
                                 .fill(log.status.color)
                         }
                 }
-                .padding(.vertical, 4)
+                .padding(.vertical, .app.space.spacingXXS)
             }
             .onDelete { indexSet in
                 guard let index = indexSet.first else { return }
                 viewModel.deleteAttendanceLog(log: viewModel.attendanceLogs[index])
             }
         }
-        .cornerRadius(8)
+        .cornerRadius(.app.corner.radiusS)
         .listStyle(.plain)
     }
     

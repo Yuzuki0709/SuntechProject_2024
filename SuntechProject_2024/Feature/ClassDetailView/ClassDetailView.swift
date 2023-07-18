@@ -55,7 +55,7 @@ struct ClassDetailView: View {
     }
     
     private func goButtons() -> some View {
-        VStack(spacing: 15) {
+        VStack(spacing: .app.space.spacingS) {
             Button {
                 isShowAttendanceSheet = true
             } label: {
@@ -64,7 +64,7 @@ struct ClassDetailView: View {
             .frame(width: 200, height: 50)
             .foregroundColor(.white)
             .background(Color.mainColor)
-            .cornerRadius(20)
+            .cornerRadius(.app.corner.radiusM)
             
             Button {
                 
@@ -74,7 +74,7 @@ struct ClassDetailView: View {
             .frame(width: 200, height: 50)
             .foregroundColor(.white)
             .background(Color.mainColor)
-            .cornerRadius(20)
+            .cornerRadius(.app.corner.radiusM)
             
             Button {
                 
@@ -84,7 +84,7 @@ struct ClassDetailView: View {
             .frame(width: 200, height: 50)
             .foregroundColor(.white)
             .background(Color.mainColor)
-            .cornerRadius(20)
+            .cornerRadius(.app.corner.radiusM)
         }
     }
 }
