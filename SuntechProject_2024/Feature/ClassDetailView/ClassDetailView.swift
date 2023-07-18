@@ -8,33 +8,25 @@
 import SwiftUI
 
 struct ClassDetailView: View {
+    @Environment (\.dismiss) var dismiss
+    
     let classData: Class
     @State private var isShowAttendanceSheet: Bool = false
     var body: some View {
-        ZStack {
-            background()
-            
-            VStack {
-                Spacer()
-                classDetailInfo()
-                Spacer()
-                goButtons()
-            }
-            .padding()
-            .sheet(isPresented: $isShowAttendanceSheet) {
-                AttendanceStatusView(classData: classData)
-            }
+        
+        VStack {
+            Spacer()
+            classDetailInfo()
+            Spacer()
+            goButtons()
         }
-        .navigationTitle("授業詳細")
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbarBackground(.visible, for: .navigationBar)
-        .toolbarBackground(Color.mainColor, for: .navigationBar)
-        .toolbarColorScheme(ColorScheme.dark, for: .navigationBar)
-    }
-    
-    private func background() -> some View {
-        Color(R.color.timetable.backgroundColor)
-            .ignoresSafeArea()
+        .padding()
+        .sheet(isPresented: $isShowAttendanceSheet) {
+            AttendanceStatusView(classData: classData)
+        }
+        .backgroundColor(color: Color(R.color.timetable.backgroundColor))
+        .customNavigationBar(title: "授業詳細", color: Color(R.color.mainColor))
+        .navigationBackButton(color: .white) { dismiss() }
     }
     
     private func classDetailInfo() -> some View {
@@ -63,7 +55,7 @@ struct ClassDetailView: View {
     }
     
     private func goButtons() -> some View {
-        VStack(spacing: 15) {
+        VStack(spacing: .app.space.spacingS) {
             Button {
                 isShowAttendanceSheet = true
             } label: {
@@ -72,7 +64,7 @@ struct ClassDetailView: View {
             .frame(width: 200, height: 50)
             .foregroundColor(.white)
             .background(Color.mainColor)
-            .cornerRadius(20)
+            .cornerRadius(.app.corner.radiusM)
             
             Button {
                 
@@ -82,7 +74,7 @@ struct ClassDetailView: View {
             .frame(width: 200, height: 50)
             .foregroundColor(.white)
             .background(Color.mainColor)
-            .cornerRadius(20)
+            .cornerRadius(.app.corner.radiusM)
             
             Button {
                 
@@ -92,7 +84,7 @@ struct ClassDetailView: View {
             .frame(width: 200, height: 50)
             .foregroundColor(.white)
             .background(Color.mainColor)
-            .cornerRadius(20)
+            .cornerRadius(.app.corner.radiusM)
         }
     }
 }

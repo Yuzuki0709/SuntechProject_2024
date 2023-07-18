@@ -21,7 +21,7 @@ struct LoginView: View {
                 
                 background()
                 
-                VStack(spacing: 30) {
+                VStack(spacing: .app.space.spacingL) {
                     headerLogo()
                     appDescription()
                     
@@ -42,16 +42,7 @@ struct LoginView: View {
             } message: {
                 Text("メールアドレスとパスワードを再入力してください。")
             }
-            .overlay {
-                if viewModel.isLoading {
-                    ZStack {
-                        Color.black
-                            .ignoresSafeArea()
-                            .opacity(0.3)
-                        ProgressView()
-                    }
-                }
-            }
+            .loading(viewModel.isLoading)
             .overlay {
                 if viewModel.isLock {
                     ZStack {
@@ -84,7 +75,7 @@ struct LoginView: View {
     }
     
     private func headerLogo() -> some View {
-        HStack(spacing: 10) {
+        HStack(spacing: .app.space.spacingXS) {
             Text("STC")
                 .font(.system(size: 50, weight: .bold))
                 .foregroundColor(.white)
@@ -104,7 +95,7 @@ struct LoginView: View {
     }
     
     private func inputLoginInfo() -> some View {
-        VStack(spacing: 20) {
+        VStack(spacing: .app.space.spacingM) {
             TextField("E-mail", text: $viewModel.emailText)
                 .disabled(viewModel.isLock)
                 .textFieldStyle(.roundedBorder)
@@ -126,7 +117,7 @@ struct LoginView: View {
                 .frame(width: width * 0.8, height: 70)
                 .background(Color.subColor)
                 .foregroundColor(.white)
-                .cornerRadius(10)
+                .cornerRadius(.app.corner.radiusS)
         }
         .disabled(viewModel.isLock)
     }

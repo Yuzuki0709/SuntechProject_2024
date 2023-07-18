@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A2133D612A64FE8E00C5B24A /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2133D602A64FE8E00C5B24A /* NavigationBarModifier.swift */; };
+		A2133D682A65033200C5B24A /* NavigationBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2133D672A65033200C5B24A /* NavigationBackButton.swift */; };
+		A2133D6A2A65061700C5B24A /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2133D692A65061700C5B24A /* CustomNavigationBar.swift */; };
+		A2133D732A6573C900C5B24A /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2133D722A6573C800C5B24A /* ActivityIndicator.swift */; };
 		A232E16F2A4F1407007599E5 /* SuntechProject_2024App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232E16E2A4F1407007599E5 /* SuntechProject_2024App.swift */; };
-		A232E1712A4F1407007599E5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232E1702A4F1407007599E5 /* ContentView.swift */; };
 		A232E1732A4F140A007599E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A232E1722A4F140A007599E5 /* Assets.xcassets */; };
 		A232E1762A4F140A007599E5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A232E1752A4F140A007599E5 /* Preview Assets.xcassets */; };
 		A232E1802A4F140A007599E5 /* SuntechProject_2024Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232E17F2A4F140A007599E5 /* SuntechProject_2024Tests.swift */; };
@@ -48,6 +51,10 @@
 		A29C1DB32A54EE3C0045FFE2 /* TimetableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1DB22A54EE3C0045FFE2 /* TimetableViewModel.swift */; };
 		A29C1DFA2A59AA4E0045FFE2 /* ClassDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1DF92A59AA4E0045FFE2 /* ClassDetailView.swift */; };
 		A29C1DFC2A5BBD7D0045FFE2 /* HalfModalSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1DFB2A5BBD7D0045FFE2 /* HalfModalSheetViewController.swift */; };
+		A2E118F42A66B1D3005901EB /* AppCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E118F32A66B1D3005901EB /* AppCompatible.swift */; };
+		A2E118F72A66B29C005901EB /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E118F62A66B29C005901EB /* AppStyle.swift */; };
+		A2E118F92A66B2DC005901EB /* CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E118F82A66B2DC005901EB /* CornerRadius.swift */; };
+		A2E118FB2A66B40B005901EB /* SpaceLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E118FA2A66B40B005901EB /* SpaceLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,9 +75,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A2133D602A64FE8E00C5B24A /* NavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
+		A2133D672A65033200C5B24A /* NavigationBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBackButton.swift; sourceTree = "<group>"; };
+		A2133D692A65061700C5B24A /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
+		A2133D722A6573C800C5B24A /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		A232E16B2A4F1407007599E5 /* SuntechProject_2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuntechProject_2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A232E16E2A4F1407007599E5 /* SuntechProject_2024App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuntechProject_2024App.swift; sourceTree = "<group>"; };
-		A232E1702A4F1407007599E5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A232E1722A4F140A007599E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A232E1752A4F140A007599E5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A232E17B2A4F140A007599E5 /* SuntechProject_2024Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuntechProject_2024Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +117,10 @@
 		A29C1DB22A54EE3C0045FFE2 /* TimetableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableViewModel.swift; sourceTree = "<group>"; };
 		A29C1DF92A59AA4E0045FFE2 /* ClassDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailView.swift; sourceTree = "<group>"; };
 		A29C1DFB2A5BBD7D0045FFE2 /* HalfModalSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalSheetViewController.swift; sourceTree = "<group>"; };
+		A2E118F32A66B1D3005901EB /* AppCompatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCompatible.swift; sourceTree = "<group>"; };
+		A2E118F62A66B29C005901EB /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
+		A2E118F82A66B2DC005901EB /* CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadius.swift; sourceTree = "<group>"; };
+		A2E118FA2A66B40B005901EB /* SpaceLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +153,80 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A2133D5E2A64FE4000C5B24A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A2E118F22A66B1C4005901EB /* AppCompatible */,
+				A2133D5F2A64FE4A00C5B24A /* Common */,
+				A2133D6C2A65073000C5B24A /* TimetableView */,
+				A2133D712A6555ED00C5B24A /* ClassDetailView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A2133D5F2A64FE4A00C5B24A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A2133D602A64FE8E00C5B24A /* NavigationBarModifier.swift */,
+				A2133D672A65033200C5B24A /* NavigationBackButton.swift */,
+				A2133D692A65061700C5B24A /* CustomNavigationBar.swift */,
+				A2133D722A6573C800C5B24A /* ActivityIndicator.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		A2133D622A64FEB800C5B24A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A29C1D8A2A52A07E0045FFE2 /* Extension */,
+				A281CAD02A5EED60004663C4 /* Helper */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		A2133D662A6502AF00C5B24A /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A29C1D912A52DF8C0045FFE2 /* SuntechAPI */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		A2133D6C2A65073000C5B24A /* TimetableView */ = {
+			isa = PBXGroup;
+			children = (
+				A29C1DA42A5303940045FFE2 /* FSCalendarView.swift */,
+				A29C1DA92A53087F0045FFE2 /* FSCalendarViewRepresentable.swift */,
+			);
+			path = TimetableView;
+			sourceTree = "<group>";
+		};
+		A2133D6E2A6555A900C5B24A /* AttendanceStatusView */ = {
+			isa = PBXGroup;
+			children = (
+				A28113412A5BD71A0037E35C /* AttendanceStatusView.swift */,
+				A281CACD2A5E2CEF004663C4 /* AttendanceStatusViewModel.swift */,
+			);
+			path = AttendanceStatusView;
+			sourceTree = "<group>";
+		};
+		A2133D702A6555C500C5B24A /* ClassDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				A29C1DF92A59AA4E0045FFE2 /* ClassDetailView.swift */,
+				A2133D6E2A6555A900C5B24A /* AttendanceStatusView */,
+			);
+			path = ClassDetailView;
+			sourceTree = "<group>";
+		};
+		A2133D712A6555ED00C5B24A /* ClassDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				A29C1DFB2A5BBD7D0045FFE2 /* HalfModalSheetViewController.swift */,
+			);
+			path = ClassDetailView;
+			sourceTree = "<group>";
+		};
 		A232E1622A4F1407007599E5 = {
 			isa = PBXGroup;
 			children = (
@@ -162,12 +250,12 @@
 		A232E16D2A4F1407007599E5 /* SuntechProject_2024 */ = {
 			isa = PBXGroup;
 			children = (
-				A281CAD02A5EED60004663C4 /* Helper */,
-				A29C1D8A2A52A07E0045FFE2 /* Extension */,
 				A29C1D882A52A0560045FFE2 /* Model */,
-				A29C1D8E2A52DF720045FFE2 /* UI */,
+				A2133D5E2A64FE4000C5B24A /* View */,
+				A29C1D8E2A52DF720045FFE2 /* Feature */,
+				A2133D662A6502AF00C5B24A /* API */,
+				A2133D622A64FEB800C5B24A /* Utils */,
 				A232E16E2A4F1407007599E5 /* SuntechProject_2024App.swift */,
-				A232E1702A4F1407007599E5 /* ContentView.swift */,
 				A232E1722A4F140A007599E5 /* Assets.xcassets */,
 				A232E1742A4F140A007599E5 /* Preview Content */,
 			);
@@ -222,7 +310,6 @@
 			children = (
 				A28113432A5BE5740037E35C /* AttendanceStatus */,
 				A29C1D9C2A5301E10045FFE2 /* Timetable */,
-				A29C1D912A52DF8C0045FFE2 /* SuntechAPI */,
 				A29C1D8B2A52A08C0045FFE2 /* LoginUser */,
 				A29C1DAD2A53B0CD0045FFE2 /* LoginUserInfo.swift */,
 				A281CACB2A5CED62004663C4 /* AttendanceRealmManager.swift */,
@@ -253,15 +340,14 @@
 			path = LoginUser;
 			sourceTree = "<group>";
 		};
-		A29C1D8E2A52DF720045FFE2 /* UI */ = {
+		A29C1D8E2A52DF720045FFE2 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
 				A29C1D8F2A52DF7B0045FFE2 /* LoginView */,
 				A29C1DB52A54F6E50045FFE2 /* TimetableView */,
-				A29C1DA42A5303940045FFE2 /* FSCalendarView.swift */,
-				A29C1DA92A53087F0045FFE2 /* FSCalendarViewRepresentable.swift */,
+				A2133D702A6555C500C5B24A /* ClassDetailView */,
 			);
-			path = UI;
+			path = Feature;
 			sourceTree = "<group>";
 		};
 		A29C1D8F2A52DF7B0045FFE2 /* LoginView */ = {
@@ -296,20 +382,19 @@
 			children = (
 				A29C1D9E2A5302960045FFE2 /* TimetableView.swift */,
 				A29C1DB22A54EE3C0045FFE2 /* TimetableViewModel.swift */,
-				A29C1DF52A59AA290045FFE2 /* ClassDatailView */,
 			);
 			path = TimetableView;
 			sourceTree = "<group>";
 		};
-		A29C1DF52A59AA290045FFE2 /* ClassDatailView */ = {
+		A2E118F22A66B1C4005901EB /* AppCompatible */ = {
 			isa = PBXGroup;
 			children = (
-				A29C1DF92A59AA4E0045FFE2 /* ClassDetailView.swift */,
-				A28113412A5BD71A0037E35C /* AttendanceStatusView.swift */,
-				A281CACD2A5E2CEF004663C4 /* AttendanceStatusViewModel.swift */,
-				A29C1DFB2A5BBD7D0045FFE2 /* HalfModalSheetViewController.swift */,
+				A2E118F32A66B1D3005901EB /* AppCompatible.swift */,
+				A2E118F62A66B29C005901EB /* AppStyle.swift */,
+				A2E118F82A66B2DC005901EB /* CornerRadius.swift */,
+				A2E118FA2A66B40B005901EB /* SpaceLayout.swift */,
 			);
-			path = ClassDatailView;
+			path = AppCompatible;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -456,6 +541,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2133D6A2A65061700C5B24A /* CustomNavigationBar.swift in Sources */,
 				A28113382A5BC1690037E35C /* View++.swift in Sources */,
 				A281134B2A5BE7F60037E35C /* ClassAttendance.swift in Sources */,
 				A29C1D9F2A5302960045FFE2 /* TimetableView.swift in Sources */,
@@ -466,15 +552,20 @@
 				A281CACC2A5CED63004663C4 /* AttendanceRealmManager.swift in Sources */,
 				A28113452A5BE58A0037E35C /* AttendanceStatus.swift in Sources */,
 				A29C1D6E2A528C420045FFE2 /* UserType.swift in Sources */,
+				A2E118F42A66B1D3005901EB /* AppCompatible.swift in Sources */,
+				A2133D612A64FE8E00C5B24A /* NavigationBarModifier.swift in Sources */,
 				A29C1DFA2A59AA4E0045FFE2 /* ClassDetailView.swift in Sources */,
 				A28113422A5BD71A0037E35C /* AttendanceStatusView.swift in Sources */,
+				A2E118F72A66B29C005901EB /* AppStyle.swift in Sources */,
 				A232E1A32A4F16CD007599E5 /* Color.swift in Sources */,
 				A29C1D9A2A5301200045FFE2 /* WeekTimetable.swift in Sources */,
+				A2133D732A6573C900C5B24A /* ActivityIndicator.swift in Sources */,
 				A29C1D982A5300750045FFE2 /* DayTimetable.swift in Sources */,
+				A2E118FB2A66B40B005901EB /* SpaceLayout.swift in Sources */,
 				A281CAD42A5EED6A004663C4 /* DateHelper.swift in Sources */,
 				A281CACE2A5E2CEF004663C4 /* AttendanceStatusViewModel.swift in Sources */,
+				A2133D682A65033200C5B24A /* NavigationBackButton.swift in Sources */,
 				A29C1D762A528D2B0045FFE2 /* Teacher.swift in Sources */,
-				A232E1712A4F1407007599E5 /* ContentView.swift in Sources */,
 				A28113482A5BE7A90037E35C /* AttendanceLog.swift in Sources */,
 				A29C1D872A529F840045FFE2 /* LoginUser.swift in Sources */,
 				A29C1D7D2A528FAE0045FFE2 /* Loggable.swift in Sources */,
@@ -485,6 +576,7 @@
 				A29C1D672A5288350045FFE2 /* LoginViewModel.swift in Sources */,
 				A29C1DAA2A53087F0045FFE2 /* FSCalendarViewRepresentable.swift in Sources */,
 				A29C1D692A5289AF0045FFE2 /* SuntechAPIClient.swift in Sources */,
+				A2E118F92A66B2DC005901EB /* CornerRadius.swift in Sources */,
 				A232E16F2A4F1407007599E5 /* SuntechProject_2024App.swift in Sources */,
 				A29C1DFC2A5BBD7D0045FFE2 /* HalfModalSheetViewController.swift in Sources */,
 			);
@@ -577,7 +669,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -631,7 +723,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
