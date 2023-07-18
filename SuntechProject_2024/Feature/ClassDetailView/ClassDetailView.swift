@@ -30,7 +30,7 @@ struct ClassDetailView: View {
     }
     
     private func classDetailInfo() -> some View {
-        VStack(alignment: .leading, spacing: 15) {
+        VStack(alignment: .leading, spacing: .app.space.spacingS) {
             classDetailInfoRow(headerText: "授業名",
                                contentText: classData.name)
             classDetailInfoRow(headerText: "教授",
@@ -45,7 +45,7 @@ struct ClassDetailView: View {
     }
     
     private func classDetailInfoRow(headerText: String, contentText: String) -> some View {
-        VStack(alignment: .leading, spacing: 5) {
+        VStack(alignment: .leading, spacing: .app.space.spacingXXS) {
             Text(headerText)
                 .font(.system(size: 14))
                 .foregroundColor(.gray)
@@ -56,36 +56,24 @@ struct ClassDetailView: View {
     
     private func goButtons() -> some View {
         VStack(spacing: .app.space.spacingS) {
-            Button {
+            button(text: "出席情報を確認") {
                 isShowAttendanceSheet = true
-            } label: {
-                Text("出席情報を確認")
             }
-            .frame(width: 200, height: 50)
-            .foregroundColor(.white)
-            .background(Color.mainColor)
-            .cornerRadius(.app.corner.radiusM)
-            
-            Button {
-                
-            } label: {
-                Text("ClassRoomへ")
-            }
-            .frame(width: 200, height: 50)
-            .foregroundColor(.white)
-            .background(Color.mainColor)
-            .cornerRadius(.app.corner.radiusM)
-            
-            Button {
-                
-            } label: {
-                Text("授業評価を見る")
-            }
-            .frame(width: 200, height: 50)
-            .foregroundColor(.white)
-            .background(Color.mainColor)
-            .cornerRadius(.app.corner.radiusM)
+            button(text: "Classroomへ") {}
+            button(text: "授業評価を見る") {}
         }
+    }
+    
+    private func button(text: String, onTap: @escaping (() -> Void)) -> some View {
+        Button {
+            onTap()
+        } label: {
+            Text(text)
+        }
+        .frame(width: 200, height: 50)
+        .foregroundColor(.white)
+        .background(Color.mainColor)
+        .cornerRadius(.app.corner.radiusM)
     }
 }
 
