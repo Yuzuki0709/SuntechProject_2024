@@ -52,6 +52,7 @@
 		A29C1DFA2A59AA4E0045FFE2 /* ClassDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1DF92A59AA4E0045FFE2 /* ClassDetailView.swift */; };
 		A29C1DFC2A5BBD7D0045FFE2 /* HalfModalSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1DFB2A5BBD7D0045FFE2 /* HalfModalSheetViewController.swift */; };
 		A2E118F42A66B1D3005901EB /* AppCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E118F32A66B1D3005901EB /* AppCompatible.swift */; };
+		A2E118F72A66B29C005901EB /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E118F62A66B29C005901EB /* AppStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,7 @@
 		A29C1DF92A59AA4E0045FFE2 /* ClassDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailView.swift; sourceTree = "<group>"; };
 		A29C1DFB2A5BBD7D0045FFE2 /* HalfModalSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalSheetViewController.swift; sourceTree = "<group>"; };
 		A2E118F32A66B1D3005901EB /* AppCompatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCompatible.swift; sourceTree = "<group>"; };
+		A2E118F62A66B29C005901EB /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -384,6 +386,7 @@
 			isa = PBXGroup;
 			children = (
 				A2E118F32A66B1D3005901EB /* AppCompatible.swift */,
+				A2E118F62A66B29C005901EB /* AppStyle.swift */,
 			);
 			path = AppCompatible;
 			sourceTree = "<group>";
@@ -547,6 +550,7 @@
 				A2133D612A64FE8E00C5B24A /* NavigationBarModifier.swift in Sources */,
 				A29C1DFA2A59AA4E0045FFE2 /* ClassDetailView.swift in Sources */,
 				A28113422A5BD71A0037E35C /* AttendanceStatusView.swift in Sources */,
+				A2E118F72A66B29C005901EB /* AppStyle.swift in Sources */,
 				A232E1A32A4F16CD007599E5 /* Color.swift in Sources */,
 				A29C1D9A2A5301200045FFE2 /* WeekTimetable.swift in Sources */,
 				A2133D732A6573C900C5B24A /* ActivityIndicator.swift in Sources */,
