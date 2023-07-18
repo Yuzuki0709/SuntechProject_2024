@@ -12,10 +12,17 @@ struct ClassDetailView: View {
     
     let classData: Class
     @State private var isShowAttendanceSheet: Bool = false
+    @StateObject private var viewModel: ClassDetailViewModel
+    
+    init(classData: Class) {
+        self.classData = classData
+        self._viewModel = StateObject(wrappedValue: ClassDetailViewModel(classData: classData))
+    }
     
     var body: some View {
         VStack(spacing: .app.space.spacingXL) {
             classDetailInfo()
+            attendanceStatus()
             goButtons()
         }
         .padding()
@@ -72,6 +79,56 @@ struct ClassDetailView: View {
         }
     }
     
+    private func attendanceStatus() -> some View {
+        VStack(alignment: .leading, spacing: .app.space.spacingXS) {
+            HStack {
+                Image(systemName: "studentdesk")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 15, height: 15)
+                Text("出席状況")
+                    .font(.system(size: 15))
+            }
+            
+            HStack(spacing: .app.space.spacingXL) {
+                ForEach(AttendanceStatus.allCases, id: \.rawValue) { status in
+                    attendanceText(status: status)
+                }
+            }
+        }
+        .padding(.vertical, .app.space.spacingM)
+        .padding(.horizontal, .app.space.spacingXXXL)
+        .background(Color.white)
+        .cornerRadius(.app.corner.radiusM)
+    }
+    
+    private func attendanceText(status: AttendanceStatus) -> some View {
+        VStack {
+            switch status {
+            case .attendance:
+                Text("\(viewModel.attendanceCount)")
+                    .font(.system(size: 40))
+                    .foregroundColor(status.color)
+            case .absence:
+                Text("\(viewModel.absenceCount)")
+                    .font(.system(size: 40))
+                    .foregroundColor(status.color)
+            case .lateness:
+                Text("\(viewModel.latenessCount)")
+                    .font(.system(size: 40))
+                    .foregroundColor(status.color)
+            case .officialAbsence:
+                Text("\(viewModel.officialAbsenceCount)")
+                    .font(.system(size: 40))
+                    .foregroundColor(status.color)
+            }
+            
+            Text(status.rawValue.prefix(2))
+                .font(.system(size: 13))
+                .foregroundColor(.gray)
+        }
+    }
+    
     private func goButtons() -> some View {
         VStack(spacing: .app.space.spacingS) {
             button(text: "出席情報を確認") {
@@ -92,6 +149,21 @@ struct ClassDetailView: View {
         .foregroundColor(.white)
         .background(Color.mainColor)
         .cornerRadius(.app.corner.radiusM)
+    }
+}
+
+private extension AttendanceStatus {
+    var color: Color {
+        switch self {
+        case .attendance:
+            return Color(R.color.attendanceStatus.attendance)
+        case .absence:
+            return Color(R.color.attendanceStatus.absence)
+        case .lateness:
+            return Color(R.color.attendanceStatus.lateness)
+        case .officialAbsence:
+            return Color(R.color.attendanceStatus.officialAbsence)
+        }
     }
 }
 
