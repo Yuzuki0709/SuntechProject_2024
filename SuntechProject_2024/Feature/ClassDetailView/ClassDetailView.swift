@@ -28,20 +28,25 @@ struct ClassDetailView: View {
     }
     
     private func classDetailInfo() -> some View {
-        VStack(alignment: .leading, spacing: .app.space.spacingS) {
+        VStack(alignment: .leading, spacing: .app.space.spacingXS) {
             classDetailInfoRow(headerText: "授業名",
+                               headerImage: Image(systemName: "graduationcap"),
                                contentText: classData.name)
             Divider()
             classDetailInfoRow(headerText: "教授",
+                               headerImage: Image(systemName: "person"),
                                contentText: classData.teacher.name)
             Divider()
             classDetailInfoRow(headerText: "単位数",
+                               headerImage: Image(systemName: "square.3.stack.3d"),
                                contentText: "\(classData.creditsCount)")
             Divider()
             classDetailInfoRow(headerText: "期間",
+                               headerImage: Image(systemName: "clock"),
                                contentText: classData.term.rawValue)
             Divider()
             classDetailInfoRow(headerText: "必選",
+                               headerImage: Image(systemName: "exclamationmark.triangle"),
                                contentText: classData.isRequired ? "必修" : "選択")
         }
         .padding(.vertical, .app.space.spacingM)
@@ -50,11 +55,18 @@ struct ClassDetailView: View {
         .cornerRadius(.app.corner.radiusM)
     }
     
-    private func classDetailInfoRow(headerText: String, contentText: String) -> some View {
+    private func classDetailInfoRow(headerText: String, headerImage: Image, contentText: String) -> some View {
         VStack(alignment: .leading, spacing: .app.space.spacingXXS) {
-            Text(headerText)
-                .font(.system(size: 10))
-                .foregroundColor(.gray)
+            HStack(spacing: .app.space.spacingXS) {
+                headerImage
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 10, height: 10)
+                Text(headerText)
+                    .font(.system(size: 10))
+            }
+            .foregroundColor(.gray)
+            
             Text(contentText)
                 .font(.system(size: 14))
         }
