@@ -12,6 +12,7 @@ struct ClassDetailView: View {
     
     let classData: Class
     @State private var isShowAttendanceSheet: Bool = false
+    @State private var isShowClassroomSheet: Bool = false
     @StateObject private var viewModel: ClassDetailViewModel
     
     private var contentWidth: CGFloat {
@@ -36,6 +37,11 @@ struct ClassDetailView: View {
         .padding()
         .sheet(isPresented: $isShowAttendanceSheet) {
             AttendanceStatusView(classData: classData)
+        }
+        .sheet(isPresented: $isShowClassroomSheet) {
+            if let classroomUrl = URL(string: classData.classroomUrl ?? "") {
+                WebView(url: classroomUrl)
+            }
         }
         .backgroundColor(color: Color(R.color.attendanceStatus.backgroundColor))
         .customNavigationBar(title: "授業詳細", color: Color(R.color.mainColor))
@@ -173,7 +179,7 @@ struct ClassDetailView: View {
             }
             if let classroomUrl = classData.classroomUrl {
                 button(text: "Classroomへ") {
-                    print(classroomUrl)
+                    isShowClassroomSheet = true
                 }
             }
         }
