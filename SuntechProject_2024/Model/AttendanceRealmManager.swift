@@ -10,6 +10,8 @@ import RealmSwift
 
 final class AttendanceRealmManager: ObservableObject {
     
+    static let shared = AttendanceRealmManager()
+    
     @Published private var localRealm: Realm?
     @Published var classAttendances: [ClassAttendance] = []
     

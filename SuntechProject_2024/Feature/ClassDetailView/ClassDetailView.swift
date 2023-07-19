@@ -12,7 +12,7 @@ struct ClassDetailView: View {
     
     let classData: Class
     @State private var isShowAttendanceSheet: Bool = false
-    @ObservedObject private var viewModel: ClassDetailViewModel
+    @StateObject private var viewModel: ClassDetailViewModel
     
     private var contentWidth: CGFloat {
         UIScreen.main.bounds.width * 0.9
@@ -20,7 +20,9 @@ struct ClassDetailView: View {
     
     init(classData: Class) {
         self.classData = classData
-        self._viewModel = ObservedObject(wrappedValue: ClassDetailViewModel(classData: classData))
+        self._viewModel = StateObject(
+            wrappedValue: ClassDetailViewModel(classData: classData)
+        )
     }
     
     var body: some View {

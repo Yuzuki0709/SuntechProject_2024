@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 final class ClassDetailViewModel: ObservableObject {
-    @Published private var realmManager: AttendanceRealmManager = .init()
+    @Published private var realmManager: AttendanceRealmManager = .shared
     @Published private(set) var attendanceCount: Int = 0
     @Published private(set) var absenceCount: Int = 0
     @Published private(set) var latenessCount: Int = 0
