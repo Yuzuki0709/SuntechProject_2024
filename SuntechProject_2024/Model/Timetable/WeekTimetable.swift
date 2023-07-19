@@ -38,7 +38,8 @@ let sampleWeekTimetable = WeekTimetable(
                             name: "杉田 勝実",
                             emailAddress: "sugita@suntech.jp"),
                         creditsCount: 4,
-                        timeCount: 60)),
+                        timeCount: 60,
+                        classroomUrl: nil)),
         
         DayTimetable(period1: 3,
                      period2: 4,
@@ -50,7 +51,8 @@ let sampleWeekTimetable = WeekTimetable(
                             name: "保坂　修治",
                             emailAddress: "hosaka@suntech.jp"),
                         creditsCount: 4,
-                        timeCount: 60))
+                        timeCount: 60,
+                        classroomUrl: "https://classroom.google.com/u/0/c/NTk1ODg0MzM1NDky"))
     ],
     tuesday: [
         DayTimetable(period1: 1,
@@ -63,7 +65,8 @@ let sampleWeekTimetable = WeekTimetable(
                             name: "山本　芳彦",
                             emailAddress: "yoshi@suntech.jp"),
                         creditsCount: 4,
-                        timeCount: 60))
+                        timeCount: 60,
+                        classroomUrl: "https://classroom.google.com/u/0/c/NjAyODI5ODcxMjQ4?"))
     ],
     wednesday: [
         DayTimetable(period1: 1,
@@ -76,7 +79,8 @@ let sampleWeekTimetable = WeekTimetable(
                             name: "深澤　克朗",
                             emailAddress: "fuka@suntech.jp"),
                         creditsCount: 4,
-                        timeCount: 60))
+                        timeCount: 60,
+                        classroomUrl: nil))
     ],
     thursday: [
         DayTimetable(period1: 3,
@@ -89,7 +93,8 @@ let sampleWeekTimetable = WeekTimetable(
                             name: "八巻　栄家",
                             emailAddress: "yamaki@suntech.jp"),
                         creditsCount: 4,
-                        timeCount: 60))
+                        timeCount: 60,
+                        classroomUrl: "https://classroom.google.com/u/0/c/NjAzOTI5MTE1NzQ3"))
     ],
     friday: []
 )

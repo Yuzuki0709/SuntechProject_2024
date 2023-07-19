@@ -171,7 +171,11 @@ struct ClassDetailView: View {
             button(text: "出席状況を記録") {
                 isShowAttendanceSheet = true
             }
-            button(text: "Classroomへ") {}
+            if let classroomUrl = classData.classroomUrl {
+                button(text: "Classroomへ") {
+                    print(classroomUrl)
+                }
+            }
         }
     }
     
@@ -214,7 +218,8 @@ struct ClassDetailView_Previews: PreviewProvider {
                     name: "杉田 勝実",
                     emailAddress: "sugita@suntech.jp"),
                 creditsCount: 4,
-                timeCount: 60))
+                timeCount: 60,
+                classroomUrl: nil))
         }
     }
 }
