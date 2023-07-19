@@ -1,21 +1,19 @@
 //
-//  AttendanceStatusViewModel.swift
+//  ClassDetailViewModel.swift
 //  SuntechProject_2024
 //
-//  Created by 岩本竜斗 on 2023/07/12.
+//  Created by 岩本竜斗 on 2023/07/18.
 //
 
-import SwiftUI
 import Foundation
 import Combine
 
-final class AttendanceStatusViewModel: ObservableObject {
+final class ClassDetailViewModel: ObservableObject {
     @Published private var realmManager: AttendanceRealmManager = .shared
     @Published private(set) var attendanceCount: Int = 0
     @Published private(set) var absenceCount: Int = 0
     @Published private(set) var latenessCount: Int = 0
     @Published private(set) var officialAbsenceCount: Int = 0
-    @Published private(set) var attendanceLogs: [AttendanceLog] = []
     
     private var classData: Class
     private var cancellables = Set<AnyCancellable>()
@@ -30,7 +28,6 @@ final class AttendanceStatusViewModel: ObservableObject {
                 self?.absenceCount = classAttendance.absenceCount
                 self?.latenessCount = classAttendance.latenessCount
                 self?.officialAbsenceCount = classAttendance.officialAbsenceCount
-                self?.attendanceLogs = Array(classAttendance.logs)
             })
             .store(in: &cancellables)
     }
@@ -38,17 +35,4 @@ final class AttendanceStatusViewModel: ObservableObject {
     func isExistClass() -> Bool {
         return realmManager.isExisting(classId: classData.id)
     }
-    
-    func addClassAttendance() {
-        realmManager.addClassAttendance(classId: classData.id)
-    }
-    
-    func addAttendanceLog(status: AttendanceStatus) {
-        realmManager.addAttendanceLog(classId: classData.id, status: status, date: Date())
-    }
-    
-    func deleteAttendanceLog(log: AttendanceLog) {
-        realmManager.deleteAttendanceLog(log)
-    }
 }
-
