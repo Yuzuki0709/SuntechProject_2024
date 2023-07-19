@@ -14,16 +14,22 @@ struct ClassDetailView: View {
     @State private var isShowAttendanceSheet: Bool = false
     @StateObject private var viewModel: ClassDetailViewModel
     
+    private var contentWidth: CGFloat {
+        UIScreen.main.bounds.width * 0.9
+    }
+    
     init(classData: Class) {
         self.classData = classData
         self._viewModel = StateObject(wrappedValue: ClassDetailViewModel(classData: classData))
     }
     
     var body: some View {
-        VStack(spacing: .app.space.spacingXL) {
-            classDetailInfo()
-            attendanceStatus()
-            goButtons()
+        ScrollView {
+            VStack(spacing: .app.space.spacingXL) {
+                classDetailInfo()
+                attendanceStatus()
+                goButtons()
+            }
         }
         .padding()
         .sheet(isPresented: $isShowAttendanceSheet) {
@@ -40,24 +46,28 @@ struct ClassDetailView: View {
                                headerImage: Image(systemName: "graduationcap"),
                                contentText: classData.name)
             Divider()
+                .padding(.horizontal)
             classDetailInfoRow(headerText: "教授",
                                headerImage: Image(systemName: "person"),
                                contentText: classData.teacher.name)
             Divider()
+                .padding(.horizontal)
             classDetailInfoRow(headerText: "単位数",
                                headerImage: Image(systemName: "square.3.stack.3d"),
                                contentText: "\(classData.creditsCount)")
             Divider()
+                .padding(.horizontal)
             classDetailInfoRow(headerText: "期間",
                                headerImage: Image(systemName: "clock"),
                                contentText: classData.term.rawValue)
             Divider()
+                .padding(.horizontal)
             classDetailInfoRow(headerText: "必選",
                                headerImage: Image(systemName: "exclamationmark.triangle"),
                                contentText: classData.isRequired ? "必修" : "選択")
         }
+        .frame(width: contentWidth)
         .padding(.vertical, .app.space.spacingM)
-        .padding(.horizontal, .app.space.spacingXXXL)
         .background(Color.white)
         .cornerRadius(.app.corner.radiusM)
     }
@@ -77,6 +87,7 @@ struct ClassDetailView: View {
             Text(contentText)
                 .font(.system(size: 14))
         }
+        .padding(.horizontal, .app.space.spacingXXL)
     }
     
     private func attendanceStatus() -> some View {
@@ -87,17 +98,20 @@ struct ClassDetailView: View {
                     .scaledToFill()
                     .frame(width: 15, height: 15)
                 Text("出席状況")
-                    .font(.system(size: 15))
+                    .font(.system(size: 13))
             }
+            .foregroundColor(.gray)
+            .padding(.horizontal, .app.space.spacingXL)
             
-            HStack(spacing: .app.space.spacingXL) {
+            HStack(spacing: .app.space.spacingXXL) {
                 ForEach(AttendanceStatus.allCases, id: \.rawValue) { status in
                     attendanceText(status: status)
                 }
             }
+            .padding(.horizontal, .app.space.spacingXXL)
         }
+        .frame(width: contentWidth)
         .padding(.vertical, .app.space.spacingM)
-        .padding(.horizontal, .app.space.spacingXXXL)
         .background(Color.white)
         .cornerRadius(.app.corner.radiusM)
     }
@@ -107,24 +121,24 @@ struct ClassDetailView: View {
             switch status {
             case .attendance:
                 Text("\(viewModel.attendanceCount)")
-                    .font(.system(size: 40))
+                    .font(.system(size: 30))
                     .foregroundColor(status.color)
             case .absence:
                 Text("\(viewModel.absenceCount)")
-                    .font(.system(size: 40))
+                    .font(.system(size: 30))
                     .foregroundColor(status.color)
             case .lateness:
                 Text("\(viewModel.latenessCount)")
-                    .font(.system(size: 40))
+                    .font(.system(size: 30))
                     .foregroundColor(status.color)
             case .officialAbsence:
                 Text("\(viewModel.officialAbsenceCount)")
-                    .font(.system(size: 40))
+                    .font(.system(size: 30))
                     .foregroundColor(status.color)
             }
             
             Text(status.rawValue.prefix(2))
-                .font(.system(size: 13))
+                .font(.system(size: 11))
                 .foregroundColor(.gray)
         }
     }
