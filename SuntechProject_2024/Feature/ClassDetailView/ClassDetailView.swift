@@ -12,7 +12,7 @@ struct ClassDetailView: View {
     
     let classData: Class
     @State private var isShowAttendanceSheet: Bool = false
-    @StateObject private var viewModel: ClassDetailViewModel
+    @ObservedObject private var viewModel: ClassDetailViewModel
     
     private var contentWidth: CGFloat {
         UIScreen.main.bounds.width * 0.9
@@ -20,7 +20,7 @@ struct ClassDetailView: View {
     
     init(classData: Class) {
         self.classData = classData
-        self._viewModel = StateObject(wrappedValue: ClassDetailViewModel(classData: classData))
+        self._viewModel = ObservedObject(wrappedValue: ClassDetailViewModel(classData: classData))
     }
     
     var body: some View {
@@ -38,6 +38,27 @@ struct ClassDetailView: View {
         .backgroundColor(color: Color(R.color.attendanceStatus.backgroundColor))
         .customNavigationBar(title: "授業詳細", color: Color(R.color.mainColor))
         .navigationBackButton(color: .white) { dismiss() }
+        .toolbar {
+            // チャット画面へ遷移
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    
+                } label: {
+                    Image(systemName: "message.fill")
+                }
+                .foregroundColor(.white)
+            }
+            
+            // 授業評価画面へ遷移
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    
+                } label: {
+                    Image(systemName: "doc.plaintext.fill")
+                }
+                .foregroundColor(.white)
+            }
+        }
     }
     
     private func classDetailInfo() -> some View {
@@ -145,11 +166,10 @@ struct ClassDetailView: View {
     
     private func goButtons() -> some View {
         VStack(spacing: .app.space.spacingS) {
-            button(text: "出席情報を確認") {
+            button(text: "出席状況を記録") {
                 isShowAttendanceSheet = true
             }
             button(text: "Classroomへ") {}
-            button(text: "授業評価を見る") {}
         }
     }
     
@@ -158,11 +178,11 @@ struct ClassDetailView: View {
             onTap()
         } label: {
             Text(text)
+                .frame(width: contentWidth, height: 50)
+                .foregroundColor(.white)
+                .background(Color.mainColor)
+                .cornerRadius(.app.corner.radiusM)
         }
-        .frame(width: 200, height: 50)
-        .foregroundColor(.white)
-        .background(Color.mainColor)
-        .cornerRadius(.app.corner.radiusM)
     }
 }
 
