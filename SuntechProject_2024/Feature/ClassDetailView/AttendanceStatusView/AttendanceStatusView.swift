@@ -133,6 +133,7 @@ struct AttendanceStatusView_Previews: PreviewProvider {
                 name: "杉田 勝実",
                 emailAddress: "sugita@suntech.jp"),
             creditsCount: 4,
-            timeCount: 60))
+            timeCount: 60,
+            classroomUrl: nil))
     }
 }

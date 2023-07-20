@@ -12,6 +12,7 @@ struct ClassDetailView: View {
     
     let classData: Class
     @State private var isShowAttendanceSheet: Bool = false
+    @State private var isShowClassroomSheet: Bool = false
     @StateObject private var viewModel: ClassDetailViewModel
     
     private var contentWidth: CGFloat {
@@ -36,6 +37,11 @@ struct ClassDetailView: View {
         .padding()
         .sheet(isPresented: $isShowAttendanceSheet) {
             AttendanceStatusView(classData: classData)
+        }
+        .sheet(isPresented: $isShowClassroomSheet) {
+            if let classroomUrl = URL(string: classData.classroomUrl ?? "") {
+                WebView(url: classroomUrl)
+            }
         }
         .backgroundColor(color: Color(R.color.attendanceStatus.backgroundColor))
         .customNavigationBar(title: "授業詳細", color: Color(R.color.mainColor))
@@ -171,7 +177,11 @@ struct ClassDetailView: View {
             button(text: "出席状況を記録") {
                 isShowAttendanceSheet = true
             }
-            button(text: "Classroomへ") {}
+            if let classroomUrl = classData.classroomUrl {
+                button(text: "Classroomへ") {
+                    isShowClassroomSheet = true
+                }
+            }
         }
     }
     
@@ -214,7 +224,8 @@ struct ClassDetailView_Previews: PreviewProvider {
                     name: "杉田 勝実",
                     emailAddress: "sugita@suntech.jp"),
                 creditsCount: 4,
-                timeCount: 60))
+                timeCount: 60,
+                classroomUrl: nil))
         }
     }
 }
