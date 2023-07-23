@@ -11,6 +11,7 @@
 		A2133D682A65033200C5B24A /* NavigationBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2133D672A65033200C5B24A /* NavigationBackButton.swift */; };
 		A2133D6A2A65061700C5B24A /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2133D692A65061700C5B24A /* CustomNavigationBar.swift */; };
 		A2133D732A6573C900C5B24A /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2133D722A6573C800C5B24A /* ActivityIndicator.swift */; };
+		A21A27B42A6D5CCE006735FA /* Chatroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A27B32A6D5CCE006735FA /* Chatroom.swift */; };
 		A232E16F2A4F1407007599E5 /* SuntechProject_2024App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232E16E2A4F1407007599E5 /* SuntechProject_2024App.swift */; };
 		A232E1732A4F140A007599E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A232E1722A4F140A007599E5 /* Assets.xcassets */; };
 		A232E1762A4F140A007599E5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A232E1752A4F140A007599E5 /* Preview Assets.xcassets */; };
@@ -81,6 +82,7 @@
 		A2133D672A65033200C5B24A /* NavigationBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBackButton.swift; sourceTree = "<group>"; };
 		A2133D692A65061700C5B24A /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		A2133D722A6573C800C5B24A /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		A21A27B32A6D5CCE006735FA /* Chatroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chatroom.swift; sourceTree = "<group>"; };
 		A232E16B2A4F1407007599E5 /* SuntechProject_2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuntechProject_2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A232E16E2A4F1407007599E5 /* SuntechProject_2024App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuntechProject_2024App.swift; sourceTree = "<group>"; };
 		A232E1722A4F140A007599E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -233,6 +235,14 @@
 			path = ClassDetailView;
 			sourceTree = "<group>";
 		};
+		A21A27B22A6D5C90006735FA /* Chatroom */ = {
+			isa = PBXGroup;
+			children = (
+				A21A27B32A6D5CCE006735FA /* Chatroom.swift */,
+			);
+			path = Chatroom;
+			sourceTree = "<group>";
+		};
 		A232E1622A4F1407007599E5 = {
 			isa = PBXGroup;
 			children = (
@@ -314,6 +324,7 @@
 		A29C1D882A52A0560045FFE2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A21A27B22A6D5C90006735FA /* Chatroom */,
 				A28113432A5BE5740037E35C /* AttendanceStatus */,
 				A29C1D9C2A5301E10045FFE2 /* Timetable */,
 				A29C1D8B2A52A08C0045FFE2 /* LoginUser */,
@@ -570,6 +581,7 @@
 				A2E118F42A66B1D3005901EB /* AppCompatible.swift in Sources */,
 				A2133D612A64FE8E00C5B24A /* NavigationBarModifier.swift in Sources */,
 				A29C1DFA2A59AA4E0045FFE2 /* ClassDetailView.swift in Sources */,
+				A21A27B42A6D5CCE006735FA /* Chatroom.swift in Sources */,
 				A28113422A5BD71A0037E35C /* AttendanceStatusView.swift in Sources */,
 				A2E118F72A66B29C005901EB /* AppStyle.swift in Sources */,
 				A232E1A32A4F16CD007599E5 /* Color.swift in Sources */,
