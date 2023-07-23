@@ -12,6 +12,7 @@
 		A2133D6A2A65061700C5B24A /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2133D692A65061700C5B24A /* CustomNavigationBar.swift */; };
 		A2133D732A6573C900C5B24A /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2133D722A6573C800C5B24A /* ActivityIndicator.swift */; };
 		A21A27B42A6D5CCE006735FA /* Chatroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A27B32A6D5CCE006735FA /* Chatroom.swift */; };
+		A21A27B62A6D5E55006735FA /* ChatUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A27B52A6D5E55006735FA /* ChatUser.swift */; };
 		A232E16F2A4F1407007599E5 /* SuntechProject_2024App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232E16E2A4F1407007599E5 /* SuntechProject_2024App.swift */; };
 		A232E1732A4F140A007599E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A232E1722A4F140A007599E5 /* Assets.xcassets */; };
 		A232E1762A4F140A007599E5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A232E1752A4F140A007599E5 /* Preview Assets.xcassets */; };
@@ -83,6 +84,7 @@
 		A2133D692A65061700C5B24A /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		A2133D722A6573C800C5B24A /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		A21A27B32A6D5CCE006735FA /* Chatroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chatroom.swift; sourceTree = "<group>"; };
+		A21A27B52A6D5E55006735FA /* ChatUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUser.swift; sourceTree = "<group>"; };
 		A232E16B2A4F1407007599E5 /* SuntechProject_2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuntechProject_2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A232E16E2A4F1407007599E5 /* SuntechProject_2024App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuntechProject_2024App.swift; sourceTree = "<group>"; };
 		A232E1722A4F140A007599E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				A21A27B32A6D5CCE006735FA /* Chatroom.swift */,
+				A21A27B52A6D5E55006735FA /* ChatUser.swift */,
 			);
 			path = Chatroom;
 			sourceTree = "<group>";
@@ -566,6 +569,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A21A27B62A6D5E55006735FA /* ChatUser.swift in Sources */,
 				A2133D6A2A65061700C5B24A /* CustomNavigationBar.swift in Sources */,
 				A2D8CBA62A681F6C00A059D3 /* WebView.swift in Sources */,
 				A28113382A5BC1690037E35C /* View++.swift in Sources */,
