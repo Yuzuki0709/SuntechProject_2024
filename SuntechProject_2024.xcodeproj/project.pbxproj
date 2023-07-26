@@ -172,7 +172,6 @@
 		A2133D5E2A64FE4000C5B24A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A2E118F22A66B1C4005901EB /* AppCompatible */,
 				A2133D5F2A64FE4A00C5B24A /* Common */,
 				A2133D6C2A65073000C5B24A /* TimetableView */,
 				A2133D712A6555ED00C5B24A /* ClassDetailView */,
@@ -184,9 +183,6 @@
 		A2133D5F2A64FE4A00C5B24A /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				A2133D602A64FE8E00C5B24A /* NavigationBarModifier.swift */,
-				A2133D672A65033200C5B24A /* NavigationBackButton.swift */,
-				A2133D692A65061700C5B24A /* CustomNavigationBar.swift */,
 				A2133D722A6573C800C5B24A /* ActivityIndicator.swift */,
 			);
 			path = Common;
@@ -275,6 +271,8 @@
 		A21A28342A7140CC006735FA /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				A21A28392A714135006735FA /* Modifier */,
+				A21A28382A714117006735FA /* Style */,
 				A21A28352A7140D7006735FA /* View */,
 			);
 			path = Components;
@@ -294,6 +292,27 @@
 				A21A28312A71405C006735FA /* HostingController.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		A21A28382A714117006735FA /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				A2E118F32A66B1D3005901EB /* AppCompatible.swift */,
+				A2E118F62A66B29C005901EB /* AppStyle.swift */,
+				A2E118F82A66B2DC005901EB /* CornerRadius.swift */,
+				A2E118FA2A66B40B005901EB /* SpaceLayout.swift */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
+		A21A28392A714135006735FA /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				A2133D602A64FE8E00C5B24A /* NavigationBarModifier.swift */,
+				A2133D672A65033200C5B24A /* NavigationBackButton.swift */,
+				A2133D692A65061700C5B24A /* CustomNavigationBar.swift */,
+			);
+			path = Modifier;
 			sourceTree = "<group>";
 		};
 		A232E1622A4F1407007599E5 = {
@@ -464,17 +483,6 @@
 				A2D8CBA52A681F6C00A059D3 /* WebView.swift */,
 			);
 			path = WebView;
-			sourceTree = "<group>";
-		};
-		A2E118F22A66B1C4005901EB /* AppCompatible */ = {
-			isa = PBXGroup;
-			children = (
-				A2E118F32A66B1D3005901EB /* AppCompatible.swift */,
-				A2E118F62A66B29C005901EB /* AppStyle.swift */,
-				A2E118F82A66B2DC005901EB /* CornerRadius.swift */,
-				A2E118FA2A66B40B005901EB /* SpaceLayout.swift */,
-			);
-			path = AppCompatible;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
