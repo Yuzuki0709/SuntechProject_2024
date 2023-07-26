@@ -15,6 +15,7 @@
 		A21A27B62A6D5E55006735FA /* ChatUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A27B52A6D5E55006735FA /* ChatUser.swift */; };
 		A21A27B92A6D5F24006735FA /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A27B82A6D5F24006735FA /* ChatMessage.swift */; };
 		A21A282D2A713F79006735FA /* UIViewControllerAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A282C2A713F79006735FA /* UIViewControllerAdaptor.swift */; };
+		A21A282F2A71400F006735FA /* UIViewController++.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A282E2A71400F006735FA /* UIViewController++.swift */; };
 		A232E16F2A4F1407007599E5 /* SuntechProject_2024App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232E16E2A4F1407007599E5 /* SuntechProject_2024App.swift */; };
 		A232E1732A4F140A007599E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A232E1722A4F140A007599E5 /* Assets.xcassets */; };
 		A232E1762A4F140A007599E5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A232E1752A4F140A007599E5 /* Preview Assets.xcassets */; };
@@ -89,6 +90,7 @@
 		A21A27B52A6D5E55006735FA /* ChatUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUser.swift; sourceTree = "<group>"; };
 		A21A27B82A6D5F24006735FA /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
 		A21A282C2A713F79006735FA /* UIViewControllerAdaptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerAdaptor.swift; sourceTree = "<group>"; };
+		A21A282E2A71400F006735FA /* UIViewController++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController++.swift"; sourceTree = "<group>"; };
 		A232E16B2A4F1407007599E5 /* SuntechProject_2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuntechProject_2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A232E16E2A4F1407007599E5 /* SuntechProject_2024App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuntechProject_2024App.swift; sourceTree = "<group>"; };
 		A232E1722A4F140A007599E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 				A232E1A22A4F16CD007599E5 /* Color.swift */,
 				A29C1DA62A5304A00045FFE2 /* UIColor.swift */,
 				A28113372A5BC1690037E35C /* View++.swift */,
+				A21A282E2A71400F006735FA /* UIViewController++.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -591,6 +594,7 @@
 				A29C1D9F2A5302960045FFE2 /* TimetableView.swift in Sources */,
 				A232E1992A4F14A9007599E5 /* LoginView.swift in Sources */,
 				A29C1DAE2A53B0CD0045FFE2 /* LoginUserInfo.swift in Sources */,
+				A21A282F2A71400F006735FA /* UIViewController++.swift in Sources */,
 				A29C1D712A528C6C0045FFE2 /* Student.swift in Sources */,
 				A29C1DB32A54EE3C0045FFE2 /* TimetableViewModel.swift in Sources */,
 				A281CACC2A5CED63004663C4 /* AttendanceRealmManager.swift in Sources */,
