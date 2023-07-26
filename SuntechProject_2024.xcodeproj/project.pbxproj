@@ -19,6 +19,7 @@
 		A21A28322A71405C006735FA /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A28312A71405C006735FA /* HostingController.swift */; };
 		A21A283E2A714227006735FA /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A283D2A714227006735FA /* FlowController.swift */; };
 		A21A28422A71428B006735FA /* LoginFlowControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A28412A71428B006735FA /* LoginFlowControllerService.swift */; };
+		A21A28452A7142BF006735FA /* LoginFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A28442A7142BF006735FA /* LoginFlowController.swift */; };
 		A232E16F2A4F1407007599E5 /* SuntechProject_2024App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232E16E2A4F1407007599E5 /* SuntechProject_2024App.swift */; };
 		A232E1732A4F140A007599E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A232E1722A4F140A007599E5 /* Assets.xcassets */; };
 		A232E1762A4F140A007599E5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A232E1752A4F140A007599E5 /* Preview Assets.xcassets */; };
@@ -97,6 +98,7 @@
 		A21A28312A71405C006735FA /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
 		A21A283D2A714227006735FA /* FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
 		A21A28412A71428B006735FA /* LoginFlowControllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlowControllerService.swift; sourceTree = "<group>"; };
+		A21A28442A7142BF006735FA /* LoginFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlowController.swift; sourceTree = "<group>"; };
 		A232E16B2A4F1407007599E5 /* SuntechProject_2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuntechProject_2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A232E16E2A4F1407007599E5 /* SuntechProject_2024App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuntechProject_2024App.swift; sourceTree = "<group>"; };
 		A232E1722A4F140A007599E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -476,6 +478,7 @@
 			children = (
 				A232E1982A4F14A9007599E5 /* LoginView.swift */,
 				A29C1D662A5288350045FFE2 /* LoginViewModel.swift */,
+				A21A28442A7142BF006735FA /* LoginFlowController.swift */,
 			);
 			path = LoginView;
 			sourceTree = "<group>";
@@ -703,6 +706,7 @@
 				A29C1D672A5288350045FFE2 /* LoginViewModel.swift in Sources */,
 				A29C1DAA2A53087F0045FFE2 /* FSCalendarViewRepresentable.swift in Sources */,
 				A29C1D692A5289AF0045FFE2 /* SuntechAPIClient.swift in Sources */,
+				A21A28452A7142BF006735FA /* LoginFlowController.swift in Sources */,
 				A21A27B92A6D5F24006735FA /* ChatMessage.swift in Sources */,
 				A2E118F92A66B2DC005901EB /* CornerRadius.swift in Sources */,
 				A232E16F2A4F1407007599E5 /* SuntechProject_2024App.swift in Sources */,

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @StateObject private var viewModel = LoginViewModel()
+    @StateObject var viewModel = LoginViewModel()
     private let width: CGFloat = UIScreen.main.bounds.width
     
     var body: some View {
