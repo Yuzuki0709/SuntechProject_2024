@@ -249,6 +249,14 @@
 			path = Chatroom;
 			sourceTree = "<group>";
 		};
+		A21A282B2A713F48006735FA /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A232E16E2A4F1407007599E5 /* SuntechProject_2024App.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		A232E1622A4F1407007599E5 = {
 			isa = PBXGroup;
 			children = (
@@ -272,12 +280,12 @@
 		A232E16D2A4F1407007599E5 /* SuntechProject_2024 */ = {
 			isa = PBXGroup;
 			children = (
+				A21A282B2A713F48006735FA /* App */,
 				A29C1D882A52A0560045FFE2 /* Model */,
 				A2133D5E2A64FE4000C5B24A /* View */,
 				A29C1D8E2A52DF720045FFE2 /* Feature */,
 				A2133D662A6502AF00C5B24A /* API */,
 				A2133D622A64FEB800C5B24A /* Utils */,
-				A232E16E2A4F1407007599E5 /* SuntechProject_2024App.swift */,
 				A232E1722A4F140A007599E5 /* Assets.xcassets */,
 				A232E1742A4F140A007599E5 /* Preview Content */,
 			);
