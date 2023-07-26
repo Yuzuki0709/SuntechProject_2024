@@ -118,3 +118,9 @@ final class LoginViewModel: ObservableObject {
         lockoutDurationDiffMinuteNow = max(0, diffMinute)
     }
 }
+
+extension LoginViewModel {
+    enum Navigation {
+        case home
+    }
+}
