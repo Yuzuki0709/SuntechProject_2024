@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 final class LoginViewModel: ObservableObject {
     @Published var emailText: String = ""
@@ -16,6 +17,8 @@ final class LoginViewModel: ObservableObject {
     @Published var error: Error? = nil
     @Published var isLock: Bool = false
     @Published var lockoutDurationDiffMinuteNow: Int = 0
+    
+    private let _navigationSubject = PassthroughSubject<Navigation, Never>()
     
     private var failureCount: Int = 0
     private var lockoutDuration: Date? {
@@ -37,6 +40,11 @@ final class LoginViewModel: ObservableObject {
     
     private let suntechAPIClient: SuntechAPIClientProtocol
     
+    
+    var navigationSignal: AnyPublisher<Navigation, Never> {
+        _navigationSubject.eraseToAnyPublisher()
+    }
+    
     init(suntechAPIClient: SuntechAPIClientProtocol = SuntechAPIClient()) {
         self.suntechAPIClient = suntechAPIClient
     }
@@ -54,6 +62,8 @@ final class LoginViewModel: ObservableObject {
                 self.loginUser = loginUser
                 self.failureCount = 0
                 LoginUserInfo.shared.setUserInfo(loginUser, password: self.passwordText)
+                // ログインに成功したら画面遷移する
+                _navigationSubject.send(.home)
             case .failure(let error):
                 self.error = error as Error
                 self.failureCount += 1
