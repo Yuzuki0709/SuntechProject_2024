@@ -21,6 +21,7 @@
 		A21A28422A71428B006735FA /* LoginFlowControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A28412A71428B006735FA /* LoginFlowControllerService.swift */; };
 		A21A28452A7142BF006735FA /* LoginFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A28442A7142BF006735FA /* LoginFlowController.swift */; };
 		A21A28612A723560006735FA /* MainTabType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A28602A723560006735FA /* MainTabType.swift */; };
+		A21A28632A723646006735FA /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A28622A723646006735FA /* MainTabBarController.swift */; };
 		A232E16F2A4F1407007599E5 /* SuntechProject_2024App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232E16E2A4F1407007599E5 /* SuntechProject_2024App.swift */; };
 		A232E1732A4F140A007599E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A232E1722A4F140A007599E5 /* Assets.xcassets */; };
 		A232E1762A4F140A007599E5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A232E1752A4F140A007599E5 /* Preview Assets.xcassets */; };
@@ -101,6 +102,7 @@
 		A21A28412A71428B006735FA /* LoginFlowControllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlowControllerService.swift; sourceTree = "<group>"; };
 		A21A28442A7142BF006735FA /* LoginFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlowController.swift; sourceTree = "<group>"; };
 		A21A28602A723560006735FA /* MainTabType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabType.swift; sourceTree = "<group>"; };
+		A21A28622A723646006735FA /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		A232E16B2A4F1407007599E5 /* SuntechProject_2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuntechProject_2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A232E16E2A4F1407007599E5 /* SuntechProject_2024App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuntechProject_2024App.swift; sourceTree = "<group>"; };
 		A232E1722A4F140A007599E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -352,6 +354,7 @@
 			isa = PBXGroup;
 			children = (
 				A21A28602A723560006735FA /* MainTabType.swift */,
+				A21A28622A723646006735FA /* MainTabBarController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -723,6 +726,7 @@
 				A2E118F92A66B2DC005901EB /* CornerRadius.swift in Sources */,
 				A232E16F2A4F1407007599E5 /* SuntechProject_2024App.swift in Sources */,
 				A29C1DFC2A5BBD7D0045FFE2 /* HalfModalSheetViewController.swift in Sources */,
+				A21A28632A723646006735FA /* MainTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
