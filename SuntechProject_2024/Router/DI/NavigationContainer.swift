@@ -47,4 +47,14 @@ final class NavigationContainer: SharedContainer {
             )
         }
     }
+    
+    var attendanceStatusFlowController: ParameterFactory<Class, AttendanceStatusFlowControllerService> {
+        self { classData in
+            AttendanceStatusFlowController(
+                rootView: AttendanceStatusView(
+                    viewModel: AttendanceStatusViewModel(classData: classData)
+                )
+            )
+        }
+    }
 }

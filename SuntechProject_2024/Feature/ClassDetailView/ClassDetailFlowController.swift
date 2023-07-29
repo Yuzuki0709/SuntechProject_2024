@@ -36,15 +36,7 @@ final class ClassDetailFlowController: HostingController<ClassDetailView>, Class
     }
     
     private func startAttendanceStatus(classData: Class) {
-        let attendanceStatus = AttendanceStatusFlowController(
-            rootView: AttendanceStatusView(
-                classData: classData,
-                viewModel: AttendanceStatusViewModel(
-                    classData: classData
-                )
-            )
-        )
-        
+        let attendanceStatus = NavigationContainer.shared.attendanceStatusFlowController(classData)
         self.present(attendanceStatus, animated: true)
         attendanceStatus.start()
     }
