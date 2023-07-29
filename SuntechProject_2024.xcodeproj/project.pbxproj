@@ -46,6 +46,8 @@
 		A24F1BEB2A751A0300B4A00A /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = A24F1BEA2A751A0300B4A00A /* Factory */; };
 		A24F1BEE2A751A5E00B4A00A /* NavigationContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BED2A751A5E00B4A00A /* NavigationContainer.swift */; };
 		A24F1BFA2A752AEA00B4A00A /* WebFlowControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BF92A752AEA00B4A00A /* WebFlowControllerService.swift */; };
+		A24F1BFD2A753A8100B4A00A /* ChatroomContainerFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BFC2A753A8100B4A00A /* ChatroomContainerFlowController.swift */; };
+		A24F1C012A753ABA00B4A00A /* ChatroomFlowControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1C002A753ABA00B4A00A /* ChatroomFlowControllerService.swift */; };
 		A28113382A5BC1690037E35C /* View++.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113372A5BC1690037E35C /* View++.swift */; };
 		A28113422A5BD71A0037E35C /* AttendanceStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113412A5BD71A0037E35C /* AttendanceStatusView.swift */; };
 		A28113452A5BE58A0037E35C /* AttendanceStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113442A5BE58A0037E35C /* AttendanceStatus.swift */; };
@@ -143,6 +145,8 @@
 		A24F1BE62A75168900B4A00A /* WebViewFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewFlowController.swift; sourceTree = "<group>"; };
 		A24F1BED2A751A5E00B4A00A /* NavigationContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationContainer.swift; sourceTree = "<group>"; };
 		A24F1BF92A752AEA00B4A00A /* WebFlowControllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebFlowControllerService.swift; sourceTree = "<group>"; };
+		A24F1BFC2A753A8100B4A00A /* ChatroomContainerFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomContainerFlowController.swift; sourceTree = "<group>"; };
+		A24F1C002A753ABA00B4A00A /* ChatroomFlowControllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomFlowControllerService.swift; sourceTree = "<group>"; };
 		A28113372A5BC1690037E35C /* View++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View++.swift"; sourceTree = "<group>"; };
 		A28113412A5BD71A0037E35C /* AttendanceStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatusView.swift; sourceTree = "<group>"; };
 		A28113442A5BE58A0037E35C /* AttendanceStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatus.swift; sourceTree = "<group>"; };
@@ -371,6 +375,7 @@
 		A21A283F2A714267006735FA /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				A24F1BFF2A753AAE00B4A00A /* Chatroom */,
 				A24F1BF72A752AD900B4A00A /* WebView */,
 				A21A28682A723729006735FA /* Main */,
 				A21A28402A71426D006735FA /* LoginView */,
@@ -527,6 +532,22 @@
 			path = WebView;
 			sourceTree = "<group>";
 		};
+		A24F1BFB2A753A6700B4A00A /* Chatroom */ = {
+			isa = PBXGroup;
+			children = (
+				A24F1BFC2A753A8100B4A00A /* ChatroomContainerFlowController.swift */,
+			);
+			path = Chatroom;
+			sourceTree = "<group>";
+		};
+		A24F1BFF2A753AAE00B4A00A /* Chatroom */ = {
+			isa = PBXGroup;
+			children = (
+				A24F1C002A753ABA00B4A00A /* ChatroomFlowControllerService.swift */,
+			);
+			path = Chatroom;
+			sourceTree = "<group>";
+		};
 		A28113432A5BE5740037E35C /* AttendanceStatus */ = {
 			isa = PBXGroup;
 			children = (
@@ -585,6 +606,7 @@
 		A29C1D8E2A52DF720045FFE2 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				A24F1BFB2A753A6700B4A00A /* Chatroom */,
 				A21A285F2A723556006735FA /* Main */,
 				A29C1D8F2A52DF7B0045FFE2 /* LoginView */,
 				A29C1DB52A54F6E50045FFE2 /* TimetableView */,
@@ -800,7 +822,9 @@
 				A21A28612A723560006735FA /* MainTabType.swift in Sources */,
 				A232E1992A4F14A9007599E5 /* LoginView.swift in Sources */,
 				A29C1DAE2A53B0CD0045FFE2 /* LoginUserInfo.swift in Sources */,
+				A24F1BFD2A753A8100B4A00A /* ChatroomContainerFlowController.swift in Sources */,
 				A21A282F2A71400F006735FA /* UIViewController++.swift in Sources */,
+				A24F1C012A753ABA00B4A00A /* ChatroomFlowControllerService.swift in Sources */,
 				A29C1D712A528C6C0045FFE2 /* Student.swift in Sources */,
 				A29C1DB32A54EE3C0045FFE2 /* TimetableViewModel.swift in Sources */,
 				A281CACC2A5CED63004663C4 /* AttendanceRealmManager.swift in Sources */,
