@@ -22,7 +22,7 @@ final class MainTabBarController: UITabBarController {
         let appearance = UITabBarAppearance()
         
         let itemAppearance = UITabBarItemAppearance(style: .stacked)
-        let selectedColor = R.color.mainColor()!
+        let selectedColor = R.color.common.mainColor()!
         itemAppearance.selected.iconColor = selectedColor
         itemAppearance.selected.titleTextAttributes = [.foregroundColor: selectedColor]
         

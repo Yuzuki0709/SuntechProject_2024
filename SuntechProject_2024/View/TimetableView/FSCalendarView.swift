@@ -18,7 +18,7 @@ class FSCalendarView: UIView {
         fsCalendar.scope = .week
         
         fsCalendar.appearance.titleWeekendColor = .clear
-        fsCalendar.appearance.todayColor = .mainColor
+        fsCalendar.appearance.todayColor = R.color.common.mainColor()
         fsCalendar.appearance.selectionColor = .clear
         fsCalendar.appearance.headerTitleColor = UIColor(Color(R.color.timetable.calendarTextColor))
         fsCalendar.appearance.weekdayTextColor = UIColor(Color(R.color.timetable.calendarTextColor))

@@ -33,12 +33,7 @@ struct AttendanceStatusView: View {
                 viewModel.addClassAttendance()
             }
         }
-        .backgroundColor(color: Color(R.color.attendanceStatus.backgroundColor))
-    }
-    
-    private func background() -> some View {
-        Color(R.color.attendanceStatus.backgroundColor)
-            .ignoresSafeArea()
+        .backgroundColor(color: Color(R.color.common.backgroundColor))
     }
     
     private func countButtons() -> some View {

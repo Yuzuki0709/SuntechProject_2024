@@ -8,6 +8,6 @@
 import SwiftUI
 
 extension UIColor {
-    static let mainColor = UIColor(Color.mainColor)
+//    static let mainColor = UIColor(Color.mainColor)
 }
 
