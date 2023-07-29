@@ -39,7 +39,7 @@ struct TimetableView: View {
         }
         .backgroundColor(color: Color(R.color.timetable.backgroundColor))
         .navigationBarBackButtonHidden(true)
-        .customNavigationBar(title: "時間割", color: Color(R.color.mainColor))
+        .navigationTitle("時間割")
     }
     
     private func classRow(classData: Class) -> some View {

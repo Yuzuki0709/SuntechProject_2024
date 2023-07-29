@@ -36,6 +36,7 @@
 		A24F1BC52A74A15E00B4A00A /* TimetableFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BC42A74A15E00B4A00A /* TimetableFlowController.swift */; };
 		A24F1BC82A74A19E00B4A00A /* TimetableFlowControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BC72A74A19E00B4A00A /* TimetableFlowControllerService.swift */; };
 		A24F1BD12A74B22E00B4A00A /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BD02A74B22E00B4A00A /* NavigationController.swift */; };
+		A24F1BD52A74B4C200B4A00A /* TimetableContainerFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BD42A74B4C200B4A00A /* TimetableContainerFlowController.swift */; };
 		A28113382A5BC1690037E35C /* View++.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113372A5BC1690037E35C /* View++.swift */; };
 		A28113422A5BD71A0037E35C /* AttendanceStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113412A5BD71A0037E35C /* AttendanceStatusView.swift */; };
 		A28113452A5BE58A0037E35C /* AttendanceStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113442A5BE58A0037E35C /* AttendanceStatus.swift */; };
@@ -124,6 +125,7 @@
 		A24F1BC42A74A15E00B4A00A /* TimetableFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableFlowController.swift; sourceTree = "<group>"; };
 		A24F1BC72A74A19E00B4A00A /* TimetableFlowControllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableFlowControllerService.swift; sourceTree = "<group>"; };
 		A24F1BD02A74B22E00B4A00A /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		A24F1BD42A74B4C200B4A00A /* TimetableContainerFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableContainerFlowController.swift; sourceTree = "<group>"; };
 		A28113372A5BC1690037E35C /* View++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View++.swift"; sourceTree = "<group>"; };
 		A28113412A5BD71A0037E35C /* AttendanceStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatusView.swift; sourceTree = "<group>"; };
 		A28113442A5BE58A0037E35C /* AttendanceStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatus.swift; sourceTree = "<group>"; };
@@ -459,6 +461,16 @@
 			path = NavigationController;
 			sourceTree = "<group>";
 		};
+		A24F1BD22A74B4AC00B4A00A /* Top */ = {
+			isa = PBXGroup;
+			children = (
+				A29C1D9E2A5302960045FFE2 /* TimetableView.swift */,
+				A29C1DB22A54EE3C0045FFE2 /* TimetableViewModel.swift */,
+				A24F1BC42A74A15E00B4A00A /* TimetableFlowController.swift */,
+			);
+			path = Top;
+			sourceTree = "<group>";
+		};
 		A28113432A5BE5740037E35C /* AttendanceStatus */ = {
 			isa = PBXGroup;
 			children = (
@@ -556,9 +568,8 @@
 		A29C1DB52A54F6E50045FFE2 /* TimetableView */ = {
 			isa = PBXGroup;
 			children = (
-				A29C1D9E2A5302960045FFE2 /* TimetableView.swift */,
-				A29C1DB22A54EE3C0045FFE2 /* TimetableViewModel.swift */,
-				A24F1BC42A74A15E00B4A00A /* TimetableFlowController.swift */,
+				A24F1BD42A74B4C200B4A00A /* TimetableContainerFlowController.swift */,
+				A24F1BD22A74B4AC00B4A00A /* Top */,
 			);
 			path = TimetableView;
 			sourceTree = "<group>";
@@ -753,6 +764,7 @@
 				A281CACE2A5E2CEF004663C4 /* AttendanceStatusViewModel.swift in Sources */,
 				A2133D682A65033200C5B24A /* NavigationBackButton.swift in Sources */,
 				A29C1D762A528D2B0045FFE2 /* Teacher.swift in Sources */,
+				A24F1BD52A74B4C200B4A00A /* TimetableContainerFlowController.swift in Sources */,
 				A28113482A5BE7A90037E35C /* AttendanceLog.swift in Sources */,
 				A29C1D872A529F840045FFE2 /* LoginUser.swift in Sources */,
 				A29C1D7D2A528FAE0045FFE2 /* Loggable.swift in Sources */,
