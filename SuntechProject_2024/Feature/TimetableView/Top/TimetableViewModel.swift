@@ -15,7 +15,6 @@ final class TimetableViewModel: ObservableObject {
     
     private let suntechAPIClient: SuntechAPIClientProtocol
     
-    
     private let _navigationSubject = PassthroughSubject<Navigation, Never>()
     var navigationSignal: AnyPublisher<Navigation, Never> {
         _navigationSubject.eraseToAnyPublisher()

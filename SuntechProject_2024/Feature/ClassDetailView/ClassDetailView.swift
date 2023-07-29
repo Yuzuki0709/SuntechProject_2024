@@ -11,7 +11,7 @@ struct ClassDetailView: View {
     @Environment (\.dismiss) var dismiss
     
     let classData: Class
-    @ObservedObject private var viewModel: ClassDetailViewModel
+    @ObservedObject var viewModel: ClassDetailViewModel
     @State private var isShowAttendanceSheet: Bool = false
     @State private var isShowClassroomSheet: Bool = false
     
@@ -33,9 +33,6 @@ struct ClassDetailView: View {
             }
         }
         .padding()
-        .sheet(isPresented: $isShowAttendanceSheet) {
-            AttendanceStatusView(classData: classData)
-        }
         .sheet(isPresented: $isShowClassroomSheet) {
             if let classroomUrl = URL(string: classData.classroomUrl ?? "") {
                 WebView(url: classroomUrl)
@@ -173,9 +170,9 @@ struct ClassDetailView: View {
     private func goButtons() -> some View {
         VStack(spacing: .app.space.spacingS) {
             button(text: "出席状況を記録") {
-                isShowAttendanceSheet = true
+                viewModel.navigate(.attendanceStatus(classData))
             }
-            if let classroomUrl = classData.classroomUrl {
+            if let _ = classData.classroomUrl {
                 button(text: "Classroomへ") {
                     isShowClassroomSheet = true
                 }

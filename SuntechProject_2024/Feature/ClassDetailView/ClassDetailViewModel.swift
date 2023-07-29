@@ -18,6 +18,11 @@ final class ClassDetailViewModel: ObservableObject {
     private var classData: Class
     private var cancellables = Set<AnyCancellable>()
     
+    private let _navigationSubject = PassthroughSubject<Navigation, Never>()
+    var navigationSignal: AnyPublisher<Navigation, Never> {
+        _navigationSubject.eraseToAnyPublisher()
+    }
+    
     init(classData: Class) {
         self.classData = classData
         
@@ -34,5 +39,15 @@ final class ClassDetailViewModel: ObservableObject {
     
     func isExistClass() -> Bool {
         return realmManager.isExisting(classId: classData.id)
+    }
+    
+    func navigate(_ navigation: Navigation) {
+        _navigationSubject.send(navigation)
+    }
+}
+
+extension ClassDetailViewModel {
+    enum Navigation {
+        case attendanceStatus(Class)
     }
 }

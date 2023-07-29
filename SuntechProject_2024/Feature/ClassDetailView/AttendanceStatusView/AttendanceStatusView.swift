@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct AttendanceStatusView: View {
-    var classData: Class
-    @StateObject private var viewModel: AttendanceStatusViewModel
+    let classData: Class
+    @ObservedObject var viewModel: AttendanceStatusViewModel
     
-    init(classData: Class) {
+    init(classData: Class, viewModel: AttendanceStatusViewModel) {
         self.classData = classData
-        self._viewModel = StateObject(wrappedValue: AttendanceStatusViewModel(classData: classData))
+        self.viewModel = viewModel
     }
     
     var body: some View {
@@ -125,15 +125,28 @@ private extension AttendanceStatus {
 
 struct AttendanceStatusView_Previews: PreviewProvider {
     static var previews: some View {
-        AttendanceStatusView(classData: Class(
-            id: "23C4110-0238",
-            name: "量子コンピューティング",
-            teacher: Teacher(
-                id: "F-0004",
-                name: "杉田 勝実",
-                emailAddress: "sugita@suntech.jp"),
-            creditsCount: 4,
-            timeCount: 60,
-            classroomUrl: nil))
+        AttendanceStatusView(
+            classData: Class(
+                id: "23C4110-0238",
+                name: "量子コンピューティング",
+                teacher: Teacher(
+                    id: "F-0004",
+                    name: "杉田 勝実",
+                    emailAddress: "sugita@suntech.jp"),
+                creditsCount: 4,
+                timeCount: 60,
+                classroomUrl: nil
+            ),
+            viewModel: AttendanceStatusViewModel(classData: Class(
+                id: "23C4110-0238",
+                name: "量子コンピューティング",
+                teacher: Teacher(
+                    id: "F-0004",
+                    name: "杉田 勝実",
+                    emailAddress: "sugita@suntech.jp"),
+                creditsCount: 4,
+                timeCount: 60,
+                classroomUrl: nil))
+        )
     }
 }
