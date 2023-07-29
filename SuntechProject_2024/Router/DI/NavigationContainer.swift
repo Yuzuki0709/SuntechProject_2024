@@ -19,4 +19,20 @@ final class NavigationContainer: SharedContainer {
     var mainFlowController: Factory<MainFlowControllerService> {
         self { MainFlowController(tabBarController: MainTabBarController()) }
     }
+    
+    var timetableContainerFlowController: Factory<TimetableFlowControllerService> {
+        self { TimetableContainerFlowController() }
+    }
+    
+    var timetableFlowController: Factory<TimetableFlowControllerService> {
+        self {
+            TimetableFlowController(
+                rootView: TimetableView(
+                    viewModel: TimetableViewModel(
+                        suntechAPIClient: SuntechAPIClient()
+                    )
+                )
+            )
+        }
+    }
 }
