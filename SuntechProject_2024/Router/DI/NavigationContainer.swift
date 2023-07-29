@@ -15,4 +15,8 @@ final class NavigationContainer: SharedContainer {
     var loginFlowController: Factory<LoginFlowControllerService> {
         self { LoginFlowController(rootView: LoginView(viewModel: LoginViewModel())) }
     }
+    
+    var mainFlowController: Factory<MainFlowControllerService> {
+        self { MainFlowController(tabBarController: MainTabBarController()) }
+    }
 }
