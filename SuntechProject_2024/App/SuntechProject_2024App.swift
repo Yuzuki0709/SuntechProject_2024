@@ -17,7 +17,7 @@ struct SuntechProject_2024App: App {
     }
     
     private func loginFlowController() -> UIViewController {
-        let login = LoginFlowController(rootView: LoginView(viewModel: LoginViewModel()))
+        let login = NavigationContainer.shared.loginFlowController()
         login.start()
         return login
     }

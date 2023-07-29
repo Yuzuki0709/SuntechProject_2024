@@ -12,5 +12,7 @@ final class NavigationContainer: SharedContainer {
     static var shared = NavigationContainer()
     var manager = ContainerManager()
     
-    
+    var loginFlowController: Factory<LoginFlowControllerService> {
+        self { LoginFlowController(rootView: LoginView(viewModel: LoginViewModel())) }
+    }
 }
