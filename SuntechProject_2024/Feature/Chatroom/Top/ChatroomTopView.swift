@@ -16,7 +16,7 @@ struct ChatroomTopView: View {
                 chatroomListRow
             }
         }
-        .backgroundColor(color: Color(R.color.attendanceStatus.backgroundColor))
+        .backgroundColor(color: Color(R.color.common.backgroundColor))
         .listStyle(.plain)
         .navigationTitle("チャット一覧")
     }
@@ -64,7 +64,7 @@ struct ChatroomTopView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             ChatroomTopView()
-                .customNavigationBar(title: "チャット一覧", color: Color(R.color.mainColor))
+                .customNavigationBar(title: "チャット一覧", color: Color(R.color.common.mainColor))
         }
     }
 }

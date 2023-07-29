@@ -27,7 +27,7 @@ open class NavigationController: UINavigationController {
         navigationBar.prefersLargeTitles = false
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = R.color.mainColor()
+        appearance.backgroundColor = R.color.common.mainColor()
         let tintColor = UIColor.white
         navigationBar.tintColor = tintColor
         appearance.titleTextAttributes = [.foregroundColor: tintColor]

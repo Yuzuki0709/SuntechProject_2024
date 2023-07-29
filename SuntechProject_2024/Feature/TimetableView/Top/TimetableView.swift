@@ -54,9 +54,9 @@ struct TimetableView: View {
         .foregroundColor(.white)
         .background {
             if classData.isRequired {
-                Color.mainColor
+                Color(R.color.common.mainColor)
             } else {
-                Color.electiveSubjectColor
+                Color(R.color.timetable.electiveSubject)
             }
         }
         .onTapGesture {

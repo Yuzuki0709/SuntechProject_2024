@@ -66,7 +66,12 @@ struct LoginView: View {
     
     private func background() -> some View {
         LinearGradient(
-            gradient: Gradient(colors: [.mainColor, Color(R.color.login.backgroundColor)]),
+            gradient: Gradient(
+                colors: [
+                    Color(R.color.common.mainColor),
+                    Color(R.color.login.backgroundColor)
+                ]
+            ),
             startPoint: .top,
             endPoint: .bottom
         )
@@ -113,7 +118,7 @@ struct LoginView: View {
             Text("Login")
                 .font(.system(size: 18, weight: .semibold))
                 .frame(width: width * 0.8, height: 70)
-                .background(Color.subColor)
+                .background(Color(R.color.common.subColor))
                 .foregroundColor(.white)
                 .cornerRadius(.app.corner.radiusS)
         }

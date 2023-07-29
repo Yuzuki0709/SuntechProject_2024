@@ -28,8 +28,8 @@ struct ClassDetailView: View {
             }
         }
         .padding()
-        .backgroundColor(color: Color(R.color.attendanceStatus.backgroundColor))
-        .customNavigationBar(title: "授業詳細", color: Color(R.color.mainColor))
+        .backgroundColor(color: Color(R.color.common.backgroundColor))
+        .navigationTitle("授業詳細")
         .navigationBackButton(color: .white) { dismiss() }
         .toolbar {
             // チャット画面へ遷移
@@ -178,7 +178,7 @@ struct ClassDetailView: View {
             Text(text)
                 .frame(width: contentWidth, height: 50)
                 .foregroundColor(.white)
-                .background(Color.mainColor)
+                .background(Color(R.color.common.mainColor))
                 .cornerRadius(.app.corner.radiusM)
         }
     }
