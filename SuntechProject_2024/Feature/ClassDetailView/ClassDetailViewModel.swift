@@ -15,7 +15,7 @@ final class ClassDetailViewModel: ObservableObject {
     @Published private(set) var latenessCount: Int = 0
     @Published private(set) var officialAbsenceCount: Int = 0
     
-    private var classData: Class
+    private(set) var classData: Class
     private var cancellables = Set<AnyCancellable>()
     
     private let _navigationSubject = PassthroughSubject<Navigation, Never>()

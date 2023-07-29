@@ -35,4 +35,16 @@ final class NavigationContainer: SharedContainer {
             )
         }
     }
+    
+    var classDetailFlowController: ParameterFactory<Class, ClassDetailFlowControllerService> {
+        self { classData in
+            ClassDetailFlowController(
+                rootView: ClassDetailView(
+                    viewModel: ClassDetailViewModel(
+                        classData: classData
+                    )
+                )
+            )
+        }
+    }
 }

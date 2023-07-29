@@ -9,16 +9,13 @@ import SwiftUI
 
 struct ClassDetailView: View {
     @Environment (\.dismiss) var dismiss
-    
-    let classData: Class
     @ObservedObject var viewModel: ClassDetailViewModel
     
     private var contentWidth: CGFloat {
         UIScreen.main.bounds.width * 0.9
     }
     
-    init(classData: Class, viewModel: ClassDetailViewModel) {
-        self.classData = classData
+    init(viewModel: ClassDetailViewModel) {
         self.viewModel = viewModel
     }
     
@@ -61,27 +58,27 @@ struct ClassDetailView: View {
         VStack(alignment: .leading, spacing: .app.space.spacingXS) {
             classDetailInfoRow(headerText: "授業名",
                                headerImage: Image(systemName: "graduationcap"),
-                               contentText: classData.name)
+                               contentText: viewModel.classData.name)
             Divider()
                 .padding(.horizontal)
             classDetailInfoRow(headerText: "教授",
                                headerImage: Image(systemName: "person"),
-                               contentText: classData.teacher.name)
+                               contentText: viewModel.classData.teacher.name)
             Divider()
                 .padding(.horizontal)
             classDetailInfoRow(headerText: "単位数",
                                headerImage: Image(systemName: "square.3.stack.3d"),
-                               contentText: "\(classData.creditsCount)")
+                               contentText: "\(viewModel.classData.creditsCount)")
             Divider()
                 .padding(.horizontal)
             classDetailInfoRow(headerText: "期間",
                                headerImage: Image(systemName: "clock"),
-                               contentText: classData.term.rawValue)
+                               contentText: viewModel.classData.term.rawValue)
             Divider()
                 .padding(.horizontal)
             classDetailInfoRow(headerText: "必選",
                                headerImage: Image(systemName: "exclamationmark.triangle"),
-                               contentText: classData.isRequired ? "必修" : "選択")
+                               contentText: viewModel.classData.isRequired ? "必修" : "選択")
         }
         .frame(width: contentWidth)
         .padding(.vertical, .app.space.spacingM)
@@ -163,9 +160,9 @@ struct ClassDetailView: View {
     private func goButtons() -> some View {
         VStack(spacing: .app.space.spacingS) {
             button(text: "出席状況を記録") {
-                viewModel.navigate(.attendanceStatus(classData))
+                viewModel.navigate(.attendanceStatus(viewModel.classData))
             }
-            if let classroomUrlString = classData.classroomUrl,
+            if let classroomUrlString = viewModel.classData.classroomUrl,
                let classroomUrl = URL(string: classroomUrlString) {
                 button(text: "Classroomへ") {
                     viewModel.navigate(.classroom(classroomUrl))
@@ -205,26 +202,20 @@ private extension AttendanceStatus {
 struct ClassDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            ClassDetailView(classData: Class(
-                id: "23C4110-0238",
-                name: "量子コンピューティング",
-                teacher: Teacher(
-                    id: "F-0004",
-                    name: "杉田 勝実",
-                    emailAddress: "sugita@suntech.jp"),
-                creditsCount: 4,
-                timeCount: 60,
-                classroomUrl: nil),
-                            viewModel: ClassDetailViewModel(classData: Class(
-                                id: "23C4110-0238",
-                                name: "量子コンピューティング",
-                                teacher: Teacher(
-                                    id: "F-0004",
-                                    name: "杉田 勝実",
-                                    emailAddress: "sugita@suntech.jp"),
-                                creditsCount: 4,
-                                timeCount: 60,
-                                classroomUrl: nil)))
+            ClassDetailView(
+                viewModel: ClassDetailViewModel(classData: Class(
+                    id: "23C4110-0238",
+                    name: "量子コンピューティング",
+                    teacher: Teacher(
+                        id: "F-0004",
+                        name: "杉田 勝実",
+                        emailAddress: "sugita@suntech.jp"),
+                    creditsCount: 4,
+                    timeCount: 60,
+                    classroomUrl: nil
+                )
+                )
+            )
         }
     }
 }

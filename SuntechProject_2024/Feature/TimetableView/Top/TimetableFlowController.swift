@@ -35,13 +35,7 @@ final class TimetableFlowController: HostingController<TimetableView>, Timetable
     }
     
     private func startClassDetail(classData: Class) {
-        let classDetail = ClassDetailFlowController(
-            rootView: ClassDetailView(
-                classData: classData,
-                viewModel: ClassDetailViewModel(classData: classData)
-            )
-        )
-        
+        let classDetail = NavigationContainer.shared.classDetailFlowController(classData)
         self.navigationController?.pushViewController(classDetail, animated: true)
         classDetail.start()
     }
