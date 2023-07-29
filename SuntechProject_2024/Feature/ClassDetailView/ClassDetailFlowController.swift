@@ -42,15 +42,13 @@ final class ClassDetailFlowController: HostingController<ClassDetailView>, Class
     }
     
     private func startClassroom(url: URL) {
-        let webView = WebViewFlowController(
-            rootView: WebView(
-                viewModel: WebViewModel(
+        let webView = NavigationContainer.shared
+            .webViewFlowController(
+                WebViewModel(
                     url: url,
                     navigateionTitle: ""
                 )
             )
-        )
-        
         self.present(webView, animated: true)
         webView.start()
     }

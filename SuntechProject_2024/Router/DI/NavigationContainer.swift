@@ -57,4 +57,10 @@ final class NavigationContainer: SharedContainer {
             )
         }
     }
+    
+    var webViewFlowController: ParameterFactory<WebViewModel, WebViewFlowControllerService> {
+        self { viewModel in
+            WebViewFlowController(rootView: WebView(viewModel: viewModel))
+        }
+    }
 }
