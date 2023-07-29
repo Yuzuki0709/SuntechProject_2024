@@ -7,9 +7,11 @@
 
 import Foundation
 import Combine
+import UIKit
 
 final class LoginFlowController: HostingController<LoginView>, LoginFlowControllerService {
     private var cancellable = Set<AnyCancellable>()
+    private var current: UIViewController?
     
     private var viewModel: LoginViewModel {
         host.rootView.viewModel
@@ -35,8 +37,10 @@ final class LoginFlowController: HostingController<LoginView>, LoginFlowControll
     
     private func startMain() {
         let main = MainFlowController(tabBarController: MainTabBarController())
-        main.modalPresentationStyle = .fullScreen
-        self.present(main, animated: false)
+        addContent(main, current)
+        current = main
+//        main.modalPresentationStyle = .fullScreen
+//        self.present(main, animated: false)
         main.start()
     }
 }

@@ -12,6 +12,7 @@ struct SuntechProject_2024App: App {
     var body: some Scene {
         WindowGroup {
             UIViewControllerAdapor(loginFlowController())
+                .ignoresSafeArea()
         }
     }
     
