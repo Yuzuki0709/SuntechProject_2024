@@ -58,6 +58,14 @@ final class NavigationContainer: SharedContainer {
         }
     }
     
+    var chatroomContainerFlowController: Factory<ChatroomFlowControllerService> {
+        self { ChatroomContainerFlowController() }
+    }
+    
+    var chatroomTopFlowController: Factory<ChatroomFlowControllerService> {
+        self { ChatroomTopFlowController(rootView: ChatroomTopView()) }
+    }
+    
     var webViewFlowController: ParameterFactory<WebViewModel, WebViewFlowControllerService> {
         self { viewModel in
             WebViewFlowController(rootView: WebView(viewModel: viewModel))

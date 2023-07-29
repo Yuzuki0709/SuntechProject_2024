@@ -44,8 +44,7 @@ private extension MainTabType {
         case .timetable:
             return NavigationContainer.shared.timetableContainerFlowController()
         case .chatroom:
-            // TODO: チャット画面ができたら書き換える
-            return TimetableFlowController(rootView: TimetableView(viewModel: TimetableViewModel()))
+            return NavigationContainer.shared.chatroomContainerFlowController()
         }
     }
 }

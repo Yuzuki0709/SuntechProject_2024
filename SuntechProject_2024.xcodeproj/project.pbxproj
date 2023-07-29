@@ -46,6 +46,9 @@
 		A24F1BEB2A751A0300B4A00A /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = A24F1BEA2A751A0300B4A00A /* Factory */; };
 		A24F1BEE2A751A5E00B4A00A /* NavigationContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BED2A751A5E00B4A00A /* NavigationContainer.swift */; };
 		A24F1BFA2A752AEA00B4A00A /* WebFlowControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BF92A752AEA00B4A00A /* WebFlowControllerService.swift */; };
+		A24F1BFD2A753A8100B4A00A /* ChatroomContainerFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BFC2A753A8100B4A00A /* ChatroomContainerFlowController.swift */; };
+		A24F1C012A753ABA00B4A00A /* ChatroomFlowControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1C002A753ABA00B4A00A /* ChatroomFlowControllerService.swift */; };
+		A24F1C062A753BD700B4A00A /* ChatroomTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1C052A753BD700B4A00A /* ChatroomTopView.swift */; };
 		A28113382A5BC1690037E35C /* View++.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113372A5BC1690037E35C /* View++.swift */; };
 		A28113422A5BD71A0037E35C /* AttendanceStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113412A5BD71A0037E35C /* AttendanceStatusView.swift */; };
 		A28113452A5BE58A0037E35C /* AttendanceStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113442A5BE58A0037E35C /* AttendanceStatus.swift */; };
@@ -78,6 +81,7 @@
 		A29C1DFA2A59AA4E0045FFE2 /* ClassDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1DF92A59AA4E0045FFE2 /* ClassDetailView.swift */; };
 		A29C1DFC2A5BBD7D0045FFE2 /* HalfModalSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1DFB2A5BBD7D0045FFE2 /* HalfModalSheetViewController.swift */; };
 		A2D8CBA62A681F6C00A059D3 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D8CBA52A681F6C00A059D3 /* WebView.swift */; };
+		A2E10FA32A75415700ECF1FA /* ChatroomTopFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E10FA22A75415700ECF1FA /* ChatroomTopFlowController.swift */; };
 		A2E118F42A66B1D3005901EB /* AppCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E118F32A66B1D3005901EB /* AppCompatible.swift */; };
 		A2E118F72A66B29C005901EB /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E118F62A66B29C005901EB /* AppStyle.swift */; };
 		A2E118F92A66B2DC005901EB /* CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E118F82A66B2DC005901EB /* CornerRadius.swift */; };
@@ -143,6 +147,9 @@
 		A24F1BE62A75168900B4A00A /* WebViewFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewFlowController.swift; sourceTree = "<group>"; };
 		A24F1BED2A751A5E00B4A00A /* NavigationContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationContainer.swift; sourceTree = "<group>"; };
 		A24F1BF92A752AEA00B4A00A /* WebFlowControllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebFlowControllerService.swift; sourceTree = "<group>"; };
+		A24F1BFC2A753A8100B4A00A /* ChatroomContainerFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomContainerFlowController.swift; sourceTree = "<group>"; };
+		A24F1C002A753ABA00B4A00A /* ChatroomFlowControllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomFlowControllerService.swift; sourceTree = "<group>"; };
+		A24F1C052A753BD700B4A00A /* ChatroomTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomTopView.swift; sourceTree = "<group>"; };
 		A28113372A5BC1690037E35C /* View++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View++.swift"; sourceTree = "<group>"; };
 		A28113412A5BD71A0037E35C /* AttendanceStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatusView.swift; sourceTree = "<group>"; };
 		A28113442A5BE58A0037E35C /* AttendanceStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatus.swift; sourceTree = "<group>"; };
@@ -171,6 +178,7 @@
 		A29C1DF92A59AA4E0045FFE2 /* ClassDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailView.swift; sourceTree = "<group>"; };
 		A29C1DFB2A5BBD7D0045FFE2 /* HalfModalSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalSheetViewController.swift; sourceTree = "<group>"; };
 		A2D8CBA52A681F6C00A059D3 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		A2E10FA22A75415700ECF1FA /* ChatroomTopFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomTopFlowController.swift; sourceTree = "<group>"; };
 		A2E118F32A66B1D3005901EB /* AppCompatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCompatible.swift; sourceTree = "<group>"; };
 		A2E118F62A66B29C005901EB /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
 		A2E118F82A66B2DC005901EB /* CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadius.swift; sourceTree = "<group>"; };
@@ -371,6 +379,7 @@
 		A21A283F2A714267006735FA /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				A24F1BFF2A753AAE00B4A00A /* Chatroom */,
 				A24F1BF72A752AD900B4A00A /* WebView */,
 				A21A28682A723729006735FA /* Main */,
 				A21A28402A71426D006735FA /* LoginView */,
@@ -527,6 +536,32 @@
 			path = WebView;
 			sourceTree = "<group>";
 		};
+		A24F1BFB2A753A6700B4A00A /* Chatroom */ = {
+			isa = PBXGroup;
+			children = (
+				A24F1BFC2A753A8100B4A00A /* ChatroomContainerFlowController.swift */,
+				A24F1C022A753BB600B4A00A /* Top */,
+			);
+			path = Chatroom;
+			sourceTree = "<group>";
+		};
+		A24F1BFF2A753AAE00B4A00A /* Chatroom */ = {
+			isa = PBXGroup;
+			children = (
+				A24F1C002A753ABA00B4A00A /* ChatroomFlowControllerService.swift */,
+			);
+			path = Chatroom;
+			sourceTree = "<group>";
+		};
+		A24F1C022A753BB600B4A00A /* Top */ = {
+			isa = PBXGroup;
+			children = (
+				A24F1C052A753BD700B4A00A /* ChatroomTopView.swift */,
+				A2E10FA22A75415700ECF1FA /* ChatroomTopFlowController.swift */,
+			);
+			path = Top;
+			sourceTree = "<group>";
+		};
 		A28113432A5BE5740037E35C /* AttendanceStatus */ = {
 			isa = PBXGroup;
 			children = (
@@ -589,6 +624,7 @@
 				A29C1D8F2A52DF7B0045FFE2 /* LoginView */,
 				A29C1DB52A54F6E50045FFE2 /* TimetableView */,
 				A2133D702A6555C500C5B24A /* ClassDetailView */,
+				A24F1BFB2A753A6700B4A00A /* Chatroom */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -800,7 +836,9 @@
 				A21A28612A723560006735FA /* MainTabType.swift in Sources */,
 				A232E1992A4F14A9007599E5 /* LoginView.swift in Sources */,
 				A29C1DAE2A53B0CD0045FFE2 /* LoginUserInfo.swift in Sources */,
+				A24F1BFD2A753A8100B4A00A /* ChatroomContainerFlowController.swift in Sources */,
 				A21A282F2A71400F006735FA /* UIViewController++.swift in Sources */,
+				A24F1C012A753ABA00B4A00A /* ChatroomFlowControllerService.swift in Sources */,
 				A29C1D712A528C6C0045FFE2 /* Student.swift in Sources */,
 				A29C1DB32A54EE3C0045FFE2 /* TimetableViewModel.swift in Sources */,
 				A281CACC2A5CED63004663C4 /* AttendanceRealmManager.swift in Sources */,
@@ -818,8 +856,10 @@
 				A232E1A32A4F16CD007599E5 /* Color.swift in Sources */,
 				A29C1D9A2A5301200045FFE2 /* WeekTimetable.swift in Sources */,
 				A2133D732A6573C900C5B24A /* ActivityIndicator.swift in Sources */,
+				A2E10FA32A75415700ECF1FA /* ChatroomTopFlowController.swift in Sources */,
 				A2E118FF2A66CF5F005901EB /* ClassDetailViewModel.swift in Sources */,
 				A29C1D982A5300750045FFE2 /* DayTimetable.swift in Sources */,
+				A24F1C062A753BD700B4A00A /* ChatroomTopView.swift in Sources */,
 				A2E118FB2A66B40B005901EB /* SpaceLayout.swift in Sources */,
 				A21A283E2A714227006735FA /* FlowController.swift in Sources */,
 				A21A286A2A723752006735FA /* MainFlowControllerService.swift in Sources */,
