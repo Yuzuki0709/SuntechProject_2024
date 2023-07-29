@@ -14,6 +14,16 @@
 		A21A27B42A6D5CCE006735FA /* Chatroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A27B32A6D5CCE006735FA /* Chatroom.swift */; };
 		A21A27B62A6D5E55006735FA /* ChatUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A27B52A6D5E55006735FA /* ChatUser.swift */; };
 		A21A27B92A6D5F24006735FA /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A27B82A6D5F24006735FA /* ChatMessage.swift */; };
+		A21A282D2A713F79006735FA /* UIViewControllerAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A282C2A713F79006735FA /* UIViewControllerAdaptor.swift */; };
+		A21A282F2A71400F006735FA /* UIViewController++.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A282E2A71400F006735FA /* UIViewController++.swift */; };
+		A21A28322A71405C006735FA /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A28312A71405C006735FA /* HostingController.swift */; };
+		A21A283E2A714227006735FA /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A283D2A714227006735FA /* FlowController.swift */; };
+		A21A28422A71428B006735FA /* LoginFlowControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A28412A71428B006735FA /* LoginFlowControllerService.swift */; };
+		A21A28452A7142BF006735FA /* LoginFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A28442A7142BF006735FA /* LoginFlowController.swift */; };
+		A21A28612A723560006735FA /* MainTabType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A28602A723560006735FA /* MainTabType.swift */; };
+		A21A28632A723646006735FA /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A28622A723646006735FA /* MainTabBarController.swift */; };
+		A21A28662A723703006735FA /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A28652A723703006735FA /* MainFlowController.swift */; };
+		A21A286A2A723752006735FA /* MainFlowControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A28692A723752006735FA /* MainFlowControllerService.swift */; };
 		A232E16F2A4F1407007599E5 /* SuntechProject_2024App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232E16E2A4F1407007599E5 /* SuntechProject_2024App.swift */; };
 		A232E1732A4F140A007599E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A232E1722A4F140A007599E5 /* Assets.xcassets */; };
 		A232E1762A4F140A007599E5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A232E1752A4F140A007599E5 /* Preview Assets.xcassets */; };
@@ -23,6 +33,16 @@
 		A232E1992A4F14A9007599E5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232E1982A4F14A9007599E5 /* LoginView.swift */; };
 		A232E19C2A4F1545007599E5 /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = A232E19B2A4F1545007599E5 /* RswiftLibrary */; };
 		A232E1A32A4F16CD007599E5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232E1A22A4F16CD007599E5 /* Color.swift */; };
+		A24F1BC52A74A15E00B4A00A /* TimetableFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BC42A74A15E00B4A00A /* TimetableFlowController.swift */; };
+		A24F1BC82A74A19E00B4A00A /* TimetableFlowControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BC72A74A19E00B4A00A /* TimetableFlowControllerService.swift */; };
+		A24F1BD12A74B22E00B4A00A /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BD02A74B22E00B4A00A /* NavigationController.swift */; };
+		A24F1BD52A74B4C200B4A00A /* TimetableContainerFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BD42A74B4C200B4A00A /* TimetableContainerFlowController.swift */; };
+		A24F1BD92A74B9AC00B4A00A /* ClassDetailFlowControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BD82A74B9AC00B4A00A /* ClassDetailFlowControllerService.swift */; };
+		A24F1BDB2A74B9C400B4A00A /* ClassDetailFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BDA2A74B9C400B4A00A /* ClassDetailFlowController.swift */; };
+		A24F1BDE2A74BBFE00B4A00A /* AttendanceStatusFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BDD2A74BBFE00B4A00A /* AttendanceStatusFlowController.swift */; };
+		A24F1BE22A750ED900B4A00A /* AttendanceStatusFlowContrllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BE12A750ED900B4A00A /* AttendanceStatusFlowContrllerService.swift */; };
+		A24F1BE42A75158700B4A00A /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BE32A75158700B4A00A /* WebViewModel.swift */; };
+		A24F1BE72A75168A00B4A00A /* WebViewFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BE62A75168900B4A00A /* WebViewFlowController.swift */; };
 		A28113382A5BC1690037E35C /* View++.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113372A5BC1690037E35C /* View++.swift */; };
 		A28113422A5BD71A0037E35C /* AttendanceStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113412A5BD71A0037E35C /* AttendanceStatusView.swift */; };
 		A28113452A5BE58A0037E35C /* AttendanceStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113442A5BE58A0037E35C /* AttendanceStatus.swift */; };
@@ -87,6 +107,16 @@
 		A21A27B32A6D5CCE006735FA /* Chatroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chatroom.swift; sourceTree = "<group>"; };
 		A21A27B52A6D5E55006735FA /* ChatUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUser.swift; sourceTree = "<group>"; };
 		A21A27B82A6D5F24006735FA /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		A21A282C2A713F79006735FA /* UIViewControllerAdaptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerAdaptor.swift; sourceTree = "<group>"; };
+		A21A282E2A71400F006735FA /* UIViewController++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController++.swift"; sourceTree = "<group>"; };
+		A21A28312A71405C006735FA /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		A21A283D2A714227006735FA /* FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
+		A21A28412A71428B006735FA /* LoginFlowControllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlowControllerService.swift; sourceTree = "<group>"; };
+		A21A28442A7142BF006735FA /* LoginFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlowController.swift; sourceTree = "<group>"; };
+		A21A28602A723560006735FA /* MainTabType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabType.swift; sourceTree = "<group>"; };
+		A21A28622A723646006735FA /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		A21A28652A723703006735FA /* MainFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
+		A21A28692A723752006735FA /* MainFlowControllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowControllerService.swift; sourceTree = "<group>"; };
 		A232E16B2A4F1407007599E5 /* SuntechProject_2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuntechProject_2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A232E16E2A4F1407007599E5 /* SuntechProject_2024App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuntechProject_2024App.swift; sourceTree = "<group>"; };
 		A232E1722A4F140A007599E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -98,6 +128,16 @@
 		A232E18B2A4F140A007599E5 /* SuntechProject_2024UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuntechProject_2024UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A232E1982A4F14A9007599E5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A232E1A22A4F16CD007599E5 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		A24F1BC42A74A15E00B4A00A /* TimetableFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableFlowController.swift; sourceTree = "<group>"; };
+		A24F1BC72A74A19E00B4A00A /* TimetableFlowControllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableFlowControllerService.swift; sourceTree = "<group>"; };
+		A24F1BD02A74B22E00B4A00A /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		A24F1BD42A74B4C200B4A00A /* TimetableContainerFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableContainerFlowController.swift; sourceTree = "<group>"; };
+		A24F1BD82A74B9AC00B4A00A /* ClassDetailFlowControllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailFlowControllerService.swift; sourceTree = "<group>"; };
+		A24F1BDA2A74B9C400B4A00A /* ClassDetailFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailFlowController.swift; sourceTree = "<group>"; };
+		A24F1BDD2A74BBFE00B4A00A /* AttendanceStatusFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatusFlowController.swift; sourceTree = "<group>"; };
+		A24F1BE12A750ED900B4A00A /* AttendanceStatusFlowContrllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatusFlowContrllerService.swift; sourceTree = "<group>"; };
+		A24F1BE32A75158700B4A00A /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
+		A24F1BE62A75168900B4A00A /* WebViewFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewFlowController.swift; sourceTree = "<group>"; };
 		A28113372A5BC1690037E35C /* View++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View++.swift"; sourceTree = "<group>"; };
 		A28113412A5BD71A0037E35C /* AttendanceStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatusView.swift; sourceTree = "<group>"; };
 		A28113442A5BE58A0037E35C /* AttendanceStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatus.swift; sourceTree = "<group>"; };
@@ -166,7 +206,6 @@
 		A2133D5E2A64FE4000C5B24A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A2E118F22A66B1C4005901EB /* AppCompatible */,
 				A2133D5F2A64FE4A00C5B24A /* Common */,
 				A2133D6C2A65073000C5B24A /* TimetableView */,
 				A2133D712A6555ED00C5B24A /* ClassDetailView */,
@@ -178,9 +217,6 @@
 		A2133D5F2A64FE4A00C5B24A /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				A2133D602A64FE8E00C5B24A /* NavigationBarModifier.swift */,
-				A2133D672A65033200C5B24A /* NavigationBackButton.swift */,
-				A2133D692A65061700C5B24A /* CustomNavigationBar.swift */,
 				A2133D722A6573C800C5B24A /* ActivityIndicator.swift */,
 			);
 			path = Common;
@@ -217,6 +253,7 @@
 			children = (
 				A28113412A5BD71A0037E35C /* AttendanceStatusView.swift */,
 				A281CACD2A5E2CEF004663C4 /* AttendanceStatusViewModel.swift */,
+				A24F1BDD2A74BBFE00B4A00A /* AttendanceStatusFlowController.swift */,
 			);
 			path = AttendanceStatusView;
 			sourceTree = "<group>";
@@ -226,6 +263,7 @@
 			children = (
 				A29C1DF92A59AA4E0045FFE2 /* ClassDetailView.swift */,
 				A2E118FE2A66CF5F005901EB /* ClassDetailViewModel.swift */,
+				A24F1BDA2A74B9C400B4A00A /* ClassDetailFlowController.swift */,
 				A2133D6E2A6555A900C5B24A /* AttendanceStatusView */,
 			);
 			path = ClassDetailView;
@@ -247,6 +285,117 @@
 				A21A27B82A6D5F24006735FA /* ChatMessage.swift */,
 			);
 			path = Chatroom;
+			sourceTree = "<group>";
+		};
+		A21A282B2A713F48006735FA /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A232E16E2A4F1407007599E5 /* SuntechProject_2024App.swift */,
+				A21A282C2A713F79006735FA /* UIViewControllerAdaptor.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A21A28332A71408E006735FA /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A21A28342A7140CC006735FA /* Components */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		A21A28342A7140CC006735FA /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A21A28392A714135006735FA /* Modifier */,
+				A21A28382A714117006735FA /* Style */,
+				A21A28352A7140D7006735FA /* View */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A21A28352A7140D7006735FA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A21A28362A7140DA006735FA /* Common */,
+				A24F1BCE2A74B21600B4A00A /* NavigationController */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A21A28362A7140DA006735FA /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A21A28312A71405C006735FA /* HostingController.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		A21A28382A714117006735FA /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				A2E118F32A66B1D3005901EB /* AppCompatible.swift */,
+				A2E118F62A66B29C005901EB /* AppStyle.swift */,
+				A2E118F82A66B2DC005901EB /* CornerRadius.swift */,
+				A2E118FA2A66B40B005901EB /* SpaceLayout.swift */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
+		A21A28392A714135006735FA /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				A2133D602A64FE8E00C5B24A /* NavigationBarModifier.swift */,
+				A2133D672A65033200C5B24A /* NavigationBackButton.swift */,
+				A2133D692A65061700C5B24A /* CustomNavigationBar.swift */,
+			);
+			path = Modifier;
+			sourceTree = "<group>";
+		};
+		A21A283C2A71421B006735FA /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				A21A283D2A714227006735FA /* FlowController.swift */,
+				A21A283F2A714267006735FA /* Feature */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		A21A283F2A714267006735FA /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				A21A28682A723729006735FA /* Main */,
+				A21A28402A71426D006735FA /* LoginView */,
+				A24F1BC62A74A18400B4A00A /* Timetable */,
+				A24F1BD62A74B97200B4A00A /* ClassDetail */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		A21A28402A71426D006735FA /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				A21A28412A71428B006735FA /* LoginFlowControllerService.swift */,
+			);
+			path = LoginView;
+			sourceTree = "<group>";
+		};
+		A21A285F2A723556006735FA /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				A21A28602A723560006735FA /* MainTabType.swift */,
+				A21A28622A723646006735FA /* MainTabBarController.swift */,
+				A21A28652A723703006735FA /* MainFlowController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		A21A28682A723729006735FA /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				A21A28692A723752006735FA /* MainFlowControllerService.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		A232E1622A4F1407007599E5 = {
@@ -272,12 +421,14 @@
 		A232E16D2A4F1407007599E5 /* SuntechProject_2024 */ = {
 			isa = PBXGroup;
 			children = (
+				A21A282B2A713F48006735FA /* App */,
+				A21A28332A71408E006735FA /* Core */,
 				A29C1D882A52A0560045FFE2 /* Model */,
 				A2133D5E2A64FE4000C5B24A /* View */,
 				A29C1D8E2A52DF720045FFE2 /* Feature */,
 				A2133D662A6502AF00C5B24A /* API */,
 				A2133D622A64FEB800C5B24A /* Utils */,
-				A232E16E2A4F1407007599E5 /* SuntechProject_2024App.swift */,
+				A21A283C2A71421B006735FA /* Router */,
 				A232E1722A4F140A007599E5 /* Assets.xcassets */,
 				A232E1742A4F140A007599E5 /* Preview Content */,
 			);
@@ -307,6 +458,49 @@
 				A232E18B2A4F140A007599E5 /* SuntechProject_2024UITestsLaunchTests.swift */,
 			);
 			path = SuntechProject_2024UITests;
+			sourceTree = "<group>";
+		};
+		A24F1BC62A74A18400B4A00A /* Timetable */ = {
+			isa = PBXGroup;
+			children = (
+				A24F1BC72A74A19E00B4A00A /* TimetableFlowControllerService.swift */,
+			);
+			path = Timetable;
+			sourceTree = "<group>";
+		};
+		A24F1BCE2A74B21600B4A00A /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				A24F1BD02A74B22E00B4A00A /* NavigationController.swift */,
+			);
+			path = NavigationController;
+			sourceTree = "<group>";
+		};
+		A24F1BD22A74B4AC00B4A00A /* Top */ = {
+			isa = PBXGroup;
+			children = (
+				A29C1D9E2A5302960045FFE2 /* TimetableView.swift */,
+				A29C1DB22A54EE3C0045FFE2 /* TimetableViewModel.swift */,
+				A24F1BC42A74A15E00B4A00A /* TimetableFlowController.swift */,
+			);
+			path = Top;
+			sourceTree = "<group>";
+		};
+		A24F1BD62A74B97200B4A00A /* ClassDetail */ = {
+			isa = PBXGroup;
+			children = (
+				A24F1BD82A74B9AC00B4A00A /* ClassDetailFlowControllerService.swift */,
+				A24F1BE02A74BC0200B4A00A /* AttendanceStatus */,
+			);
+			path = ClassDetail;
+			sourceTree = "<group>";
+		};
+		A24F1BE02A74BC0200B4A00A /* AttendanceStatus */ = {
+			isa = PBXGroup;
+			children = (
+				A24F1BE12A750ED900B4A00A /* AttendanceStatusFlowContrllerService.swift */,
+			);
+			path = AttendanceStatus;
 			sourceTree = "<group>";
 		};
 		A28113432A5BE5740037E35C /* AttendanceStatus */ = {
@@ -346,6 +540,7 @@
 				A232E1A22A4F16CD007599E5 /* Color.swift */,
 				A29C1DA62A5304A00045FFE2 /* UIColor.swift */,
 				A28113372A5BC1690037E35C /* View++.swift */,
+				A21A282E2A71400F006735FA /* UIViewController++.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -366,6 +561,7 @@
 		A29C1D8E2A52DF720045FFE2 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				A21A285F2A723556006735FA /* Main */,
 				A29C1D8F2A52DF7B0045FFE2 /* LoginView */,
 				A29C1DB52A54F6E50045FFE2 /* TimetableView */,
 				A2133D702A6555C500C5B24A /* ClassDetailView */,
@@ -378,6 +574,7 @@
 			children = (
 				A232E1982A4F14A9007599E5 /* LoginView.swift */,
 				A29C1D662A5288350045FFE2 /* LoginViewModel.swift */,
+				A21A28442A7142BF006735FA /* LoginFlowController.swift */,
 			);
 			path = LoginView;
 			sourceTree = "<group>";
@@ -403,8 +600,8 @@
 		A29C1DB52A54F6E50045FFE2 /* TimetableView */ = {
 			isa = PBXGroup;
 			children = (
-				A29C1D9E2A5302960045FFE2 /* TimetableView.swift */,
-				A29C1DB22A54EE3C0045FFE2 /* TimetableViewModel.swift */,
+				A24F1BD42A74B4C200B4A00A /* TimetableContainerFlowController.swift */,
+				A24F1BD22A74B4AC00B4A00A /* Top */,
 			);
 			path = TimetableView;
 			sourceTree = "<group>";
@@ -413,19 +610,10 @@
 			isa = PBXGroup;
 			children = (
 				A2D8CBA52A681F6C00A059D3 /* WebView.swift */,
+				A24F1BE32A75158700B4A00A /* WebViewModel.swift */,
+				A24F1BE62A75168900B4A00A /* WebViewFlowController.swift */,
 			);
 			path = WebView;
-			sourceTree = "<group>";
-		};
-		A2E118F22A66B1C4005901EB /* AppCompatible */ = {
-			isa = PBXGroup;
-			children = (
-				A2E118F32A66B1D3005901EB /* AppCompatible.swift */,
-				A2E118F62A66B29C005901EB /* AppStyle.swift */,
-				A2E118F82A66B2DC005901EB /* CornerRadius.swift */,
-				A2E118FA2A66B40B005901EB /* SpaceLayout.swift */,
-			);
-			path = AppCompatible;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -572,14 +760,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A21A28322A71405C006735FA /* HostingController.swift in Sources */,
+				A24F1BC82A74A19E00B4A00A /* TimetableFlowControllerService.swift in Sources */,
 				A21A27B62A6D5E55006735FA /* ChatUser.swift in Sources */,
+				A21A28422A71428B006735FA /* LoginFlowControllerService.swift in Sources */,
+				A24F1BDB2A74B9C400B4A00A /* ClassDetailFlowController.swift in Sources */,
 				A2133D6A2A65061700C5B24A /* CustomNavigationBar.swift in Sources */,
 				A2D8CBA62A681F6C00A059D3 /* WebView.swift in Sources */,
 				A28113382A5BC1690037E35C /* View++.swift in Sources */,
 				A281134B2A5BE7F60037E35C /* ClassAttendance.swift in Sources */,
+				A24F1BE22A750ED900B4A00A /* AttendanceStatusFlowContrllerService.swift in Sources */,
 				A29C1D9F2A5302960045FFE2 /* TimetableView.swift in Sources */,
+				A21A28612A723560006735FA /* MainTabType.swift in Sources */,
 				A232E1992A4F14A9007599E5 /* LoginView.swift in Sources */,
 				A29C1DAE2A53B0CD0045FFE2 /* LoginUserInfo.swift in Sources */,
+				A21A282F2A71400F006735FA /* UIViewController++.swift in Sources */,
 				A29C1D712A528C6C0045FFE2 /* Student.swift in Sources */,
 				A29C1DB32A54EE3C0045FFE2 /* TimetableViewModel.swift in Sources */,
 				A281CACC2A5CED63004663C4 /* AttendanceRealmManager.swift in Sources */,
@@ -588,33 +783,46 @@
 				A2E118F42A66B1D3005901EB /* AppCompatible.swift in Sources */,
 				A2133D612A64FE8E00C5B24A /* NavigationBarModifier.swift in Sources */,
 				A29C1DFA2A59AA4E0045FFE2 /* ClassDetailView.swift in Sources */,
+				A24F1BE42A75158700B4A00A /* WebViewModel.swift in Sources */,
+				A21A28662A723703006735FA /* MainFlowController.swift in Sources */,
 				A21A27B42A6D5CCE006735FA /* Chatroom.swift in Sources */,
 				A28113422A5BD71A0037E35C /* AttendanceStatusView.swift in Sources */,
 				A2E118F72A66B29C005901EB /* AppStyle.swift in Sources */,
+				A24F1BE72A75168A00B4A00A /* WebViewFlowController.swift in Sources */,
 				A232E1A32A4F16CD007599E5 /* Color.swift in Sources */,
 				A29C1D9A2A5301200045FFE2 /* WeekTimetable.swift in Sources */,
 				A2133D732A6573C900C5B24A /* ActivityIndicator.swift in Sources */,
 				A2E118FF2A66CF5F005901EB /* ClassDetailViewModel.swift in Sources */,
 				A29C1D982A5300750045FFE2 /* DayTimetable.swift in Sources */,
 				A2E118FB2A66B40B005901EB /* SpaceLayout.swift in Sources */,
+				A21A283E2A714227006735FA /* FlowController.swift in Sources */,
+				A21A286A2A723752006735FA /* MainFlowControllerService.swift in Sources */,
+				A24F1BD12A74B22E00B4A00A /* NavigationController.swift in Sources */,
 				A281CAD42A5EED6A004663C4 /* DateHelper.swift in Sources */,
 				A281CACE2A5E2CEF004663C4 /* AttendanceStatusViewModel.swift in Sources */,
 				A2133D682A65033200C5B24A /* NavigationBackButton.swift in Sources */,
+				A24F1BD92A74B9AC00B4A00A /* ClassDetailFlowControllerService.swift in Sources */,
 				A29C1D762A528D2B0045FFE2 /* Teacher.swift in Sources */,
+				A24F1BD52A74B4C200B4A00A /* TimetableContainerFlowController.swift in Sources */,
 				A28113482A5BE7A90037E35C /* AttendanceLog.swift in Sources */,
+				A24F1BDE2A74BBFE00B4A00A /* AttendanceStatusFlowController.swift in Sources */,
 				A29C1D872A529F840045FFE2 /* LoginUser.swift in Sources */,
 				A29C1D7D2A528FAE0045FFE2 /* Loggable.swift in Sources */,
+				A21A282D2A713F79006735FA /* UIViewControllerAdaptor.swift in Sources */,
 				A29C1DA52A5303940045FFE2 /* FSCalendarView.swift in Sources */,
 				A29C1D732A528CE10045FFE2 /* Department.swift in Sources */,
 				A29C1DA72A5304A00045FFE2 /* UIColor.swift in Sources */,
+				A24F1BC52A74A15E00B4A00A /* TimetableFlowController.swift in Sources */,
 				A29C1D932A52FF7E0045FFE2 /* Class.swift in Sources */,
 				A29C1D672A5288350045FFE2 /* LoginViewModel.swift in Sources */,
 				A29C1DAA2A53087F0045FFE2 /* FSCalendarViewRepresentable.swift in Sources */,
 				A29C1D692A5289AF0045FFE2 /* SuntechAPIClient.swift in Sources */,
+				A21A28452A7142BF006735FA /* LoginFlowController.swift in Sources */,
 				A21A27B92A6D5F24006735FA /* ChatMessage.swift in Sources */,
 				A2E118F92A66B2DC005901EB /* CornerRadius.swift in Sources */,
 				A232E16F2A4F1407007599E5 /* SuntechProject_2024App.swift in Sources */,
 				A29C1DFC2A5BBD7D0045FFE2 /* HalfModalSheetViewController.swift in Sources */,
+				A21A28632A723646006735FA /* MainTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

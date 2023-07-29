@@ -8,19 +8,13 @@
 import SwiftUI
 
 struct LoginView: View {
-    @StateObject private var viewModel = LoginViewModel()
+    @ObservedObject var viewModel = LoginViewModel()
     private let width: CGFloat = UIScreen.main.bounds.width
     
     var body: some View {
         NavigationView {
             ZStack {
-                NavigationLink(destination: TimetableView(),
-                               isActive: .constant(viewModel.loginUser != nil)) {
-                    EmptyView()
-                }
-                
                 background()
-                
                 VStack(spacing: .app.space.spacingL) {
                     headerLogo()
                     appDescription()
@@ -37,6 +31,7 @@ struct LoginView: View {
                 }
                 .padding()
             }
+            .ignoresSafeArea()
             .alert("エラーが発生しました", isPresented: .constant(viewModel.error != nil)) {
                 Button("OK") { viewModel.error = nil }
             } message: {
@@ -71,7 +66,6 @@ struct LoginView: View {
             startPoint: .top,
             endPoint: .bottom
         )
-        .ignoresSafeArea()
     }
     
     private func headerLogo() -> some View {

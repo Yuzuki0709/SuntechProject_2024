@@ -11,19 +11,15 @@ struct ClassDetailView: View {
     @Environment (\.dismiss) var dismiss
     
     let classData: Class
-    @State private var isShowAttendanceSheet: Bool = false
-    @State private var isShowClassroomSheet: Bool = false
-    @StateObject private var viewModel: ClassDetailViewModel
+    @ObservedObject var viewModel: ClassDetailViewModel
     
     private var contentWidth: CGFloat {
         UIScreen.main.bounds.width * 0.9
     }
     
-    init(classData: Class) {
+    init(classData: Class, viewModel: ClassDetailViewModel) {
         self.classData = classData
-        self._viewModel = StateObject(
-            wrappedValue: ClassDetailViewModel(classData: classData)
-        )
+        self.viewModel = viewModel
     }
     
     var body: some View {
@@ -35,14 +31,6 @@ struct ClassDetailView: View {
             }
         }
         .padding()
-        .sheet(isPresented: $isShowAttendanceSheet) {
-            AttendanceStatusView(classData: classData)
-        }
-        .sheet(isPresented: $isShowClassroomSheet) {
-            if let classroomUrl = URL(string: classData.classroomUrl ?? "") {
-                WebView(url: classroomUrl)
-            }
-        }
         .backgroundColor(color: Color(R.color.attendanceStatus.backgroundColor))
         .customNavigationBar(title: "授業詳細", color: Color(R.color.mainColor))
         .navigationBackButton(color: .white) { dismiss() }
@@ -175,11 +163,12 @@ struct ClassDetailView: View {
     private func goButtons() -> some View {
         VStack(spacing: .app.space.spacingS) {
             button(text: "出席状況を記録") {
-                isShowAttendanceSheet = true
+                viewModel.navigate(.attendanceStatus(classData))
             }
-            if let classroomUrl = classData.classroomUrl {
+            if let classroomUrlString = classData.classroomUrl,
+               let classroomUrl = URL(string: classroomUrlString) {
                 button(text: "Classroomへ") {
-                    isShowClassroomSheet = true
+                    viewModel.navigate(.classroom(classroomUrl))
                 }
             }
         }
@@ -225,7 +214,17 @@ struct ClassDetailView_Previews: PreviewProvider {
                     emailAddress: "sugita@suntech.jp"),
                 creditsCount: 4,
                 timeCount: 60,
-                classroomUrl: nil))
+                classroomUrl: nil),
+                            viewModel: ClassDetailViewModel(classData: Class(
+                                id: "23C4110-0238",
+                                name: "量子コンピューティング",
+                                teacher: Teacher(
+                                    id: "F-0004",
+                                    name: "杉田 勝実",
+                                    emailAddress: "sugita@suntech.jp"),
+                                creditsCount: 4,
+                                timeCount: 60,
+                                classroomUrl: nil)))
         }
     }
 }

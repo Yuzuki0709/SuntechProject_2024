@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct TimetableView: View {
-    @StateObject private var viewModel = TimetableViewModel()
+    @ObservedObject var viewModel: TimetableViewModel
+    
+    init(viewModel: TimetableViewModel) {
+        self.viewModel = viewModel
+    }
+    
     var body: some View {
         GeometryReader { geometry in
             VStack {
@@ -34,27 +39,28 @@ struct TimetableView: View {
         }
         .backgroundColor(color: Color(R.color.timetable.backgroundColor))
         .navigationBarBackButtonHidden(true)
-        .customNavigationBar(title: "時間割", color: Color(R.color.mainColor))
+        .navigationTitle("時間割")
     }
     
     private func classRow(classData: Class) -> some View {
-        NavigationLink(destination: ClassDetailView(classData: classData)) {
-            VStack(alignment: .leading) {
-                Text(classData.name)
-                    .font(.system(size: 12))
-                Text(classData.teacher.name)
-                    .font(.system(size: 10))
+        VStack(alignment: .leading) {
+            Text(classData.name)
+                .font(.system(size: 12))
+            Text(classData.teacher.name)
+                .font(.system(size: 10))
+        }
+        .frame(height: 90)
+        .frame(maxWidth: .infinity)
+        .foregroundColor(.white)
+        .background {
+            if classData.isRequired {
+                Color.mainColor
+            } else {
+                Color.electiveSubjectColor
             }
-            .frame(height: 90)
-            .frame(maxWidth: .infinity)
-            .foregroundColor(.white)
-            .background {
-                if classData.isRequired {
-                    Color.mainColor
-                } else {
-                    Color.electiveSubjectColor
-                }
-            }
+        }
+        .onTapGesture {
+            viewModel.navigate(.classDetail(classData))
         }
     }
     
@@ -91,6 +97,6 @@ struct TimetableView: View {
 
 struct TimetableView_Previews: PreviewProvider {
     static var previews: some View {
-        TimetableView()
+        TimetableView(viewModel: TimetableViewModel())
     }
 }
