@@ -12,5 +12,9 @@ final class ChatroomContainerFlowController: NavigationController, ChatroomFlowC
         startTop()
     }
     
-    private func startTop() {}
+    private func startTop() {
+        let top = NavigationContainer.shared.chatroomTopFlowController()
+        setViewControllers([top], animated: true)
+        top.start()
+    }
 }
