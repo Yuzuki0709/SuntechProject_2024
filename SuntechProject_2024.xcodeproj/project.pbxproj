@@ -33,6 +33,8 @@
 		A232E1992A4F14A9007599E5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232E1982A4F14A9007599E5 /* LoginView.swift */; };
 		A232E19C2A4F1545007599E5 /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = A232E19B2A4F1545007599E5 /* RswiftLibrary */; };
 		A232E1A32A4F16CD007599E5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232E1A22A4F16CD007599E5 /* Color.swift */; };
+		A24F1BC52A74A15E00B4A00A /* TimetableFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BC42A74A15E00B4A00A /* TimetableFlowController.swift */; };
+		A24F1BC82A74A19E00B4A00A /* TimetableFlowControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BC72A74A19E00B4A00A /* TimetableFlowControllerService.swift */; };
 		A28113382A5BC1690037E35C /* View++.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113372A5BC1690037E35C /* View++.swift */; };
 		A28113422A5BD71A0037E35C /* AttendanceStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113412A5BD71A0037E35C /* AttendanceStatusView.swift */; };
 		A28113452A5BE58A0037E35C /* AttendanceStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113442A5BE58A0037E35C /* AttendanceStatus.swift */; };
@@ -118,6 +120,8 @@
 		A232E18B2A4F140A007599E5 /* SuntechProject_2024UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuntechProject_2024UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A232E1982A4F14A9007599E5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A232E1A22A4F16CD007599E5 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		A24F1BC42A74A15E00B4A00A /* TimetableFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableFlowController.swift; sourceTree = "<group>"; };
+		A24F1BC72A74A19E00B4A00A /* TimetableFlowControllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableFlowControllerService.swift; sourceTree = "<group>"; };
 		A28113372A5BC1690037E35C /* View++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View++.swift"; sourceTree = "<group>"; };
 		A28113412A5BD71A0037E35C /* AttendanceStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatusView.swift; sourceTree = "<group>"; };
 		A28113442A5BE58A0037E35C /* AttendanceStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatus.swift; sourceTree = "<group>"; };
@@ -343,6 +347,7 @@
 			children = (
 				A21A28682A723729006735FA /* Main */,
 				A21A28402A71426D006735FA /* LoginView */,
+				A24F1BC62A74A18400B4A00A /* Timetable */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -433,6 +438,14 @@
 				A232E18B2A4F140A007599E5 /* SuntechProject_2024UITestsLaunchTests.swift */,
 			);
 			path = SuntechProject_2024UITests;
+			sourceTree = "<group>";
+		};
+		A24F1BC62A74A18400B4A00A /* Timetable */ = {
+			isa = PBXGroup;
+			children = (
+				A24F1BC72A74A19E00B4A00A /* TimetableFlowControllerService.swift */,
+			);
+			path = Timetable;
 			sourceTree = "<group>";
 		};
 		A28113432A5BE5740037E35C /* AttendanceStatus */ = {
@@ -534,6 +547,7 @@
 			children = (
 				A29C1D9E2A5302960045FFE2 /* TimetableView.swift */,
 				A29C1DB22A54EE3C0045FFE2 /* TimetableViewModel.swift */,
+				A24F1BC42A74A15E00B4A00A /* TimetableFlowController.swift */,
 			);
 			path = TimetableView;
 			sourceTree = "<group>";
@@ -691,6 +705,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A21A28322A71405C006735FA /* HostingController.swift in Sources */,
+				A24F1BC82A74A19E00B4A00A /* TimetableFlowControllerService.swift in Sources */,
 				A21A27B62A6D5E55006735FA /* ChatUser.swift in Sources */,
 				A21A28422A71428B006735FA /* LoginFlowControllerService.swift in Sources */,
 				A2133D6A2A65061700C5B24A /* CustomNavigationBar.swift in Sources */,
@@ -733,6 +748,7 @@
 				A29C1DA52A5303940045FFE2 /* FSCalendarView.swift in Sources */,
 				A29C1D732A528CE10045FFE2 /* Department.swift in Sources */,
 				A29C1DA72A5304A00045FFE2 /* UIColor.swift in Sources */,
+				A24F1BC52A74A15E00B4A00A /* TimetableFlowController.swift in Sources */,
 				A29C1D932A52FF7E0045FFE2 /* Class.swift in Sources */,
 				A29C1D672A5288350045FFE2 /* LoginViewModel.swift in Sources */,
 				A29C1DAA2A53087F0045FFE2 /* FSCalendarViewRepresentable.swift in Sources */,
