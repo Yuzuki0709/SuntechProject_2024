@@ -7,12 +7,19 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 final class TimetableViewModel: ObservableObject {
     @Published private(set) var weekTimetable: WeekTimetable?
     @Published private(set) var isLoading: Bool = false
     
     private let suntechAPIClient: SuntechAPIClientProtocol
+    
+    
+    private let _navigationSubject = PassthroughSubject<Navigation, Never>()
+    var navigationSignal: AnyPublisher<Navigation, Never> {
+        _navigationSubject.eraseToAnyPublisher()
+    }
     
     init(suntechAPIClient: SuntechAPIClientProtocol = SuntechAPIClient()) {
         self.suntechAPIClient = suntechAPIClient
@@ -35,5 +42,15 @@ final class TimetableViewModel: ObservableObject {
             
             self?.isLoading = false
         }
+    }
+    
+    func navigate(_ navigation: Navigation) {
+        _navigationSubject.send(navigation)
+    }
+}
+
+extension TimetableViewModel {
+    enum Navigation {
+        case classDetail(Class)
     }
 }
