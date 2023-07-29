@@ -49,5 +49,6 @@ final class ClassDetailViewModel: ObservableObject {
 extension ClassDetailViewModel {
     enum Navigation {
         case attendanceStatus(Class)
+        case classroom(URL)
     }
 }

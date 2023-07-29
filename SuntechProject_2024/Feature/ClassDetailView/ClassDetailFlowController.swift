@@ -27,7 +27,9 @@ final class ClassDetailFlowController: HostingController<ClassDetailView>, Class
                 guard let self else { return }
                 switch navigation {
                 case .attendanceStatus(let classData):
-                    startAttendanceStatus(classData: classData)
+                    self.startAttendanceStatus(classData: classData)
+                case .classroom(let url):
+                    self.startClassroom(url: url)
                 }
             })
             .store(in: &cancellable)
@@ -45,5 +47,19 @@ final class ClassDetailFlowController: HostingController<ClassDetailView>, Class
         
         self.present(attendanceStatus, animated: true)
         attendanceStatus.start()
+    }
+    
+    private func startClassroom(url: URL) {
+        let webView = WebViewFlowController(
+            rootView: WebView(
+                viewModel: WebViewModel(
+                    url: url,
+                    navigateionTitle: ""
+                )
+            )
+        )
+        
+        self.present(webView, animated: true)
+        webView.start()
     }
 }

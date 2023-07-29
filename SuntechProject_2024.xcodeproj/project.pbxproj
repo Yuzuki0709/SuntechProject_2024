@@ -41,6 +41,8 @@
 		A24F1BDB2A74B9C400B4A00A /* ClassDetailFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BDA2A74B9C400B4A00A /* ClassDetailFlowController.swift */; };
 		A24F1BDE2A74BBFE00B4A00A /* AttendanceStatusFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BDD2A74BBFE00B4A00A /* AttendanceStatusFlowController.swift */; };
 		A24F1BE22A750ED900B4A00A /* AttendanceStatusFlowContrllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BE12A750ED900B4A00A /* AttendanceStatusFlowContrllerService.swift */; };
+		A24F1BE42A75158700B4A00A /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BE32A75158700B4A00A /* WebViewModel.swift */; };
+		A24F1BE72A75168A00B4A00A /* WebViewFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BE62A75168900B4A00A /* WebViewFlowController.swift */; };
 		A28113382A5BC1690037E35C /* View++.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113372A5BC1690037E35C /* View++.swift */; };
 		A28113422A5BD71A0037E35C /* AttendanceStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113412A5BD71A0037E35C /* AttendanceStatusView.swift */; };
 		A28113452A5BE58A0037E35C /* AttendanceStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113442A5BE58A0037E35C /* AttendanceStatus.swift */; };
@@ -134,6 +136,8 @@
 		A24F1BDA2A74B9C400B4A00A /* ClassDetailFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailFlowController.swift; sourceTree = "<group>"; };
 		A24F1BDD2A74BBFE00B4A00A /* AttendanceStatusFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatusFlowController.swift; sourceTree = "<group>"; };
 		A24F1BE12A750ED900B4A00A /* AttendanceStatusFlowContrllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatusFlowContrllerService.swift; sourceTree = "<group>"; };
+		A24F1BE32A75158700B4A00A /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
+		A24F1BE62A75168900B4A00A /* WebViewFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewFlowController.swift; sourceTree = "<group>"; };
 		A28113372A5BC1690037E35C /* View++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View++.swift"; sourceTree = "<group>"; };
 		A28113412A5BD71A0037E35C /* AttendanceStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatusView.swift; sourceTree = "<group>"; };
 		A28113442A5BE58A0037E35C /* AttendanceStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatus.swift; sourceTree = "<group>"; };
@@ -606,6 +610,8 @@
 			isa = PBXGroup;
 			children = (
 				A2D8CBA52A681F6C00A059D3 /* WebView.swift */,
+				A24F1BE32A75158700B4A00A /* WebViewModel.swift */,
+				A24F1BE62A75168900B4A00A /* WebViewFlowController.swift */,
 			);
 			path = WebView;
 			sourceTree = "<group>";
@@ -777,10 +783,12 @@
 				A2E118F42A66B1D3005901EB /* AppCompatible.swift in Sources */,
 				A2133D612A64FE8E00C5B24A /* NavigationBarModifier.swift in Sources */,
 				A29C1DFA2A59AA4E0045FFE2 /* ClassDetailView.swift in Sources */,
+				A24F1BE42A75158700B4A00A /* WebViewModel.swift in Sources */,
 				A21A28662A723703006735FA /* MainFlowController.swift in Sources */,
 				A21A27B42A6D5CCE006735FA /* Chatroom.swift in Sources */,
 				A28113422A5BD71A0037E35C /* AttendanceStatusView.swift in Sources */,
 				A2E118F72A66B29C005901EB /* AppStyle.swift in Sources */,
+				A24F1BE72A75168A00B4A00A /* WebViewFlowController.swift in Sources */,
 				A232E1A32A4F16CD007599E5 /* Color.swift in Sources */,
 				A29C1D9A2A5301200045FFE2 /* WeekTimetable.swift in Sources */,
 				A2133D732A6573C900C5B24A /* ActivityIndicator.swift in Sources */,

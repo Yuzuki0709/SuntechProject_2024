@@ -12,8 +12,6 @@ struct ClassDetailView: View {
     
     let classData: Class
     @ObservedObject var viewModel: ClassDetailViewModel
-    @State private var isShowAttendanceSheet: Bool = false
-    @State private var isShowClassroomSheet: Bool = false
     
     private var contentWidth: CGFloat {
         UIScreen.main.bounds.width * 0.9
@@ -33,11 +31,6 @@ struct ClassDetailView: View {
             }
         }
         .padding()
-        .sheet(isPresented: $isShowClassroomSheet) {
-            if let classroomUrl = URL(string: classData.classroomUrl ?? "") {
-                WebView(url: classroomUrl)
-            }
-        }
         .backgroundColor(color: Color(R.color.attendanceStatus.backgroundColor))
         .customNavigationBar(title: "授業詳細", color: Color(R.color.mainColor))
         .navigationBackButton(color: .white) { dismiss() }
@@ -172,9 +165,10 @@ struct ClassDetailView: View {
             button(text: "出席状況を記録") {
                 viewModel.navigate(.attendanceStatus(classData))
             }
-            if let _ = classData.classroomUrl {
+            if let classroomUrlString = classData.classroomUrl,
+               let classroomUrl = URL(string: classroomUrlString) {
                 button(text: "Classroomへ") {
-                    isShowClassroomSheet = true
+                    viewModel.navigate(.classroom(classroomUrl))
                 }
             }
         }
