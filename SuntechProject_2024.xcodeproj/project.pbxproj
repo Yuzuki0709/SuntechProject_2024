@@ -44,6 +44,7 @@
 		A24F1BE42A75158700B4A00A /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BE32A75158700B4A00A /* WebViewModel.swift */; };
 		A24F1BE72A75168A00B4A00A /* WebViewFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BE62A75168900B4A00A /* WebViewFlowController.swift */; };
 		A24F1BEB2A751A0300B4A00A /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = A24F1BEA2A751A0300B4A00A /* Factory */; };
+		A24F1BEE2A751A5E00B4A00A /* NavigationContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BED2A751A5E00B4A00A /* NavigationContainer.swift */; };
 		A28113382A5BC1690037E35C /* View++.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113372A5BC1690037E35C /* View++.swift */; };
 		A28113422A5BD71A0037E35C /* AttendanceStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113412A5BD71A0037E35C /* AttendanceStatusView.swift */; };
 		A28113452A5BE58A0037E35C /* AttendanceStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113442A5BE58A0037E35C /* AttendanceStatus.swift */; };
@@ -139,6 +140,7 @@
 		A24F1BE12A750ED900B4A00A /* AttendanceStatusFlowContrllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatusFlowContrllerService.swift; sourceTree = "<group>"; };
 		A24F1BE32A75158700B4A00A /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
 		A24F1BE62A75168900B4A00A /* WebViewFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewFlowController.swift; sourceTree = "<group>"; };
+		A24F1BED2A751A5E00B4A00A /* NavigationContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationContainer.swift; sourceTree = "<group>"; };
 		A28113372A5BC1690037E35C /* View++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View++.swift"; sourceTree = "<group>"; };
 		A28113412A5BD71A0037E35C /* AttendanceStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatusView.swift; sourceTree = "<group>"; };
 		A28113442A5BE58A0037E35C /* AttendanceStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatus.swift; sourceTree = "<group>"; };
@@ -358,6 +360,7 @@
 			isa = PBXGroup;
 			children = (
 				A21A283D2A714227006735FA /* FlowController.swift */,
+				A24F1BEC2A751A5400B4A00A /* DI */,
 				A21A283F2A714267006735FA /* Feature */,
 			);
 			path = Router;
@@ -503,6 +506,14 @@
 				A24F1BE12A750ED900B4A00A /* AttendanceStatusFlowContrllerService.swift */,
 			);
 			path = AttendanceStatus;
+			sourceTree = "<group>";
+		};
+		A24F1BEC2A751A5400B4A00A /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				A24F1BED2A751A5E00B4A00A /* NavigationContainer.swift */,
+			);
+			path = DI;
 			sourceTree = "<group>";
 		};
 		A28113432A5BE5740037E35C /* AttendanceStatus */ = {
@@ -803,6 +814,7 @@
 				A21A286A2A723752006735FA /* MainFlowControllerService.swift in Sources */,
 				A24F1BD12A74B22E00B4A00A /* NavigationController.swift in Sources */,
 				A281CAD42A5EED6A004663C4 /* DateHelper.swift in Sources */,
+				A24F1BEE2A751A5E00B4A00A /* NavigationContainer.swift in Sources */,
 				A281CACE2A5E2CEF004663C4 /* AttendanceStatusViewModel.swift in Sources */,
 				A2133D682A65033200C5B24A /* NavigationBackButton.swift in Sources */,
 				A24F1BD92A74B9AC00B4A00A /* ClassDetailFlowControllerService.swift in Sources */,
