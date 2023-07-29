@@ -11,19 +11,17 @@ struct ClassDetailView: View {
     @Environment (\.dismiss) var dismiss
     
     let classData: Class
+    @ObservedObject private var viewModel: ClassDetailViewModel
     @State private var isShowAttendanceSheet: Bool = false
     @State private var isShowClassroomSheet: Bool = false
-    @StateObject private var viewModel: ClassDetailViewModel
     
     private var contentWidth: CGFloat {
         UIScreen.main.bounds.width * 0.9
     }
     
-    init(classData: Class) {
+    init(classData: Class, viewModel: ClassDetailViewModel) {
         self.classData = classData
-        self._viewModel = StateObject(
-            wrappedValue: ClassDetailViewModel(classData: classData)
-        )
+        self.viewModel = viewModel
     }
     
     var body: some View {
@@ -225,7 +223,17 @@ struct ClassDetailView_Previews: PreviewProvider {
                     emailAddress: "sugita@suntech.jp"),
                 creditsCount: 4,
                 timeCount: 60,
-                classroomUrl: nil))
+                classroomUrl: nil),
+                            viewModel: ClassDetailViewModel(classData: Class(
+                                id: "23C4110-0238",
+                                name: "量子コンピューティング",
+                                teacher: Teacher(
+                                    id: "F-0004",
+                                    name: "杉田 勝実",
+                                    emailAddress: "sugita@suntech.jp"),
+                                creditsCount: 4,
+                                timeCount: 60,
+                                classroomUrl: nil)))
         }
     }
 }

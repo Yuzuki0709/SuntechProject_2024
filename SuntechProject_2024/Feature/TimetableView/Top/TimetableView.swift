@@ -43,7 +43,7 @@ struct TimetableView: View {
     }
     
     private func classRow(classData: Class) -> some View {
-        NavigationLink(destination: ClassDetailView(classData: classData)) {
+        NavigationLink(destination: ClassDetailView(classData: classData, viewModel: ClassDetailViewModel(classData: classData))) {
             VStack(alignment: .leading) {
                 Text(classData.name)
                     .font(.system(size: 12))

@@ -37,6 +37,8 @@
 		A24F1BC82A74A19E00B4A00A /* TimetableFlowControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BC72A74A19E00B4A00A /* TimetableFlowControllerService.swift */; };
 		A24F1BD12A74B22E00B4A00A /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BD02A74B22E00B4A00A /* NavigationController.swift */; };
 		A24F1BD52A74B4C200B4A00A /* TimetableContainerFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BD42A74B4C200B4A00A /* TimetableContainerFlowController.swift */; };
+		A24F1BD92A74B9AC00B4A00A /* ClassDetailFlowControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BD82A74B9AC00B4A00A /* ClassDetailFlowControllerService.swift */; };
+		A24F1BDB2A74B9C400B4A00A /* ClassDetailFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BDA2A74B9C400B4A00A /* ClassDetailFlowController.swift */; };
 		A28113382A5BC1690037E35C /* View++.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113372A5BC1690037E35C /* View++.swift */; };
 		A28113422A5BD71A0037E35C /* AttendanceStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113412A5BD71A0037E35C /* AttendanceStatusView.swift */; };
 		A28113452A5BE58A0037E35C /* AttendanceStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113442A5BE58A0037E35C /* AttendanceStatus.swift */; };
@@ -126,6 +128,8 @@
 		A24F1BC72A74A19E00B4A00A /* TimetableFlowControllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableFlowControllerService.swift; sourceTree = "<group>"; };
 		A24F1BD02A74B22E00B4A00A /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		A24F1BD42A74B4C200B4A00A /* TimetableContainerFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableContainerFlowController.swift; sourceTree = "<group>"; };
+		A24F1BD82A74B9AC00B4A00A /* ClassDetailFlowControllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailFlowControllerService.swift; sourceTree = "<group>"; };
+		A24F1BDA2A74B9C400B4A00A /* ClassDetailFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailFlowController.swift; sourceTree = "<group>"; };
 		A28113372A5BC1690037E35C /* View++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View++.swift"; sourceTree = "<group>"; };
 		A28113412A5BD71A0037E35C /* AttendanceStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatusView.swift; sourceTree = "<group>"; };
 		A28113442A5BE58A0037E35C /* AttendanceStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatus.swift; sourceTree = "<group>"; };
@@ -250,6 +254,7 @@
 			children = (
 				A29C1DF92A59AA4E0045FFE2 /* ClassDetailView.swift */,
 				A2E118FE2A66CF5F005901EB /* ClassDetailViewModel.swift */,
+				A24F1BDA2A74B9C400B4A00A /* ClassDetailFlowController.swift */,
 				A2133D6E2A6555A900C5B24A /* AttendanceStatusView */,
 			);
 			path = ClassDetailView;
@@ -353,6 +358,7 @@
 				A21A28682A723729006735FA /* Main */,
 				A21A28402A71426D006735FA /* LoginView */,
 				A24F1BC62A74A18400B4A00A /* Timetable */,
+				A24F1BD62A74B97200B4A00A /* ClassDetail */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -469,6 +475,14 @@
 				A24F1BC42A74A15E00B4A00A /* TimetableFlowController.swift */,
 			);
 			path = Top;
+			sourceTree = "<group>";
+		};
+		A24F1BD62A74B97200B4A00A /* ClassDetail */ = {
+			isa = PBXGroup;
+			children = (
+				A24F1BD82A74B9AC00B4A00A /* ClassDetailFlowControllerService.swift */,
+			);
+			path = ClassDetail;
 			sourceTree = "<group>";
 		};
 		A28113432A5BE5740037E35C /* AttendanceStatus */ = {
@@ -730,6 +744,7 @@
 				A24F1BC82A74A19E00B4A00A /* TimetableFlowControllerService.swift in Sources */,
 				A21A27B62A6D5E55006735FA /* ChatUser.swift in Sources */,
 				A21A28422A71428B006735FA /* LoginFlowControllerService.swift in Sources */,
+				A24F1BDB2A74B9C400B4A00A /* ClassDetailFlowController.swift in Sources */,
 				A2133D6A2A65061700C5B24A /* CustomNavigationBar.swift in Sources */,
 				A2D8CBA62A681F6C00A059D3 /* WebView.swift in Sources */,
 				A28113382A5BC1690037E35C /* View++.swift in Sources */,
@@ -763,6 +778,7 @@
 				A281CAD42A5EED6A004663C4 /* DateHelper.swift in Sources */,
 				A281CACE2A5E2CEF004663C4 /* AttendanceStatusViewModel.swift in Sources */,
 				A2133D682A65033200C5B24A /* NavigationBackButton.swift in Sources */,
+				A24F1BD92A74B9AC00B4A00A /* ClassDetailFlowControllerService.swift in Sources */,
 				A29C1D762A528D2B0045FFE2 /* Teacher.swift in Sources */,
 				A24F1BD52A74B4C200B4A00A /* TimetableContainerFlowController.swift in Sources */,
 				A28113482A5BE7A90037E35C /* AttendanceLog.swift in Sources */,
