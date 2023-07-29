@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct LoginView: View {
-    @ObservedObject var viewModel = LoginViewModel()
+    @ObservedObject var viewModel: LoginViewModel
     private let width: CGFloat = UIScreen.main.bounds.width
+    
+    init(viewModel: LoginViewModel) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         NavigationView {
@@ -119,6 +123,6 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(viewModel: LoginViewModel())
     }
 }

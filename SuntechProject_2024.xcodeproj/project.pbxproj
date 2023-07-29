@@ -43,6 +43,9 @@
 		A24F1BE22A750ED900B4A00A /* AttendanceStatusFlowContrllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BE12A750ED900B4A00A /* AttendanceStatusFlowContrllerService.swift */; };
 		A24F1BE42A75158700B4A00A /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BE32A75158700B4A00A /* WebViewModel.swift */; };
 		A24F1BE72A75168A00B4A00A /* WebViewFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BE62A75168900B4A00A /* WebViewFlowController.swift */; };
+		A24F1BEB2A751A0300B4A00A /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = A24F1BEA2A751A0300B4A00A /* Factory */; };
+		A24F1BEE2A751A5E00B4A00A /* NavigationContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BED2A751A5E00B4A00A /* NavigationContainer.swift */; };
+		A24F1BFA2A752AEA00B4A00A /* WebFlowControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BF92A752AEA00B4A00A /* WebFlowControllerService.swift */; };
 		A28113382A5BC1690037E35C /* View++.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113372A5BC1690037E35C /* View++.swift */; };
 		A28113422A5BD71A0037E35C /* AttendanceStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113412A5BD71A0037E35C /* AttendanceStatusView.swift */; };
 		A28113452A5BE58A0037E35C /* AttendanceStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113442A5BE58A0037E35C /* AttendanceStatus.swift */; };
@@ -138,6 +141,8 @@
 		A24F1BE12A750ED900B4A00A /* AttendanceStatusFlowContrllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatusFlowContrllerService.swift; sourceTree = "<group>"; };
 		A24F1BE32A75158700B4A00A /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
 		A24F1BE62A75168900B4A00A /* WebViewFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewFlowController.swift; sourceTree = "<group>"; };
+		A24F1BED2A751A5E00B4A00A /* NavigationContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationContainer.swift; sourceTree = "<group>"; };
+		A24F1BF92A752AEA00B4A00A /* WebFlowControllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebFlowControllerService.swift; sourceTree = "<group>"; };
 		A28113372A5BC1690037E35C /* View++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View++.swift"; sourceTree = "<group>"; };
 		A28113412A5BD71A0037E35C /* AttendanceStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatusView.swift; sourceTree = "<group>"; };
 		A28113442A5BE58A0037E35C /* AttendanceStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatus.swift; sourceTree = "<group>"; };
@@ -181,6 +186,7 @@
 				A232E19C2A4F1545007599E5 /* RswiftLibrary in Frameworks */,
 				A29C1DA32A53036A0045FFE2 /* FSCalendar in Frameworks */,
 				A281CAC72A5CED2B004663C4 /* Realm in Frameworks */,
+				A24F1BEB2A751A0300B4A00A /* Factory in Frameworks */,
 				A281CAC92A5CED2B004663C4 /* RealmSwift in Frameworks */,
 				A29C1D652A5288000045FFE2 /* Alamofire in Frameworks */,
 			);
@@ -356,6 +362,7 @@
 			isa = PBXGroup;
 			children = (
 				A21A283D2A714227006735FA /* FlowController.swift */,
+				A24F1BEC2A751A5400B4A00A /* DI */,
 				A21A283F2A714267006735FA /* Feature */,
 			);
 			path = Router;
@@ -364,6 +371,7 @@
 		A21A283F2A714267006735FA /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				A24F1BF72A752AD900B4A00A /* WebView */,
 				A21A28682A723729006735FA /* Main */,
 				A21A28402A71426D006735FA /* LoginView */,
 				A24F1BC62A74A18400B4A00A /* Timetable */,
@@ -503,6 +511,22 @@
 			path = AttendanceStatus;
 			sourceTree = "<group>";
 		};
+		A24F1BEC2A751A5400B4A00A /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				A24F1BED2A751A5E00B4A00A /* NavigationContainer.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		A24F1BF72A752AD900B4A00A /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				A24F1BF92A752AEA00B4A00A /* WebFlowControllerService.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
 		A28113432A5BE5740037E35C /* AttendanceStatus */ = {
 			isa = PBXGroup;
 			children = (
@@ -639,6 +663,7 @@
 				A29C1DA22A53036A0045FFE2 /* FSCalendar */,
 				A281CAC62A5CED2B004663C4 /* Realm */,
 				A281CAC82A5CED2B004663C4 /* RealmSwift */,
+				A24F1BEA2A751A0300B4A00A /* Factory */,
 			);
 			productName = SuntechProject_2024;
 			productReference = A232E16B2A4F1407007599E5 /* SuntechProject_2024.app */;
@@ -717,6 +742,7 @@
 				A29C1D632A5288000045FFE2 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				A29C1DA12A5303690045FFE2 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 				A281CAC52A5CED2B004663C4 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				A24F1BE92A751A0200B4A00A /* XCRemoteSwiftPackageReference "Factory" */,
 			);
 			productRefGroup = A232E16C2A4F1407007599E5 /* Products */;
 			projectDirPath = "";
@@ -799,6 +825,7 @@
 				A21A286A2A723752006735FA /* MainFlowControllerService.swift in Sources */,
 				A24F1BD12A74B22E00B4A00A /* NavigationController.swift in Sources */,
 				A281CAD42A5EED6A004663C4 /* DateHelper.swift in Sources */,
+				A24F1BEE2A751A5E00B4A00A /* NavigationContainer.swift in Sources */,
 				A281CACE2A5E2CEF004663C4 /* AttendanceStatusViewModel.swift in Sources */,
 				A2133D682A65033200C5B24A /* NavigationBackButton.swift in Sources */,
 				A24F1BD92A74B9AC00B4A00A /* ClassDetailFlowControllerService.swift in Sources */,
@@ -810,6 +837,7 @@
 				A29C1D7D2A528FAE0045FFE2 /* Loggable.swift in Sources */,
 				A21A282D2A713F79006735FA /* UIViewControllerAdaptor.swift in Sources */,
 				A29C1DA52A5303940045FFE2 /* FSCalendarView.swift in Sources */,
+				A24F1BFA2A752AEA00B4A00A /* WebFlowControllerService.swift in Sources */,
 				A29C1D732A528CE10045FFE2 /* Department.swift in Sources */,
 				A29C1DA72A5304A00045FFE2 /* UIColor.swift in Sources */,
 				A24F1BC52A74A15E00B4A00A /* TimetableFlowController.swift in Sources */,
@@ -1161,6 +1189,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		A24F1BE92A751A0200B4A00A /* XCRemoteSwiftPackageReference "Factory" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:hmlongco/Factory.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		A281CAC52A5CED2B004663C4 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift";
@@ -1196,6 +1232,11 @@
 		A232E19D2A4F156B007599E5 /* RswiftGenerateInternalResources */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = "plugin:RswiftGenerateInternalResources";
+		};
+		A24F1BEA2A751A0300B4A00A /* Factory */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A24F1BE92A751A0200B4A00A /* XCRemoteSwiftPackageReference "Factory" */;
+			productName = Factory;
 		};
 		A281CAC62A5CED2B004663C4 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;

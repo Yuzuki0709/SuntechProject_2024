@@ -13,7 +13,7 @@ final class TimetableContainerFlowController: NavigationController, TimetableFlo
     }
     
     private func startTop() {
-        let top = TimetableFlowController(rootView: TimetableView(viewModel: TimetableViewModel()))
+        let top = NavigationContainer.shared.timetableFlowController()
         setViewControllers([top], animated: true)
         top.start()
     }

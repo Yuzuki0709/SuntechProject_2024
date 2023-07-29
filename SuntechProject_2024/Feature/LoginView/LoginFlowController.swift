@@ -36,11 +36,9 @@ final class LoginFlowController: HostingController<LoginView>, LoginFlowControll
     }
     
     private func startMain() {
-        let main = MainFlowController(tabBarController: MainTabBarController())
+        let main = NavigationContainer.shared.mainFlowController()
         addContent(main, current)
         current = main
-//        main.modalPresentationStyle = .fullScreen
-//        self.present(main, animated: false)
         main.start()
     }
 }

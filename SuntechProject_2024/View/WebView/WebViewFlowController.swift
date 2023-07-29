@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class WebViewFlowController: HostingController<WebView>, FlowController {
+final class WebViewFlowController: HostingController<WebView>, WebViewFlowControllerService {
     func start() {
     }
 }
