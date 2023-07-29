@@ -37,7 +37,7 @@ struct TimetableView: View {
         .onAppear {
             viewModel.fetchWeekTimetable()
         }
-        .backgroundColor(color: Color(R.color.timetable.backgroundColor))
+        .backgroundColor(color: Color(R.color.common.backgroundColor))
         .navigationBarBackButtonHidden(true)
         .navigationTitle("時間割")
     }
