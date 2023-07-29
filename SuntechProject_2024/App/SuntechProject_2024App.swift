@@ -11,7 +11,13 @@ import SwiftUI
 struct SuntechProject_2024App: App {
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            UIViewControllerAdapor(loginFlowController())
         }
+    }
+    
+    private func loginFlowController() -> UIViewController {
+        let login = LoginFlowController(rootView: LoginView(viewModel: LoginViewModel()))
+        login.start()
+        return login
     }
 }

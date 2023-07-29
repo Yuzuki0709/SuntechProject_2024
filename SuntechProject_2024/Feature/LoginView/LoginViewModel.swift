@@ -63,7 +63,7 @@ final class LoginViewModel: ObservableObject {
                 self.failureCount = 0
                 LoginUserInfo.shared.setUserInfo(loginUser, password: self.passwordText)
                 // ログインに成功したら画面遷移する
-                _navigationSubject.send(.home)
+                _navigationSubject.send(.main)
             case .failure(let error):
                 self.error = error as Error
                 self.failureCount += 1
@@ -131,6 +131,6 @@ final class LoginViewModel: ObservableObject {
 
 extension LoginViewModel {
     enum Navigation {
-        case home
+        case main
     }
 }

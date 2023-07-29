@@ -21,5 +21,22 @@ final class LoginFlowController: HostingController<LoginView>, LoginFlowControll
     
     func start() {
         cancellable = Set()
+        
+        viewModel.navigationSignal
+            .sink(receiveValue: { [weak self] navigation in
+                guard let self else { return }
+                switch navigation {
+                case .main:
+                    self.startMain()
+                }
+            })
+            .store(in: &cancellable)
+    }
+    
+    private func startMain() {
+        let main = MainFlowController(tabBarController: MainTabBarController())
+        main.modalPresentationStyle = .fullScreen
+        self.present(main, animated: false)
+        main.start()
     }
 }
