@@ -43,6 +43,7 @@
 		A24F1BE22A750ED900B4A00A /* AttendanceStatusFlowContrllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BE12A750ED900B4A00A /* AttendanceStatusFlowContrllerService.swift */; };
 		A24F1BE42A75158700B4A00A /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BE32A75158700B4A00A /* WebViewModel.swift */; };
 		A24F1BE72A75168A00B4A00A /* WebViewFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BE62A75168900B4A00A /* WebViewFlowController.swift */; };
+		A24F1BEB2A751A0300B4A00A /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = A24F1BEA2A751A0300B4A00A /* Factory */; };
 		A28113382A5BC1690037E35C /* View++.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113372A5BC1690037E35C /* View++.swift */; };
 		A28113422A5BD71A0037E35C /* AttendanceStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113412A5BD71A0037E35C /* AttendanceStatusView.swift */; };
 		A28113452A5BE58A0037E35C /* AttendanceStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113442A5BE58A0037E35C /* AttendanceStatus.swift */; };
@@ -181,6 +182,7 @@
 				A232E19C2A4F1545007599E5 /* RswiftLibrary in Frameworks */,
 				A29C1DA32A53036A0045FFE2 /* FSCalendar in Frameworks */,
 				A281CAC72A5CED2B004663C4 /* Realm in Frameworks */,
+				A24F1BEB2A751A0300B4A00A /* Factory in Frameworks */,
 				A281CAC92A5CED2B004663C4 /* RealmSwift in Frameworks */,
 				A29C1D652A5288000045FFE2 /* Alamofire in Frameworks */,
 			);
@@ -639,6 +641,7 @@
 				A29C1DA22A53036A0045FFE2 /* FSCalendar */,
 				A281CAC62A5CED2B004663C4 /* Realm */,
 				A281CAC82A5CED2B004663C4 /* RealmSwift */,
+				A24F1BEA2A751A0300B4A00A /* Factory */,
 			);
 			productName = SuntechProject_2024;
 			productReference = A232E16B2A4F1407007599E5 /* SuntechProject_2024.app */;
@@ -717,6 +720,7 @@
 				A29C1D632A5288000045FFE2 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				A29C1DA12A5303690045FFE2 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 				A281CAC52A5CED2B004663C4 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				A24F1BE92A751A0200B4A00A /* XCRemoteSwiftPackageReference "Factory" */,
 			);
 			productRefGroup = A232E16C2A4F1407007599E5 /* Products */;
 			projectDirPath = "";
@@ -1161,6 +1165,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		A24F1BE92A751A0200B4A00A /* XCRemoteSwiftPackageReference "Factory" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:hmlongco/Factory.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		A281CAC52A5CED2B004663C4 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift";
@@ -1196,6 +1208,11 @@
 		A232E19D2A4F156B007599E5 /* RswiftGenerateInternalResources */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = "plugin:RswiftGenerateInternalResources";
+		};
+		A24F1BEA2A751A0300B4A00A /* Factory */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A24F1BE92A751A0200B4A00A /* XCRemoteSwiftPackageReference "Factory" */;
+			productName = Factory;
 		};
 		A281CAC62A5CED2B004663C4 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
