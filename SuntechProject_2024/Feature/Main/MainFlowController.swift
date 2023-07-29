@@ -42,9 +42,10 @@ private extension MainTabType {
     var flowController: (any FlowController)? {
         switch self {
         case .timetable:
-            return nil
+            return TimetableFlowController(rootView: TimetableView(viewModel: TimetableViewModel()))
         case .chatroom:
-            return nil
+            // TODO: チャット画面ができたら書き換える
+            return TimetableFlowController(rootView: TimetableView(viewModel: TimetableViewModel()))
         }
     }
 }

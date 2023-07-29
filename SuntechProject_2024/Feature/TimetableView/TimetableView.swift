@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct TimetableView: View {
-    @StateObject private var viewModel = TimetableViewModel()
+    @ObservedObject private var viewModel = TimetableViewModel()
+    
+    init(viewModel: TimetableViewModel = TimetableViewModel()) {
+        self.viewModel = viewModel
+    }
+    
     var body: some View {
         GeometryReader { geometry in
             VStack {
