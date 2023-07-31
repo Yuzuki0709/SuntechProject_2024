@@ -55,6 +55,13 @@ final class SuntechAPIClient: SuntechAPIClientProtocol {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         
+        let iso8601Full = DateFormatter()
+        iso8601Full.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
+        iso8601Full.calendar = Calendar(identifier: .iso8601)
+        iso8601Full.locale = Locale(identifier: "ja_JP")
+
+        decoder.dateDecodingStrategy = .formatted(iso8601Full)
+        
         let path = "/api/chat/get_rooms"
         let parameter = [
             "user_id": "\"\(userId)\""
