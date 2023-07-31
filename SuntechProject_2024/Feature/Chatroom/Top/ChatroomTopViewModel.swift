@@ -17,4 +17,19 @@ final class ChatroomTopViewModel: ObservableObject {
         self.suntechAPIClient = suntechAPIClient
     }
     
+    func fetchChatroomList() {
+        guard let userId = LoginUserInfo.shared.currentUser?.user.id else { return }
+        
+        suntechAPIClient.fetchChatroomList(userId: userId) { [weak self] result in
+            guard let self else { return }
+            switch result {
+            case .success(let chatrooms):
+                self.chatrooms = chatrooms
+                print(chatrooms)
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }

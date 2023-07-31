@@ -55,9 +55,9 @@ final class SuntechAPIClient: SuntechAPIClientProtocol {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         
-        let path = "api/chat/get_rooms"
+        let path = "/api/chat/get_rooms"
         let parameter = [
-            "user_id": userId
+            "user_id": "\"\(userId)\""
         ]
         
         AF.request(baseURL + path, parameters: parameter)

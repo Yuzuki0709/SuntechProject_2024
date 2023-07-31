@@ -9,12 +9,20 @@ import SwiftUI
 
 struct ChatroomTopView: View {
     @State private var searchText: String = ""
+    @ObservedObject var viewModel: ChatroomTopViewModel
+    
+    init(viewModel: ChatroomTopViewModel) {
+        self.viewModel = viewModel
+    }
     var body: some View {
         List {
             searchTextField
             ForEach(0..<10) { _ in
                 chatroomListRow
             }
+        }
+        .onAppear {
+            viewModel.fetchChatroomList()
         }
         .backgroundColor(color: Color(R.color.common.backgroundColor))
         .listStyle(.plain)
@@ -63,7 +71,7 @@ struct ChatroomTopView: View {
 struct ChatroomTopView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            ChatroomTopView()
+            ChatroomTopView(viewModel: ChatroomTopViewModel())
                 .customNavigationBar(title: "チャット一覧", color: Color(R.color.common.mainColor))
         }
     }
