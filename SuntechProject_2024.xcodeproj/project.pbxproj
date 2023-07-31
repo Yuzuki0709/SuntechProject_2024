@@ -559,8 +559,8 @@
 			isa = PBXGroup;
 			children = (
 				A24F1C052A753BD700B4A00A /* ChatroomTopView.swift */,
-				A2E10FA22A75415700ECF1FA /* ChatroomTopFlowController.swift */,
 				A2E10FA62A77A6B900ECF1FA /* ChatroomTopViewModel.swift */,
+				A2E10FA22A75415700ECF1FA /* ChatroomTopFlowController.swift */,
 			);
 			path = Top;
 			sourceTree = "<group>";

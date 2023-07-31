@@ -17,8 +17,8 @@ struct ChatroomTopView: View {
     var body: some View {
         List {
             searchTextField
-            ForEach(0..<10) { _ in
-                chatroomListRow
+            ForEach(viewModel.chatrooms) { chatroom in
+                chatroomListRow(chatroom)
             }
         }
         .onAppear {
@@ -37,7 +37,7 @@ struct ChatroomTopView: View {
             .padding(.vertical, .app.space.spacingXS)
     }
     
-    private var chatroomListRow: some View {
+    private func chatroomListRow(_ chatroom: Chatroom) -> some View {
         HStack(spacing: .app.space.spacingS) {
             Image(systemName: "person")
                 .foregroundColor(.white)
@@ -46,7 +46,7 @@ struct ChatroomTopView: View {
                 .clipShape(Circle())
             
             VStack(alignment: .leading, spacing: .app.space.spacingXXS) {
-                Text("山田太郎")
+                Text(chatroom.partner.name)
                     .fontWeight(.bold)
                 Text("サンプルテキスト")
                     .font(.system(size: 13))
@@ -57,7 +57,7 @@ struct ChatroomTopView: View {
             Spacer()
             
             VStack {
-                Text("7/29")
+                Text(DateHelper.formatToString(date: chatroom.updateAt, format: "yyyy/MM/dd"))
                     .font(.system(size: 13))
                     .foregroundColor(.gray)
                 Spacer()
