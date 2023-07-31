@@ -12,4 +12,5 @@ public struct Chatroom: Codable {
     public let name: String
     public let createdAt: Date
     public let updateAt: Date
+    public let partner: ChatUser
 }
