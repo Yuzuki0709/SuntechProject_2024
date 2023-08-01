@@ -24,6 +24,7 @@ struct ChatroomTopView: View {
         .onAppear {
             viewModel.fetchChatroomList()
         }
+        .loading(viewModel.isLoading)
         .backgroundColor(color: Color(R.color.common.backgroundColor))
         .listStyle(.plain)
         .navigationTitle("チャット一覧")

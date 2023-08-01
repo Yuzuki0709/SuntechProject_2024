@@ -10,6 +10,7 @@ import Combine
 
 final class ChatroomTopViewModel: ObservableObject {
     @Published var chatrooms: [Chatroom] = []
+    @Published var isLoading: Bool = false
     
     private let suntechAPIClient: SuntechAPIClientProtocol
     
@@ -19,6 +20,8 @@ final class ChatroomTopViewModel: ObservableObject {
     
     func fetchChatroomList() {
         guard let userId = LoginUserInfo.shared.currentUser?.user.id else { return }
+        
+        isLoading = true
         
         suntechAPIClient.fetchChatroomList(userId: userId) { [weak self] result in
             guard let self else { return }
@@ -30,6 +33,8 @@ final class ChatroomTopViewModel: ObservableObject {
             case .failure(let error):
                 print(error)
             }
+            
+            self.isLoading = false
         }
     }
 }
