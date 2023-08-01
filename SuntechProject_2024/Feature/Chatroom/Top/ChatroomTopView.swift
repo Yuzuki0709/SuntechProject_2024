@@ -29,6 +29,7 @@ struct ChatroomTopView: View {
             
         }
         .onAppear {
+            viewModel.fetchChatUser()
             viewModel.fetchChatroomList()
         }
         .loading(viewModel.isLoading)

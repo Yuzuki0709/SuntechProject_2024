@@ -13,6 +13,7 @@ public protocol SuntechAPIClientProtocol {
     func fetchWeekTimetable(studentId: String, password: String, completion: @escaping ((Result<WeekTimetable, AFError>) -> ()))
     
     func fetchChatroomList(userId: String, completion: @escaping ((Result<[Chatroom], AFError>) -> ()))
+    func fetchChatUser(userId: String, completion: @escaping ((Result<ChatUser, AFError>) -> ()))
 }
 
 final class SuntechAPIClient: SuntechAPIClientProtocol {
@@ -74,7 +75,7 @@ final class SuntechAPIClient: SuntechAPIClientProtocol {
     }
     
     func fetchChatUser(userId: String, completion: @escaping ((Result<ChatUser, AFError>) -> ())) {
-        let path = "api/chat/get_user"
+        let path = "/api/chat/get_user"
         let parameter = [
             "user_id": "\"\(userId)\""
         ]

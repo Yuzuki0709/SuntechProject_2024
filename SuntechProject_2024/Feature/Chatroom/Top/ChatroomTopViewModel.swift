@@ -15,6 +15,7 @@ final class ChatroomTopViewModel: ObservableObject {
     }
     @Published var searchText: String = ""
     @Published var isLoading: Bool = false
+    @Published var myAccount: ChatUser? = nil
     
     private let suntechAPIClient: SuntechAPIClientProtocol
     
@@ -39,6 +40,20 @@ final class ChatroomTopViewModel: ObservableObject {
             }
             
             self.isLoading = false
+        }
+    }
+    
+    func fetchChatUser() {
+        guard let userId = LoginUserInfo.shared.currentUser?.user.id else { return }
+        
+        suntechAPIClient.fetchChatUser(userId: userId) { [weak self] result in
+            guard let self else { return }
+            switch result {
+            case .success(let user):
+                self.myAccount = user
+            case .failure(let error):
+                print(error)
+            }
         }
     }
 }
