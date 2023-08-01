@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct AddChatroomView: View {
+    @ObservedObject var viewModel: AddChatroomViewModel
+    
+    init(viewModel: AddChatroomViewModel) {
+        self.viewModel = viewModel
+    }
+    
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
@@ -15,6 +21,6 @@ struct AddChatroomView: View {
 
 struct AddChatroomView_Previews: PreviewProvider {
     static var previews: some View {
-        AddChatroomView()
+        AddChatroomView(viewModel: AddChatroomViewModel())
     }
 }

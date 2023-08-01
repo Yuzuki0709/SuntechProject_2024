@@ -39,7 +39,7 @@ struct ChatroomTopView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
-                    
+                    viewModel.navigate(.addChatroom)
                 } label: {
                     Image(systemName: "person.badge.plus")
                         .foregroundColor(.white)

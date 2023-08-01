@@ -6,8 +6,20 @@
 //
 
 import Foundation
+import Combine
 
 final class AddChatroomFlowController: HostingController<AddChatroomView>, AddChatroomFlowControllerService {
+    
+    private var cancellable = Set<AnyCancellable>()
+    
+    private var viewModel: AddChatroomViewModel {
+        host.rootView.viewModel
+    }
+    
+    override init(rootView: AddChatroomView) {
+        super.init(rootView: rootView)
+    }
+    
     func start() {
     }
 }

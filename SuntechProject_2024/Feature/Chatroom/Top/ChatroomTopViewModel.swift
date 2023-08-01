@@ -19,6 +19,13 @@ final class ChatroomTopViewModel: ObservableObject {
     
     private let suntechAPIClient: SuntechAPIClientProtocol
     
+    private var cancellables = Set<AnyCancellable>()
+    
+    private let _navigationSubject = PassthroughSubject<Navigation, Never>()
+    var navigationSignal: AnyPublisher<Navigation, Never> {
+        _navigationSubject.eraseToAnyPublisher()
+    }
+    
     init(suntechAPIClient: SuntechAPIClientProtocol = SuntechAPIClient()) {
         self.suntechAPIClient = suntechAPIClient
     }
@@ -55,5 +62,15 @@ final class ChatroomTopViewModel: ObservableObject {
                 print(error)
             }
         }
+    }
+    
+    func navigate(_ navigation: Navigation) {
+        _navigationSubject.send(navigation)
+    }
+}
+
+extension ChatroomTopViewModel {
+    enum Navigation {
+        case addChatroom
     }
 }
