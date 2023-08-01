@@ -35,6 +35,16 @@ struct ChatroomTopView: View {
         .backgroundColor(color: Color(R.color.common.backgroundColor))
         .listStyle(.plain)
         .navigationTitle("チャット一覧")
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    
+                } label: {
+                    Image(systemName: "person.badge.plus")
+                        .foregroundColor(.white)
+                }
+            }
+        }
     }
     
     private var searchTextField: some View {
