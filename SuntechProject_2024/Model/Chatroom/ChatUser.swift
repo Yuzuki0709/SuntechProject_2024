@@ -10,5 +10,5 @@ import Foundation
 public struct ChatUser: Codable {
     public let id: String
     public let name: String
-    public let iconImgaeUrl: String?
+    public let iconImageUrl: String?
 }
