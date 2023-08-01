@@ -59,6 +59,7 @@
 		A281CACC2A5CED63004663C4 /* AttendanceRealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A281CACB2A5CED62004663C4 /* AttendanceRealmManager.swift */; };
 		A281CACE2A5E2CEF004663C4 /* AttendanceStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A281CACD2A5E2CEF004663C4 /* AttendanceStatusViewModel.swift */; };
 		A281CAD42A5EED6A004663C4 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A281CAD32A5EED6A004663C4 /* DateHelper.swift */; };
+		A28F5B522A79529D0029468F /* AddChatroomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F5B512A79529D0029468F /* AddChatroomView.swift */; };
 		A29C1D652A5288000045FFE2 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A29C1D642A5288000045FFE2 /* Alamofire */; };
 		A29C1D672A5288350045FFE2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D662A5288350045FFE2 /* LoginViewModel.swift */; };
 		A29C1D692A5289AF0045FFE2 /* SuntechAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1D682A5289AF0045FFE2 /* SuntechAPIClient.swift */; };
@@ -159,6 +160,7 @@
 		A281CACB2A5CED62004663C4 /* AttendanceRealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceRealmManager.swift; sourceTree = "<group>"; };
 		A281CACD2A5E2CEF004663C4 /* AttendanceStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatusViewModel.swift; sourceTree = "<group>"; };
 		A281CAD32A5EED6A004663C4 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		A28F5B512A79529D0029468F /* AddChatroomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChatroomView.swift; sourceTree = "<group>"; };
 		A29C1D662A5288350045FFE2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		A29C1D682A5289AF0045FFE2 /* SuntechAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuntechAPIClient.swift; sourceTree = "<group>"; };
 		A29C1D6D2A528C420045FFE2 /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
@@ -543,6 +545,7 @@
 			children = (
 				A24F1BFC2A753A8100B4A00A /* ChatroomContainerFlowController.swift */,
 				A24F1C022A753BB600B4A00A /* Top */,
+				A28F5B4E2A79527D0029468F /* AddChatroom */,
 			);
 			path = Chatroom;
 			sourceTree = "<group>";
@@ -581,6 +584,14 @@
 				A281CAD32A5EED6A004663C4 /* DateHelper.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		A28F5B4E2A79527D0029468F /* AddChatroom */ = {
+			isa = PBXGroup;
+			children = (
+				A28F5B512A79529D0029468F /* AddChatroomView.swift */,
+			);
+			path = AddChatroom;
 			sourceTree = "<group>";
 		};
 		A29C1D882A52A0560045FFE2 /* Model */ = {
@@ -889,6 +900,7 @@
 				A29C1D672A5288350045FFE2 /* LoginViewModel.swift in Sources */,
 				A29C1DAA2A53087F0045FFE2 /* FSCalendarViewRepresentable.swift in Sources */,
 				A29C1D692A5289AF0045FFE2 /* SuntechAPIClient.swift in Sources */,
+				A28F5B522A79529D0029468F /* AddChatroomView.swift in Sources */,
 				A21A28452A7142BF006735FA /* LoginFlowController.swift in Sources */,
 				A21A27B92A6D5F24006735FA /* ChatMessage.swift in Sources */,
 				A2E118F92A66B2DC005901EB /* CornerRadius.swift in Sources */,
