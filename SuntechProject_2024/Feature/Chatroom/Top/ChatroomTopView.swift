@@ -8,18 +8,25 @@
 import SwiftUI
 
 struct ChatroomTopView: View {
-    @State private var searchText: String = ""
     @ObservedObject var viewModel: ChatroomTopViewModel
     
     init(viewModel: ChatroomTopViewModel) {
         self.viewModel = viewModel
+        UITextField.appearance().clearButtonMode = .whileEditing
     }
     var body: some View {
         List {
             searchTextField
-            ForEach(viewModel.chatrooms) { chatroom in
-                chatroomListRow(chatroom)
+            if viewModel.searchText.isEmpty {
+                ForEach(viewModel.chatrooms) { chatroom in
+                    chatroomListRow(chatroom)
+                }
+            } else {
+                ForEach(viewModel.searchResults) { chatroom in
+                    chatroomListRow(chatroom)
+                }
             }
+            
         }
         .onAppear {
             viewModel.fetchChatroomList()
@@ -31,7 +38,7 @@ struct ChatroomTopView: View {
     }
     
     private var searchTextField: some View {
-        TextField("検索", text: $searchText)
+        TextField("検索", text: $viewModel.searchText)
             .textFieldStyle(.roundedBorder)
             .listRowBackground(Color.clear)
             .listRowSeparator(.hidden)
