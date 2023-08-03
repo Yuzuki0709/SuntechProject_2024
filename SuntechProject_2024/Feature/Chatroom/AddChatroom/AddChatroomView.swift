@@ -25,6 +25,14 @@ struct AddChatroomView: View {
         .onAppear {
             viewModel.fetchAllChatUser()
         }
+        .alert("確認", isPresented: .constant(viewModel.selectedUser != nil), actions: {
+            Button("Yes") {}
+            Button("No") {}
+        }, message: {
+            if let name = viewModel.selectedUser?.name {
+                Text("\(name)とのチャットを開始しますか？")
+            }
+        })
         .navigationTitle("チャット追加")
     }
     
@@ -54,6 +62,10 @@ struct AddChatroomView: View {
             
         }
         .listRowBackground(Color.clear)
+        .contentShape(Rectangle())
+        .onTapGesture {
+            viewModel.selectedUser = user
+        }
     }
     
     

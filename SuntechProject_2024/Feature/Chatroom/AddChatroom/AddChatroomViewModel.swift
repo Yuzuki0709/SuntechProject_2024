@@ -12,6 +12,7 @@ final class AddChatroomViewModel: ObservableObject {
     @Published var chatUsers: [ChatUser] = []
     @Published var searchText: String = ""
     @Published var isLoading: Bool = false
+    @Published var selectedUser: ChatUser? = nil
     var searchResults: [ChatUser] {
         return chatUsers.filter { $0.name.contains(searchText) }
     }
