@@ -10,7 +10,11 @@ import Combine
 
 final class AddChatroomViewModel: ObservableObject {
     @Published var chatUsers: [ChatUser] = []
+    @Published var searchText: String = ""
     @Published var isLoading: Bool = false
+    var searchResults: [ChatUser] {
+        return chatUsers.filter { $0.name.contains(searchText) }
+    }
     
     private let suntechAPIClient: SuntechAPIClientProtocol
     

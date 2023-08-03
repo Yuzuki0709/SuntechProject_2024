@@ -16,13 +16,23 @@ struct AddChatroomView: View {
     
     var body: some View {
         List {
+            searchTextField
             userSections
         }
         .listStyle(.grouped)
         .loading(viewModel.isLoading)
+        .backgroundColor(color: Color(R.color.common.backgroundColor))
         .onAppear {
             viewModel.fetchAllChatUser()
         }
+        .navigationTitle("チャット追加")
+    }
+    
+    private var searchTextField: some View {
+        TextField("検索", text: $viewModel.searchText)
+            .textFieldStyle(.roundedBorder)
+            .listRowBackground(Color.clear)
+            .listRowSeparator(.hidden)
     }
     
     private func chatUserListRow(_ user: ChatUser) -> some View {
@@ -46,26 +56,29 @@ struct AddChatroomView: View {
         .listRowBackground(Color.clear)
     }
     
+    
+    @ViewBuilder
     private var userSections: some View {
-        Group {
+        if !viewModel.searchText.isEmpty {
+            ForEach(viewModel.searchResults) { user in
+                chatUserListRow(user)
+            }
+        } else {
             Section("教師") {
                 ForEach(viewModel.chatUsers.filter { $0.type == .teacher }) { user in
                     chatUserListRow(user)
                 }
             }
-            
             Section("コンピュータ・コミュニケーション科") {
                 ForEach(viewModel.chatUsers.filter { $0.type == .student(.C) }) { user in
                     chatUserListRow(user)
                 }
             }
-            
             Section("情報システム科") {
                 ForEach(viewModel.chatUsers.filter { $0.type == .student(.S) }) { user in
                     chatUserListRow(user)
                 }
             }
-            
             Section("マルチメディア科") {
                 ForEach(viewModel.chatUsers.filter { $0.type == .student(.M) }) { user in
                     chatUserListRow(user)
