@@ -14,6 +14,7 @@ public protocol SuntechAPIClientProtocol {
     
     func fetchChatroomList(userId: String, completion: @escaping ((Result<[Chatroom], AFError>) -> ()))
     func fetchChatUser(userId: String, completion: @escaping ((Result<ChatUser, AFError>) -> ()))
+    func fetchAllChatUser(completion: @escaping ((Result<[ChatUser], AFError>) -> ()))
 }
 
 final class SuntechAPIClient: SuntechAPIClientProtocol {
@@ -82,6 +83,15 @@ final class SuntechAPIClient: SuntechAPIClientProtocol {
         
         AF.request(baseURL + path, parameters: parameter)
             .responseDecodable(of: ChatUser.self, decoder: JSONDecoder()) { response in
+                completion(response.result)
+            }
+    }
+    
+    func fetchAllChatUser(completion: @escaping ((Result<[ChatUser], AFError>) -> ())) {
+        let path = "/api/chat/get_all_user"
+        
+        AF.request(baseURL + path)
+            .responseDecodable(of: [ChatUser].self, decoder: JSONDecoder()) { response in
                 completion(response.result)
             }
     }
