@@ -16,11 +16,35 @@ struct AddChatroomView: View {
     
     var body: some View {
         List {
-            
+            ForEach(viewModel.chatUsers) { user in
+                chatUserListRow(user)
+            }
         }
+        .listStyle(.plain)
+        .loading(viewModel.isLoading)
         .onAppear {
             viewModel.fetchAllChatUser()
         }
+    }
+    
+    private func chatUserListRow(_ user: ChatUser) -> some View {
+        HStack(spacing: .app.space.spacingS) {
+            Image(systemName: "person")
+                .foregroundColor(.white)
+                .padding()
+                .background(Color.gray)
+                .clipShape(Circle())
+            
+            Text(user.name)
+                .fontWeight(.bold)
+            
+            Spacer()
+            
+            Image(systemName: "chevron.right")
+                .foregroundColor(.gray)
+            
+        }
+        .listRowBackground(Color.clear)
     }
 }
 
