@@ -11,6 +11,7 @@
 		A2133D682A65033200C5B24A /* NavigationBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2133D672A65033200C5B24A /* NavigationBackButton.swift */; };
 		A2133D6A2A65061700C5B24A /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2133D692A65061700C5B24A /* CustomNavigationBar.swift */; };
 		A2133D732A6573C900C5B24A /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2133D722A6573C800C5B24A /* ActivityIndicator.swift */; };
+		A21994F32A7E887800B1A172 /* SuntechAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21994F22A7E887800B1A172 /* SuntechAPIError.swift */; };
 		A21A27B42A6D5CCE006735FA /* Chatroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A27B32A6D5CCE006735FA /* Chatroom.swift */; };
 		A21A27B62A6D5E55006735FA /* ChatUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A27B52A6D5E55006735FA /* ChatUser.swift */; };
 		A21A27B92A6D5F24006735FA /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A27B82A6D5F24006735FA /* ChatMessage.swift */; };
@@ -116,6 +117,7 @@
 		A2133D672A65033200C5B24A /* NavigationBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBackButton.swift; sourceTree = "<group>"; };
 		A2133D692A65061700C5B24A /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		A2133D722A6573C800C5B24A /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		A21994F22A7E887800B1A172 /* SuntechAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuntechAPIError.swift; sourceTree = "<group>"; };
 		A21A27B32A6D5CCE006735FA /* Chatroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chatroom.swift; sourceTree = "<group>"; };
 		A21A27B52A6D5E55006735FA /* ChatUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUser.swift; sourceTree = "<group>"; };
 		A21A27B82A6D5F24006735FA /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
@@ -674,6 +676,7 @@
 			isa = PBXGroup;
 			children = (
 				A29C1D682A5289AF0045FFE2 /* SuntechAPIClient.swift */,
+				A21994F22A7E887800B1A172 /* SuntechAPIError.swift */,
 			);
 			path = SuntechAPI;
 			sourceTree = "<group>";
@@ -924,6 +927,7 @@
 				A21A27B92A6D5F24006735FA /* ChatMessage.swift in Sources */,
 				A2E118F92A66B2DC005901EB /* CornerRadius.swift in Sources */,
 				A28F5B592A7954640029468F /* AddChatroomFlowControllerService.swift in Sources */,
+				A21994F32A7E887800B1A172 /* SuntechAPIError.swift in Sources */,
 				A232E16F2A4F1407007599E5 /* SuntechProject_2024App.swift in Sources */,
 				A29C1DFC2A5BBD7D0045FFE2 /* HalfModalSheetViewController.swift in Sources */,
 				A21A28632A723646006735FA /* MainTabBarController.swift in Sources */,
