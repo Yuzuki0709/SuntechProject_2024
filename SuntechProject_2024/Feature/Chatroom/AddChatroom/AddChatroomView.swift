@@ -63,6 +63,7 @@ struct AddChatroomView: View {
                 .foregroundColor(.gray)
             
         }
+        .padding(.vertical, .app.space.spacingXXS)
         .listRowBackground(Color.clear)
         .contentShape(Rectangle())
         .onTapGesture {

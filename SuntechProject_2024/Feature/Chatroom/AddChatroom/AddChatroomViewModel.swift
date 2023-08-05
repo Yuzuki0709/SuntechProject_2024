@@ -25,11 +25,12 @@ final class AddChatroomViewModel: ObservableObject {
     
     func fetchAllChatUser() {
         isLoading = true
+        guard let id = LoginUserInfo.shared.currentUser?.user.id else { return }
         suntechAPIClient.fetchAllChatUser { [weak self] result in
             guard let self else { return }
             switch result {
             case .success(let chatUsers):
-                self.chatUsers = chatUsers
+                self.chatUsers = chatUsers.filter { $0.id != id }
             case .failure(let error):
                 print(error)
             }
