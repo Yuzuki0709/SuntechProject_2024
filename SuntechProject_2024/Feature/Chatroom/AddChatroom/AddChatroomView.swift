@@ -35,6 +35,13 @@ struct AddChatroomView: View {
                 Text("\(name)とのチャットを開始しますか？")
             }
         })
+        .alert("エラー", isPresented: .constant(viewModel.apiError != nil), actions: {
+            Button("OK") { viewModel.apiError = nil }
+        }, message: {
+            if let error = viewModel.apiError {
+                Text(error.description)
+            }
+        })
         .navigationTitle("チャット追加")
     }
     

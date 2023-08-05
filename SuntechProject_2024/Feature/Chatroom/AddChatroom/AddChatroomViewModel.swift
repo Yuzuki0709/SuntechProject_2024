@@ -13,6 +13,8 @@ final class AddChatroomViewModel: ObservableObject {
     @Published var searchText: String = ""
     @Published var isLoading: Bool = false
     @Published var selectedUser: ChatUser? = nil
+    @Published var apiError: SuntechAPIError? = nil
+    
     var searchResults: [ChatUser] {
         return chatUsers.filter { $0.name.contains(searchText) }
     }
@@ -52,9 +54,10 @@ final class AddChatroomViewModel: ObservableObject {
             guard let self else { return }
             switch result {
             case .success():
+                // TODO: チャット画面へ遷移する
                 print("Success!")
             case .failure(let error):
-                print(error)
+                self.apiError = error
             }
             
             self.isLoading = false

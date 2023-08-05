@@ -20,7 +20,7 @@ public enum SuntechAPIError: Error {
         case .networkError:
             return "接続環境の良いところでもう一度お試しください。"
         case .existingChatroom:
-            return "このユーザーらのチャットは既に存在します。"
+            return "このユーザーとのチャットは既に存在します。"
         case .unknown:
             return "不明なエラーです。"
         }
