@@ -37,4 +37,28 @@ final class AddChatroomViewModel: ObservableObject {
             self.isLoading = false
         }
     }
+    
+    func sendChatroom() {
+        guard let userId1 = LoginUserInfo.shared.currentUser?.user.id else { return }
+        guard let userId2 = selectedUser?.id else { return }
+        
+        isLoading = true
+        suntechAPIClient.sendChatroom(
+            userId1: userId1,
+            userId2: userId2,
+            roomName: "テスト部屋"
+        ) { [weak self] result in
+            guard let self else { return }
+            switch result {
+            case .success():
+                print("Success!")
+            case .failure(let error):
+                print(error)
+            }
+            
+            self.isLoading = false
+        }
+        
+        selectedUser = nil
+    }
 }

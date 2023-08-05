@@ -15,6 +15,13 @@ public protocol SuntechAPIClientProtocol {
     func fetchChatroomList(userId: String, completion: @escaping ((Result<[Chatroom], AFError>) -> ()))
     func fetchChatUser(userId: String, completion: @escaping ((Result<ChatUser, AFError>) -> ()))
     func fetchAllChatUser(completion: @escaping ((Result<[ChatUser], AFError>) -> ()))
+    
+    func sendChatroom(
+        userId1: String,
+        userId2: String,
+        roomName: String,
+        completion: @escaping ((Result<Void, SuntechAPIError>) -> ())
+    )
 }
 
 final class SuntechAPIClient: SuntechAPIClientProtocol {
@@ -95,4 +102,26 @@ final class SuntechAPIClient: SuntechAPIClientProtocol {
                 completion(response.result)
             }
     }
+    
+    func sendChatroom(userId1: String, userId2: String, roomName: String, completion: @escaping ((Result<Void, SuntechAPIError>) -> ())) {
+        let path = "/api/chat/send_room"
+        let parameter = [
+            "user_id_1": "\"\(userId1)\"",
+            "user_id_2": "\"\(userId2)\"",
+            "room_name": "\"\(roomName)\""
+        ]
+        
+        AF.request(baseURL + path, parameters: parameter)
+            .response { response in
+                guard let _ = response.data,
+                      let statusCode = response.response?.statusCode else { return completion(.failure(.networkError)) }
+                
+                if statusCode == 200 {
+                    completion(.success(()))
+                } else {
+                    completion(.failure(.existingChatroom))
+                }
+            }
+    }
 }
+
