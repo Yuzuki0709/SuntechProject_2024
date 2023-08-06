@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct ChatMessageView: View {
+    @ObservedObject var viewModel: ChatMessageViewModel
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    }
+    
+    init(viewModel: ChatMessageViewModel) {
+        self.viewModel = viewModel
     }
 }
 
 struct ChatMessageView_Previews: PreviewProvider {
     static var previews: some View {
-        ChatMessageView()
+        ChatMessageView(viewModel: ChatMessageViewModel())
     }
 }
