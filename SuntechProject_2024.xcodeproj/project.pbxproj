@@ -12,6 +12,7 @@
 		A2133D6A2A65061700C5B24A /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2133D692A65061700C5B24A /* CustomNavigationBar.swift */; };
 		A2133D732A6573C900C5B24A /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2133D722A6573C800C5B24A /* ActivityIndicator.swift */; };
 		A21994F32A7E887800B1A172 /* SuntechAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21994F22A7E887800B1A172 /* SuntechAPIError.swift */; };
+		A21994FA2A7FE93A00B1A172 /* ChatMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21994F92A7FE93A00B1A172 /* ChatMessageView.swift */; };
 		A21A27B42A6D5CCE006735FA /* Chatroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A27B32A6D5CCE006735FA /* Chatroom.swift */; };
 		A21A27B62A6D5E55006735FA /* ChatUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A27B52A6D5E55006735FA /* ChatUser.swift */; };
 		A21A27B92A6D5F24006735FA /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A27B82A6D5F24006735FA /* ChatMessage.swift */; };
@@ -118,6 +119,7 @@
 		A2133D692A65061700C5B24A /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		A2133D722A6573C800C5B24A /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		A21994F22A7E887800B1A172 /* SuntechAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuntechAPIError.swift; sourceTree = "<group>"; };
+		A21994F92A7FE93A00B1A172 /* ChatMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageView.swift; sourceTree = "<group>"; };
 		A21A27B32A6D5CCE006735FA /* Chatroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chatroom.swift; sourceTree = "<group>"; };
 		A21A27B52A6D5E55006735FA /* ChatUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUser.swift; sourceTree = "<group>"; };
 		A21A27B82A6D5F24006735FA /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
@@ -301,6 +303,14 @@
 				A29C1DFB2A5BBD7D0045FFE2 /* HalfModalSheetViewController.swift */,
 			);
 			path = ClassDetailView;
+			sourceTree = "<group>";
+		};
+		A21994F82A7FE91E00B1A172 /* ChatMessage */ = {
+			isa = PBXGroup;
+			children = (
+				A21994F92A7FE93A00B1A172 /* ChatMessageView.swift */,
+			);
+			path = ChatMessage;
 			sourceTree = "<group>";
 		};
 		A21A27B22A6D5C90006735FA /* Chatroom */ = {
@@ -554,6 +564,7 @@
 				A24F1BFC2A753A8100B4A00A /* ChatroomContainerFlowController.swift */,
 				A24F1C022A753BB600B4A00A /* Top */,
 				A28F5B4E2A79527D0029468F /* AddChatroom */,
+				A21994F82A7FE91E00B1A172 /* ChatMessage */,
 			);
 			path = Chatroom;
 			sourceTree = "<group>";
@@ -909,6 +920,7 @@
 				A29C1D762A528D2B0045FFE2 /* Teacher.swift in Sources */,
 				A24F1BD52A74B4C200B4A00A /* TimetableContainerFlowController.swift in Sources */,
 				A28113482A5BE7A90037E35C /* AttendanceLog.swift in Sources */,
+				A21994FA2A7FE93A00B1A172 /* ChatMessageView.swift in Sources */,
 				A24F1BDE2A74BBFE00B4A00A /* AttendanceStatusFlowController.swift in Sources */,
 				A29C1D872A529F840045FFE2 /* LoginUser.swift in Sources */,
 				A29C1D7D2A528FAE0045FFE2 /* Loggable.swift in Sources */,
