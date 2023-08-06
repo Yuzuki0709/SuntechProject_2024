@@ -84,6 +84,10 @@ struct ChatroomTopView: View {
             .padding(.vertical)
         }
         .listRowBackground(Color.clear)
+        .contentShape(Rectangle())
+        .onTapGesture {
+            viewModel.navigate(.chatMessage)
+        }
     }
 }
 

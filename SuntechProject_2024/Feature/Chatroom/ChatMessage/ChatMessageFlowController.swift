@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-final class ChatMessageFlowController: ChatMessageFlowControllerService {
+final class ChatMessageFlowController: HostingController<ChatMessageView>, ChatMessageFlowControllerService {
     func start() {
     }
 }

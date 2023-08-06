@@ -30,6 +30,9 @@ final class ChatroomTopFlowController: HostingController<ChatroomTopView>, Chatr
                 switch navigation {
                 case .addChatroom:
                     startAddChatroom()
+                    
+                case .chatMessage:
+                    startChatMessage()
                 }
             })
             .store(in: &cancellable)
@@ -39,5 +42,11 @@ final class ChatroomTopFlowController: HostingController<ChatroomTopView>, Chatr
         let addChatroom = NavigationContainer.shared.addChatroomFlowController()
         navigationController?.pushViewController(addChatroom, animated: true)
         addChatroom.start()
+    }
+    
+    private func startChatMessage() {
+        let chatMessage = NavigationContainer.shared.chatMessageFlowController()
+        navigationController?.pushViewController(chatMessage, animated: true)
+        chatMessage.start()
     }
 }
