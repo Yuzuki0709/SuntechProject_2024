@@ -14,6 +14,8 @@
 		A21994F32A7E887800B1A172 /* SuntechAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21994F22A7E887800B1A172 /* SuntechAPIError.swift */; };
 		A21994FA2A7FE93A00B1A172 /* ChatMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21994F92A7FE93A00B1A172 /* ChatMessageView.swift */; };
 		A21994FC2A7FE98C00B1A172 /* ChatMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21994FB2A7FE98C00B1A172 /* ChatMessageViewModel.swift */; };
+		A21994FF2A7FE9EA00B1A172 /* ChatMessageFlowControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21994FE2A7FE9EA00B1A172 /* ChatMessageFlowControllerService.swift */; };
+		A21995012A7FEA0900B1A172 /* ChatMessageFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21995002A7FEA0900B1A172 /* ChatMessageFlowController.swift */; };
 		A21A27B42A6D5CCE006735FA /* Chatroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A27B32A6D5CCE006735FA /* Chatroom.swift */; };
 		A21A27B62A6D5E55006735FA /* ChatUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A27B52A6D5E55006735FA /* ChatUser.swift */; };
 		A21A27B92A6D5F24006735FA /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A27B82A6D5F24006735FA /* ChatMessage.swift */; };
@@ -122,6 +124,8 @@
 		A21994F22A7E887800B1A172 /* SuntechAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuntechAPIError.swift; sourceTree = "<group>"; };
 		A21994F92A7FE93A00B1A172 /* ChatMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageView.swift; sourceTree = "<group>"; };
 		A21994FB2A7FE98C00B1A172 /* ChatMessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageViewModel.swift; sourceTree = "<group>"; };
+		A21994FE2A7FE9EA00B1A172 /* ChatMessageFlowControllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageFlowControllerService.swift; sourceTree = "<group>"; };
+		A21995002A7FEA0900B1A172 /* ChatMessageFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageFlowController.swift; sourceTree = "<group>"; };
 		A21A27B32A6D5CCE006735FA /* Chatroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chatroom.swift; sourceTree = "<group>"; };
 		A21A27B52A6D5E55006735FA /* ChatUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUser.swift; sourceTree = "<group>"; };
 		A21A27B82A6D5F24006735FA /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
@@ -312,6 +316,15 @@
 			children = (
 				A21994F92A7FE93A00B1A172 /* ChatMessageView.swift */,
 				A21994FB2A7FE98C00B1A172 /* ChatMessageViewModel.swift */,
+				A21995002A7FEA0900B1A172 /* ChatMessageFlowController.swift */,
+			);
+			path = ChatMessage;
+			sourceTree = "<group>";
+		};
+		A21994FD2A7FE9D800B1A172 /* ChatMessage */ = {
+			isa = PBXGroup;
+			children = (
+				A21994FE2A7FE9EA00B1A172 /* ChatMessageFlowControllerService.swift */,
 			);
 			path = ChatMessage;
 			sourceTree = "<group>";
@@ -577,6 +590,7 @@
 			children = (
 				A24F1C002A753ABA00B4A00A /* ChatroomFlowControllerService.swift */,
 				A28F5B572A7954560029468F /* AddChatroom */,
+				A21994FD2A7FE9D800B1A172 /* ChatMessage */,
 			);
 			path = Chatroom;
 			sourceTree = "<group>";
@@ -879,6 +893,7 @@
 				A2D8CBA62A681F6C00A059D3 /* WebView.swift in Sources */,
 				A28113382A5BC1690037E35C /* View++.swift in Sources */,
 				A281134B2A5BE7F60037E35C /* ClassAttendance.swift in Sources */,
+				A21994FF2A7FE9EA00B1A172 /* ChatMessageFlowControllerService.swift in Sources */,
 				A24F1BE22A750ED900B4A00A /* AttendanceStatusFlowContrllerService.swift in Sources */,
 				A29C1D9F2A5302960045FFE2 /* TimetableView.swift in Sources */,
 				A21A28612A723560006735FA /* MainTabType.swift in Sources */,
@@ -894,6 +909,7 @@
 				A28113452A5BE58A0037E35C /* AttendanceStatus.swift in Sources */,
 				A29C1D6E2A528C420045FFE2 /* UserType.swift in Sources */,
 				A2E118F42A66B1D3005901EB /* AppCompatible.swift in Sources */,
+				A21995012A7FEA0900B1A172 /* ChatMessageFlowController.swift in Sources */,
 				A2133D612A64FE8E00C5B24A /* NavigationBarModifier.swift in Sources */,
 				A29C1DFA2A59AA4E0045FFE2 /* ClassDetailView.swift in Sources */,
 				A24F1BE42A75158700B4A00A /* WebViewModel.swift in Sources */,
