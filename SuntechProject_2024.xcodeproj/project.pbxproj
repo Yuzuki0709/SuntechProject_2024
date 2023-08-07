@@ -17,6 +17,7 @@
 		A21994FF2A7FE9EA00B1A172 /* ChatMessageFlowControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21994FE2A7FE9EA00B1A172 /* ChatMessageFlowControllerService.swift */; };
 		A21995012A7FEA0900B1A172 /* ChatMessageFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21995002A7FEA0900B1A172 /* ChatMessageFlowController.swift */; };
 		A21995042A81233B00B1A172 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21995032A81233B00B1A172 /* Triangle.swift */; };
+		A21995082A81278900B1A172 /* MyCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21995072A81278900B1A172 /* MyCommentView.swift */; };
 		A21A27B42A6D5CCE006735FA /* Chatroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A27B32A6D5CCE006735FA /* Chatroom.swift */; };
 		A21A27B62A6D5E55006735FA /* ChatUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A27B52A6D5E55006735FA /* ChatUser.swift */; };
 		A21A27B92A6D5F24006735FA /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A27B82A6D5F24006735FA /* ChatMessage.swift */; };
@@ -128,6 +129,7 @@
 		A21994FE2A7FE9EA00B1A172 /* ChatMessageFlowControllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageFlowControllerService.swift; sourceTree = "<group>"; };
 		A21995002A7FEA0900B1A172 /* ChatMessageFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageFlowController.swift; sourceTree = "<group>"; };
 		A21995032A81233B00B1A172 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		A21995072A81278900B1A172 /* MyCommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCommentView.swift; sourceTree = "<group>"; };
 		A21A27B32A6D5CCE006735FA /* Chatroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chatroom.swift; sourceTree = "<group>"; };
 		A21A27B52A6D5E55006735FA /* ChatUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUser.swift; sourceTree = "<group>"; };
 		A21A27B82A6D5F24006735FA /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 				A21994F92A7FE93A00B1A172 /* ChatMessageView.swift */,
 				A21994FB2A7FE98C00B1A172 /* ChatMessageViewModel.swift */,
 				A21995002A7FEA0900B1A172 /* ChatMessageFlowController.swift */,
+				A21995062A81275F00B1A172 /* Components */,
 			);
 			path = ChatMessage;
 			sourceTree = "<group>";
@@ -329,6 +332,14 @@
 				A21994FE2A7FE9EA00B1A172 /* ChatMessageFlowControllerService.swift */,
 			);
 			path = ChatMessage;
+			sourceTree = "<group>";
+		};
+		A21995062A81275F00B1A172 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A21995072A81278900B1A172 /* MyCommentView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		A21A27B22A6D5C90006735FA /* Chatroom */ = {
@@ -893,6 +904,7 @@
 				A21A28422A71428B006735FA /* LoginFlowControllerService.swift in Sources */,
 				A24F1BDB2A74B9C400B4A00A /* ClassDetailFlowController.swift in Sources */,
 				A2133D6A2A65061700C5B24A /* CustomNavigationBar.swift in Sources */,
+				A21995082A81278900B1A172 /* MyCommentView.swift in Sources */,
 				A2D8CBA62A681F6C00A059D3 /* WebView.swift in Sources */,
 				A28113382A5BC1690037E35C /* View++.swift in Sources */,
 				A281134B2A5BE7F60037E35C /* ClassAttendance.swift in Sources */,
