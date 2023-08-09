@@ -23,6 +23,12 @@ public protocol SuntechAPIClientProtocol {
         roomName: String,
         completion: @escaping ((Result<Void, SuntechAPIError>) -> ())
     )
+    func sendChatMessage(
+        userId: String,
+        roomId: Int64,
+        text: String,
+        completion: @escaping ((Result<Void, SuntechAPIError>) -> ())
+    )
 }
 
 final class SuntechAPIClient: SuntechAPIClientProtocol {
@@ -145,6 +151,21 @@ final class SuntechAPIClient: SuntechAPIClientProtocol {
                 } else {
                     completion(.failure(.existingChatroom))
                 }
+            }
+    }
+    
+    func sendChatMessage(userId: String, roomId: Int64, text: String, completion: @escaping ((Result<Void, SuntechAPIError>) -> ())) {
+        let path = "/api/chat/send_message"
+        let parameter = [
+            "user_id": "\"\(userId)\"",
+            "room_id": "\(roomId)",
+            "text": "\"\(text)\""
+        ]
+        
+        AF.request(baseURL + path, parameters: parameter)
+            .response { response in
+                guard let _ = response.data else { return completion(.failure(.networkError))}
+                completion(.success(()))
             }
     }
 }
