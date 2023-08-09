@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ChatMessageView: View {
-    @State var messageText: String = ""
     @ObservedObject var viewModel: ChatMessageViewModel
     var body: some View {
         VStack {
@@ -56,11 +55,12 @@ struct ChatMessageView: View {
     
     private var textField: some View {
         HStack(spacing: .app.space.spacingXXS) {
-            TextField("", text: $messageText)
+            TextField("", text: $viewModel.messageText)
                 .textFieldStyle(.roundedBorder)
                 .padding(.horizontal)
             Button {
-                
+                viewModel.sendChatMessage()
+                viewModel.messageText = ""
             } label: {
                 Image(systemName: "paperplane")
                     .resizable()
