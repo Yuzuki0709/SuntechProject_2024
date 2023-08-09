@@ -8,36 +8,41 @@
 import SwiftUI
 
 struct ChatMessageView: View {
+    @State var messageText: String = ""
     @ObservedObject var viewModel: ChatMessageViewModel
     var body: some View {
-        List {
-            ForEach(viewModel.messages) { message in
-                if message.user.id == LoginUserInfo.shared.currentUser?.user.id {
-                    MyCommentView(
-                        date: DateHelper.formatToString(
-                            date: message.sendAt,
-                            format: "yyyy-MM-dd"
-                        )
-                    ) {
-                        Text(message.text)
+        VStack {
+            List {
+                ForEach(viewModel.messages) { message in
+                    if message.user.id == LoginUserInfo.shared.currentUser?.user.id {
+                        MyCommentView(
+                            date: DateHelper.formatToString(
+                                date: message.sendAt,
+                                format: "yyyy-MM-dd"
+                            )
+                        ) {
+                            Text(message.text)
+                        }
+                        .listRowSeparator(.hidden)
+                        .listRowBackground(Color.clear)
+                    } else {
+                        CommentView(
+                            date: DateHelper.formatToString(
+                                date: message.sendAt,
+                                format: "yyyy-MM-dd"
+                            )
+                        ) {
+                            Text(message.text)
+                        }
+                        .listRowSeparator(.hidden)
+                        .listRowBackground(Color.clear)
                     }
-                    .listRowSeparator(.hidden)
-                    .listRowBackground(Color.clear)
-                } else {
-                    CommentView(
-                        date: DateHelper.formatToString(
-                            date: message.sendAt,
-                            format: "yyyy-MM-dd"
-                        )
-                    ) {
-                        Text(message.text)
-                    }
-                    .listRowSeparator(.hidden)
-                    .listRowBackground(Color.clear)
                 }
             }
+            .listStyle(.plain)
+            
+            textField
         }
-        .listStyle(.plain)
         .onAppear {
             viewModel.fetchChatMessage()
         }
@@ -47,6 +52,27 @@ struct ChatMessageView: View {
     
     init(viewModel: ChatMessageViewModel) {
         self.viewModel = viewModel
+    }
+    
+    private var textField: some View {
+        HStack(spacing: .app.space.spacingXXS) {
+            TextField("", text: $messageText)
+                .textFieldStyle(.roundedBorder)
+                .padding(.horizontal)
+            Button {
+                
+            } label: {
+                Image(systemName: "paperplane")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 35, height: 20)
+                    .padding(.app.space.spacingXS)
+                    .foregroundColor(.white)
+                    .background(Color(R.color.common.mainColor))
+                    .cornerRadius(10)
+            }
+        }
+        .padding(.horizontal, .app.space.spacingXS)
     }
 }
 

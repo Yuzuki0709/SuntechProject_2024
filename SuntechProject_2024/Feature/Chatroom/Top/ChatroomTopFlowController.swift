@@ -46,6 +46,7 @@ final class ChatroomTopFlowController: HostingController<ChatroomTopView>, Chatr
     
     private func startChatMessage(_ chatroom: Chatroom) {
         let chatMessage = NavigationContainer.shared.chatMessageFlowController(chatroom)
+        chatMessage.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(chatMessage, animated: true)
         chatMessage.start()
     }
