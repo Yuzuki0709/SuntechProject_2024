@@ -15,11 +15,18 @@ public protocol SuntechAPIClientProtocol {
     func fetchChatroomList(userId: String, completion: @escaping ((Result<[Chatroom], AFError>) -> ()))
     func fetchChatUser(userId: String, completion: @escaping ((Result<ChatUser, AFError>) -> ()))
     func fetchAllChatUser(completion: @escaping ((Result<[ChatUser], AFError>) -> ()))
+    func fetchChatMessage(userId: String, roomId: Int64, completion: @escaping ((Result<[ChatMessage], AFError>) -> ()))
     
     func sendChatroom(
         userId1: String,
         userId2: String,
         roomName: String,
+        completion: @escaping ((Result<Void, SuntechAPIError>) -> ())
+    )
+    func sendChatMessage(
+        userId: String,
+        roomId: Int64,
+        text: String,
         completion: @escaping ((Result<Void, SuntechAPIError>) -> ())
     )
 }
@@ -103,6 +110,29 @@ final class SuntechAPIClient: SuntechAPIClientProtocol {
             }
     }
     
+    func fetchChatMessage(userId: String, roomId: Int64, completion: @escaping ((Result<[ChatMessage], AFError>) -> ())) {
+        let path = "/api/chat/get_message"
+        let parameter = [
+            "user_id": "\"\(userId)\"",
+            "room_id": "\(roomId)"
+        ]
+        
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        
+        let iso8601Full = DateFormatter()
+        iso8601Full.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
+        iso8601Full.calendar = Calendar(identifier: .iso8601)
+        iso8601Full.locale = Locale(identifier: "ja_JP")
+        
+        decoder.dateDecodingStrategy = .formatted(iso8601Full)
+        
+        AF.request(baseURL + path, parameters: parameter)
+            .responseDecodable(of: [ChatMessage].self, decoder: decoder) { response in
+                completion(response.result)
+            }
+    }
+    
     func sendChatroom(userId1: String, userId2: String, roomName: String, completion: @escaping ((Result<Void, SuntechAPIError>) -> ())) {
         let path = "/api/chat/send_room"
         let parameter = [
@@ -121,6 +151,21 @@ final class SuntechAPIClient: SuntechAPIClientProtocol {
                 } else {
                     completion(.failure(.existingChatroom))
                 }
+            }
+    }
+    
+    func sendChatMessage(userId: String, roomId: Int64, text: String, completion: @escaping ((Result<Void, SuntechAPIError>) -> ())) {
+        let path = "/api/chat/send_message"
+        let parameter = [
+            "user_id": "\"\(userId)\"",
+            "room_id": "\(roomId)",
+            "text": "\"\(text)\""
+        ]
+        
+        AF.request(baseURL + path, parameters: parameter)
+            .response { response in
+                guard let _ = response.data else { return completion(.failure(.networkError))}
+                completion(.success(()))
             }
     }
 }

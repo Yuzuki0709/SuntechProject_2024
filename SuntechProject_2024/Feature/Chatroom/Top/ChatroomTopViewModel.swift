@@ -40,7 +40,6 @@ final class ChatroomTopViewModel: ObservableObject {
             switch result {
             case .success(let chatrooms):
                 self.chatrooms = chatrooms
-                print(chatrooms)
                 
             case .failure(let error):
                 print(error)
@@ -72,5 +71,6 @@ final class ChatroomTopViewModel: ObservableObject {
 extension ChatroomTopViewModel {
     enum Navigation {
         case addChatroom
+        case chatMessage(Chatroom)
     }
 }
