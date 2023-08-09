@@ -99,6 +99,7 @@
 		A2E118F92A66B2DC005901EB /* CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E118F82A66B2DC005901EB /* CornerRadius.swift */; };
 		A2E118FB2A66B40B005901EB /* SpaceLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E118FA2A66B40B005901EB /* SpaceLayout.swift */; };
 		A2E118FF2A66CF5F005901EB /* ClassDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E118FE2A66CF5F005901EB /* ClassDetailViewModel.swift */; };
+		A2F7A3272A83C7EB00B7E1F9 /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7A3262A83C7EB00B7E1F9 /* CommentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -208,6 +209,7 @@
 		A2E118F82A66B2DC005901EB /* CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadius.swift; sourceTree = "<group>"; };
 		A2E118FA2A66B40B005901EB /* SpaceLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceLayout.swift; sourceTree = "<group>"; };
 		A2E118FE2A66CF5F005901EB /* ClassDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailViewModel.swift; sourceTree = "<group>"; };
+		A2F7A3262A83C7EB00B7E1F9 /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -338,6 +340,7 @@
 			isa = PBXGroup;
 			children = (
 				A21995072A81278900B1A172 /* MyCommentView.swift */,
+				A2F7A3262A83C7EB00B7E1F9 /* CommentView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -964,6 +967,7 @@
 				A29C1DA52A5303940045FFE2 /* FSCalendarView.swift in Sources */,
 				A24F1BFA2A752AEA00B4A00A /* WebFlowControllerService.swift in Sources */,
 				A29C1D732A528CE10045FFE2 /* Department.swift in Sources */,
+				A2F7A3272A83C7EB00B7E1F9 /* CommentView.swift in Sources */,
 				A29C1DA72A5304A00045FFE2 /* UIColor.swift in Sources */,
 				A24F1BC52A74A15E00B4A00A /* TimetableFlowController.swift in Sources */,
 				A29C1D932A52FF7E0045FFE2 /* Class.swift in Sources */,
