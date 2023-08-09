@@ -40,7 +40,6 @@ final class ChatroomTopViewModel: ObservableObject {
             switch result {
             case .success(let chatrooms):
                 self.chatrooms = chatrooms
-                print(chatrooms)
                 
             case .failure(let error):
                 print(error)
