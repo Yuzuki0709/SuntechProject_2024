@@ -15,6 +15,7 @@ public protocol SuntechAPIClientProtocol {
     func fetchChatroomList(userId: String, completion: @escaping ((Result<[Chatroom], AFError>) -> ()))
     func fetchChatUser(userId: String, completion: @escaping ((Result<ChatUser, AFError>) -> ()))
     func fetchAllChatUser(completion: @escaping ((Result<[ChatUser], AFError>) -> ()))
+    func fetchChatMessage(userId: String, roomId: Int, completion: @escaping ((Result<[ChatMessage], AFError>) -> ()))
     
     func sendChatroom(
         userId1: String,
@@ -99,6 +100,29 @@ final class SuntechAPIClient: SuntechAPIClientProtocol {
         
         AF.request(baseURL + path)
             .responseDecodable(of: [ChatUser].self, decoder: JSONDecoder()) { response in
+                completion(response.result)
+            }
+    }
+    
+    func fetchChatMessage(userId: String, roomId: Int, completion: @escaping ((Result<[ChatMessage], AFError>) -> ())) {
+        let path = "/api/chat/get_message"
+        let parameter = [
+            "user_id": "\"\(userId)\"",
+            "room_id": "\(roomId)"
+        ]
+        
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        
+        let iso8601Full = DateFormatter()
+        iso8601Full.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
+        iso8601Full.calendar = Calendar(identifier: .iso8601)
+        iso8601Full.locale = Locale(identifier: "ja_JP")
+        
+        decoder.dateDecodingStrategy = .formatted(iso8601Full)
+        
+        AF.request(baseURL + path, parameters: parameter)
+            .responseDecodable(of: [ChatMessage].self, decoder: decoder) { response in
                 completion(response.result)
             }
     }
