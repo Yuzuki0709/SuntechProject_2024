@@ -10,7 +10,10 @@ import SwiftUI
 struct ChatMessageView: View {
     @ObservedObject var viewModel: ChatMessageViewModel
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Hello, World!")
+            .onAppear {
+                viewModel.fetchChatMessage()
+            }
     }
     
     init(viewModel: ChatMessageViewModel) {
@@ -20,6 +23,20 @@ struct ChatMessageView: View {
 
 struct ChatMessageView_Previews: PreviewProvider {
     static var previews: some View {
-        ChatMessageView(viewModel: ChatMessageViewModel())
+        ChatMessageView(
+            viewModel: ChatMessageViewModel(
+                chatroom: Chatroom(
+                    id: 1,
+                    name: "サンプル部屋",
+                    createdAt: Date(),
+                    updateAt: Date(),
+                    partner: ChatUser(
+                        id: "F-0001",
+                        name: "秋山　康平",
+                        iconImageUrl: nil
+                    )
+                )
+            )
+        )
     }
 }

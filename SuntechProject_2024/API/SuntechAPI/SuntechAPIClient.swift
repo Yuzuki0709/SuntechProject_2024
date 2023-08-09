@@ -15,7 +15,7 @@ public protocol SuntechAPIClientProtocol {
     func fetchChatroomList(userId: String, completion: @escaping ((Result<[Chatroom], AFError>) -> ()))
     func fetchChatUser(userId: String, completion: @escaping ((Result<ChatUser, AFError>) -> ()))
     func fetchAllChatUser(completion: @escaping ((Result<[ChatUser], AFError>) -> ()))
-    func fetchChatMessage(userId: String, roomId: Int, completion: @escaping ((Result<[ChatMessage], AFError>) -> ()))
+    func fetchChatMessage(userId: String, roomId: Int64, completion: @escaping ((Result<[ChatMessage], AFError>) -> ()))
     
     func sendChatroom(
         userId1: String,
@@ -104,7 +104,7 @@ final class SuntechAPIClient: SuntechAPIClientProtocol {
             }
     }
     
-    func fetchChatMessage(userId: String, roomId: Int, completion: @escaping ((Result<[ChatMessage], AFError>) -> ())) {
+    func fetchChatMessage(userId: String, roomId: Int64, completion: @escaping ((Result<[ChatMessage], AFError>) -> ())) {
         let path = "/api/chat/get_message"
         let parameter = [
             "user_id": "\"\(userId)\"",
