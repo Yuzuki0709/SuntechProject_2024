@@ -38,4 +38,24 @@ extension View {
             self
         }
     }
+    
+    /// - Parameters:
+    ///   - keyPath: 読みたい値。`\.self` あるいは `\.width` `\.height`
+    func readSize<T: Equatable>(of keyPath: KeyPath<CGSize, T> = \.self, onChange: @escaping (T) -> Void) -> some View {
+        background {
+            GeometryReader { geometry in
+                Color.clear
+                    .onAppear { onChange(geometry.size[keyPath: keyPath]) }
+                    .onChange(of: geometry.size[keyPath: keyPath], perform: onChange)
+            }
+        }
+    }
+    
+    /// - Parameters:
+    ///   - keyPath: 読みたい値。`\.self` あるいは `\.width` `\.height`
+    func readSize<T: Equatable>(of keyPath: KeyPath<CGSize, T> = \.self, to binding: Binding<T>) -> some View {
+        readSize(of: keyPath) { newValue in
+            binding.wrappedValue = newValue
+        }
+    }
 }
