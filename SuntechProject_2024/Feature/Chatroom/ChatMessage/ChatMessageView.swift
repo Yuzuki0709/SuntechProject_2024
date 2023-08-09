@@ -10,10 +10,39 @@ import SwiftUI
 struct ChatMessageView: View {
     @ObservedObject var viewModel: ChatMessageViewModel
     var body: some View {
-        Text("Hello, World!")
-            .onAppear {
-                viewModel.fetchChatMessage()
+        List {
+            ForEach(viewModel.messages) { message in
+                if message.user.id == LoginUserInfo.shared.currentUser?.user.id {
+                    MyCommentView(
+                        date: DateHelper.formatToString(
+                            date: message.sendAt,
+                            format: "yyyy-MM-dd"
+                        )
+                    ) {
+                        Text(message.text)
+                    }
+                    .listRowSeparator(.hidden)
+                    .listRowBackground(Color.clear)
+                } else {
+                    CommentView(
+                        date: DateHelper.formatToString(
+                            date: message.sendAt,
+                            format: "yyyy-MM-dd"
+                        )
+                    ) {
+                        Text(message.text)
+                    }
+                    .listRowSeparator(.hidden)
+                    .listRowBackground(Color.clear)
+                }
             }
+        }
+        .listStyle(.plain)
+        .onAppear {
+            viewModel.fetchChatMessage()
+        }
+        .backgroundColor(color: Color(R.color.common.backgroundColor))
+        .navigationTitle("メッセージ")
     }
     
     init(viewModel: ChatMessageViewModel) {

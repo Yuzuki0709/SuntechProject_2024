@@ -9,7 +9,9 @@ import Foundation
 import Combine
 
 final class ChatMessageViewModel: ObservableObject {
-    @Published var messages: [ChatMessage] = []
+    @Published var messages: [ChatMessage] = [] {
+        didSet { print(messages) }
+    }
     
     private let chatroom: Chatroom
     private let suntechAPIClient: SuntechAPIClientProtocol
@@ -22,10 +24,11 @@ final class ChatMessageViewModel: ObservableObject {
     func fetchChatMessage() {
         guard let userId = LoginUserInfo.shared.currentUser?.user.id else { return }
         
-        suntechAPIClient.fetchChatMessage(userId: userId, roomId: chatroom.id) { result in
+        suntechAPIClient.fetchChatMessage(userId: userId, roomId: chatroom.id) { [weak self] result in
+            guard let self else { return }
             switch result {
             case .success(let messages):
-                print(messages)
+                self.messages = messages
             case .failure(let error):
                 print(error)
             }
