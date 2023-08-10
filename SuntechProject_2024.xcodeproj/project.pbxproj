@@ -56,6 +56,7 @@
 		A24F1BFD2A753A8100B4A00A /* ChatroomContainerFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BFC2A753A8100B4A00A /* ChatroomContainerFlowController.swift */; };
 		A24F1C012A753ABA00B4A00A /* ChatroomFlowControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1C002A753ABA00B4A00A /* ChatroomFlowControllerService.swift */; };
 		A24F1C062A753BD700B4A00A /* ChatroomTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1C052A753BD700B4A00A /* ChatroomTopView.swift */; };
+		A2716F782A853E54003C0D8C /* AppTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2716F772A853E54003C0D8C /* AppTextEditor.swift */; };
 		A28113382A5BC1690037E35C /* View++.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113372A5BC1690037E35C /* View++.swift */; };
 		A28113422A5BD71A0037E35C /* AttendanceStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113412A5BD71A0037E35C /* AttendanceStatusView.swift */; };
 		A28113452A5BE58A0037E35C /* AttendanceStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113442A5BE58A0037E35C /* AttendanceStatus.swift */; };
@@ -170,6 +171,7 @@
 		A24F1BFC2A753A8100B4A00A /* ChatroomContainerFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomContainerFlowController.swift; sourceTree = "<group>"; };
 		A24F1C002A753ABA00B4A00A /* ChatroomFlowControllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomFlowControllerService.swift; sourceTree = "<group>"; };
 		A24F1C052A753BD700B4A00A /* ChatroomTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomTopView.swift; sourceTree = "<group>"; };
+		A2716F772A853E54003C0D8C /* AppTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextEditor.swift; sourceTree = "<group>"; };
 		A28113372A5BC1690037E35C /* View++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View++.swift"; sourceTree = "<group>"; };
 		A28113412A5BD71A0037E35C /* AttendanceStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatusView.swift; sourceTree = "<group>"; };
 		A28113442A5BE58A0037E35C /* AttendanceStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatus.swift; sourceTree = "<group>"; };
@@ -396,6 +398,7 @@
 			children = (
 				A21A28312A71405C006735FA /* HostingController.swift */,
 				A21995032A81233B00B1A172 /* Triangle.swift */,
+				A2716F772A853E54003C0D8C /* AppTextEditor.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -945,6 +948,7 @@
 				A29C1D982A5300750045FFE2 /* DayTimetable.swift in Sources */,
 				A24F1C062A753BD700B4A00A /* ChatroomTopView.swift in Sources */,
 				A28F5B542A7953390029468F /* AddChatroomViewModel.swift in Sources */,
+				A2716F782A853E54003C0D8C /* AppTextEditor.swift in Sources */,
 				A2E118FB2A66B40B005901EB /* SpaceLayout.swift in Sources */,
 				A21A283E2A714227006735FA /* FlowController.swift in Sources */,
 				A21A286A2A723752006735FA /* MainFlowControllerService.swift in Sources */,
