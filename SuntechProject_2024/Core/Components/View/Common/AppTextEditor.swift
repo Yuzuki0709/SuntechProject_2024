@@ -52,10 +52,12 @@ private struct InternalTextView: UIViewRepresentable {
 
     func makeUIView(context: Context) -> UITextView {
         let textView = UITextView()
-        textView.backgroundColor = .clear
+        textView.backgroundColor = .white
         textView.delegate = context.coordinator
         textView.textContainerInset = .init(textContentInset)
         textView.textContainer.lineFragmentPadding = 0
+        textView.font = UIFont.systemFont(ofSize: 18)
+        textView.layer.cornerRadius = .app.corner.radiusS
         return textView
     }
 
