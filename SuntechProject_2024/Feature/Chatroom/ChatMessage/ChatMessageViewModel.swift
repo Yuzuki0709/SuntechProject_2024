@@ -11,6 +11,7 @@ import Combine
 final class ChatMessageViewModel: ObservableObject {
     @Published var messages: [ChatMessage] = []
     @Published var messageText: String = ""
+    @Published var isFocused: Bool = false
     
     private let chatroom: Chatroom
     private let suntechAPIClient: SuntechAPIClientProtocol
