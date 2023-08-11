@@ -53,28 +53,6 @@ struct ChatMessageView: View {
         self.viewModel = viewModel
     }
     
-    //    private var textField: some View {
-    //        HStack(spacing: .app.space.spacingXXS) {
-    //            TextField("", text: $viewModel.messageText)
-    //                .textFieldStyle(.roundedBorder)
-    //                .padding(.horizontal)
-    //            Button {
-    //                viewModel.sendChatMessage()
-    //                viewModel.messageText = ""
-    //            } label: {
-    //                Image(systemName: "paperplane")
-    //                    .resizable()
-    //                    .scaledToFit()
-    //                    .frame(width: 35, height: 20)
-    //                    .padding(.app.space.spacingXS)
-    //                    .foregroundColor(.white)
-    //                    .background(Color(R.color.common.mainColor))
-    //                    .cornerRadius(10)
-    //            }
-    //        }
-    //        .padding(.horizontal, .app.space.spacingXS)
-    //    }
-    
     private var textField: some View {
         HStack(alignment: .bottom, spacing: .app.space.spacingXS) {
             AppTextEditor(
@@ -103,9 +81,10 @@ struct ChatMessageView: View {
                     .frame(width: 35, height: 20)
                     .padding(.app.space.spacingXS)
                     .foregroundColor(.white)
-                    .background(Color(R.color.common.mainColor))
+                    .background(viewModel.messageText.isEmpty ? .gray :  Color(R.color.common.mainColor))
                     .cornerRadius(.app.corner.radiusS)
             }
+            .disabled(viewModel.messageText.isEmpty)
         }
         .padding(.horizontal)
     }
