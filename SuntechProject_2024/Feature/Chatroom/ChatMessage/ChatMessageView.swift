@@ -11,36 +11,38 @@ struct ChatMessageView: View {
     @ObservedObject var viewModel: ChatMessageViewModel
     var body: some View {
         VStack {
-            List {
-                ForEach(viewModel.messages) { message in
-                    if message.user.id == LoginUserInfo.shared.currentUser?.user.id {
-                        MyCommentView(
-                            date: DateHelper.formatToString(
-                                date: message.sendAt,
-                                format: "yyyy-MM-dd"
-                            )
-                        ) {
-                            Text(message.text)
+            ScrollViewReader { proxy in
+                List {
+                    ForEach(viewModel.messages) { message in
+                        if message.user.id == LoginUserInfo.shared.currentUser?.user.id {
+                            MyCommentView(
+                                date: DateHelper.formatToString(
+                                    date: message.sendAt,
+                                    format: "yyyy-MM-dd"
+                                )
+                            ) {
+                                Text(message.text)
+                            }
+                            .listRowSeparator(.hidden)
+                            .listRowBackground(Color.clear)
+                        } else {
+                            CommentView(
+                                date: DateHelper.formatToString(
+                                    date: message.sendAt,
+                                    format: "yyyy-MM-dd"
+                                )
+                            ) {
+                                Text(message.text)
+                            }
+                            .listRowSeparator(.hidden)
+                            .listRowBackground(Color.clear)
                         }
-                        .listRowSeparator(.hidden)
-                        .listRowBackground(Color.clear)
-                    } else {
-                        CommentView(
-                            date: DateHelper.formatToString(
-                                date: message.sendAt,
-                                format: "yyyy-MM-dd"
-                            )
-                        ) {
-                            Text(message.text)
-                        }
-                        .listRowSeparator(.hidden)
-                        .listRowBackground(Color.clear)
                     }
                 }
+                .listStyle(.plain)
             }
-            .listStyle(.plain)
             
-            textField
+            MessageTextField(viewModel: viewModel)
         }
         .onAppear {
             viewModel.fetchChatMessage()
@@ -51,42 +53,6 @@ struct ChatMessageView: View {
     
     init(viewModel: ChatMessageViewModel) {
         self.viewModel = viewModel
-    }
-    
-    private var textField: some View {
-        HStack(alignment: .bottom, spacing: .app.space.spacingXS) {
-            AppTextEditor(
-                text: $viewModel.messageText,
-                isFocused: $viewModel.isFocused,
-                lineLimit: .flexible(1...5),
-                textContentInset: .init(
-                    top: .app.space.spacingXXS,
-                    leading: .app.space.spacingXXS,
-                    bottom: .app.space.spacingXXS,
-                    trailing: .app.space.spacingXXS
-                )
-            )
-            .overlay {
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.gray.opacity(0.5), lineWidth: 1)
-            }
-            
-            Button {
-                viewModel.sendChatMessage()
-                viewModel.messageText = ""
-            } label: {
-                Image(systemName: "paperplane")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 35, height: 20)
-                    .padding(.app.space.spacingXS)
-                    .foregroundColor(.white)
-                    .background(viewModel.messageText.isEmpty ? .gray :  Color(R.color.common.mainColor))
-                    .cornerRadius(.app.corner.radiusS)
-            }
-            .disabled(viewModel.messageText.isEmpty)
-        }
-        .padding(.horizontal)
     }
 }
 
