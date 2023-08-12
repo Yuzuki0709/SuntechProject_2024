@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 public enum TextLineLimit {
     case fixed(Int)
@@ -23,7 +24,6 @@ private struct InternalTextView: UIViewRepresentable {
 
         init(_ parent: InternalTextView) {
             self.parent = parent
-            super.init()
         }
 
         func textViewDidChange(_ textView: UITextView) {

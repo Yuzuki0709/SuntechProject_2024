@@ -57,6 +57,7 @@
 		A24F1C012A753ABA00B4A00A /* ChatroomFlowControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1C002A753ABA00B4A00A /* ChatroomFlowControllerService.swift */; };
 		A24F1C062A753BD700B4A00A /* ChatroomTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1C052A753BD700B4A00A /* ChatroomTopView.swift */; };
 		A2716F782A853E54003C0D8C /* AppTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2716F772A853E54003C0D8C /* AppTextEditor.swift */; };
+		A2716F7B2A863E1A003C0D8C /* MessageTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2716F7A2A863E1A003C0D8C /* MessageTextField.swift */; };
 		A28113382A5BC1690037E35C /* View++.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113372A5BC1690037E35C /* View++.swift */; };
 		A28113422A5BD71A0037E35C /* AttendanceStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113412A5BD71A0037E35C /* AttendanceStatusView.swift */; };
 		A28113452A5BE58A0037E35C /* AttendanceStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113442A5BE58A0037E35C /* AttendanceStatus.swift */; };
@@ -172,6 +173,7 @@
 		A24F1C002A753ABA00B4A00A /* ChatroomFlowControllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomFlowControllerService.swift; sourceTree = "<group>"; };
 		A24F1C052A753BD700B4A00A /* ChatroomTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomTopView.swift; sourceTree = "<group>"; };
 		A2716F772A853E54003C0D8C /* AppTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextEditor.swift; sourceTree = "<group>"; };
+		A2716F7A2A863E1A003C0D8C /* MessageTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTextField.swift; sourceTree = "<group>"; };
 		A28113372A5BC1690037E35C /* View++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View++.swift"; sourceTree = "<group>"; };
 		A28113412A5BD71A0037E35C /* AttendanceStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatusView.swift; sourceTree = "<group>"; };
 		A28113442A5BE58A0037E35C /* AttendanceStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatus.swift; sourceTree = "<group>"; };
@@ -343,6 +345,7 @@
 			children = (
 				A21995072A81278900B1A172 /* MyCommentView.swift */,
 				A2F7A3262A83C7EB00B7E1F9 /* CommentView.swift */,
+				A2716F7A2A863E1A003C0D8C /* MessageTextField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -943,6 +946,7 @@
 				A232E1A32A4F16CD007599E5 /* Color.swift in Sources */,
 				A29C1D9A2A5301200045FFE2 /* WeekTimetable.swift in Sources */,
 				A2133D732A6573C900C5B24A /* ActivityIndicator.swift in Sources */,
+				A2716F7B2A863E1A003C0D8C /* MessageTextField.swift in Sources */,
 				A2E10FA32A75415700ECF1FA /* ChatroomTopFlowController.swift in Sources */,
 				A2E118FF2A66CF5F005901EB /* ClassDetailViewModel.swift in Sources */,
 				A29C1D982A5300750045FFE2 /* DayTimetable.swift in Sources */,
