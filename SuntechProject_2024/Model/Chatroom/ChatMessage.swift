@@ -14,3 +14,9 @@ public struct ChatMessage: Codable, Identifiable {
     public let sendAt: Date
     public let user: ChatUser
 }
+
+extension ChatMessage: Equatable {
+    public static func == (lhs: ChatMessage, rhs: ChatMessage) -> Bool {
+        return lhs.id == rhs.id
+    }
+}
