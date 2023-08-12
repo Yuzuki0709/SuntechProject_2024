@@ -12,39 +12,23 @@ struct ChatMessageView: View {
     var body: some View {
         VStack {
             ScrollViewReader { proxy in
-                List {
-                    ForEach(viewModel.messages) { message in
-                        if message.user.id == LoginUserInfo.shared.currentUser?.user.id {
-                            MyCommentView(
-                                date: DateHelper.formatToString(
-                                    date: message.sendAt,
-                                    format: "yyyy-MM-dd"
-                                )
-                            ) {
-                                Text(message.text)
-                            }
-                            .listRowSeparator(.hidden)
-                            .listRowBackground(Color.clear)
-                        } else {
-                            CommentView(
-                                date: DateHelper.formatToString(
-                                    date: message.sendAt,
-                                    format: "yyyy-MM-dd"
-                                )
-                            ) {
-                                Text(message.text)
-                            }
-                            .listRowSeparator(.hidden)
-                            .listRowBackground(Color.clear)
-                        }
+                ScrollView {
+                    LazyVStack {
+                        messages()
+                            .id(0)
                     }
                 }
-                .listStyle(.plain)
+                .onChange(of: viewModel.messages) { _ in
+                    // TODO: 画面表示時はアニメーションなしでスクロールする
+                    withAnimation {
+                        proxy.scrollTo(0, anchor: .bottom)
+                    }
+                }
             }
-            
             MessageTextField(viewModel: viewModel)
         }
         .onAppear {
+            print("aaa")
             viewModel.fetchChatMessage()
         }
         .backgroundColor(color: Color(R.color.common.backgroundColor))
@@ -53,6 +37,34 @@ struct ChatMessageView: View {
     
     init(viewModel: ChatMessageViewModel) {
         self.viewModel = viewModel
+    }
+    
+    private func messages() -> some View {
+        VStack(spacing: 0) {
+            ForEach(viewModel.messages) { message in
+                if message.user.id == LoginUserInfo.shared.currentUser?.user.id {
+                    MyCommentView(
+                        date: DateHelper.formatToString(
+                            date: message.sendAt,
+                            format: "yyyy-MM-dd"
+                        )
+                    ) {
+                        Text(message.text)
+                    }
+                    .padding(.vertical, .app.space.spacingXS)
+                } else {
+                    CommentView(
+                        date: DateHelper.formatToString(
+                            date: message.sendAt,
+                            format: "yyyy-MM-dd"
+                        )
+                    ) {
+                        Text(message.text)
+                    }
+                    .padding(.app.space.spacingXS)
+                }
+            }
+        }
     }
 }
 
