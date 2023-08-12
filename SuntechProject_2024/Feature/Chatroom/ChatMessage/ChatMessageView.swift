@@ -9,26 +9,28 @@ import SwiftUI
 
 struct ChatMessageView: View {
     @ObservedObject var viewModel: ChatMessageViewModel
+    
     var body: some View {
         VStack {
             ScrollViewReader { proxy in
                 ScrollView {
                     LazyVStack {
                         messages()
-                            .id(0)
                     }
                 }
                 .onChange(of: viewModel.messages) { _ in
                     // TODO: 画面表示時はアニメーションなしでスクロールする
-                    withAnimation {
-                        proxy.scrollTo(0, anchor: .bottom)
+                    scrollToBottomWithAnimation(proxy: proxy, anchor: .top)
+                }
+                .onChange(of: viewModel.isFocused) { newValue in
+                    if newValue {
+                        scrollToBottomWithAnimation(proxy: proxy, anchor: .top)
                     }
                 }
             }
             MessageTextField(viewModel: viewModel)
         }
         .onAppear {
-            print("aaa")
             viewModel.fetchChatMessage()
         }
         .backgroundColor(color: Color(R.color.common.backgroundColor))
@@ -42,28 +44,44 @@ struct ChatMessageView: View {
     private func messages() -> some View {
         VStack(spacing: 0) {
             ForEach(viewModel.messages) { message in
-                if message.user.id == LoginUserInfo.shared.currentUser?.user.id {
-                    MyCommentView(
-                        date: DateHelper.formatToString(
-                            date: message.sendAt,
-                            format: "yyyy-MM-dd"
-                        )
-                    ) {
-                        Text(message.text)
-                    }
+                messageView(message)
                     .padding(.vertical, .app.space.spacingXS)
-                } else {
-                    CommentView(
-                        date: DateHelper.formatToString(
-                            date: message.sendAt,
-                            format: "yyyy-MM-dd"
-                        )
-                    ) {
-                        Text(message.text)
-                    }
-                    .padding(.app.space.spacingXS)
-                }
+                    .id(message.id)
             }
+        }
+    }
+    
+    @ViewBuilder
+    private func messageView(_ message: ChatMessage) -> some View {
+        if message.user.id == LoginUserInfo.shared.currentUser?.user.id {
+            MyCommentView(
+                date: DateHelper.formatToString(
+                    date: message.sendAt,
+                    format: "yyyy-MM-dd"
+                )
+            ) {
+                Text(message.text)
+            }
+        } else {
+            CommentView(
+                date: DateHelper.formatToString(
+                    date: message.sendAt,
+                    format: "yyyy-MM-dd"
+                )
+            ) {
+                Text(message.text)
+            }
+        }
+    }
+    
+    private func scrollToBottom(proxy: ScrollViewProxy, anchor: UnitPoint) {
+        guard let message = viewModel.messages.last else { return }
+        proxy.scrollTo(message.id, anchor: anchor)
+    }
+    
+    private func scrollToBottomWithAnimation(proxy: ScrollViewProxy, anchor: UnitPoint) {
+        withAnimation {
+            scrollToBottom(proxy: proxy, anchor: anchor)
         }
     }
 }
