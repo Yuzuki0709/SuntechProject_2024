@@ -18,7 +18,7 @@ struct ChatMessageView: View {
                         messages()
                     }
                 }
-                .onChange(of: viewModel.messages) { _ in
+                .onChange(of: viewModel.messageOfDay) { _ in
                     // TODO: 画面表示時はアニメーションなしでスクロールする
                     scrollToBottomWithAnimation(proxy: proxy, anchor: .top)
                 }
@@ -43,10 +43,18 @@ struct ChatMessageView: View {
     
     private func messages() -> some View {
         VStack(spacing: 0) {
-            ForEach(viewModel.messages) { message in
-                messageView(message)
-                    .padding(.vertical, .app.space.spacingXS)
-                    .id(message.id)
+            ForEach(viewModel.messageOfDay) { messageOfDay in
+                DateHeader(
+                    title: DateHelper.formatToString(
+                        date: messageOfDay.dateTime,
+                        format: "yyyy年MM月dd日"
+                    )
+                )
+                ForEach(messageOfDay.messages) { message in
+                    messageView(message)
+                        .padding(.vertical, .app.space.spacingXS)
+                        .id(message.id)
+                }
             }
         }
     }
@@ -57,7 +65,7 @@ struct ChatMessageView: View {
             MyCommentView(
                 date: DateHelper.formatToString(
                     date: message.sendAt,
-                    format: "yyyy-MM-dd"
+                    format: "HH:mm"
                 )
             ) {
                 Text(message.text)
@@ -66,7 +74,7 @@ struct ChatMessageView: View {
             CommentView(
                 date: DateHelper.formatToString(
                     date: message.sendAt,
-                    format: "yyyy-MM-dd"
+                    format: "HH:mm"
                 )
             ) {
                 Text(message.text)
@@ -75,7 +83,8 @@ struct ChatMessageView: View {
     }
     
     private func scrollToBottom(proxy: ScrollViewProxy, anchor: UnitPoint) {
-        guard let message = viewModel.messages.last else { return }
+        guard let messageOfDay = viewModel.messageOfDay.last,
+              let message = messageOfDay.messages.last else { return }
         proxy.scrollTo(message.id, anchor: anchor)
     }
     
