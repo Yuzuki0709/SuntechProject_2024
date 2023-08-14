@@ -15,7 +15,7 @@ public protocol SuntechAPIClientProtocol {
     func fetchChatroomList(userId: String, completion: @escaping ((Result<[Chatroom], AFError>) -> ()))
     func fetchChatUser(userId: String, completion: @escaping ((Result<ChatUser, AFError>) -> ()))
     func fetchAllChatUser(completion: @escaping ((Result<[ChatUser], AFError>) -> ()))
-    func fetchChatMessage(userId: String, roomId: Int64, completion: @escaping ((Result<[ChatMessage], AFError>) -> ()))
+    func fetchChatMessage(userId: String, roomId: Int64, completion: @escaping ((Result<[ChatMessageOfDay], AFError>) -> ()))
     
     func sendChatroom(
         userId1: String,
@@ -130,6 +130,56 @@ final class SuntechAPIClient: SuntechAPIClientProtocol {
         AF.request(baseURL + path, parameters: parameter)
             .responseDecodable(of: [ChatMessage].self, decoder: decoder) { response in
                 completion(response.result)
+            }
+    }
+    
+    func fetchChatMessage(userId: String, roomId: Int64, completion: @escaping ((Result<[ChatMessageOfDay], AFError>) -> ())) {
+        let path = "/api/chat/get_message"
+        let parameter = [
+            "user_id": "\"\(userId)\"",
+            "room_id": "\(roomId)"
+        ]
+        
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        
+        let iso8601Full = DateFormatter()
+        iso8601Full.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
+        iso8601Full.calendar = Calendar(identifier: .iso8601)
+        iso8601Full.locale = Locale(identifier: "ja_JP")
+        
+        decoder.dateDecodingStrategy = .formatted(iso8601Full)
+        
+        AF.request(baseURL + path, parameters: parameter)
+            .responseDecodable(of: [ChatMessage].self, decoder: decoder) { response in
+                switch response.result {
+                case .success(let messages):
+                    
+                    let calendar = Calendar(identifier: .gregorian)
+                    
+                    let groupedMessages = Dictionary(grouping: messages) { message in
+                        let dateComponents = calendar.dateComponents(
+                            [.year, .month, .day],
+                            from: message.sendAt
+                        )
+                        return calendar.date(from: dateComponents) ?? Date()
+                    }
+                    
+                    let sortedKeys = groupedMessages.keys.sorted { a, b in
+                        return a < b
+                    }
+                    
+                    let chatMessageOfDay = sortedKeys.map { key in
+                        ChatMessageOfDay(
+                            dateTime: key,
+                            messages: groupedMessages[key] ?? []
+                        )
+                    }
+                    completion(.success(chatMessageOfDay))
+                    
+                case .failure(let error):
+                    completion(.failure(error))
+                }
             }
     }
     

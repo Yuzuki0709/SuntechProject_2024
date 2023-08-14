@@ -8,8 +8,8 @@
 import Foundation
 
 /// 日付単位のチャットメッセージ一覧
-struct ChatMessageOfDay: Identifiable {
-    let id: UUID = UUID()
-    let dateTime: Date // メッセージ送信日
-    let messages: [ChatMessage]
+public struct ChatMessageOfDay: Identifiable {
+    public let id: UUID = UUID()
+    public let dateTime: Date // メッセージ送信日
+    public let messages: [ChatMessage]
 }
