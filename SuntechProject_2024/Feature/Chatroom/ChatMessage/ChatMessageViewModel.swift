@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 final class ChatMessageViewModel: ObservableObject {
-    @Published var messages: [ChatMessage] = []
+    @Published var messageOfDay: [ChatMessageOfDay] = []
     @Published var messageText: String = ""
     @Published var isFocused: Bool = false
     
@@ -28,7 +28,7 @@ final class ChatMessageViewModel: ObservableObject {
             guard let self else { return }
             switch result {
             case .success(let messages):
-                self.messages = messages
+                self.messageOfDay = messages
             case .failure(let error):
                 print(error)
             }

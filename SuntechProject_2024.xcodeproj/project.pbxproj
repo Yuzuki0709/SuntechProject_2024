@@ -59,6 +59,7 @@
 		A2716F782A853E54003C0D8C /* AppTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2716F772A853E54003C0D8C /* AppTextEditor.swift */; };
 		A2716F7B2A863E1A003C0D8C /* MessageTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2716F7A2A863E1A003C0D8C /* MessageTextField.swift */; };
 		A274B9E02A89FF93001817A6 /* ChatMessageOfDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A274B9DF2A89FF93001817A6 /* ChatMessageOfDay.swift */; };
+		A274B9E52A8A0E77001817A6 /* DateHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A274B9E42A8A0E77001817A6 /* DateHeader.swift */; };
 		A28113382A5BC1690037E35C /* View++.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113372A5BC1690037E35C /* View++.swift */; };
 		A28113422A5BD71A0037E35C /* AttendanceStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113412A5BD71A0037E35C /* AttendanceStatusView.swift */; };
 		A28113452A5BE58A0037E35C /* AttendanceStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28113442A5BE58A0037E35C /* AttendanceStatus.swift */; };
@@ -176,6 +177,7 @@
 		A2716F772A853E54003C0D8C /* AppTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextEditor.swift; sourceTree = "<group>"; };
 		A2716F7A2A863E1A003C0D8C /* MessageTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTextField.swift; sourceTree = "<group>"; };
 		A274B9DF2A89FF93001817A6 /* ChatMessageOfDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageOfDay.swift; sourceTree = "<group>"; };
+		A274B9E42A8A0E77001817A6 /* DateHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHeader.swift; sourceTree = "<group>"; };
 		A28113372A5BC1690037E35C /* View++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View++.swift"; sourceTree = "<group>"; };
 		A28113412A5BD71A0037E35C /* AttendanceStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatusView.swift; sourceTree = "<group>"; };
 		A28113442A5BE58A0037E35C /* AttendanceStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceStatus.swift; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 				A21995072A81278900B1A172 /* MyCommentView.swift */,
 				A2F7A3262A83C7EB00B7E1F9 /* CommentView.swift */,
 				A2716F7A2A863E1A003C0D8C /* MessageTextField.swift */,
+				A274B9E42A8A0E77001817A6 /* DateHeader.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -928,6 +931,7 @@
 				A29C1DAE2A53B0CD0045FFE2 /* LoginUserInfo.swift in Sources */,
 				A28F5B562A7954330029468F /* AddChatroomFlowController.swift in Sources */,
 				A24F1BFD2A753A8100B4A00A /* ChatroomContainerFlowController.swift in Sources */,
+				A274B9E52A8A0E77001817A6 /* DateHeader.swift in Sources */,
 				A21A282F2A71400F006735FA /* UIViewController++.swift in Sources */,
 				A24F1C012A753ABA00B4A00A /* ChatroomFlowControllerService.swift in Sources */,
 				A29C1D712A528C6C0045FFE2 /* Student.swift in Sources */,
