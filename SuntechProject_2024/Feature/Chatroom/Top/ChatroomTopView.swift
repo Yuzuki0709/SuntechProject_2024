@@ -67,7 +67,7 @@ struct ChatroomTopView: View {
             VStack(alignment: .leading, spacing: .app.space.spacingXXS) {
                 Text(chatroom.partner.name)
                     .fontWeight(.bold)
-                Text("サンプルテキスト")
+                Text(chatroom.recentMessage ?? "")
                     .font(.system(size: 13))
                     .foregroundColor(.gray)
                     .lineLimit(2)
