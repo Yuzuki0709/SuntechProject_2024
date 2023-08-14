@@ -19,7 +19,6 @@ struct ChatMessageView: View {
                     }
                 }
                 .onChange(of: viewModel.messageOfDay) { _ in
-                    // TODO: 画面表示時はアニメーションなしでスクロールする
                     scrollToBottomWithAnimation(proxy: proxy, anchor: .top)
                 }
                 .onChange(of: viewModel.isFocused) { newValue in
@@ -32,6 +31,9 @@ struct ChatMessageView: View {
         }
         .onAppear {
             viewModel.fetchChatMessage()
+        }
+        .onTapGesture {
+            UIApplication.shared.closeKeyboard()
         }
         .backgroundColor(color: Color(R.color.common.backgroundColor))
         .navigationTitle("メッセージ")

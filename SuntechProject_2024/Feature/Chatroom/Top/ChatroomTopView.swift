@@ -32,6 +32,9 @@ struct ChatroomTopView: View {
             viewModel.fetchChatUser()
             viewModel.fetchChatroomList()
         }
+        .onTapGesture {
+            UIApplication.shared.closeKeyboard()
+        }
         .loading(viewModel.isLoading)
         .backgroundColor(color: Color(R.color.common.backgroundColor))
         .listStyle(.plain)
