@@ -21,7 +21,7 @@ public protocol SuntechAPIClientProtocol {
         userId1: String,
         userId2: String,
         roomName: String,
-        completion: @escaping ((Result<Void, SuntechAPIError>) -> ())
+        completion: @escaping ((Result<Chatroom, SuntechAPIError>) -> ())
     )
     func sendChatMessage(
         userId: String,
@@ -75,7 +75,7 @@ final class SuntechAPIClient: SuntechAPIClientProtocol {
         iso8601Full.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
         iso8601Full.calendar = Calendar(identifier: .iso8601)
         iso8601Full.locale = Locale(identifier: "ja_JP")
-
+        
         decoder.dateDecodingStrategy = .formatted(iso8601Full)
         
         let path = "/api/chat/get_rooms"
@@ -183,7 +183,18 @@ final class SuntechAPIClient: SuntechAPIClientProtocol {
             }
     }
     
-    func sendChatroom(userId1: String, userId2: String, roomName: String, completion: @escaping ((Result<Void, SuntechAPIError>) -> ())) {
+    func sendChatroom(userId1: String, userId2: String, roomName: String, completion: @escaping ((Result<Chatroom, SuntechAPIError>) -> ())) {
+        
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        
+        let iso8601Full = DateFormatter()
+        iso8601Full.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
+        iso8601Full.calendar = Calendar(identifier: .iso8601)
+        iso8601Full.locale = Locale(identifier: "ja_JP")
+        
+        decoder.dateDecodingStrategy = .formatted(iso8601Full)
+        
         let path = "/api/chat/send_room"
         let parameter = [
             "user_id_1": "\"\(userId1)\"",
@@ -192,12 +203,15 @@ final class SuntechAPIClient: SuntechAPIClientProtocol {
         ]
         
         AF.request(baseURL + path, parameters: parameter)
-            .response { response in
+            .responseDecodable(of: Chatroom.self, decoder: decoder) { response in
                 guard let _ = response.data,
                       let statusCode = response.response?.statusCode else { return completion(.failure(.networkError)) }
                 
                 if statusCode == 200 {
-                    completion(.success(()))
+                    guard let chatroom = response.value else {
+                        return completion(.failure(.networkError))
+                    }
+                    completion(.success(chatroom))
                 } else {
                     completion(.failure(.existingChatroom))
                 }

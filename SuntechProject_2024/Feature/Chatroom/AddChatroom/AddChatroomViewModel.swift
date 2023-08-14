@@ -19,6 +19,11 @@ final class AddChatroomViewModel: ObservableObject {
         return chatUsers.filter { $0.name.contains(searchText) }
     }
     
+    private let _navigationSubject = PassthroughSubject<Navigation, Never>()
+    var navigationSignal: AnyPublisher<Navigation, Never> {
+        _navigationSubject.eraseToAnyPublisher()
+    }
+    
     private let suntechAPIClient: SuntechAPIClientProtocol
     
     init(suntechAPIClient: SuntechAPIClientProtocol = SuntechAPIClient()) {
@@ -53,9 +58,9 @@ final class AddChatroomViewModel: ObservableObject {
         ) { [weak self] result in
             guard let self else { return }
             switch result {
-            case .success():
-                // TODO: チャット画面へ遷移する
-                print("Success!")
+            case .success(let chatroom):
+                print(chatroom)
+                self._navigationSubject.send(.chatMessage(chatroom))
             case .failure(let error):
                 self.apiError = error
             }
@@ -64,5 +69,15 @@ final class AddChatroomViewModel: ObservableObject {
         }
         
         selectedUser = nil
+    }
+    
+    func navigate(_ navigation: Navigation) {
+        _navigationSubject.send(navigation)
+    }
+}
+
+extension AddChatroomViewModel {
+    enum Navigation {
+        case chatMessage(Chatroom)
     }
 }
