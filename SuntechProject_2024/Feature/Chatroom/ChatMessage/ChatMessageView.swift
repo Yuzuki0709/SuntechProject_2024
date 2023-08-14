@@ -36,7 +36,7 @@ struct ChatMessageView: View {
             UIApplication.shared.closeKeyboard()
         }
         .backgroundColor(color: Color(R.color.common.backgroundColor))
-        .navigationTitle("メッセージ")
+        .navigationTitle(viewModel.chatroom.partner.name)
     }
     
     init(viewModel: ChatMessageViewModel) {
