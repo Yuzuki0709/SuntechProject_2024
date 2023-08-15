@@ -13,7 +13,7 @@ final class ChatMessageViewModel: ObservableObject {
     @Published var messageText: String = ""
     @Published var isFocused: Bool = false
     
-    private let chatroom: Chatroom
+    let chatroom: Chatroom
     private let suntechAPIClient: SuntechAPIClientProtocol
     
     init(chatroom: Chatroom, suntechAPIClient: SuntechAPIClientProtocol = SuntechAPIClient()) {
