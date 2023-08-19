@@ -41,6 +41,7 @@
 		A232E19C2A4F1545007599E5 /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = A232E19B2A4F1545007599E5 /* RswiftLibrary */; };
 		A232E1A32A4F16CD007599E5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232E1A22A4F16CD007599E5 /* Color.swift */; };
 		A23BDAA02A90741D0042852C /* UserIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23BDA9F2A90741D0042852C /* UserIcon.swift */; };
+		A23BDAA42A907CE10042852C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A23BDAA32A907CE10042852C /* Kingfisher */; };
 		A24F1BC52A74A15E00B4A00A /* TimetableFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BC42A74A15E00B4A00A /* TimetableFlowController.swift */; };
 		A24F1BC82A74A19E00B4A00A /* TimetableFlowControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BC72A74A19E00B4A00A /* TimetableFlowControllerService.swift */; };
 		A24F1BD12A74B22E00B4A00A /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BD02A74B22E00B4A00A /* NavigationController.swift */; };
@@ -231,6 +232,7 @@
 			files = (
 				A232E19C2A4F1545007599E5 /* RswiftLibrary in Frameworks */,
 				A29C1DA32A53036A0045FFE2 /* FSCalendar in Frameworks */,
+				A23BDAA42A907CE10042852C /* Kingfisher in Frameworks */,
 				A281CAC72A5CED2B004663C4 /* Realm in Frameworks */,
 				A24F1BEB2A751A0300B4A00A /* Factory in Frameworks */,
 				A281CAC92A5CED2B004663C4 /* RealmSwift in Frameworks */,
@@ -805,6 +807,7 @@
 				A281CAC62A5CED2B004663C4 /* Realm */,
 				A281CAC82A5CED2B004663C4 /* RealmSwift */,
 				A24F1BEA2A751A0300B4A00A /* Factory */,
+				A23BDAA32A907CE10042852C /* Kingfisher */,
 			);
 			productName = SuntechProject_2024;
 			productReference = A232E16B2A4F1407007599E5 /* SuntechProject_2024.app */;
@@ -884,6 +887,7 @@
 				A29C1DA12A5303690045FFE2 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 				A281CAC52A5CED2B004663C4 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				A24F1BE92A751A0200B4A00A /* XCRemoteSwiftPackageReference "Factory" */,
+				A23BDAA22A907CE10042852C /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = A232E16C2A4F1407007599E5 /* Products */;
 			projectDirPath = "";
@@ -1353,6 +1357,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		A23BDAA22A907CE10042852C /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		A24F1BE92A751A0200B4A00A /* XCRemoteSwiftPackageReference "Factory" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:hmlongco/Factory.git";
@@ -1396,6 +1408,11 @@
 		A232E19D2A4F156B007599E5 /* RswiftGenerateInternalResources */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = "plugin:RswiftGenerateInternalResources";
+		};
+		A23BDAA32A907CE10042852C /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A23BDAA22A907CE10042852C /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 		A24F1BEA2A751A0300B4A00A /* Factory */ = {
 			isa = XCSwiftPackageProductDependency;
