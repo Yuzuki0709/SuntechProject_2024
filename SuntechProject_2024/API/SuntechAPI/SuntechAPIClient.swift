@@ -104,8 +104,12 @@ final class SuntechAPIClient: SuntechAPIClientProtocol {
     func fetchAllChatUser(completion: @escaping ((Result<[ChatUser], AFError>) -> ())) {
         let path = "/api/chat/get_all_user"
         
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        
         AF.request(baseURL + path)
-            .responseDecodable(of: [ChatUser].self, decoder: JSONDecoder()) { response in
+            .responseDecodable(of: [ChatUser].self, decoder: decoder) { response in
+                print(response.result)
                 completion(response.result)
             }
     }

@@ -61,11 +61,7 @@ struct ChatroomTopView: View {
     
     private func chatroomListRow(_ chatroom: Chatroom) -> some View {
         HStack(spacing: .app.space.spacingS) {
-            Image(systemName: "person")
-                .foregroundColor(.white)
-                .padding()
-                .background(Color.gray)
-                .clipShape(Circle())
+            UserIcon(iconUrlString: chatroom.partner.iconImageUrl, size: 50)
             
             VStack(alignment: .leading, spacing: .app.space.spacingXXS) {
                 Text(chatroom.partner.name)

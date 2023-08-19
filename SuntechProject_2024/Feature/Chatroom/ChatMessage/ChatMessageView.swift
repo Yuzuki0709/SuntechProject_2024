@@ -77,7 +77,8 @@ struct ChatMessageView: View {
                 date: DateHelper.formatToString(
                     date: message.sendAt,
                     format: "HH:mm"
-                )
+                ),
+                iconUrlString: viewModel.chatroom.partner.iconImageUrl
             ) {
                 Text(message.text)
             }

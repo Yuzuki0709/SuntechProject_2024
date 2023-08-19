@@ -9,6 +9,7 @@ import SwiftUI
 
 public struct CommentView<Content: View>: View {
     let date: String
+    let iconUrlString: String?
     @ViewBuilder var content: () -> Content
     
     @State private var contentWidth: CGFloat = .zero
@@ -26,10 +27,7 @@ public struct CommentView<Content: View>: View {
             
             
             HStack(alignment: .top, spacing: 8) {
-                Image(systemName: "person.circle.fill")
-                    .resizable()
-                    .frame(width: 40, height: 40)
-                    .foregroundColor(.gray)
+                UserIcon(iconUrlString: iconUrlString, size: 40)
                 
                 speechBubble
             }
@@ -52,16 +50,11 @@ public struct CommentView<Content: View>: View {
                 .readSize(of: \.width, to: $contentWidth)
         }
     }
-    
-    init(date: String, content: @escaping () -> Content) {
-        self.date = date
-        self.content = content
-    }
 }
 
 struct CommentView_Previews: PreviewProvider {
     static var previews: some View {
-        CommentView( date: "12:30") {
+        CommentView(date: "12:30", iconUrlString: nil) {
             Text("あああああああ")
         }
         .padding()

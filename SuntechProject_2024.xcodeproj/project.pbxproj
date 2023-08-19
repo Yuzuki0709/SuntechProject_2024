@@ -40,6 +40,7 @@
 		A232E1992A4F14A9007599E5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232E1982A4F14A9007599E5 /* LoginView.swift */; };
 		A232E19C2A4F1545007599E5 /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = A232E19B2A4F1545007599E5 /* RswiftLibrary */; };
 		A232E1A32A4F16CD007599E5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232E1A22A4F16CD007599E5 /* Color.swift */; };
+		A23BDAA02A90741D0042852C /* UserIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23BDA9F2A90741D0042852C /* UserIcon.swift */; };
 		A24F1BC52A74A15E00B4A00A /* TimetableFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BC42A74A15E00B4A00A /* TimetableFlowController.swift */; };
 		A24F1BC82A74A19E00B4A00A /* TimetableFlowControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BC72A74A19E00B4A00A /* TimetableFlowControllerService.swift */; };
 		A24F1BD12A74B22E00B4A00A /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BD02A74B22E00B4A00A /* NavigationController.swift */; };
@@ -160,6 +161,7 @@
 		A232E18B2A4F140A007599E5 /* SuntechProject_2024UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuntechProject_2024UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A232E1982A4F14A9007599E5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A232E1A22A4F16CD007599E5 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		A23BDA9F2A90741D0042852C /* UserIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIcon.swift; sourceTree = "<group>"; };
 		A24F1BC42A74A15E00B4A00A /* TimetableFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableFlowController.swift; sourceTree = "<group>"; };
 		A24F1BC72A74A19E00B4A00A /* TimetableFlowControllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableFlowControllerService.swift; sourceTree = "<group>"; };
 		A24F1BD02A74B22E00B4A00A /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
@@ -546,6 +548,14 @@
 			path = SuntechProject_2024UITests;
 			sourceTree = "<group>";
 		};
+		A23BDA9E2A9074130042852C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A23BDA9F2A90741D0042852C /* UserIcon.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		A24F1BC62A74A18400B4A00A /* Timetable */ = {
 			isa = PBXGroup;
 			children = (
@@ -632,6 +642,7 @@
 				A24F1C052A753BD700B4A00A /* ChatroomTopView.swift */,
 				A2E10FA62A77A6B900ECF1FA /* ChatroomTopViewModel.swift */,
 				A2E10FA22A75415700ECF1FA /* ChatroomTopFlowController.swift */,
+				A23BDA9E2A9074130042852C /* Components */,
 			);
 			path = Top;
 			sourceTree = "<group>";
@@ -949,6 +960,7 @@
 				A24F1BE42A75158700B4A00A /* WebViewModel.swift in Sources */,
 				A21A28662A723703006735FA /* MainFlowController.swift in Sources */,
 				A2E10FA72A77A6B900ECF1FA /* ChatroomTopViewModel.swift in Sources */,
+				A23BDAA02A90741D0042852C /* UserIcon.swift in Sources */,
 				A21A27B42A6D5CCE006735FA /* Chatroom.swift in Sources */,
 				A28113422A5BD71A0037E35C /* AttendanceStatusView.swift in Sources */,
 				A2E118F72A66B29C005901EB /* AppStyle.swift in Sources */,
