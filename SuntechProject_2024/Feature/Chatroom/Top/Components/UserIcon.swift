@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct UserIcon: View {
     let iconUrlString: String?
@@ -14,15 +15,12 @@ struct UserIcon: View {
         
         if let iconUrlString = iconUrlString,
            let iconUrl = URL(string: iconUrlString) {
-            AsyncImage(url: iconUrl) { image in
-                image
-                    .resizable()
-                    .scaledToFill()
-            } placeholder: {
-                ProgressView()
-            }
-            .frame(width: size, height: size)
-            .clipShape(Circle())
+            KFImage(iconUrl)
+                .placeholder { _ in ProgressView() }
+                .resizable()
+                .scaledToFill()
+                .frame(width: size, height: size)
+                .clipShape(Circle())
         } else {
             Image(systemName: "person")
                 .foregroundColor(.white)
