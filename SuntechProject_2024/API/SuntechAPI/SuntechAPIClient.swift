@@ -95,8 +95,11 @@ final class SuntechAPIClient: SuntechAPIClientProtocol {
             "user_id": "\"\(userId)\""
         ]
         
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        
         AF.request(baseURL + path, parameters: parameter)
-            .responseDecodable(of: ChatUser.self, decoder: JSONDecoder()) { response in
+            .responseDecodable(of: ChatUser.self, decoder: decoder) { response in
                 completion(response.result)
             }
     }

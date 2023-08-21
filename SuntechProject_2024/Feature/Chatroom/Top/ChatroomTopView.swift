@@ -16,6 +16,10 @@ struct ChatroomTopView: View {
     }
     var body: some View {
         List {
+            if let myAccount = viewModel.myAccount {
+                myAccountRow(myAccount)
+            }
+            
             searchTextField
             if viewModel.searchText.isEmpty {
                 ForEach(viewModel.chatrooms) { chatroom in
@@ -49,6 +53,22 @@ struct ChatroomTopView: View {
                 }
             }
         }
+    }
+    
+    private func myAccountRow(_ user: ChatUser) -> some View {
+        HStack {
+            VStack(alignment: .leading) {
+                Text(user.name)
+                    .font(.system(size: 20))
+                    .fontWeight(.bold)
+                Text(user.typeDescription)
+                    .font(.system(size: 13))
+                    .foregroundColor(.gray)
+            }
+            Spacer()
+            UserIcon(iconUrlString: user.iconImageUrl, size: 60)
+        }
+        .listRowBackground(Color.clear)
     }
     
     private var searchTextField: some View {
@@ -86,6 +106,26 @@ struct ChatroomTopView: View {
         .contentShape(Rectangle())
         .onTapGesture {
             viewModel.navigate(.chatMessage(chatroom))
+        }
+    }
+}
+
+private extension ChatUser {
+    var typeDescription: String {
+        switch self.type {
+        case .teacher:
+            return "教師"
+        case .student(let department):
+            switch department {
+            case .C:
+                return "コンピュータコミュニケーション科"
+            case .M:
+                return "マルチメディア科"
+            case .S:
+                return "情報システム科"
+            }
+        case .unknownd:
+            return "不明"
         }
     }
 }

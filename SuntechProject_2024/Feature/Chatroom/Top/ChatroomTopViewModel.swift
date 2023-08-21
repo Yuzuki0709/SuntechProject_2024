@@ -28,6 +28,7 @@ final class ChatroomTopViewModel: ObservableObject {
     
     init(suntechAPIClient: SuntechAPIClientProtocol = SuntechAPIClient()) {
         self.suntechAPIClient = suntechAPIClient
+        self.fetchChatUser()
     }
     
     func fetchChatroomList() {
