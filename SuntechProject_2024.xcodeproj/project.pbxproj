@@ -42,6 +42,7 @@
 		A232E1A32A4F16CD007599E5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232E1A22A4F16CD007599E5 /* Color.swift */; };
 		A23BDAA02A90741D0042852C /* UserIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23BDA9F2A90741D0042852C /* UserIcon.swift */; };
 		A23BDAA42A907CE10042852C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A23BDAA32A907CE10042852C /* Kingfisher */; };
+		A23BDB2A2A9445C40042852C /* ImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23BDB292A9445C40042852C /* ImageViewer.swift */; };
 		A24F1BC52A74A15E00B4A00A /* TimetableFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BC42A74A15E00B4A00A /* TimetableFlowController.swift */; };
 		A24F1BC82A74A19E00B4A00A /* TimetableFlowControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BC72A74A19E00B4A00A /* TimetableFlowControllerService.swift */; };
 		A24F1BD12A74B22E00B4A00A /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BD02A74B22E00B4A00A /* NavigationController.swift */; };
@@ -163,6 +164,7 @@
 		A232E1982A4F14A9007599E5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A232E1A22A4F16CD007599E5 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		A23BDA9F2A90741D0042852C /* UserIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIcon.swift; sourceTree = "<group>"; };
+		A23BDB292A9445C40042852C /* ImageViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewer.swift; sourceTree = "<group>"; };
 		A24F1BC42A74A15E00B4A00A /* TimetableFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableFlowController.swift; sourceTree = "<group>"; };
 		A24F1BC72A74A19E00B4A00A /* TimetableFlowControllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableFlowControllerService.swift; sourceTree = "<group>"; };
 		A24F1BD02A74B22E00B4A00A /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
@@ -414,6 +416,7 @@
 				A21A28312A71405C006735FA /* HostingController.swift */,
 				A21995032A81233B00B1A172 /* Triangle.swift */,
 				A2716F772A853E54003C0D8C /* AppTextEditor.swift */,
+				A23BDB292A9445C40042852C /* ImageViewer.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -943,6 +946,7 @@
 				A281134B2A5BE7F60037E35C /* ClassAttendance.swift in Sources */,
 				A21994FF2A7FE9EA00B1A172 /* ChatMessageFlowControllerService.swift in Sources */,
 				A24F1BE22A750ED900B4A00A /* AttendanceStatusFlowContrllerService.swift in Sources */,
+				A23BDB2A2A9445C40042852C /* ImageViewer.swift in Sources */,
 				A29C1D9F2A5302960045FFE2 /* TimetableView.swift in Sources */,
 				A21A28612A723560006735FA /* MainTabType.swift in Sources */,
 				A232E1992A4F14A9007599E5 /* LoginView.swift in Sources */,
