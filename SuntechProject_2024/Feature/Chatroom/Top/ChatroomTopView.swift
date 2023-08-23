@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ChatroomTopView: View {
     @ObservedObject var viewModel: ChatroomTopViewModel
+    @State private var showImageViewer = false
     
     init(viewModel: ChatroomTopViewModel) {
         self.viewModel = viewModel
@@ -53,6 +54,15 @@ struct ChatroomTopView: View {
                 }
             }
         }
+        .overlay {
+            ImageViewer(imageURL: URL(string: viewModel.myAccount!.iconImageUrl!)!,
+                        isEditButtonHidden: false,
+                        onBackButtonTap: { showImageViewer = false },
+                        onEditButtonTap: { }
+            )
+            .opacity(showImageViewer ? 1 : 0)
+            .animation(.default, value: showImageViewer)
+        }
     }
     
     private func myAccountRow(_ user: ChatUser) -> some View {
@@ -67,6 +77,9 @@ struct ChatroomTopView: View {
             }
             Spacer()
             UserIcon(iconUrlString: user.iconImageUrl, size: 60)
+                .onTapGesture {
+                    showImageViewer = true
+                }
         }
         .listRowBackground(Color.clear)
     }

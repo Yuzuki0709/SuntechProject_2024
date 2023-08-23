@@ -64,31 +64,37 @@ struct ImageViewer: View {
     let onEditButtonTap: () -> Void
     
     var body: some View {
-        ZStack {
+        ZStack(alignment: .top) {
             Color.black
+                .ignoresSafeArea()
+            
             ImageURLViewerRepresentable(imageURL: imageURL)
-        }
-        .ignoresSafeArea()
-        .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
+            
+            HStack {
                 Button {
                     onBackButtonTap()
                 } label: {
                     Image(systemName: "xmark")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                        .scaledToFit()
                         .foregroundColor(.white)
                 }
-            }
-            ToolbarItem(placement: .navigationBarTrailing) {
+                
+                Spacer()
+                
                 Button {
                     onEditButtonTap()
                 } label: {
-                    HStack(spacing: 1) {
+                    HStack(spacing: .app.space.spacingXXS) {
                         Image(systemName: "camera")
+                            .resizable()
+                            .frame(width: 20, height: 15)
+                            .scaledToFit()
                         Text("編集")
                     }
-                    .font(.system(size: 12))
                     .foregroundColor(.white)
-                    .padding(5)
+                    .padding(.app.space.spacingXS)
                     .overlay {
                         Capsule()
                             .stroke(lineWidth: 1)
@@ -97,7 +103,9 @@ struct ImageViewer: View {
                 }
                 .hidden(isEditButtonHidden)
             }
+            .padding()
         }
+       
     }
     
     init(
@@ -110,6 +118,17 @@ struct ImageViewer: View {
         self.isEditButtonHidden = isEditButtonHidden
         self.onBackButtonTap = onBackButtonTap
         self.onEditButtonTap = onEditButtonTap
+    }
+}
+
+struct ImageViewer_Previews: PreviewProvider {
+    static var previews: some View {
+        ImageViewer(
+            imageURL: URL(string: "https://proj-r.works/user_icon/user_icon-1692415720153.jpeg")!,
+            isEditButtonHidden: false,
+            onBackButtonTap: {},
+            onEditButtonTap: {}
+        )
     }
 }
 
