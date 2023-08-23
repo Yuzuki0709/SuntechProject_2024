@@ -58,7 +58,7 @@ struct ImageURLViewerRepresentable: UIViewRepresentable {
 }
 
 struct ImageViewer: View {
-    let imageURL: URL
+    let imageURL: URL?
     let isEditButtonHidden: Bool
     let onBackButtonTap: () -> Void
     let onEditButtonTap: () -> Void
@@ -68,7 +68,20 @@ struct ImageViewer: View {
             Color.black
                 .ignoresSafeArea()
             
-            ImageURLViewerRepresentable(imageURL: imageURL)
+            if let imageURL = imageURL {
+                ImageURLViewerRepresentable(imageURL: imageURL)
+            } else {
+                VStack {
+                    Spacer()
+                    Image(systemName: "person.circle.fill")
+                        .resizable()
+                        .foregroundColor(.gray)
+                        .frame(width: 300, height: 300, alignment: .center)
+                        .scaledToFit()
+                    Spacer()
+                }
+                
+            }
             
             HStack {
                 Button {
@@ -109,7 +122,7 @@ struct ImageViewer: View {
     }
     
     init(
-        imageURL: URL,
+        imageURL: URL?,
         isEditButtonHidden: Bool = true,
         onBackButtonTap: @escaping () -> Void,
         onEditButtonTap: @escaping () -> Void = {}
@@ -123,12 +136,16 @@ struct ImageViewer: View {
 
 struct ImageViewer_Previews: PreviewProvider {
     static var previews: some View {
-        ImageViewer(
-            imageURL: URL(string: "https://proj-r.works/user_icon/user_icon-1692415720153.jpeg")!,
-            isEditButtonHidden: false,
-            onBackButtonTap: {},
-            onEditButtonTap: {}
-        )
+            ImageViewer(
+                imageURL: URL(string: "https://proj-r.works/user_icon/user_icon-1692415720153.jpeg")!,
+                isEditButtonHidden: false,
+                onBackButtonTap: {},
+                onEditButtonTap: {}
+            )
+            .previewDisplayName("URL_Stable")
+        
+            ImageViewer(imageURL: nil, onBackButtonTap: {})
+                .previewDisplayName("URL_Empty")
     }
 }
 

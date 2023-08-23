@@ -55,7 +55,7 @@ struct ChatroomTopView: View {
             }
         }
         .overlay {
-            ImageViewer(imageURL: URL(string: viewModel.myAccount!.iconImageUrl!)!,
+            ImageViewer(imageURL: URL(string: viewModel.myAccount?.iconImageUrl ?? ""),
                         isEditButtonHidden: false,
                         onBackButtonTap: { showImageViewer = false },
                         onEditButtonTap: { }
