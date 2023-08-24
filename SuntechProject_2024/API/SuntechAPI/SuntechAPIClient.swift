@@ -5,7 +5,7 @@
 //  Created by 岩本竜斗 on 2023/07/03.
 //
 
-import Foundation
+import SwiftUI
 import Alamofire
 
 public protocol SuntechAPIClientProtocol {
@@ -27,6 +27,11 @@ public protocol SuntechAPIClientProtocol {
         userId: String,
         roomId: Int64,
         text: String,
+        completion: @escaping ((Result<Void, SuntechAPIError>) -> ())
+    )
+    func sendUserIcon(
+        userId: String,
+        userIcon: UIImage,
         completion: @escaping ((Result<Void, SuntechAPIError>) -> ())
     )
 }
@@ -238,6 +243,37 @@ final class SuntechAPIClient: SuntechAPIClientProtocol {
                 guard let _ = response.data else { return completion(.failure(.networkError))}
                 completion(.success(()))
             }
+    }
+    
+    func sendUserIcon(userId: String, userIcon: UIImage, completion: @escaping ((Result<Void, SuntechAPIError>) -> ())) {
+        let path = "/api/chat/uploadIcon"
+        let parameter = [
+            "user_id": "\"\(userId)\"",
+        ]
+        let headers: HTTPHeaders = [
+            "Content-type": "multipart/form-data"
+        ]
+        
+        guard let imageData = userIcon.jpegData(compressionQuality: 1.0) else { return completion(.failure(.unknown)) }
+        
+        AF.upload(
+            multipartFormData: { multipartFormData in
+                multipartFormData.append(imageData, withName: "image", fileName: "image.jpg", mimeType: "image/jpeg")
+            },
+            to: baseURL + path,
+            method: .post,
+            headers: headers
+        )
+        .response { response in
+            if let statusCode = response.response?.statusCode {
+                if case 200...299 = statusCode {
+                    completion(.success(()))
+                } else {
+                    completion(.failure(.networkError))
+                }
+            }
+        }
+        
     }
 }
 
