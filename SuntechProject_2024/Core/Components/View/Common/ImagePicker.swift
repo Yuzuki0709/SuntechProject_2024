@@ -49,7 +49,9 @@ struct ImagePicker: UIViewControllerRepresentable {
                itemProvider.canLoadObject(ofClass: UIImage.self) {
                 itemProvider.loadObject(ofClass: UIImage.self) { (image, error) in
                     if let uiImage = image as? UIImage {
-                        self.parent.selectedImage = uiImage
+                        DispatchQueue.main.async {
+                            self.parent.selectedImage = uiImage
+                        }
                     }
                     if let error = error {
                         print(error)

@@ -10,6 +10,7 @@ import SwiftUI
 struct ChatroomTopView: View {
     @ObservedObject var viewModel: ChatroomTopViewModel
     @State private var showImageViewer = false
+    @State private var showImagePicker = false
     
     init(viewModel: ChatroomTopViewModel) {
         self.viewModel = viewModel
@@ -58,10 +59,13 @@ struct ChatroomTopView: View {
             ImageViewer(imageURL: URL(string: viewModel.myAccount?.iconImageUrl ?? ""),
                         isEditButtonHidden: false,
                         onBackButtonTap: { showImageViewer = false },
-                        onEditButtonTap: { }
+                        onEditButtonTap: { showImagePicker = true }
             )
             .opacity(showImageViewer ? 1 : 0)
             .animation(.default, value: showImageViewer)
+        }
+        .fullScreenCover(isPresented: $showImagePicker) {
+            ImagePicker(selectedImage: $viewModel.selectedImage)
         }
     }
     

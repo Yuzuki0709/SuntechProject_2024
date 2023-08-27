@@ -246,10 +246,7 @@ final class SuntechAPIClient: SuntechAPIClientProtocol {
     }
     
     func sendUserIcon(userId: String, userIcon: UIImage, completion: @escaping ((Result<Void, SuntechAPIError>) -> ())) {
-        let path = "/api/chat/uploadIcon"
-        let parameter = [
-            "user_id": "\"\(userId)\"",
-        ]
+        let path = "/api/chat/uploadIcon?user_id=\(userId)"
         let headers: HTTPHeaders = [
             "Content-type": "multipart/form-data"
         ]
@@ -258,7 +255,7 @@ final class SuntechAPIClient: SuntechAPIClientProtocol {
         
         AF.upload(
             multipartFormData: { multipartFormData in
-                multipartFormData.append(imageData, withName: "image", fileName: "image.jpg", mimeType: "image/jpeg")
+                multipartFormData.append(imageData, withName: "user_icon", fileName: "image.jpg", mimeType: "image/jpeg")
             },
             to: baseURL + path,
             method: .post,
@@ -271,9 +268,10 @@ final class SuntechAPIClient: SuntechAPIClientProtocol {
                 } else {
                     completion(.failure(.networkError))
                 }
+            } else {
+                completion(.failure(.unknown)) // Handle other cases
             }
         }
-        
     }
 }
 
