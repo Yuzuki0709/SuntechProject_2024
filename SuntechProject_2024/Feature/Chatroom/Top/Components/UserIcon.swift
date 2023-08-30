@@ -22,23 +22,29 @@ struct UserIcon: View {
                 .frame(width: size, height: size)
                 .clipShape(Circle())
         } else {
-            Image(systemName: "person")
-                .foregroundColor(.white)
-                .background {
-                    Circle()
-                        .foregroundColor(.gray)
-                        .frame(width: size, height: size)
-                }
-                .padding()
+            Image(systemName: "person.circle.fill")
+                .resizable()
+                .scaledToFit()
+                .frame(width: size, height: size)
+                .foregroundColor(.gray)
         }
     }
 }
 
 struct UserIcon_Previews: PreviewProvider {
     static var previews: some View {
-        UserIcon(iconUrlString: "https://proj-r.works/user_icon/user_icon-1692415720153.jpeg", size: 50)
-            .previewDisplayName("設定あり")
-        UserIcon(iconUrlString: nil, size: 50)
-            .previewDisplayName("設定なし")
+        VStack {
+            HStack {
+                UserIcon(iconUrlString: "https://proj-r.works/user_icon/user_icon-1692415720153.jpeg", size: 50)
+                Text("ユーザ名")
+            }
+            
+            HStack {
+                UserIcon(iconUrlString: nil, size: 50)
+                Text("ユーザ名")
+            }
+            
+        }
+        
     }
 }
