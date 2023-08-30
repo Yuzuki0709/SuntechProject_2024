@@ -41,7 +41,7 @@ struct ChatroomTopView: View {
         .onTapGesture {
             UIApplication.shared.closeKeyboard()
         }
-        .loading(viewModel.isLoading)
+        .loading(viewModel.isLoading, disabled: true)
         .backgroundColor(color: Color(R.color.common.backgroundColor))
         .listStyle(.plain)
         .navigationTitle("チャット一覧")
@@ -59,8 +59,12 @@ struct ChatroomTopView: View {
             ImageViewer(imageURL: URL(string: viewModel.myAccount?.iconImageUrl ?? ""),
                         isEditButtonHidden: false,
                         onBackButtonTap: { showImageViewer = false },
-                        onEditButtonTap: { showImagePicker = true }
+                        onEditButtonTap: {
+                            showImagePicker = true
+                            showImageViewer = false
+                        }
             )
+            .id(viewModel.myAccount?.iconImageUrl)
             .opacity(showImageViewer ? 1 : 0)
             .animation(.default, value: showImageViewer)
         }

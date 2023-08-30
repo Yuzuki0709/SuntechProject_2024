@@ -73,16 +73,18 @@ final class ChatroomTopViewModel: ObservableObject {
     }
     
     private func sendUserIcon(userIcon: UIImage) {
-        print(#function)
         guard let userId = LoginUserInfo.shared.currentUser?.user.id else { return }
         
-        suntechAPIClient.sendUserIcon(userId: userId, userIcon: userIcon) { result in
+        isLoading = true
+        suntechAPIClient.sendUserIcon(userId: userId, userIcon: userIcon) { [weak self] result in
             switch result {
             case .success():
-                print("Success")
+                self?.fetchChatUser()
             case .failure(let error):
                 print(error)
             }
+            
+            self?.isLoading = false
         }
     }
     
