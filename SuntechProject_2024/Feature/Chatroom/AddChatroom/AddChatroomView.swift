@@ -54,12 +54,11 @@ struct AddChatroomView: View {
     
     private func chatUserListRow(_ user: ChatUser) -> some View {
         HStack(spacing: .app.space.spacingS) {
-            Image(systemName: "person")
-                .scaledToFit()
-                .frame(width: 35, height: 35)
-                .foregroundColor(.white)
-                .background(Color.gray)
-                .clipShape(Circle())
+            UserIcon(iconUrlString: user.iconImageUrl, size: 35)
+                .onAppear {
+                    print(user.name)
+                    print(user.iconImageUrl)
+                }
             
             Text(user.name)
                 .fontWeight(.bold)

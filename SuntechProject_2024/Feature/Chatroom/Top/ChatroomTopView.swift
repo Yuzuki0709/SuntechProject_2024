@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ChatroomTopView: View {
     @ObservedObject var viewModel: ChatroomTopViewModel
+    @State private var showImageViewer = false
+    @State private var showImagePicker = false
     
     init(viewModel: ChatroomTopViewModel) {
         self.viewModel = viewModel
@@ -16,6 +18,10 @@ struct ChatroomTopView: View {
     }
     var body: some View {
         List {
+            if let myAccount = viewModel.myAccount {
+                myAccountRow(myAccount)
+            }
+            
             searchTextField
             if viewModel.searchText.isEmpty {
                 ForEach(viewModel.chatrooms) { chatroom in
@@ -35,7 +41,7 @@ struct ChatroomTopView: View {
         .onTapGesture {
             UIApplication.shared.closeKeyboard()
         }
-        .loading(viewModel.isLoading)
+        .loading(viewModel.isLoading, disabled: true)
         .backgroundColor(color: Color(R.color.common.backgroundColor))
         .listStyle(.plain)
         .navigationTitle("チャット一覧")
@@ -49,6 +55,41 @@ struct ChatroomTopView: View {
                 }
             }
         }
+        .overlay {
+            ImageViewer(imageURL: URL(string: viewModel.myAccount?.iconImageUrl ?? ""),
+                        isEditButtonHidden: false,
+                        onBackButtonTap: { showImageViewer = false },
+                        onEditButtonTap: {
+                            showImagePicker = true
+                            showImageViewer = false
+                        }
+            )
+            .id(viewModel.myAccount?.iconImageUrl)
+            .opacity(showImageViewer ? 1 : 0)
+            .animation(.default, value: showImageViewer)
+        }
+        .fullScreenCover(isPresented: $showImagePicker) {
+            ImagePicker(selectedImage: $viewModel.selectedImage)
+        }
+    }
+    
+    private func myAccountRow(_ user: ChatUser) -> some View {
+        HStack {
+            VStack(alignment: .leading) {
+                Text(user.name)
+                    .font(.system(size: 20))
+                    .fontWeight(.bold)
+                Text(user.typeDescription)
+                    .font(.system(size: 13))
+                    .foregroundColor(.gray)
+            }
+            Spacer()
+            UserIcon(iconUrlString: user.iconImageUrl, size: 60)
+                .onTapGesture {
+                    showImageViewer = true
+                }
+        }
+        .listRowBackground(Color.clear)
     }
     
     private var searchTextField: some View {
@@ -61,11 +102,7 @@ struct ChatroomTopView: View {
     
     private func chatroomListRow(_ chatroom: Chatroom) -> some View {
         HStack(spacing: .app.space.spacingS) {
-            Image(systemName: "person")
-                .foregroundColor(.white)
-                .padding()
-                .background(Color.gray)
-                .clipShape(Circle())
+            UserIcon(iconUrlString: chatroom.partner.iconImageUrl, size: 50)
             
             VStack(alignment: .leading, spacing: .app.space.spacingXXS) {
                 Text(chatroom.partner.name)
@@ -90,6 +127,26 @@ struct ChatroomTopView: View {
         .contentShape(Rectangle())
         .onTapGesture {
             viewModel.navigate(.chatMessage(chatroom))
+        }
+    }
+}
+
+private extension ChatUser {
+    var typeDescription: String {
+        switch self.type {
+        case .teacher:
+            return "教師"
+        case .student(let department):
+            switch department {
+            case .C:
+                return "コンピュータコミュニケーション科"
+            case .M:
+                return "マルチメディア科"
+            case .S:
+                return "情報システム科"
+            }
+        case .unknownd:
+            return "不明"
         }
     }
 }

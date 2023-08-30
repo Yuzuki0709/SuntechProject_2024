@@ -5,7 +5,7 @@
 //  Created by 岩本竜斗 on 2023/07/31.
 //
 
-import Foundation
+import SwiftUI
 import Combine
 
 final class ChatroomTopViewModel: ObservableObject {
@@ -16,6 +16,7 @@ final class ChatroomTopViewModel: ObservableObject {
     @Published var searchText: String = ""
     @Published var isLoading: Bool = false
     @Published var myAccount: ChatUser? = nil
+    @Published var selectedImage: UIImage? = nil
     
     private let suntechAPIClient: SuntechAPIClientProtocol
     
@@ -28,6 +29,14 @@ final class ChatroomTopViewModel: ObservableObject {
     
     init(suntechAPIClient: SuntechAPIClientProtocol = SuntechAPIClient()) {
         self.suntechAPIClient = suntechAPIClient
+        self.fetchChatUser()
+        
+        self.$selectedImage
+            .compactMap { $0 }
+            .sink { [weak self] selectedImage in
+                self?.sendUserIcon(userIcon: selectedImage)
+            }
+            .store(in: &cancellables)
     }
     
     func fetchChatroomList() {
@@ -60,6 +69,22 @@ final class ChatroomTopViewModel: ObservableObject {
             case .failure(let error):
                 print(error)
             }
+        }
+    }
+    
+    private func sendUserIcon(userIcon: UIImage) {
+        guard let userId = LoginUserInfo.shared.currentUser?.user.id else { return }
+        
+        isLoading = true
+        suntechAPIClient.sendUserIcon(userId: userId, userIcon: userIcon) { [weak self] result in
+            switch result {
+            case .success():
+                self?.fetchChatUser()
+            case .failure(let error):
+                print(error)
+            }
+            
+            self?.isLoading = false
         }
     }
     

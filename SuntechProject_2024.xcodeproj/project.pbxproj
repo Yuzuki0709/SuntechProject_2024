@@ -40,6 +40,10 @@
 		A232E1992A4F14A9007599E5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232E1982A4F14A9007599E5 /* LoginView.swift */; };
 		A232E19C2A4F1545007599E5 /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = A232E19B2A4F1545007599E5 /* RswiftLibrary */; };
 		A232E1A32A4F16CD007599E5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232E1A22A4F16CD007599E5 /* Color.swift */; };
+		A23BDAA02A90741D0042852C /* UserIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23BDA9F2A90741D0042852C /* UserIcon.swift */; };
+		A23BDAA42A907CE10042852C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A23BDAA32A907CE10042852C /* Kingfisher */; };
+		A23BDB2A2A9445C40042852C /* ImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23BDB292A9445C40042852C /* ImageViewer.swift */; };
+		A23BDB2F2A96629B0042852C /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23BDB2E2A96629B0042852C /* ImagePicker.swift */; };
 		A24F1BC52A74A15E00B4A00A /* TimetableFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BC42A74A15E00B4A00A /* TimetableFlowController.swift */; };
 		A24F1BC82A74A19E00B4A00A /* TimetableFlowControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BC72A74A19E00B4A00A /* TimetableFlowControllerService.swift */; };
 		A24F1BD12A74B22E00B4A00A /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F1BD02A74B22E00B4A00A /* NavigationController.swift */; };
@@ -160,6 +164,9 @@
 		A232E18B2A4F140A007599E5 /* SuntechProject_2024UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuntechProject_2024UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A232E1982A4F14A9007599E5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A232E1A22A4F16CD007599E5 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		A23BDA9F2A90741D0042852C /* UserIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIcon.swift; sourceTree = "<group>"; };
+		A23BDB292A9445C40042852C /* ImageViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewer.swift; sourceTree = "<group>"; };
+		A23BDB2E2A96629B0042852C /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		A24F1BC42A74A15E00B4A00A /* TimetableFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableFlowController.swift; sourceTree = "<group>"; };
 		A24F1BC72A74A19E00B4A00A /* TimetableFlowControllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableFlowControllerService.swift; sourceTree = "<group>"; };
 		A24F1BD02A74B22E00B4A00A /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
@@ -229,6 +236,7 @@
 			files = (
 				A232E19C2A4F1545007599E5 /* RswiftLibrary in Frameworks */,
 				A29C1DA32A53036A0045FFE2 /* FSCalendar in Frameworks */,
+				A23BDAA42A907CE10042852C /* Kingfisher in Frameworks */,
 				A281CAC72A5CED2B004663C4 /* Realm in Frameworks */,
 				A24F1BEB2A751A0300B4A00A /* Factory in Frameworks */,
 				A281CAC92A5CED2B004663C4 /* RealmSwift in Frameworks */,
@@ -410,6 +418,8 @@
 				A21A28312A71405C006735FA /* HostingController.swift */,
 				A21995032A81233B00B1A172 /* Triangle.swift */,
 				A2716F772A853E54003C0D8C /* AppTextEditor.swift */,
+				A23BDB292A9445C40042852C /* ImageViewer.swift */,
+				A23BDB2E2A96629B0042852C /* ImagePicker.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -546,6 +556,14 @@
 			path = SuntechProject_2024UITests;
 			sourceTree = "<group>";
 		};
+		A23BDA9E2A9074130042852C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A23BDA9F2A90741D0042852C /* UserIcon.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		A24F1BC62A74A18400B4A00A /* Timetable */ = {
 			isa = PBXGroup;
 			children = (
@@ -632,6 +650,7 @@
 				A24F1C052A753BD700B4A00A /* ChatroomTopView.swift */,
 				A2E10FA62A77A6B900ECF1FA /* ChatroomTopViewModel.swift */,
 				A2E10FA22A75415700ECF1FA /* ChatroomTopFlowController.swift */,
+				A23BDA9E2A9074130042852C /* Components */,
 			);
 			path = Top;
 			sourceTree = "<group>";
@@ -794,6 +813,7 @@
 				A281CAC62A5CED2B004663C4 /* Realm */,
 				A281CAC82A5CED2B004663C4 /* RealmSwift */,
 				A24F1BEA2A751A0300B4A00A /* Factory */,
+				A23BDAA32A907CE10042852C /* Kingfisher */,
 			);
 			productName = SuntechProject_2024;
 			productReference = A232E16B2A4F1407007599E5 /* SuntechProject_2024.app */;
@@ -873,6 +893,7 @@
 				A29C1DA12A5303690045FFE2 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 				A281CAC52A5CED2B004663C4 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				A24F1BE92A751A0200B4A00A /* XCRemoteSwiftPackageReference "Factory" */,
+				A23BDAA22A907CE10042852C /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = A232E16C2A4F1407007599E5 /* Products */;
 			projectDirPath = "";
@@ -928,6 +949,7 @@
 				A281134B2A5BE7F60037E35C /* ClassAttendance.swift in Sources */,
 				A21994FF2A7FE9EA00B1A172 /* ChatMessageFlowControllerService.swift in Sources */,
 				A24F1BE22A750ED900B4A00A /* AttendanceStatusFlowContrllerService.swift in Sources */,
+				A23BDB2A2A9445C40042852C /* ImageViewer.swift in Sources */,
 				A29C1D9F2A5302960045FFE2 /* TimetableView.swift in Sources */,
 				A21A28612A723560006735FA /* MainTabType.swift in Sources */,
 				A232E1992A4F14A9007599E5 /* LoginView.swift in Sources */,
@@ -949,6 +971,7 @@
 				A24F1BE42A75158700B4A00A /* WebViewModel.swift in Sources */,
 				A21A28662A723703006735FA /* MainFlowController.swift in Sources */,
 				A2E10FA72A77A6B900ECF1FA /* ChatroomTopViewModel.swift in Sources */,
+				A23BDAA02A90741D0042852C /* UserIcon.swift in Sources */,
 				A21A27B42A6D5CCE006735FA /* Chatroom.swift in Sources */,
 				A28113422A5BD71A0037E35C /* AttendanceStatusView.swift in Sources */,
 				A2E118F72A66B29C005901EB /* AppStyle.swift in Sources */,
@@ -971,6 +994,7 @@
 				A281CAD42A5EED6A004663C4 /* DateHelper.swift in Sources */,
 				A24F1BEE2A751A5E00B4A00A /* NavigationContainer.swift in Sources */,
 				A274B9E02A89FF93001817A6 /* ChatMessageOfDay.swift in Sources */,
+				A23BDB2F2A96629B0042852C /* ImagePicker.swift in Sources */,
 				A281CACE2A5E2CEF004663C4 /* AttendanceStatusViewModel.swift in Sources */,
 				A2133D682A65033200C5B24A /* NavigationBackButton.swift in Sources */,
 				A24F1BD92A74B9AC00B4A00A /* ClassDetailFlowControllerService.swift in Sources */,
@@ -1341,6 +1365,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		A23BDAA22A907CE10042852C /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		A24F1BE92A751A0200B4A00A /* XCRemoteSwiftPackageReference "Factory" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:hmlongco/Factory.git";
@@ -1384,6 +1416,11 @@
 		A232E19D2A4F156B007599E5 /* RswiftGenerateInternalResources */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = "plugin:RswiftGenerateInternalResources";
+		};
+		A23BDAA32A907CE10042852C /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A23BDAA22A907CE10042852C /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 		A24F1BEA2A751A0300B4A00A /* Factory */ = {
 			isa = XCSwiftPackageProductDependency;

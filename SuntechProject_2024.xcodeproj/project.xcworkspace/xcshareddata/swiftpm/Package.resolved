@@ -28,6 +28,15 @@
       }
     },
     {
+      "identity" : "kingfisher",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/onevcat/Kingfisher.git",
+      "state" : {
+        "revision" : "c75584ac759cbb16b204d0a7de3ebf53ea6b304d",
+        "version" : "7.9.0"
+      }
+    },
+    {
       "identity" : "r.swift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/mac-cain13/R.swift.git",
