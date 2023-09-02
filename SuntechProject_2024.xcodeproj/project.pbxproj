@@ -100,6 +100,7 @@
 		A29C1DB32A54EE3C0045FFE2 /* TimetableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1DB22A54EE3C0045FFE2 /* TimetableViewModel.swift */; };
 		A29C1DFA2A59AA4E0045FFE2 /* ClassDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1DF92A59AA4E0045FFE2 /* ClassDetailView.swift */; };
 		A29C1DFC2A5BBD7D0045FFE2 /* HalfModalSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29C1DFB2A5BBD7D0045FFE2 /* HalfModalSheetViewController.swift */; };
+		A29E70DD2AA3827300B17C64 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = A29E70DC2AA3827300B17C64 /* Lottie */; };
 		A2D8CBA62A681F6C00A059D3 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D8CBA52A681F6C00A059D3 /* WebView.swift */; };
 		A2E10FA32A75415700ECF1FA /* ChatroomTopFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E10FA22A75415700ECF1FA /* ChatroomTopFlowController.swift */; };
 		A2E10FA72A77A6B900ECF1FA /* ChatroomTopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E10FA62A77A6B900ECF1FA /* ChatroomTopViewModel.swift */; };
@@ -241,6 +242,7 @@
 				A24F1BEB2A751A0300B4A00A /* Factory in Frameworks */,
 				A281CAC92A5CED2B004663C4 /* RealmSwift in Frameworks */,
 				A29C1D652A5288000045FFE2 /* Alamofire in Frameworks */,
+				A29E70DD2AA3827300B17C64 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -814,6 +816,7 @@
 				A281CAC82A5CED2B004663C4 /* RealmSwift */,
 				A24F1BEA2A751A0300B4A00A /* Factory */,
 				A23BDAA32A907CE10042852C /* Kingfisher */,
+				A29E70DC2AA3827300B17C64 /* Lottie */,
 			);
 			productName = SuntechProject_2024;
 			productReference = A232E16B2A4F1407007599E5 /* SuntechProject_2024.app */;
@@ -894,6 +897,7 @@
 				A281CAC52A5CED2B004663C4 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				A24F1BE92A751A0200B4A00A /* XCRemoteSwiftPackageReference "Factory" */,
 				A23BDAA22A907CE10042852C /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				A29E70DB2AA3827300B17C64 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = A232E16C2A4F1407007599E5 /* Products */;
 			projectDirPath = "";
@@ -1405,6 +1409,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		A29E70DB2AA3827300B17C64 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1446,6 +1458,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A29C1DA12A5303690045FFE2 /* XCRemoteSwiftPackageReference "FSCalendar" */;
 			productName = FSCalendar;
+		};
+		A29E70DC2AA3827300B17C64 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A29E70DB2AA3827300B17C64 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
