@@ -48,7 +48,7 @@ final class ChatroomTopViewModel: ObservableObject {
             guard let self else { return }
             switch result {
             case .success(let chatrooms):
-                self.chatrooms = chatrooms
+                self.chatrooms = chatrooms.sorted(by: { $0.updateAt > $1.updateAt })
                 
             case .failure(let error):
                 print(error)
