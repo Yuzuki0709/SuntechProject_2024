@@ -84,7 +84,7 @@ struct ChatroomTopView: View {
     
     private var emptyView: some View {
         VStack {
-            LottieView(name: "empty")
+            LottieView(name: "empty", loopMode: .loop)
                 .frame(maxWidth: .infinity, maxHeight: 300)
             Text("誰ともチャットをしてません。")
             Text("右上のボタンからチャットをしてみよう")
