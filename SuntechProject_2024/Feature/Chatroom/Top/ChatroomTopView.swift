@@ -17,22 +17,12 @@ struct ChatroomTopView: View {
         UITextField.appearance().clearButtonMode = .whileEditing
     }
     var body: some View {
-        List {
-            if let myAccount = viewModel.myAccount {
-                myAccountRow(myAccount)
-            }
-            
-            searchTextField
-            if viewModel.searchText.isEmpty {
-                ForEach(viewModel.chatrooms) { chatroom in
-                    chatroomListRow(chatroom)
-                }
+        Group {
+            if !viewModel.chatrooms.isEmpty {
+                chatroomList
             } else {
-                ForEach(viewModel.searchResults) { chatroom in
-                    chatroomListRow(chatroom)
-                }
+                emptyView
             }
-            
         }
         .onAppear {
             viewModel.fetchChatUser()
@@ -60,9 +50,9 @@ struct ChatroomTopView: View {
                         isEditButtonHidden: false,
                         onBackButtonTap: { showImageViewer = false },
                         onEditButtonTap: {
-                            showImagePicker = true
-                            showImageViewer = false
-                        }
+                showImagePicker = true
+                showImageViewer = false
+            }
             )
             .id(viewModel.myAccount?.iconImageUrl)
             .opacity(showImageViewer ? 1 : 0)
@@ -71,6 +61,35 @@ struct ChatroomTopView: View {
         .fullScreenCover(isPresented: $showImagePicker) {
             ImagePicker(selectedImage: $viewModel.selectedImage)
         }
+    }
+    
+    private var chatroomList: some View {
+        List {
+            if let myAccount = viewModel.myAccount {
+                myAccountRow(myAccount)
+            }
+            
+            searchTextField
+            if viewModel.searchText.isEmpty {
+                ForEach(viewModel.chatrooms) { chatroom in
+                    chatroomListRow(chatroom)
+                }
+            } else {
+                ForEach(viewModel.searchResults) { chatroom in
+                    chatroomListRow(chatroom)
+                }
+            }
+        }
+    }
+    
+    private var emptyView: some View {
+        VStack {
+            LottieView(name: "empty", loopMode: .loop)
+                .frame(maxWidth: .infinity, maxHeight: 300)
+            Text("誰ともチャットをしてません。")
+            Text("右上のボタンからチャットをしてみよう")
+        }
+        .foregroundColor(.gray)
     }
     
     private func myAccountRow(_ user: ChatUser) -> some View {
