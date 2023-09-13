@@ -105,6 +105,7 @@
 		A29E70E32AA384ED00B17C64 /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = A29E70E22AA384ED00B17C64 /* empty.json */; };
 		A2AAEF652AB1EBD50010A02A /* Vacation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AAEF642AB1EBD50010A02A /* Vacation.swift */; };
 		A2AAEF6F2AB1F7860010A02A /* vacation.json in Resources */ = {isa = PBXBuildFile; fileRef = A2AAEF6E2AB1F7860010A02A /* vacation.json */; };
+		A2AAEF6D2AB1F5730010A02A /* VacationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AAEF6C2AB1F5730010A02A /* VacationView.swift */; };
 		A2D8CBA62A681F6C00A059D3 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D8CBA52A681F6C00A059D3 /* WebView.swift */; };
 		A2E10FA32A75415700ECF1FA /* ChatroomTopFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E10FA22A75415700ECF1FA /* ChatroomTopFlowController.swift */; };
 		A2E10FA72A77A6B900ECF1FA /* ChatroomTopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E10FA62A77A6B900ECF1FA /* ChatroomTopViewModel.swift */; };
@@ -227,6 +228,7 @@
 		A29E70E22AA384ED00B17C64 /* empty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = empty.json; sourceTree = "<group>"; };
 		A2AAEF642AB1EBD50010A02A /* Vacation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vacation.swift; sourceTree = "<group>"; };
 		A2AAEF6E2AB1F7860010A02A /* vacation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vacation.json; sourceTree = "<group>"; };
+		A2AAEF6C2AB1F5730010A02A /* VacationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationView.swift; sourceTree = "<group>"; };
 		A2D8CBA52A681F6C00A059D3 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		A2E10FA22A75415700ECF1FA /* ChatroomTopFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomTopFlowController.swift; sourceTree = "<group>"; };
 		A2E10FA62A77A6B900ECF1FA /* ChatroomTopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomTopViewModel.swift; sourceTree = "<group>"; };
@@ -598,6 +600,7 @@
 				A29C1D9E2A5302960045FFE2 /* TimetableView.swift */,
 				A29C1DB22A54EE3C0045FFE2 /* TimetableViewModel.swift */,
 				A24F1BC42A74A15E00B4A00A /* TimetableFlowController.swift */,
+				A2AAEF6B2AB1F5680010A02A /* Components */,
 			);
 			path = Top;
 			sourceTree = "<group>";
@@ -799,6 +802,14 @@
 				A2AAEF6E2AB1F7860010A02A /* vacation.json */,
 			);
 			path = Animation;
+			sourceTree = "<group>";
+		};
+		A2AAEF6B2AB1F5680010A02A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A2AAEF6C2AB1F5730010A02A /* VacationView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		A2D8CBA22A681F4700A059D3 /* WebView */ = {
@@ -1047,6 +1058,7 @@
 				A29C1DAA2A53087F0045FFE2 /* FSCalendarViewRepresentable.swift in Sources */,
 				A29C1D692A5289AF0045FFE2 /* SuntechAPIClient.swift in Sources */,
 				A28F5B522A79529D0029468F /* AddChatroomView.swift in Sources */,
+				A2AAEF6D2AB1F5730010A02A /* VacationView.swift in Sources */,
 				A21A28452A7142BF006735FA /* LoginFlowController.swift in Sources */,
 				A21A27B92A6D5F24006735FA /* ChatMessage.swift in Sources */,
 				A2E118F92A66B2DC005901EB /* CornerRadius.swift in Sources */,
