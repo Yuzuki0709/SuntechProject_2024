@@ -11,6 +11,7 @@ import Alamofire
 public protocol SuntechAPIClientProtocol {
     func login(email: String, password: String, completion: @escaping ((Result<LoginUser, AFError>) -> ()))
     func fetchWeekTimetable(studentId: String, password: String, completion: @escaping ((Result<WeekTimetable, AFError>) -> ()))
+    func fetchVacations(completion: @escaping ((Result<[Vacation], AFError>) -> ()))
     
     func fetchChatroomList(userId: String, completion: @escaping ((Result<[Chatroom], AFError>) -> ()))
     func fetchChatUser(userId: String, completion: @escaping ((Result<ChatUser, AFError>) -> ()))
@@ -68,6 +69,25 @@ final class SuntechAPIClient: SuntechAPIClientProtocol {
         
         AF.request(baseURL + path, parameters: parameter)
             .responseDecodable(of: WeekTimetable.self, decoder: decoder) { response in
+                completion(response.result)
+            }
+    }
+    
+    func fetchVacations(completion: @escaping ((Result<[Vacation], AFError>) -> ())) {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        
+        let iso8601Full = DateFormatter()
+        iso8601Full.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
+        iso8601Full.calendar = Calendar(identifier: .iso8601)
+        iso8601Full.locale = Locale(identifier: "ja_JP")
+        
+        decoder.dateDecodingStrategy = .formatted(iso8601Full)
+        
+        let path = "/api/timetable/get_vacations"
+        
+        AF.request(baseURL + path)
+            .responseDecodable(of: [Vacation].self, decoder: decoder) { response in
                 completion(response.result)
             }
     }
