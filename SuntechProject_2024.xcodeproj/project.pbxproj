@@ -104,6 +104,7 @@
 		A29E70E02AA3832300B17C64 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29E70DF2AA3832300B17C64 /* LottieView.swift */; };
 		A29E70E32AA384ED00B17C64 /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = A29E70E22AA384ED00B17C64 /* empty.json */; };
 		A2AAEF652AB1EBD50010A02A /* Vacation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AAEF642AB1EBD50010A02A /* Vacation.swift */; };
+		A2AAEF6F2AB1F7860010A02A /* vacation.json in Resources */ = {isa = PBXBuildFile; fileRef = A2AAEF6E2AB1F7860010A02A /* vacation.json */; };
 		A2D8CBA62A681F6C00A059D3 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D8CBA52A681F6C00A059D3 /* WebView.swift */; };
 		A2E10FA32A75415700ECF1FA /* ChatroomTopFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E10FA22A75415700ECF1FA /* ChatroomTopFlowController.swift */; };
 		A2E10FA72A77A6B900ECF1FA /* ChatroomTopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E10FA62A77A6B900ECF1FA /* ChatroomTopViewModel.swift */; };
@@ -225,6 +226,7 @@
 		A29E70DF2AA3832300B17C64 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		A29E70E22AA384ED00B17C64 /* empty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = empty.json; sourceTree = "<group>"; };
 		A2AAEF642AB1EBD50010A02A /* Vacation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vacation.swift; sourceTree = "<group>"; };
+		A2AAEF6E2AB1F7860010A02A /* vacation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vacation.json; sourceTree = "<group>"; };
 		A2D8CBA52A681F6C00A059D3 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		A2E10FA22A75415700ECF1FA /* ChatroomTopFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomTopFlowController.swift; sourceTree = "<group>"; };
 		A2E10FA62A77A6B900ECF1FA /* ChatroomTopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomTopViewModel.swift; sourceTree = "<group>"; };
@@ -794,6 +796,7 @@
 			isa = PBXGroup;
 			children = (
 				A29E70E22AA384ED00B17C64 /* empty.json */,
+				A2AAEF6E2AB1F7860010A02A /* vacation.json */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -935,6 +938,7 @@
 				A29E70E32AA384ED00B17C64 /* empty.json in Resources */,
 				A232E1762A4F140A007599E5 /* Preview Assets.xcassets in Resources */,
 				A232E1732A4F140A007599E5 /* Assets.xcassets in Resources */,
+				A2AAEF6F2AB1F7860010A02A /* vacation.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
