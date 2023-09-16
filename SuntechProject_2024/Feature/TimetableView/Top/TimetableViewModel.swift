@@ -11,11 +11,13 @@ import Combine
 
 final class TimetableViewModel: ObservableObject {
     @Published private(set) var weekTimetable: WeekTimetable?
+    @Published private(set) var vacations: [Vacation] = []
     @Published private(set) var isLoading: Bool = false
     @Published var today: Date?
     @Published var monday: Date?
     @Published var friday: Date?
     
+    private var cancellables = Set<AnyCancellable>()
     private let suntechAPIClient: SuntechAPIClientProtocol
     
     private let _navigationSubject = PassthroughSubject<Navigation, Never>()
@@ -25,6 +27,7 @@ final class TimetableViewModel: ObservableObject {
     
     init(suntechAPIClient: SuntechAPIClientProtocol = SuntechAPIClient()) {
         self.suntechAPIClient = suntechAPIClient
+        self.fetchVacations()
     }
     
     func fetchWeekTimetable() {
@@ -42,6 +45,20 @@ final class TimetableViewModel: ObservableObject {
                 print(error)
             }
             
+            self?.isLoading = false
+        }
+    }
+    
+    func fetchVacations() {
+        isLoading = true
+        
+        suntechAPIClient.fetchVacations { [weak self] result in
+            switch result {
+            case .success(let vacations):
+                self?.vacations = vacations
+            case .failure(let error):
+                print(error)
+            }
             self?.isLoading = false
         }
     }
