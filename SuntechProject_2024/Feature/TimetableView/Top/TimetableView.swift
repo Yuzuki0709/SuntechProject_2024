@@ -17,7 +17,12 @@ struct TimetableView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                FSCalendarViewRepresentable(bounds: geometry.frame(in: .local))
+                FSCalendarViewRepresentable(
+                    bounds: geometry.frame(in: .local),
+                    today: $viewModel.today,
+                    monday: $viewModel.monday,
+                    friday: $viewModel.friday
+                )
                     .frame(height: 100)
                 
                 if let weekTimetable = viewModel.weekTimetable {

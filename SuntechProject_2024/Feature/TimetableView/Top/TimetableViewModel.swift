@@ -12,6 +12,9 @@ import Combine
 final class TimetableViewModel: ObservableObject {
     @Published private(set) var weekTimetable: WeekTimetable?
     @Published private(set) var isLoading: Bool = false
+    @Published var today: Date?
+    @Published var monday: Date?
+    @Published var friday: Date?
     
     private let suntechAPIClient: SuntechAPIClientProtocol
     

@@ -9,7 +9,14 @@ import UIKit
 import SwiftUI
 import FSCalendar
 
-class FSCalendarView: UIView {
+public protocol FSCalendarViewDelegate: AnyObject {
+    func onAppearCalendar(_ calendar: FSCalendar)
+    func calendarCurrentPageDidChange(_ calendar: FSCalendar)
+}
+
+final class FSCalendarView: UIView {
+    
+    weak var delegate: FSCalendarViewDelegate?
     
     private var fsCalendar: FSCalendar = {
         let fsCalendar = FSCalendar()
@@ -50,6 +57,8 @@ class FSCalendarView: UIView {
             fsCalendar.topAnchor.constraint(equalTo: topAnchor, constant: 0),
             fsCalendar.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
         ])
+        
+        delegate?.onAppearCalendar(fsCalendar)
     }
     
     required init?(coder: NSCoder) {
@@ -58,5 +67,7 @@ class FSCalendarView: UIView {
 }
 
 extension FSCalendarView: FSCalendarDelegate, FSCalendarDataSource {
-    
+    func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
+        delegate?.calendarCurrentPageDidChange(calendar)
+    }
 }
