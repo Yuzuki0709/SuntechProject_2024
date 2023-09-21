@@ -26,7 +26,9 @@ struct TimetableView: View {
                     .frame(height: 100)
                 
                 if viewModel.isVacation {
+                    Spacer()
                     VacationView(name: "夏休み")
+                    Spacer()
                 } else {
                     if let weekTimetable = viewModel.weekTimetable {
                         weekTimetableRow(weekTimetable: weekTimetable)
