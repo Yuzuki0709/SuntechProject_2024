@@ -57,7 +57,9 @@ final class FSCalendarView: UIView {
             fsCalendar.topAnchor.constraint(equalTo: topAnchor, constant: 0),
             fsCalendar.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
         ])
-        
+    }
+    
+    override func didMoveToWindow() {
         delegate?.onAppearCalendar(fsCalendar)
     }
     

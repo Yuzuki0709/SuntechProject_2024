@@ -104,8 +104,9 @@
 		A29E70E02AA3832300B17C64 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29E70DF2AA3832300B17C64 /* LottieView.swift */; };
 		A29E70E32AA384ED00B17C64 /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = A29E70E22AA384ED00B17C64 /* empty.json */; };
 		A2AAEF652AB1EBD50010A02A /* Vacation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AAEF642AB1EBD50010A02A /* Vacation.swift */; };
-		A2AAEF6F2AB1F7860010A02A /* vacation.json in Resources */ = {isa = PBXBuildFile; fileRef = A2AAEF6E2AB1F7860010A02A /* vacation.json */; };
 		A2AAEF6D2AB1F5730010A02A /* VacationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AAEF6C2AB1F5730010A02A /* VacationView.swift */; };
+		A2AAEF6F2AB1F7860010A02A /* vacation.json in Resources */ = {isa = PBXBuildFile; fileRef = A2AAEF6E2AB1F7860010A02A /* vacation.json */; };
+		A2AAEF762AB55EF90010A02A /* VacationChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AAEF752AB55EF90010A02A /* VacationChecker.swift */; };
 		A2D8CBA62A681F6C00A059D3 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D8CBA52A681F6C00A059D3 /* WebView.swift */; };
 		A2E10FA32A75415700ECF1FA /* ChatroomTopFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E10FA22A75415700ECF1FA /* ChatroomTopFlowController.swift */; };
 		A2E10FA72A77A6B900ECF1FA /* ChatroomTopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E10FA62A77A6B900ECF1FA /* ChatroomTopViewModel.swift */; };
@@ -227,8 +228,9 @@
 		A29E70DF2AA3832300B17C64 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		A29E70E22AA384ED00B17C64 /* empty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = empty.json; sourceTree = "<group>"; };
 		A2AAEF642AB1EBD50010A02A /* Vacation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vacation.swift; sourceTree = "<group>"; };
-		A2AAEF6E2AB1F7860010A02A /* vacation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vacation.json; sourceTree = "<group>"; };
 		A2AAEF6C2AB1F5730010A02A /* VacationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationView.swift; sourceTree = "<group>"; };
+		A2AAEF6E2AB1F7860010A02A /* vacation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vacation.json; sourceTree = "<group>"; };
+		A2AAEF752AB55EF90010A02A /* VacationChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationChecker.swift; sourceTree = "<group>"; };
 		A2D8CBA52A681F6C00A059D3 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		A2E10FA22A75415700ECF1FA /* ChatroomTopFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomTopFlowController.swift; sourceTree = "<group>"; };
 		A2E10FA62A77A6B900ECF1FA /* ChatroomTopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomTopViewModel.swift; sourceTree = "<group>"; };
@@ -401,6 +403,7 @@
 			isa = PBXGroup;
 			children = (
 				A21A28342A7140CC006735FA /* Components */,
+				A2AAEF722AB55EC40010A02A /* Feature */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -812,6 +815,22 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		A2AAEF722AB55EC40010A02A /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				A2AAEF742AB55EE70010A02A /* TimeTable */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		A2AAEF742AB55EE70010A02A /* TimeTable */ = {
+			isa = PBXGroup;
+			children = (
+				A2AAEF752AB55EF90010A02A /* VacationChecker.swift */,
+			);
+			path = TimeTable;
+			sourceTree = "<group>";
+		};
 		A2D8CBA22A681F4700A059D3 /* WebView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1052,6 +1071,7 @@
 				A29C1D732A528CE10045FFE2 /* Department.swift in Sources */,
 				A2F7A3272A83C7EB00B7E1F9 /* CommentView.swift in Sources */,
 				A29C1DA72A5304A00045FFE2 /* UIColor.swift in Sources */,
+				A2AAEF762AB55EF90010A02A /* VacationChecker.swift in Sources */,
 				A24F1BC52A74A15E00B4A00A /* TimetableFlowController.swift in Sources */,
 				A29C1D932A52FF7E0045FFE2 /* Class.swift in Sources */,
 				A29C1D672A5288350045FFE2 /* LoginViewModel.swift in Sources */,

@@ -38,12 +38,16 @@ struct FSCalendarViewRepresentable: UIViewRepresentable {
         }
         
         func onAppearCalendar(_ calendar: FSCalendar) {
-            parent.today = calendar.today
+            Task { @MainActor in
+                parent.today = calendar.today
+            }
         }
         
         func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
-            parent.monday = Calendar.current.date(byAdding: .day, value: 2, to: calendar.currentPage)
-            parent.friday = Calendar.current.date(byAdding: .day, value: 6, to: calendar.currentPage)
+            Task { @MainActor in
+                parent.monday = Calendar.current.date(byAdding: .day, value: 2, to: calendar.currentPage)
+                parent.friday = Calendar.current.date(byAdding: .day, value: 6, to: calendar.currentPage)
+            }
         }
     }
 }
