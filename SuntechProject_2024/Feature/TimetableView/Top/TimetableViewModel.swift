@@ -11,8 +11,14 @@ import Combine
 
 final class TimetableViewModel: ObservableObject {
     @Published private(set) var weekTimetable: WeekTimetable?
+    @Published private(set) var vacations: [Vacation] = []
+    @Published private(set) var vacation: Vacation? = nil
     @Published private(set) var isLoading: Bool = false
+    @Published var today: Date?
+    @Published var monday: Date?
+    @Published var friday: Date?
     
+    private var cancellables = Set<AnyCancellable>()
     private let suntechAPIClient: SuntechAPIClientProtocol
     
     private let _navigationSubject = PassthroughSubject<Navigation, Never>()
@@ -22,6 +28,46 @@ final class TimetableViewModel: ObservableObject {
     
     init(suntechAPIClient: SuntechAPIClientProtocol = SuntechAPIClient()) {
         self.suntechAPIClient = suntechAPIClient
+        self.fetchVacations()
+        
+        $today
+            .compactMap { $0 }
+            .sink { [weak self] date in
+                guard let self else { return }
+                
+                for vacation in self.vacations {
+                    if VacationChecker.isVacationInToday(date, vacation: vacation) {
+                        self.vacation = vacation
+                        return
+                    } else {
+                        self.vacation = nil
+                    }
+                }
+            }
+            .store(in: &cancellables)
+        
+        Publishers.Zip($monday.compactMap { $0 }, $friday.compactMap { $0 })
+            .sink { [weak self] monday, friday in
+                guard let self,
+                      let today = self.today else {
+                    return
+                }
+                
+                for vacation in self.vacations {
+                    if VacationChecker.isVacationInWeek(
+                        today: today,
+                        monday: monday,
+                        friday: friday,
+                        vacation: vacation) {
+                        self.vacation = vacation
+                        return
+                    } else {
+                        self.vacation = nil
+                    }
+                }
+                
+            }
+            .store(in: &cancellables)
     }
     
     func fetchWeekTimetable() {
@@ -39,6 +85,20 @@ final class TimetableViewModel: ObservableObject {
                 print(error)
             }
             
+            self?.isLoading = false
+        }
+    }
+    
+    func fetchVacations() {
+        isLoading = true
+        
+        suntechAPIClient.fetchVacations { [weak self] result in
+            switch result {
+            case .success(let vacations):
+                self?.vacations = vacations
+            case .failure(let error):
+                print(error)
+            }
             self?.isLoading = false
         }
     }

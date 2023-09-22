@@ -17,21 +17,24 @@ struct TimetableView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                FSCalendarViewRepresentable(bounds: geometry.frame(in: .local))
-                    .frame(height: 100)
+                FSCalendarViewRepresentable(
+                    bounds: geometry.frame(in: .local),
+                    today: $viewModel.today,
+                    monday: $viewModel.monday,
+                    friday: $viewModel.friday
+                )
+                .frame(height: 100)
                 
-                if let weekTimetable = viewModel.weekTimetable {
+                if let vacation = viewModel.vacation {
+                    Spacer()
+                    VacationView(name: vacation.name)
+                    Spacer()
+                } else if let weekTimetable = viewModel.weekTimetable {
                     weekTimetableRow(weekTimetable: weekTimetable)
                         .padding()
-                        .overlay {
-                            if viewModel.isLoading {
-                                ProgressView()
-                                    .frame(width: 100, height: 100)
-                            }
-                        }
+                        .loading(viewModel.isLoading)
+                    Spacer()
                 }
-                
-                Spacer()
             }
         }
         .onAppear {

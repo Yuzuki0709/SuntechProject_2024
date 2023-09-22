@@ -9,7 +9,14 @@ import UIKit
 import SwiftUI
 import FSCalendar
 
-class FSCalendarView: UIView {
+public protocol FSCalendarViewDelegate: AnyObject {
+    func onAppearCalendar(_ calendar: FSCalendar)
+    func calendarCurrentPageDidChange(_ calendar: FSCalendar)
+}
+
+final class FSCalendarView: UIView {
+    
+    weak var delegate: FSCalendarViewDelegate?
     
     private var fsCalendar: FSCalendar = {
         let fsCalendar = FSCalendar()
@@ -52,11 +59,17 @@ class FSCalendarView: UIView {
         ])
     }
     
+    override func didMoveToWindow() {
+        delegate?.onAppearCalendar(fsCalendar)
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
 
 extension FSCalendarView: FSCalendarDelegate, FSCalendarDataSource {
-    
+    func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
+        delegate?.calendarCurrentPageDidChange(calendar)
+    }
 }

@@ -6,17 +6,48 @@
 //
 
 import SwiftUI
+import FSCalendar
 
 struct FSCalendarViewRepresentable: UIViewRepresentable {
     let bounds: CGRect
+    @Binding var today: Date?
+    @Binding var monday: Date?
+    @Binding var friday: Date?
     
     typealias UIViewType = FSCalendarView
     
     func makeUIView(context: Context) -> FSCalendarView {
-        return FSCalendarView(bounds: bounds)
+        let fsCalendar = FSCalendarView(bounds: bounds)
+        fsCalendar.delegate = context.coordinator
+        return fsCalendar
     }
     
     func updateUIView(_ uiView: FSCalendarView, context: Context) {
         
+    }
+    
+    func makeCoordinator() -> Coordinator {
+        return Coordinator(self)
+    }
+    
+    final class Coordinator: NSObject, FSCalendarViewDelegate {
+        let parent: FSCalendarViewRepresentable
+        
+        init(_ parent: FSCalendarViewRepresentable) {
+            self.parent = parent
+        }
+        
+        func onAppearCalendar(_ calendar: FSCalendar) {
+            Task { @MainActor in
+                parent.today = calendar.today
+            }
+        }
+        
+        func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
+            Task { @MainActor in
+                parent.monday = Calendar.current.date(byAdding: .day, value: 2, to: calendar.currentPage)
+                parent.friday = Calendar.current.date(byAdding: .day, value: 6, to: calendar.currentPage)
+            }
+        }
     }
 }
