@@ -35,13 +35,9 @@ final class TimetableViewModel: ObservableObject {
             .sink { [weak self] date in
                 guard let self else { return }
                 
-                self.vacations.forEach { vacation in
-                    if VacationChecker.isVacationInToday(date, vacation: vacation) {
-                        self.isVacation = true
-                        return
-                    }
-                    
-                    self.isVacation = false
+                for vacation in self.vacations {
+                    self.isVacation = VacationChecker.isVacationInToday(date, vacation: vacation)
+                    if self.isVacation { return }
                 }
             }
             .store(in: &cancellables)
@@ -52,24 +48,18 @@ final class TimetableViewModel: ObservableObject {
                       let today = self.today else {
                     return
                 }
-                self.vacations.forEach { vacation in
-                    if VacationChecker.isVacationInWeek(
+                
+                for vacation in self.vacations {
+                    self.isVacation = VacationChecker.isVacationInWeek(
                         today: today,
                         monday: monday,
                         friday: friday,
-                        vacation: vacation) {
-                        self.isVacation = true
-                        return
-                    }
-                    
-                    self.isVacation = false
+                        vacation: vacation
+                    )
+                    if self.isVacation { return }
                 }
                 
             }
-            .store(in: &cancellables)
-        
-        $isVacation
-            .sink { print($0) }
             .store(in: &cancellables)
     }
     
