@@ -23,24 +23,16 @@ struct TimetableView: View {
                     monday: $viewModel.monday,
                     friday: $viewModel.friday
                 )
-                    .frame(height: 100)
+                .frame(height: 100)
                 
-                if viewModel.isVacation {
+                if let vacation = viewModel.vacation {
                     Spacer()
-                    VacationView(name: "夏休み")
+                    VacationView(name: vacation.name)
                     Spacer()
-                } else {
-                    if let weekTimetable = viewModel.weekTimetable {
-                        weekTimetableRow(weekTimetable: weekTimetable)
-                            .padding()
-                            .overlay {
-                                if viewModel.isLoading {
-                                    ProgressView()
-                                        .frame(width: 100, height: 100)
-                                }
-                            }
-                    }
-                    
+                } else if let weekTimetable = viewModel.weekTimetable {
+                    weekTimetableRow(weekTimetable: weekTimetable)
+                        .padding()
+                        .loading(viewModel.isLoading)
                     Spacer()
                 }
             }

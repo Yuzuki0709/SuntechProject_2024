@@ -12,7 +12,7 @@ import Combine
 final class TimetableViewModel: ObservableObject {
     @Published private(set) var weekTimetable: WeekTimetable?
     @Published private(set) var vacations: [Vacation] = []
-    @Published private(set) var isVacation: Bool = false
+    @Published private(set) var vacation: Vacation? = nil
     @Published private(set) var isLoading: Bool = false
     @Published var today: Date?
     @Published var monday: Date?
@@ -36,8 +36,12 @@ final class TimetableViewModel: ObservableObject {
                 guard let self else { return }
                 
                 for vacation in self.vacations {
-                    self.isVacation = VacationChecker.isVacationInToday(date, vacation: vacation)
-                    if self.isVacation { return }
+                    if VacationChecker.isVacationInToday(date, vacation: vacation) {
+                        self.vacation = vacation
+                        return
+                    } else {
+                        self.vacation = nil
+                    }
                 }
             }
             .store(in: &cancellables)
@@ -50,13 +54,16 @@ final class TimetableViewModel: ObservableObject {
                 }
                 
                 for vacation in self.vacations {
-                    self.isVacation = VacationChecker.isVacationInWeek(
+                    if VacationChecker.isVacationInWeek(
                         today: today,
                         monday: monday,
                         friday: friday,
-                        vacation: vacation
-                    )
-                    if self.isVacation { return }
+                        vacation: vacation) {
+                        self.vacation = vacation
+                        return
+                    } else {
+                        self.vacation = nil
+                    }
                 }
                 
             }
