@@ -63,6 +63,7 @@ struct TimetableView: View {
             }
         }
         .onTapGesture {
+            print(viewModel.vacation)
             viewModel.navigate(.classDetail(classData))
         }
     }
