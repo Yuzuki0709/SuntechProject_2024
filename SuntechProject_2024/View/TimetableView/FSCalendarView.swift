@@ -59,7 +59,8 @@ final class FSCalendarView: UIView {
         ])
     }
     
-    override func didMoveToWindow() {
+    override func didMoveToSuperview() {
+        print(#function)
         delegate?.onAppearCalendar(fsCalendar)
     }
     
