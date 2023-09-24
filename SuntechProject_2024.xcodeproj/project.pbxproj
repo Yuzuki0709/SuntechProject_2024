@@ -107,6 +107,7 @@
 		A2AAEF6D2AB1F5730010A02A /* VacationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AAEF6C2AB1F5730010A02A /* VacationView.swift */; };
 		A2AAEF762AB55EF90010A02A /* VacationChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AAEF752AB55EF90010A02A /* VacationChecker.swift */; };
 		A2AAEF792ABBDCD30010A02A /* vacation.json in Resources */ = {isa = PBXBuildFile; fileRef = A2AAEF782ABBDCD30010A02A /* vacation.json */; };
+		A2AAEFBA2ABFB72F0010A02A /* StateMachineProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AAEFB92ABFB72F0010A02A /* StateMachineProtocol.swift */; };
 		A2D8CBA62A681F6C00A059D3 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D8CBA52A681F6C00A059D3 /* WebView.swift */; };
 		A2E10FA32A75415700ECF1FA /* ChatroomTopFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E10FA22A75415700ECF1FA /* ChatroomTopFlowController.swift */; };
 		A2E10FA72A77A6B900ECF1FA /* ChatroomTopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E10FA62A77A6B900ECF1FA /* ChatroomTopViewModel.swift */; };
@@ -231,6 +232,7 @@
 		A2AAEF6C2AB1F5730010A02A /* VacationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationView.swift; sourceTree = "<group>"; };
 		A2AAEF752AB55EF90010A02A /* VacationChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationChecker.swift; sourceTree = "<group>"; };
 		A2AAEF782ABBDCD30010A02A /* vacation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vacation.json; sourceTree = "<group>"; };
+		A2AAEFB92ABFB72F0010A02A /* StateMachineProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachineProtocol.swift; sourceTree = "<group>"; };
 		A2D8CBA52A681F6C00A059D3 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		A2E10FA22A75415700ECF1FA /* ChatroomTopFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomTopFlowController.swift; sourceTree = "<group>"; };
 		A2E10FA62A77A6B900ECF1FA /* ChatroomTopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomTopViewModel.swift; sourceTree = "<group>"; };
@@ -402,6 +404,7 @@
 		A21A28332A71408E006735FA /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				A2AAEFB72ABFB7150010A02A /* StateMachine */,
 				A21A28342A7140CC006735FA /* Components */,
 				A2AAEF722AB55EC40010A02A /* Feature */,
 			);
@@ -831,6 +834,14 @@
 			path = TimeTable;
 			sourceTree = "<group>";
 		};
+		A2AAEFB72ABFB7150010A02A /* StateMachine */ = {
+			isa = PBXGroup;
+			children = (
+				A2AAEFB92ABFB72F0010A02A /* StateMachineProtocol.swift */,
+			);
+			path = StateMachine;
+			sourceTree = "<group>";
+		};
 		A2D8CBA22A681F4700A059D3 /* WebView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1034,6 +1045,7 @@
 				A24F1BE72A75168A00B4A00A /* WebViewFlowController.swift in Sources */,
 				A232E1A32A4F16CD007599E5 /* Color.swift in Sources */,
 				A29C1D9A2A5301200045FFE2 /* WeekTimetable.swift in Sources */,
+				A2AAEFBA2ABFB72F0010A02A /* StateMachineProtocol.swift in Sources */,
 				A2133D732A6573C900C5B24A /* ActivityIndicator.swift in Sources */,
 				A2716F7B2A863E1A003C0D8C /* MessageTextField.swift in Sources */,
 				A2E10FA32A75415700ECF1FA /* ChatroomTopFlowController.swift in Sources */,
