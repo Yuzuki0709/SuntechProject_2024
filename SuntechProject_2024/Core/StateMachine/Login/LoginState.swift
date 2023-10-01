@@ -11,5 +11,6 @@ enum LoginState: Equatable {
     case initial
     case loading
     case results
+    case wait
     case error
 }
