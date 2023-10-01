@@ -109,6 +109,7 @@
 		A2AAEF792ABBDCD30010A02A /* vacation.json in Resources */ = {isa = PBXBuildFile; fileRef = A2AAEF782ABBDCD30010A02A /* vacation.json */; };
 		A2AAEFBA2ABFB72F0010A02A /* StateMachineProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AAEFB92ABFB72F0010A02A /* StateMachineProtocol.swift */; };
 		A2AAEFBC2ABFB7F20010A02A /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AAEFBB2ABFB7F20010A02A /* StateMachine.swift */; };
+		A2D620862AC9ACF2008C9229 /* LoginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D620852AC9ACF2008C9229 /* LoginState.swift */; };
 		A2D8CBA62A681F6C00A059D3 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D8CBA52A681F6C00A059D3 /* WebView.swift */; };
 		A2E10FA32A75415700ECF1FA /* ChatroomTopFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E10FA22A75415700ECF1FA /* ChatroomTopFlowController.swift */; };
 		A2E10FA72A77A6B900ECF1FA /* ChatroomTopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E10FA62A77A6B900ECF1FA /* ChatroomTopViewModel.swift */; };
@@ -235,6 +236,7 @@
 		A2AAEF782ABBDCD30010A02A /* vacation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vacation.json; sourceTree = "<group>"; };
 		A2AAEFB92ABFB72F0010A02A /* StateMachineProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachineProtocol.swift; sourceTree = "<group>"; };
 		A2AAEFBB2ABFB7F20010A02A /* StateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
+		A2D620852AC9ACF2008C9229 /* LoginState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginState.swift; sourceTree = "<group>"; };
 		A2D8CBA52A681F6C00A059D3 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		A2E10FA22A75415700ECF1FA /* ChatroomTopFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomTopFlowController.swift; sourceTree = "<group>"; };
 		A2E10FA62A77A6B900ECF1FA /* ChatroomTopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomTopViewModel.swift; sourceTree = "<group>"; };
@@ -841,8 +843,17 @@
 			children = (
 				A2AAEFB92ABFB72F0010A02A /* StateMachineProtocol.swift */,
 				A2AAEFBB2ABFB7F20010A02A /* StateMachine.swift */,
+				A2D620842AC9ACC4008C9229 /* Login */,
 			);
 			path = StateMachine;
+			sourceTree = "<group>";
+		};
+		A2D620842AC9ACC4008C9229 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A2D620852AC9ACF2008C9229 /* LoginState.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		A2D8CBA22A681F4700A059D3 /* WebView */ = {
@@ -1030,6 +1041,7 @@
 				A21A282F2A71400F006735FA /* UIViewController++.swift in Sources */,
 				A24F1C012A753ABA00B4A00A /* ChatroomFlowControllerService.swift in Sources */,
 				A29C1D712A528C6C0045FFE2 /* Student.swift in Sources */,
+				A2D620862AC9ACF2008C9229 /* LoginState.swift in Sources */,
 				A29C1DB32A54EE3C0045FFE2 /* TimetableViewModel.swift in Sources */,
 				A281CACC2A5CED63004663C4 /* AttendanceRealmManager.swift in Sources */,
 				A28113452A5BE58A0037E35C /* AttendanceStatus.swift in Sources */,
