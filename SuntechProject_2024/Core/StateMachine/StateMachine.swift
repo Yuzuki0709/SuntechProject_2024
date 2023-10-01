@@ -7,28 +7,28 @@
 
 import Foundation
 
-final class StateMachine<State, Event>: NSObject, ObservableObject, StateMachineProtocol where State: Equatable {
+public class StateMachine<State, Event>: NSObject, ObservableObject, StateMachineProtocol where State: Equatable {
     
     public init(_ initialState: State) {
         self.state = initialState
     }
     
-    func handleStateUpdate(_ oldState: State, new newState: State) {
+    public func handleStateUpdate(_ oldState: State, new newState: State) {
         fatalError("Override handleStateUpdate(_:, new:) before continuing.")
     }
     
-    func handleEvent(_ event: Event) -> State? {
+    public func handleEvent(_ event: Event) -> State? {
         fatalError("Override handleEvent(_:) before continuing.")
     }
     
-    func send(event: Event) {
+    public func send(event: Event) {
         if let state = handleEvent(event) {
             self.state = state
         }
     }
     
-    func leaveState(_ state: State) {}
-    func enterState(_ state: State) {}
+    public func leaveState(_ state: State) {}
+    public func enterState(_ state: State) {}
     
     @Published public var error: Error?
     @Published private(set) public var state: State {
