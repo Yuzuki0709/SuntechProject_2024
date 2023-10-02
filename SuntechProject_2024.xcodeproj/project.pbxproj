@@ -112,6 +112,7 @@
 		A2D620862AC9ACF2008C9229 /* LoginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D620852AC9ACF2008C9229 /* LoginState.swift */; };
 		A2D620892AC9AD45008C9229 /* LoginEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D620882AC9AD45008C9229 /* LoginEvent.swift */; };
 		A2D6208C2ACA4049008C9229 /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D6208B2ACA4049008C9229 /* DomainError.swift */; };
+		A2D6208F2ACA489F008C9229 /* ErrorDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D6208E2ACA489F008C9229 /* ErrorDialog.swift */; };
 		A2D8CBA62A681F6C00A059D3 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D8CBA52A681F6C00A059D3 /* WebView.swift */; };
 		A2E10FA32A75415700ECF1FA /* ChatroomTopFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E10FA22A75415700ECF1FA /* ChatroomTopFlowController.swift */; };
 		A2E10FA72A77A6B900ECF1FA /* ChatroomTopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E10FA62A77A6B900ECF1FA /* ChatroomTopViewModel.swift */; };
@@ -241,6 +242,7 @@
 		A2D620852AC9ACF2008C9229 /* LoginState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginState.swift; sourceTree = "<group>"; };
 		A2D620882AC9AD45008C9229 /* LoginEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEvent.swift; sourceTree = "<group>"; };
 		A2D6208B2ACA4049008C9229 /* DomainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainError.swift; sourceTree = "<group>"; };
+		A2D6208E2ACA489F008C9229 /* ErrorDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorDialog.swift; sourceTree = "<group>"; };
 		A2D8CBA52A681F6C00A059D3 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		A2E10FA22A75415700ECF1FA /* ChatroomTopFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomTopFlowController.swift; sourceTree = "<group>"; };
 		A2E10FA62A77A6B900ECF1FA /* ChatroomTopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomTopViewModel.swift; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				A2133D722A6573C800C5B24A /* ActivityIndicator.swift */,
+				A2D6208E2ACA489F008C9229 /* ErrorDialog.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1070,6 +1073,7 @@
 				A23BDAA02A90741D0042852C /* UserIcon.swift in Sources */,
 				A21A27B42A6D5CCE006735FA /* Chatroom.swift in Sources */,
 				A28113422A5BD71A0037E35C /* AttendanceStatusView.swift in Sources */,
+				A2D6208F2ACA489F008C9229 /* ErrorDialog.swift in Sources */,
 				A2E118F72A66B29C005901EB /* AppStyle.swift in Sources */,
 				A24F1BE72A75168A00B4A00A /* WebViewFlowController.swift in Sources */,
 				A232E1A32A4F16CD007599E5 /* Color.swift in Sources */,

@@ -36,12 +36,13 @@ struct LoginView: View {
                 .padding()
             }
             .ignoresSafeArea()
-            .alert(viewModel.error?.message ?? "", isPresented: .constant(viewModel.state == .error)) {
-                Button("OK") { viewModel.send(event: .alertPositiveButtonTap) }
-            } message: {
-                Text(viewModel.error?.description ?? "")
-            }
             .loading(viewModel.state == .loading)
+            .errorDialog(
+                viewModel.state == .error,
+                message: viewModel.error?.message,
+                description: viewModel.error?.description,
+                okButtonTapped: { viewModel.send(event: .alertPositiveButtonTap) }
+            )
             .overlay {
                 if viewModel.state == .wait {
                     screenLock()
