@@ -111,6 +111,7 @@
 		A2AAEFBC2ABFB7F20010A02A /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AAEFBB2ABFB7F20010A02A /* StateMachine.swift */; };
 		A2D620862AC9ACF2008C9229 /* LoginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D620852AC9ACF2008C9229 /* LoginState.swift */; };
 		A2D620892AC9AD45008C9229 /* LoginEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D620882AC9AD45008C9229 /* LoginEvent.swift */; };
+		A2D6208C2ACA4049008C9229 /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D6208B2ACA4049008C9229 /* DomainError.swift */; };
 		A2D8CBA62A681F6C00A059D3 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D8CBA52A681F6C00A059D3 /* WebView.swift */; };
 		A2E10FA32A75415700ECF1FA /* ChatroomTopFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E10FA22A75415700ECF1FA /* ChatroomTopFlowController.swift */; };
 		A2E10FA72A77A6B900ECF1FA /* ChatroomTopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E10FA62A77A6B900ECF1FA /* ChatroomTopViewModel.swift */; };
@@ -239,6 +240,7 @@
 		A2AAEFBB2ABFB7F20010A02A /* StateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
 		A2D620852AC9ACF2008C9229 /* LoginState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginState.swift; sourceTree = "<group>"; };
 		A2D620882AC9AD45008C9229 /* LoginEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEvent.swift; sourceTree = "<group>"; };
+		A2D6208B2ACA4049008C9229 /* DomainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainError.swift; sourceTree = "<group>"; };
 		A2D8CBA52A681F6C00A059D3 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		A2E10FA22A75415700ECF1FA /* ChatroomTopFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomTopFlowController.swift; sourceTree = "<group>"; };
 		A2E10FA62A77A6B900ECF1FA /* ChatroomTopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomTopViewModel.swift; sourceTree = "<group>"; };
@@ -410,6 +412,7 @@
 		A21A28332A71408E006735FA /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				A2D6208A2ACA403F008C9229 /* DomainError */,
 				A2AAEFB72ABFB7150010A02A /* StateMachine */,
 				A21A28342A7140CC006735FA /* Components */,
 				A2AAEF722AB55EC40010A02A /* Feature */,
@@ -859,6 +862,14 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		A2D6208A2ACA403F008C9229 /* DomainError */ = {
+			isa = PBXGroup;
+			children = (
+				A2D6208B2ACA4049008C9229 /* DomainError.swift */,
+			);
+			path = DomainError;
+			sourceTree = "<group>";
+		};
 		A2D8CBA22A681F4700A059D3 /* WebView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1100,6 +1111,7 @@
 				A21994FC2A7FE98C00B1A172 /* ChatMessageViewModel.swift in Sources */,
 				A29C1DA52A5303940045FFE2 /* FSCalendarView.swift in Sources */,
 				A24F1BFA2A752AEA00B4A00A /* WebFlowControllerService.swift in Sources */,
+				A2D6208C2ACA4049008C9229 /* DomainError.swift in Sources */,
 				A29C1D732A528CE10045FFE2 /* Department.swift in Sources */,
 				A2F7A3272A83C7EB00B7E1F9 /* CommentView.swift in Sources */,
 				A29C1DA72A5304A00045FFE2 /* UIColor.swift in Sources */,
