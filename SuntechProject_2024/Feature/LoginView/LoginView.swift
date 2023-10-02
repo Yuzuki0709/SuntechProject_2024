@@ -36,29 +36,15 @@ struct LoginView: View {
                 .padding()
             }
             .ignoresSafeArea()
-            .alert("エラーが発生しました", isPresented: .constant(viewModel.error != nil)) {
-                Button("OK") { viewModel.error = nil }
+            .alert("エラーが発生しました", isPresented: .constant(viewModel.state == .error)) {
+                Button("OK") { viewModel.send(event: .alertPositiveButtonTap) }
             } message: {
                 Text("メールアドレスとパスワードを再入力してください。")
             }
-            .loading(viewModel.isLoading)
+            .loading(viewModel.state == .loading)
             .overlay {
-                if viewModel.isLock {
-                    ZStack {
-                        Color.black
-                            .ignoresSafeArea()
-                            .opacity(0.6)
-                        
-                        VStack {
-                            Text("現在ログインできません")
-                                .font(.title2)
-                                .padding()
-                            Text("\(viewModel.lockoutDurationDiffMinuteNow + 1)分後にやり直してください")
-                                .font(.title3)
-                        }
-                        .foregroundColor(.white)
-                    }
-                    .background(.ultraThinMaterial)
+                if viewModel.state == .wait {
+                    screenLock()
                 }
             }
         }
@@ -100,12 +86,12 @@ struct LoginView: View {
     private func inputLoginInfo() -> some View {
         VStack(spacing: .app.space.spacingM) {
             TextField("E-mail", text: $viewModel.emailText)
-                .disabled(viewModel.isLock)
+                .disabled(viewModel.state == .wait)
                 .textFieldStyle(.roundedBorder)
                 .keyboardType(.emailAddress)
             
             SecureField("Password", text: $viewModel.passwordText)
-                .disabled(viewModel.isLock)
+                .disabled(viewModel.state == .wait)
                 .textFieldStyle(.roundedBorder)
         }
         .frame(width: width * 0.8)
@@ -113,7 +99,7 @@ struct LoginView: View {
     
     private func loginButton() -> some View {
         Button {
-            viewModel.login()
+            viewModel.send(event: .login)
         } label: {
             Text("Login")
                 .font(.system(size: 18, weight: .semibold))
@@ -122,7 +108,25 @@ struct LoginView: View {
                 .foregroundColor(.white)
                 .cornerRadius(.app.corner.radiusS)
         }
-        .disabled(viewModel.isLock)
+        .disabled(viewModel.state == .wait)
+    }
+    
+    private func screenLock() -> some View {
+        ZStack {
+            Color.black
+                .ignoresSafeArea()
+                .opacity(0.6)
+            
+            VStack {
+                Text("現在ログインできません")
+                    .font(.title2)
+                    .padding()
+                Text("\(viewModel.lockoutDurationDiffMinuteNow + 1)分後にやり直してください")
+                    .font(.title3)
+            }
+            .foregroundColor(.white)
+        }
+        .background(.ultraThinMaterial)
     }
 }
 

@@ -10,6 +10,9 @@ import Foundation
 enum LoginEvent {
     case onAppear
     case login
+    case lock
+    case unlock
+    case alertPositiveButtonTap
     case didFetchResultSuccessfully(_ result: LoginUser)
     case didFetchResultFailure(_ error: Error)
 }

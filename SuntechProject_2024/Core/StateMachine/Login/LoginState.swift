@@ -10,7 +10,7 @@ import Foundation
 enum LoginState: Equatable {
     case initial
     case loading
-    case results
+    case success
     case wait
     case error
 }
