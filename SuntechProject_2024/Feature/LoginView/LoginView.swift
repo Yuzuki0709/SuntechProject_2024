@@ -36,10 +36,10 @@ struct LoginView: View {
                 .padding()
             }
             .ignoresSafeArea()
-            .alert("エラーが発生しました", isPresented: .constant(viewModel.state == .error)) {
+            .alert(viewModel.error?.message ?? "", isPresented: .constant(viewModel.state == .error)) {
                 Button("OK") { viewModel.send(event: .alertPositiveButtonTap) }
             } message: {
-                Text("メールアドレスとパスワードを再入力してください。")
+                Text(viewModel.error?.description ?? "")
             }
             .loading(viewModel.state == .loading)
             .overlay {

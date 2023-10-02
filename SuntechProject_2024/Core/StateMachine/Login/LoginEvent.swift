@@ -14,5 +14,5 @@ enum LoginEvent {
     case unlock
     case alertPositiveButtonTap
     case didFetchResultSuccessfully(_ result: LoginUser)
-    case didFetchResultFailure(_ error: Error)
+    case didFetchResultFailure(_ error: DomainError)
 }

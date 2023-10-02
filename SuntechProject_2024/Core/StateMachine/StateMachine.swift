@@ -30,7 +30,7 @@ public class StateMachine<State, Event>: NSObject, ObservableObject, StateMachin
     public func leaveState(_ state: State) {}
     public func enterState(_ state: State) {}
     
-    @Published public var error: Error?
+    @Published public var error: DomainError?
     @Published private(set) public var state: State {
         willSet { leaveState(state) }
         didSet {
