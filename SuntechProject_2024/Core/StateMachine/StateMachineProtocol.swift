@@ -12,7 +12,7 @@ public protocol StateMachineProtocol {
     associatedtype Event
     
     var state: State { get }
-    var error: Error? { get set }
+    var error: DomainError? { get set }
     
     func handleStateUpdate(_ oldState: State, new newState: State)
     func handleEvent(_ event: Event) -> State?

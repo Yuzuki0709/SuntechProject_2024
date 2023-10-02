@@ -9,13 +9,9 @@ import Foundation
 import SwiftUI
 import Combine
 
-final class LoginViewModel: ObservableObject {
+final class LoginViewModel: StateMachine<LoginState, LoginEvent> {
     @Published var emailText: String = ""
     @Published var passwordText: String = ""
-    @Published var isLoading: Bool = false
-    @Published var loginUser: LoginUser? = nil
-    @Published var error: Error? = nil
-    @Published var isLock: Bool = false
     @Published var lockoutDurationDiffMinuteNow: Int = 0
     
     private let _navigationSubject = PassthroughSubject<Navigation, Never>()
@@ -24,14 +20,13 @@ final class LoginViewModel: ObservableObject {
     private var lockoutDuration: Date? {
         didSet {
             if let lockoutDuration = lockoutDuration {
-                isLock = lockoutDuration > Date()
-                if isLock {
-                    scheduleUnlockTimer(for: lockoutDuration)
-                    startUpdateLockoutDurationTimer()
+                if lockoutDuration > Date() {
+                    send(event: .lock)
                 }
             } else {
-                isLock = false
-                cancelUnlockTimer()
+                if state == .wait {
+                    send(event: .unlock)
+                }
             }
         }
     }
@@ -45,31 +40,85 @@ final class LoginViewModel: ObservableObject {
         _navigationSubject.eraseToAnyPublisher()
     }
     
-    init(suntechAPIClient: SuntechAPIClientProtocol = SuntechAPIClient()) {
+    init(
+        initialState: LoginState = .initial,
+        suntechAPIClient: SuntechAPIClientProtocol = SuntechAPIClient()
+    ) {
         self.suntechAPIClient = suntechAPIClient
+        super.init(initialState)
     }
     
     deinit {
         stopUpdateLockoutDurationTimer()
     }
     
+    override func handleStateUpdate(_ oldState: LoginState, new newState: LoginState) {
+        switch(oldState, newState) {
+        case (.initial, .loading):
+            break
+        case (.loading, .success):
+            failureCount = 0
+            _navigationSubject.send(.main)
+            
+        case (.loading, .error):
+            failureCount += 1
+            handleLoginFailure()
+            
+        case (_, .wait):
+            scheduleUnlockTimer(for: lockoutDuration)
+            startUpdateLockoutDurationTimer()
+            
+        case (_, .initial):
+            break
+            
+        default:
+            fatalError("You lended in a misterious place... Coming from \(oldState) and trying to get to \(newState)")
+        }
+    }
+    
+    override func handleEvent(_ event: LoginEvent) -> LoginState? {
+        switch(state, event) {
+        case (.initial, .login):
+            login()
+            return .loading
+            
+        case (.loading, .didFetchResultSuccessfully(let loginUser)):
+            LoginUserInfo.shared.setUserInfo(loginUser, password: passwordText)
+            return .success
+            
+        case (.loading, .didFetchResultFailure(let error)):
+            self.error = error
+            return .error
+            
+        case (_, .lock):
+            return .wait
+            
+        case (.wait, .unlock):
+            cancelUnlockTimer()
+            return .initial
+            
+        case (.error, .alertPositiveButtonTap):
+            self.error = nil
+            return .initial
+            
+        case (.wait, .alertPositiveButtonTap):
+            break
+            
+        default:
+            fatalError("Event not handled...")
+        }
+        return nil
+    }
+    
     func login() {
-        isLoading = true
         suntechAPIClient.login(email: emailText, password: passwordText) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let loginUser):
-                self.loginUser = loginUser
-                self.failureCount = 0
-                LoginUserInfo.shared.setUserInfo(loginUser, password: self.passwordText)
-                // ログインに成功したら画面遷移する
-                _navigationSubject.send(.main)
+                self.send(event: .didFetchResultSuccessfully(loginUser))
             case .failure(let error):
-                self.error = error as Error
-                self.failureCount += 1
-                self.handleLoginFailure()
+                self.send(event: .didFetchResultFailure(error))
             }
-            self.isLoading = false
         }
     }
     
@@ -88,7 +137,8 @@ final class LoginViewModel: ObservableObject {
         }
     }
     
-    private func scheduleUnlockTimer(for unlockTime: Date) {
+    private func scheduleUnlockTimer(for unlockTime: Date?) {
+        guard let unlockTime else { return }
         cancelUnlockTimer()
         let timer = Timer(fire: unlockTime, interval: 0, repeats: false) { [weak self] _ in
             self?.unlockTimerFired()

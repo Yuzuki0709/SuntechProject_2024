@@ -9,7 +9,7 @@ import SwiftUI
 import Alamofire
 
 public protocol SuntechAPIClientProtocol {
-    func login(email: String, password: String, completion: @escaping ((Result<LoginUser, AFError>) -> ()))
+    func login(email: String, password: String, completion: @escaping ((Result<LoginUser, DomainError>) -> ()))
     func fetchWeekTimetable(studentId: String, password: String, completion: @escaping ((Result<WeekTimetable, AFError>) -> ()))
     func fetchVacations(completion: @escaping ((Result<[Vacation], AFError>) -> ()))
     
@@ -40,7 +40,7 @@ public protocol SuntechAPIClientProtocol {
 final class SuntechAPIClient: SuntechAPIClientProtocol {
     let baseURL = "https://proj-r.works"
     
-    func login(email: String, password: String, completion: @escaping (Result<LoginUser, AFError>) -> ()) {
+    func login(email: String, password: String, completion: @escaping (Result<LoginUser, DomainError>) -> ()) {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         
@@ -53,7 +53,16 @@ final class SuntechAPIClient: SuntechAPIClientProtocol {
         
         AF.request(baseURL + path, parameters: parameter)
             .responseDecodable(of: LoginUser.self, decoder: decoder) { response in
-                completion(response.result)
+                if let error = response.error {
+                    switch error {
+                    case .responseSerializationFailed(_):
+                        completion(.failure(.loginFailure))
+                    default:
+                        completion(.failure(.network))
+                    }
+                }
+                guard let loginUser = response.value else { return }
+                completion(.success(loginUser))
             }
     }
     
