@@ -12,6 +12,7 @@ public struct ChatMessage: Codable, Identifiable {
     public let id: Int64
     public let text: String
     public let sendAt: Date
+    public let isRead: Bool
     public let user: ChatUser
 }
 
