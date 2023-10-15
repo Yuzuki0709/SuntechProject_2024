@@ -134,19 +134,32 @@ struct ChatroomTopView: View {
             
             Spacer()
             
-            VStack {
+            VStack(spacing: 0) {
                 Text(DateHelper.formatToString(date: chatroom.updateAt, format: "yyyy/MM/dd"))
                     .font(.system(size: 13))
                     .foregroundColor(.gray)
-                Spacer()
+                    .padding(.bottom, .app.space.spacingXS)
+                if chatroom.unreadMessageCount > 0 {
+                    unreadMessageCountLabel(chatroom.unreadMessageCount)
+                }
             }
-            .padding(.vertical)
         }
         .listRowBackground(Color.clear)
         .contentShape(Rectangle())
         .onTapGesture {
             viewModel.navigate(.chatMessage(chatroom))
         }
+    }
+    
+    private func unreadMessageCountLabel(_ count: Int) -> some View {
+        Circle()
+            .frame(width: 28, height: 28)
+            .foregroundColor(Color(R.color.common.mainColor))
+            .overlay {
+                Text(count.description)
+                    .foregroundColor(.white)
+                    .font(.caption)
+            }
     }
 }
 

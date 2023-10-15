@@ -107,6 +107,7 @@ struct ChatMessageView_Previews: PreviewProvider {
                     name: "サンプル部屋",
                     createdAt: Date(),
                     updateAt: Date(),
+                    unreadMessageCount: 0,
                     recentMessage: "これはサンプルです。",
                     partner: ChatUser(
                         id: "F-0001",
