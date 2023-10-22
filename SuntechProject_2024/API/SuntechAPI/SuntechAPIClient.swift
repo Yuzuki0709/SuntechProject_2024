@@ -82,6 +82,22 @@ final class SuntechAPIClient: SuntechAPIClientProtocol {
             }
     }
     
+    func fetchWeekTimetableSecond(studentId: String, password: String, completion: @escaping (Result<WeekTimetable, AFError>) -> ()) {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        
+        let path = "/api/timetable_second"
+        
+        let parameter = [
+            "student_id": "\"\(studentId)\""
+        ]
+        
+        AF.request(baseURL + path, parameters: parameter)
+            .responseDecodable(of: WeekTimetable.self, decoder: decoder) { response in
+                completion(response.result)
+            }
+    }
+    
     func fetchVacations(completion: @escaping ((Result<[Vacation], AFError>) -> ())) {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
