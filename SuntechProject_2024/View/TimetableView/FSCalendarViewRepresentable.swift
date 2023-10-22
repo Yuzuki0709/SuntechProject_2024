@@ -13,6 +13,7 @@ struct FSCalendarViewRepresentable: UIViewRepresentable {
     @Binding var today: Date?
     @Binding var monday: Date?
     @Binding var friday: Date?
+    @Binding var month: Int
     
     typealias UIViewType = FSCalendarView
     
@@ -47,6 +48,7 @@ struct FSCalendarViewRepresentable: UIViewRepresentable {
             Task { @MainActor in
                 parent.monday = Calendar.current.date(byAdding: .day, value: 2, to: calendar.currentPage)
                 parent.friday = Calendar.current.date(byAdding: .day, value: 6, to: calendar.currentPage)
+                parent.month = Calendar.current.component(.month, from: calendar.currentPage)
             }
         }
     }

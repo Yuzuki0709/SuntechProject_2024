@@ -11,6 +11,7 @@ import Alamofire
 public protocol SuntechAPIClientProtocol {
     func login(email: String, password: String, completion: @escaping ((Result<LoginUser, DomainError>) -> ()))
     func fetchWeekTimetableFirst(studentId: String, password: String, completion: @escaping ((Result<WeekTimetable, AFError>) -> ()))
+    func fetchWeekTimetableSecond(studentId: String, password: String, completion: @escaping ((Result<WeekTimetable, AFError>) -> ()))
     func fetchVacations(completion: @escaping ((Result<[Vacation], AFError>) -> ()))
     
     func fetchChatroomList(userId: String, completion: @escaping ((Result<[Chatroom], AFError>) -> ()))

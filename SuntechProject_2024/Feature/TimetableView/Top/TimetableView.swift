@@ -21,7 +21,8 @@ struct TimetableView: View {
                     bounds: geometry.frame(in: .local),
                     today: $viewModel.today,
                     monday: $viewModel.monday,
-                    friday: $viewModel.friday
+                    friday: $viewModel.friday,
+                    month: $viewModel.month
                 )
                 .frame(height: 100)
                 
@@ -36,9 +37,6 @@ struct TimetableView: View {
                     Spacer()
                 }
             }
-        }
-        .onAppear {
-            viewModel.fetchWeekTimetable()
         }
         .backgroundColor(color: Color(R.color.common.backgroundColor))
         .navigationBarBackButtonHidden(true)
