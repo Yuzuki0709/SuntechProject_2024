@@ -17,6 +17,7 @@ final class TimetableViewModel: ObservableObject {
     @Published var today: Date?
     @Published var monday: Date?
     @Published var friday: Date?
+    @Published var month: Int = Calendar.current.component(.month, from: .now)
     
     private var cancellables = Set<AnyCancellable>()
     private let suntechAPIClient: SuntechAPIClientProtocol
@@ -43,6 +44,14 @@ final class TimetableViewModel: ObservableObject {
                         self.vacation = nil
                     }
                 }
+            }
+            .store(in: &cancellables)
+        
+        $month
+            .sink { [weak self] month in
+                guard let self else { return }
+                
+                self.fetchWeekTimetable()
             }
             .store(in: &cancellables)
         
@@ -74,19 +83,28 @@ final class TimetableViewModel: ObservableObject {
         guard let currentUser = LoginUserInfo.shared.currentUser,
               let password = LoginUserInfo.shared.password,
               let student = currentUser.user as? Student else { return }
-        
-        isLoading = true
-        
-        suntechAPIClient.fetchWeekTimetable(studentId: student.id, password: password) { [weak self] result in
-            switch result {
-            case .success(let weekTimetable):
-                self?.weekTimetable = weekTimetable
-            case .failure(let error):
-                print(error)
+
+        if 4 <= month && month <= 8 { // 前期
+            suntechAPIClient.fetchWeekTimetableFirst(studentId: student.id, password: password) { [weak self] result in
+                switch result {
+                case .success(let weekTimetable):
+                    self?.weekTimetable = weekTimetable
+                case .failure(let error):
+                    print(error)
+                }
             }
-            
-            self?.isLoading = false
+        } else { // 後期
+            suntechAPIClient.fetchWeekTimetableSecond(studentId: student.id, password: password) { [weak self] result in
+                switch result {
+                case .success(let weekTimetable):
+                    self?.weekTimetable = weekTimetable
+                case .failure(let error):
+                    print(error)
+                }
+            }
         }
+        
+        
     }
     
     func fetchVacations() {

@@ -10,7 +10,8 @@ import Alamofire
 
 public protocol SuntechAPIClientProtocol {
     func login(email: String, password: String, completion: @escaping ((Result<LoginUser, DomainError>) -> ()))
-    func fetchWeekTimetable(studentId: String, password: String, completion: @escaping ((Result<WeekTimetable, AFError>) -> ()))
+    func fetchWeekTimetableFirst(studentId: String, password: String, completion: @escaping ((Result<WeekTimetable, AFError>) -> ()))
+    func fetchWeekTimetableSecond(studentId: String, password: String, completion: @escaping ((Result<WeekTimetable, AFError>) -> ()))
     func fetchVacations(completion: @escaping ((Result<[Vacation], AFError>) -> ()))
     
     func fetchChatroomList(userId: String, completion: @escaping ((Result<[Chatroom], AFError>) -> ()))
@@ -66,11 +67,27 @@ final class SuntechAPIClient: SuntechAPIClientProtocol {
             }
     }
     
-    func fetchWeekTimetable(studentId: String, password: String, completion: @escaping (Result<WeekTimetable, AFError>) -> ()) {
+    func fetchWeekTimetableFirst(studentId: String, password: String, completion: @escaping (Result<WeekTimetable, AFError>) -> ()) {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         
-        let path = "/api/timetable"
+        let path = "/api/timetable_first"
+        
+        let parameter = [
+            "student_id": "\"\(studentId)\""
+        ]
+        
+        AF.request(baseURL + path, parameters: parameter)
+            .responseDecodable(of: WeekTimetable.self, decoder: decoder) { response in
+                completion(response.result)
+            }
+    }
+    
+    func fetchWeekTimetableSecond(studentId: String, password: String, completion: @escaping (Result<WeekTimetable, AFError>) -> ()) {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        
+        let path = "/api/timetable_second"
         
         let parameter = [
             "student_id": "\"\(studentId)\""
