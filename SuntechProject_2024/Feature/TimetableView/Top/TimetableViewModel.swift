@@ -77,7 +77,7 @@ final class TimetableViewModel: ObservableObject {
         
         isLoading = true
         
-        suntechAPIClient.fetchWeekTimetable(studentId: student.id, password: password) { [weak self] result in
+        suntechAPIClient.fetchWeekTimetableFirst(studentId: student.id, password: password) { [weak self] result in
             switch result {
             case .success(let weekTimetable):
                 self?.weekTimetable = weekTimetable
