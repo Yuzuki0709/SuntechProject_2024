@@ -8,7 +8,7 @@
 import Foundation
 
 public struct ClassCancellation: Identifiable, Codable {
-    public var id: UUID = .init()
+    public var id: Int
     public let classId: String
     public let date: Date
 }

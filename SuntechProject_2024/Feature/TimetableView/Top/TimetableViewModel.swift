@@ -13,7 +13,9 @@ final class TimetableViewModel: ObservableObject {
     @Published private(set) var weekTimetable: WeekTimetable?
     @Published private(set) var vacations: [Vacation] = []
     @Published private(set) var vacation: Vacation? = nil
+    @Published private(set) var cancellClasses: [ClassCancellation] = []
     @Published private(set) var isLoading: Bool = false
+    @Published var apiError: Error? = nil
     @Published var today: Date?
     @Published var monday: Date?
     @Published var friday: Date?
@@ -30,6 +32,7 @@ final class TimetableViewModel: ObservableObject {
     init(suntechAPIClient: SuntechAPIClientProtocol = SuntechAPIClient()) {
         self.suntechAPIClient = suntechAPIClient
         self.fetchVacations()
+        self.fetchCancelClass()
         
         $today
             .compactMap { $0 }
@@ -118,6 +121,17 @@ final class TimetableViewModel: ObservableObject {
                 print(error)
             }
             self?.isLoading = false
+        }
+    }
+    
+    func fetchCancelClass() {
+        suntechAPIClient.fetchCancelClass { [weak self] result in
+            switch result {
+            case .success(let cancellClasses):
+                self?.cancellClasses = cancellClasses
+            case .failure(let error):
+                self?.apiError = error as Error
+            }
         }
     }
     
