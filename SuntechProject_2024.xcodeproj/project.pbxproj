@@ -114,6 +114,7 @@
 		A2D6208C2ACA4049008C9229 /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D6208B2ACA4049008C9229 /* DomainError.swift */; };
 		A2D6208F2ACA489F008C9229 /* ErrorDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D6208E2ACA489F008C9229 /* ErrorDialog.swift */; };
 		A2D8CBA62A681F6C00A059D3 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D8CBA52A681F6C00A059D3 /* WebView.swift */; };
+		A2E07DC12AE9220A008A66BB /* ClassCancellation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E07DC02AE9220A008A66BB /* ClassCancellation.swift */; };
 		A2E10FA32A75415700ECF1FA /* ChatroomTopFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E10FA22A75415700ECF1FA /* ChatroomTopFlowController.swift */; };
 		A2E10FA72A77A6B900ECF1FA /* ChatroomTopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E10FA62A77A6B900ECF1FA /* ChatroomTopViewModel.swift */; };
 		A2E118F42A66B1D3005901EB /* AppCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E118F32A66B1D3005901EB /* AppCompatible.swift */; };
@@ -244,6 +245,7 @@
 		A2D6208B2ACA4049008C9229 /* DomainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainError.swift; sourceTree = "<group>"; };
 		A2D6208E2ACA489F008C9229 /* ErrorDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorDialog.swift; sourceTree = "<group>"; };
 		A2D8CBA52A681F6C00A059D3 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		A2E07DC02AE9220A008A66BB /* ClassCancellation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassCancellation.swift; sourceTree = "<group>"; };
 		A2E10FA22A75415700ECF1FA /* ChatroomTopFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomTopFlowController.swift; sourceTree = "<group>"; };
 		A2E10FA62A77A6B900ECF1FA /* ChatroomTopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomTopViewModel.swift; sourceTree = "<group>"; };
 		A2E118F32A66B1D3005901EB /* AppCompatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCompatible.swift; sourceTree = "<group>"; };
@@ -797,6 +799,7 @@
 			isa = PBXGroup;
 			children = (
 				A29C1D922A52FF7E0045FFE2 /* Class.swift */,
+				A2E07DC02AE9220A008A66BB /* ClassCancellation.swift */,
 				A29C1D972A5300750045FFE2 /* DayTimetable.swift */,
 				A29C1D992A5301200045FFE2 /* WeekTimetable.swift */,
 				A2AAEF642AB1EBD50010A02A /* Vacation.swift */,
@@ -1070,6 +1073,7 @@
 				A24F1BE42A75158700B4A00A /* WebViewModel.swift in Sources */,
 				A21A28662A723703006735FA /* MainFlowController.swift in Sources */,
 				A2E10FA72A77A6B900ECF1FA /* ChatroomTopViewModel.swift in Sources */,
+				A2E07DC12AE9220A008A66BB /* ClassCancellation.swift in Sources */,
 				A23BDAA02A90741D0042852C /* UserIcon.swift in Sources */,
 				A21A27B42A6D5CCE006735FA /* Chatroom.swift in Sources */,
 				A28113422A5BD71A0037E35C /* AttendanceStatusView.swift in Sources */,
