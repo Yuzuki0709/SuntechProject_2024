@@ -61,7 +61,7 @@ struct TimetableView: View {
             }
         }
         .overlay(alignment: .bottom) {
-            if viewModel.cancellClasses.contains(where: { $0.classId == classData.id }) {
+            if viewModel.cancellClassesInWeek.contains(where: { $0.classId == classData.id }) {
                 cancellClassText
                     .padding(.bottom, .app.space.spacingXXS)
             }
