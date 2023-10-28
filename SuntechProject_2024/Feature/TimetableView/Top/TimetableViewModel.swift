@@ -38,7 +38,6 @@ final class TimetableViewModel: ObservableObject {
         self.fetchVacations()
         self.fetchCancelClass()
         
-        
         $today
             .compactMap { $0 }
             .sink { [weak self] date in
@@ -139,8 +138,6 @@ final class TimetableViewModel: ObservableObject {
                 }
             }
         }
-        
-        
     }
     
     func fetchVacations() {
@@ -183,14 +180,14 @@ private extension Date {
     func getMondayOfWeek() -> Date {
         let calendar = Calendar.current
         let weekday = calendar.component(.weekday, from: self)
-        let daysToAddToMonday = abs(2 - weekday)
+        let daysToAddToMonday = 2 - weekday
         
-        return calendar.date(byAdding: .day, value: -daysToAddToMonday, to: self)!
+        return calendar.date(byAdding: .day, value: daysToAddToMonday, to: self)!
     }
     func getFridayOfWeek() -> Date {
         let calendar = Calendar.current
         let weekday = calendar.component(.weekday, from: self)
-        let daysToAddToMonday = abs(6 - weekday)
+        let daysToAddToMonday = 6 - weekday
         
         return calendar.date(byAdding: .day, value: daysToAddToMonday, to: self)!
     }
