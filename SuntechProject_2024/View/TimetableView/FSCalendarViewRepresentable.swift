@@ -10,9 +10,9 @@ import FSCalendar
 
 struct FSCalendarViewRepresentable: UIViewRepresentable {
     let bounds: CGRect
-    @Binding var today: Date?
-    @Binding var monday: Date?
-    @Binding var friday: Date?
+    @Binding var today: Date
+    @Binding var monday: Date
+    @Binding var friday: Date
     @Binding var month: Int
     
     typealias UIViewType = FSCalendarView
@@ -40,14 +40,18 @@ struct FSCalendarViewRepresentable: UIViewRepresentable {
         
         func onAppearCalendar(_ calendar: FSCalendar) {
             Task { @MainActor in
-                parent.today = calendar.today
+                guard let today = calendar.today else { return }
+                parent.today = today
+                parent.monday = Calendar.current.date(byAdding: .day, value: 2, to: calendar.currentPage)!
+                parent.friday = Calendar.current.date(byAdding: .day, value: 6, to: calendar.currentPage)!
+                parent.month = Calendar.current.component(.month, from: calendar.currentPage)
             }
         }
         
         func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
             Task { @MainActor in
-                parent.monday = Calendar.current.date(byAdding: .day, value: 2, to: calendar.currentPage)
-                parent.friday = Calendar.current.date(byAdding: .day, value: 6, to: calendar.currentPage)
+                parent.monday = Calendar.current.date(byAdding: .day, value: 2, to: calendar.currentPage)!
+                parent.friday = Calendar.current.date(byAdding: .day, value: 6, to: calendar.currentPage)!
                 parent.month = Calendar.current.component(.month, from: calendar.currentPage)
             }
         }

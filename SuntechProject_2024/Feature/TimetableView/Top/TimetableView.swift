@@ -60,6 +60,12 @@ struct TimetableView: View {
                 Color(R.color.timetable.electiveSubject)
             }
         }
+        .overlay(alignment: .bottom) {
+            if viewModel.cancellClassesInWeek.contains(where: { $0.classId == classData.id }) {
+                cancellClassText
+                    .padding(.bottom, .app.space.spacingXXS)
+            }
+        }
         .onTapGesture {
             viewModel.navigate(.classDetail(classData))
         }
@@ -93,6 +99,26 @@ struct TimetableView: View {
             dayTimetableRow(dayTimetables: weekTimetable.friday)
         }
         .frame(maxWidth: .infinity)
+    }
+    
+    private var cancellClassText: some View {
+        RoundedRectangle(cornerRadius: .app.space.spacingXXS)
+            .fill(.white)
+            .foregroundColor(.red)
+            .frame(width: 60, height: 15)
+            .overlay {
+                RoundedRectangle(cornerRadius: .app.corner.radiusS)
+                    .stroke(lineWidth: 2)
+                    .foregroundColor(.red)
+            }
+            .overlay {
+                HStack(spacing: .app.space.spacingXXS) {
+                    Image(systemName: "exclamationmark.octagon")
+                    Text("休講")
+                }
+                .font(.caption)
+                .foregroundColor(.red)
+            }
     }
 }
 
