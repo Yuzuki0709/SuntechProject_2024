@@ -31,6 +31,7 @@
 		A21A28632A723646006735FA /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A28622A723646006735FA /* MainTabBarController.swift */; };
 		A21A28662A723703006735FA /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A28652A723703006735FA /* MainFlowController.swift */; };
 		A21A286A2A723752006735FA /* MainFlowControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A28692A723752006735FA /* MainFlowControllerService.swift */; };
+		A22D24542AFBC4EE00AF0B84 /* nice.json in Resources */ = {isa = PBXBuildFile; fileRef = A22D24532AFBC4EE00AF0B84 /* nice.json */; };
 		A232E16F2A4F1407007599E5 /* SuntechProject_2024App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232E16E2A4F1407007599E5 /* SuntechProject_2024App.swift */; };
 		A232E1732A4F140A007599E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A232E1722A4F140A007599E5 /* Assets.xcassets */; };
 		A232E1762A4F140A007599E5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A232E1752A4F140A007599E5 /* Preview Assets.xcassets */; };
@@ -167,6 +168,7 @@
 		A21A28622A723646006735FA /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		A21A28652A723703006735FA /* MainFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
 		A21A28692A723752006735FA /* MainFlowControllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowControllerService.swift; sourceTree = "<group>"; };
+		A22D24532AFBC4EE00AF0B84 /* nice.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = nice.json; sourceTree = "<group>"; };
 		A232E16B2A4F1407007599E5 /* SuntechProject_2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuntechProject_2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A232E16E2A4F1407007599E5 /* SuntechProject_2024App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuntechProject_2024App.swift; sourceTree = "<group>"; };
 		A232E1722A4F140A007599E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -821,6 +823,7 @@
 			children = (
 				A2AAEF782ABBDCD30010A02A /* vacation.json */,
 				A29E70E22AA384ED00B17C64 /* empty.json */,
+				A22D24532AFBC4EE00AF0B84 /* nice.json */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -1014,6 +1017,7 @@
 				A29E70E32AA384ED00B17C64 /* empty.json in Resources */,
 				A232E1762A4F140A007599E5 /* Preview Assets.xcassets in Resources */,
 				A232E1732A4F140A007599E5 /* Assets.xcassets in Resources */,
+				A22D24542AFBC4EE00AF0B84 /* nice.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
