@@ -58,4 +58,13 @@ extension View {
             binding.wrappedValue = newValue
         }
     }
+    
+    @ViewBuilder
+    func overlay<T: View>(isPresented: Bool, content: () -> T) -> some View {
+        if isPresented {
+            self.overlay { content() }
+        } else {
+            self
+        }
+    }
 }
