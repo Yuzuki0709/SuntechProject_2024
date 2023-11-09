@@ -60,7 +60,7 @@ extension View {
     }
     
     @ViewBuilder
-    func overlay<T: View>(isPresented: Bool, content: () -> T) -> some View {
+    func overlay<T: View>(isPresented: Bool, @ViewBuilder content: () -> T) -> some View {
         if isPresented {
             self.overlay { content() }
         } else {
