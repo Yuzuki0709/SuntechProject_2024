@@ -99,6 +99,7 @@ struct AttendanceStatusView: View {
         .foregroundColor(.white)
         .clipShape(Circle())
         .contentShape(Circle())
+        .disabled(viewModel.isStatusButtonTapped.0)
         .overlay(isPresented: viewModel.isStatusButtonTapped.0) {
             if let tapStatus = viewModel.isStatusButtonTapped.1,
                tapStatus == status {
