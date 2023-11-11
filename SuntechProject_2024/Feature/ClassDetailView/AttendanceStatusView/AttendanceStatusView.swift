@@ -133,7 +133,7 @@ private extension AttendanceStatus {
         case .lateness:
             return "run"
         case .officialAbsence:
-            return ""
+            return "mail"
         }
     }
 }
