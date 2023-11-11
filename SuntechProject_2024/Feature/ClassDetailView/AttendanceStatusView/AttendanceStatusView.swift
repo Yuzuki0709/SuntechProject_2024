@@ -81,6 +81,7 @@ struct AttendanceStatusView: View {
     private func attendanceButton(status: AttendanceStatus) -> some View {
         Button {
             viewModel.addAttendanceLog(status: status)
+            viewModel.isStatusButtonTapped = (true, status)
         } label: {
             switch status {
             case .attendance:
@@ -98,6 +99,14 @@ struct AttendanceStatusView: View {
         .foregroundColor(.white)
         .clipShape(Circle())
         .contentShape(Circle())
+        .disabled(viewModel.isStatusButtonTapped.0)
+        .overlay(isPresented: viewModel.isStatusButtonTapped.0) {
+            if let tapStatus = viewModel.isStatusButtonTapped.1,
+               tapStatus == status {
+                LottieView(name: status.onTapAnimationName, loopMode: .playOnce)
+                    .frame(width: 100, height: 100)
+            }
+        }
     }
 }
 
@@ -112,6 +121,19 @@ private extension AttendanceStatus {
             return Color(R.color.attendanceStatus.lateness)
         case .officialAbsence:
             return Color(R.color.attendanceStatus.officialAbsence)
+        }
+    }
+    
+    var onTapAnimationName: String {
+        switch self {
+        case .attendance:
+            return "nice"
+        case .absence:
+            return "sleep"
+        case .lateness:
+            return "run"
+        case .officialAbsence:
+            return "mail"
         }
     }
 }

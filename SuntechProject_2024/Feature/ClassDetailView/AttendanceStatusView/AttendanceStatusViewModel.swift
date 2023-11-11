@@ -17,6 +17,16 @@ final class AttendanceStatusViewModel: ObservableObject {
     @Published private(set) var officialAbsenceCount: Int = 0
     @Published private(set) var attendanceLogs: [AttendanceLog] = []
     
+    @Published var isStatusButtonTapped: (Bool, AttendanceStatus?) = (false, nil) {
+        didSet {
+            if isStatusButtonTapped.0 { // ボタンが押されたら2秒後に押下状態を解除する
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+                    self?.isStatusButtonTapped = (false, nil)
+                }
+            }
+        }
+    }
+    
     private var classData: Class
     private var cancellables = Set<AnyCancellable>()
     
