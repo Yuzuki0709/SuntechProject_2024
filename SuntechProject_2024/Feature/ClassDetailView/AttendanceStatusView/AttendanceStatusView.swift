@@ -131,7 +131,7 @@ private extension AttendanceStatus {
         case .absence:
             return "sleep"
         case .lateness:
-            return ""
+            return "run"
         case .officialAbsence:
             return ""
         }
