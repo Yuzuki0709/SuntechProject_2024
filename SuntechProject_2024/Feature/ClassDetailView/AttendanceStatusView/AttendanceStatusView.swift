@@ -80,8 +80,10 @@ struct AttendanceStatusView: View {
     
     private func attendanceButton(status: AttendanceStatus) -> some View {
         Button {
-            viewModel.addAttendanceLog(status: status)
-            viewModel.isStatusButtonTapped = (true, status)
+            withAnimation(.default) {
+                viewModel.addAttendanceLog(status: status)
+                viewModel.isStatusButtonTapped = (true, status)
+            }
         } label: {
             switch status {
             case .attendance:
