@@ -40,7 +40,7 @@ final class AttendanceStatusViewModel: ObservableObject {
                 self?.absenceCount = classAttendance.absenceCount
                 self?.latenessCount = classAttendance.latenessCount
                 self?.officialAbsenceCount = classAttendance.officialAbsenceCount
-                self?.attendanceLogs = Array(classAttendance.logs)
+                self?.attendanceLogs = Array(classAttendance.logs).sorted(by: { $0.date > $1.date })
             })
             .store(in: &cancellables)
     }
