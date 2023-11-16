@@ -113,6 +113,7 @@
 		A2AAEF792ABBDCD30010A02A /* vacation.json in Resources */ = {isa = PBXBuildFile; fileRef = A2AAEF782ABBDCD30010A02A /* vacation.json */; };
 		A2AAEFBA2ABFB72F0010A02A /* StateMachineProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AAEFB92ABFB72F0010A02A /* StateMachineProtocol.swift */; };
 		A2AAEFBC2ABFB7F20010A02A /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AAEFBB2ABFB7F20010A02A /* StateMachine.swift */; };
+		A2C0CBFC2B05B1DD00CB8014 /* ClassChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C0CBFB2B05B1DD00CB8014 /* ClassChange.swift */; };
 		A2D620862AC9ACF2008C9229 /* LoginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D620852AC9ACF2008C9229 /* LoginState.swift */; };
 		A2D620892AC9AD45008C9229 /* LoginEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D620882AC9AD45008C9229 /* LoginEvent.swift */; };
 		A2D6208C2ACA4049008C9229 /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D6208B2ACA4049008C9229 /* DomainError.swift */; };
@@ -248,6 +249,7 @@
 		A2AAEF782ABBDCD30010A02A /* vacation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vacation.json; sourceTree = "<group>"; };
 		A2AAEFB92ABFB72F0010A02A /* StateMachineProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachineProtocol.swift; sourceTree = "<group>"; };
 		A2AAEFBB2ABFB7F20010A02A /* StateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
+		A2C0CBFB2B05B1DD00CB8014 /* ClassChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassChange.swift; sourceTree = "<group>"; };
 		A2D620852AC9ACF2008C9229 /* LoginState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginState.swift; sourceTree = "<group>"; };
 		A2D620882AC9AD45008C9229 /* LoginEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEvent.swift; sourceTree = "<group>"; };
 		A2D6208B2ACA4049008C9229 /* DomainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainError.swift; sourceTree = "<group>"; };
@@ -808,6 +810,7 @@
 			children = (
 				A29C1D922A52FF7E0045FFE2 /* Class.swift */,
 				A2E07DC02AE9220A008A66BB /* ClassCancellation.swift */,
+				A2C0CBFB2B05B1DD00CB8014 /* ClassChange.swift */,
 				A29C1D972A5300750045FFE2 /* DayTimetable.swift */,
 				A29C1D992A5301200045FFE2 /* WeekTimetable.swift */,
 				A2AAEF642AB1EBD50010A02A /* Vacation.swift */,
@@ -1062,6 +1065,7 @@
 				A2133D6A2A65061700C5B24A /* CustomNavigationBar.swift in Sources */,
 				A21995082A81278900B1A172 /* MyCommentView.swift in Sources */,
 				A2D8CBA62A681F6C00A059D3 /* WebView.swift in Sources */,
+				A2C0CBFC2B05B1DD00CB8014 /* ClassChange.swift in Sources */,
 				A28113382A5BC1690037E35C /* View++.swift in Sources */,
 				A281134B2A5BE7F60037E35C /* ClassAttendance.swift in Sources */,
 				A21994FF2A7FE9EA00B1A172 /* ChatMessageFlowControllerService.swift in Sources */,
