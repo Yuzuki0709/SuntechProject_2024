@@ -15,6 +15,8 @@ final class TimetableViewModel: ObservableObject {
     @Published private(set) var vacation: Vacation? = nil
     @Published private(set) var cancellClasses: [ClassCancellation] = []
     @Published var cancellClassesInWeek: [ClassCancellation] = []
+    @Published private(set) var changeClasses: [ClassChange] = []
+    @Published var changeClassesInWeek: [ClassChange] = []
     @Published private(set) var isLoading: Bool = false
     @Published var apiError: Error? = nil
     @Published var today: Date = .now
@@ -37,6 +39,7 @@ final class TimetableViewModel: ObservableObject {
         self.friday = today.getFridayOfWeek()
         self.fetchVacations()
         self.fetchCancelClass()
+        self.fetchChangeClass()
         
         $today
             .compactMap { $0 }
@@ -112,6 +115,25 @@ final class TimetableViewModel: ObservableObject {
 //            }
 //            .assign(to: \.cancellClassesInWeek, on: self)
 //            .store(in: &cancellables)
+        
+        // 週ごとの変更情報を取得するための処理
+        Publishers.Zip($monday, $friday)
+            .dropFirst(2)
+            .sink { [weak self] monday, friday in
+                guard let self else { return }
+                self.changeClassesInWeek = self.changeClasses.filter { monday <= $0.beforeDate && $0.beforeDate <= friday}
+            }
+            .store(in: &cancellables)
+
+        $changeClasses
+            .map { classes in
+                classes.filter { [weak self] in
+                    guard let self else { return false }
+                    return self.monday <= $0.beforeDate && $0.beforeDate <= self.friday
+                }
+            }
+            .assign(to: \.changeClassesInWeek, on: self)
+            .store(in: &cancellables)
     }
     
     func fetchWeekTimetable() {
@@ -159,6 +181,17 @@ final class TimetableViewModel: ObservableObject {
             switch result {
             case .success(let cancellClasses):
                 self?.cancellClasses = cancellClasses
+            case .failure(let error):
+                self?.apiError = error as Error
+            }
+        }
+    }
+    
+    func fetchChangeClass() {
+        suntechAPIClient.fetchChangeClass { [weak self] result in
+            switch result {
+            case .success(let changeClasses):
+                self?.changeClasses = changeClasses
             case .failure(let error):
                 self?.apiError = error as Error
             }
