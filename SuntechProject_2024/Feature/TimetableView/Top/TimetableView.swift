@@ -66,8 +66,15 @@ struct TimetableView: View {
                     .padding(.bottom, .app.space.spacingXXS)
             }
         }
+        .overlay(alignment: .bottom) {
+            if let changeClass = viewModel.changeClassesInWeek.filter({ $0.classId == classData.id }).first {
+                changeClassText(changeClass)
+                    .padding(.bottom, .app.space.spacingXXS)
+            }
+        }
         .onTapGesture {
-            viewModel.navigate(.classDetail(classData))
+            let changeClass = viewModel.changeClassesInWeek.filter({ $0.classId == classData.id }).first
+            viewModel.navigate(.classDetail(classData, changeClass))
         }
     }
     
@@ -102,7 +109,7 @@ struct TimetableView: View {
     }
     
     private var cancellClassText: some View {
-        RoundedRectangle(cornerRadius: .app.space.spacingXXS)
+        RoundedRectangle(cornerRadius: .app.corner.radiusS)
             .fill(.white)
             .foregroundColor(.red)
             .frame(width: 60, height: 15)
@@ -118,6 +125,23 @@ struct TimetableView: View {
                 }
                 .font(.caption)
                 .foregroundColor(.red)
+            }
+    }
+    
+    private func changeClassText(_ changeClass: ClassChange) -> some View {
+        RoundedRectangle(cornerRadius: .app.corner.radiusS)
+            .fill(.white)
+            .foregroundColor(.red)
+            .frame(width: 60, height: 15)
+            .overlay {
+                RoundedRectangle(cornerRadius: .app.corner.radiusS)
+                    .stroke(lineWidth: 2)
+                    .foregroundColor(.red)
+            }
+            .overlay {
+                Text("移動:" + DateHelper.formatToString(date: changeClass.afterDate, format: "MM/dd"))
+                    .font(.caption2)
+                    .foregroundColor(.red)
             }
     }
 }

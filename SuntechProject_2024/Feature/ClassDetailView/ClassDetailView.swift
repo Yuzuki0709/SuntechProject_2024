@@ -11,12 +11,15 @@ struct ClassDetailView: View {
     @Environment (\.dismiss) var dismiss
     @ObservedObject var viewModel: ClassDetailViewModel
     
+    let changeClass: ClassChange?
+    
     private var contentWidth: CGFloat {
         UIScreen.main.bounds.width * 0.9
     }
     
-    init(viewModel: ClassDetailViewModel) {
+    init(viewModel: ClassDetailViewModel, changeClass: ClassChange? = nil) {
         self.viewModel = viewModel
+        self.changeClass = changeClass
     }
     
     var body: some View {
@@ -51,6 +54,12 @@ struct ClassDetailView: View {
                 }
                 .foregroundColor(.white)
             }
+        }
+        .alert(
+            "この日の授業は" + DateHelper.formatToString(date: changeClass?.afterDate ?? Date(), format: "MM月dd日") + "に変更になりました。",
+            isPresented: .constant(changeClass != nil)
+        ) {
+            Button("OK") {}
         }
     }
     
