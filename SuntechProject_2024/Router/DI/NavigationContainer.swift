@@ -36,13 +36,14 @@ final class NavigationContainer: SharedContainer {
         }
     }
     
-    var classDetailFlowController: ParameterFactory<Class, ClassDetailFlowControllerService> {
-        self { classData in
+    var classDetailFlowController: ParameterFactory<(Class,ClassChange?), ClassDetailFlowControllerService> {
+        self { (classData, changeClass) in
             ClassDetailFlowController(
                 rootView: ClassDetailView(
                     viewModel: ClassDetailViewModel(
                         classData: classData
-                    )
+                    ),
+                    changeClass: changeClass
                 )
             )
         }

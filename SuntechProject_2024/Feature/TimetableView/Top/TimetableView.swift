@@ -73,7 +73,8 @@ struct TimetableView: View {
             }
         }
         .onTapGesture {
-            viewModel.navigate(.classDetail(classData))
+            let changeClass = viewModel.changeClassesInWeek.filter({ $0.classId == classData.id }).first
+            viewModel.navigate(.classDetail(classData, changeClass))
         }
     }
     

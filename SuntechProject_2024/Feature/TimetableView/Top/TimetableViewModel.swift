@@ -205,7 +205,7 @@ final class TimetableViewModel: ObservableObject {
 
 extension TimetableViewModel {
     enum Navigation {
-        case classDetail(Class)
+        case classDetail(Class, ClassChange?)
     }
 }
 
