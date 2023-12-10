@@ -10,15 +10,14 @@ import SwiftUI
 import Combine
 
 final class TimetableViewModel: ObservableObject {
-//    @Published private(set) var weekTimetable = WeekTimetable(monday: [], tuesday: [], wednesday: [], thursday: [], friday: [])
-    @Published var weekTimetable: WeekTimetable? = nil
+    @Published private(set) var weekTimetable: WeekTimetable? = nil
     @Published private(set) var vacations: [Vacation] = []
     @Published private(set) var vacation: Vacation? = nil
     @Published private(set) var cancellClasses: [ClassCancellation] = []
-    @Published var cancellClassesInWeek: [ClassCancellation] = []
+    @Published private(set) var cancellClassesInWeek: [ClassCancellation] = []
     @Published private(set) var changeClasses: [ClassChange] = []
-    @Published var changeClassesInWeek: [ClassChange] = []
-    @Published var timetableInWeek: WeekTimetable? = nil
+    @Published private(set) var changeClassesInWeek: [ClassChange] = []
+    @Published private(set) var timetableInWeek: WeekTimetable? = nil
     @Published private(set) var isLoading: Bool = false
     @Published var apiError: Error? = nil
     @Published var today: Date = .now
@@ -137,60 +136,9 @@ final class TimetableViewModel: ObservableObject {
             .assign(to: \.changeClassesInWeek, on: self)
             .store(in: &cancellables)
         
-//        $timetableInWeek
-//        Publishers.CombineLatest($weekTimetable, $changeClassesInWeek)
-//            .map { timetable, changeClasses in
-//            }
-//            .assign(to: \.timetableInWeek, on: self)
-//            .store(in: &cancellables)
-        
         Publishers.CombineLatest($weekTimetable, $changeClassesInWeek)
-            .map { timetable, changeClasses in
-                // TODO: 1. タイムテーブル内に変更授業があるかどうか判別
-                // TODO: 2. あるならafterDateから曜日を算出
-                // TODO: 3. その曜日に授業情報を追加
-                // TODO: 4. タイムテーブルから元の授業情報を削除
-                // TODO: 5. リファクタリング
-                
-                guard let timetable = timetable else { return nil }
-                var updateTimetable = timetable
-                let week = timetable.monday + timetable.tuesday + timetable.wednesday + timetable.thursday + timetable.friday
-                
-                if let change = changeClasses.filter { a in
-                    week.contains { b in
-                        a.classId == b.classData.id
-                    }
-                }.first {
-                    if let hoge = week.filter { a in
-                        changeClasses.contains { b in
-                            a.classData.id == b.classId
-                        }
-                    }.first {
-                        let weekDay = Calendar.current.component(.weekday, from: change.afterDate)
-                        updateTimetable.monday.removeAll(where: { $0.id == hoge.id })
-                        updateTimetable.tuesday.removeAll(where: { $0.id == hoge.id })
-                        updateTimetable.wednesday.removeAll(where: { $0.id == hoge.id })
-                        updateTimetable.thursday.removeAll(where: { $0.id == hoge.id })
-                        updateTimetable.friday.removeAll(where: { $0.id == hoge.id })
-                        
-                        // TODO: 日付と数字の対応の見直し
-                        switch weekDay {
-                        case 2:
-                            updateTimetable.monday.append(DayTimetable(period1: change.period1, period2: change.period2, classData: hoge.classData))
-                        case 3:
-                            updateTimetable.tuesday.append(DayTimetable(period1: change.period1, period2: change.period2, classData: hoge.classData))
-                        case 4:
-                            updateTimetable.wednesday.append(DayTimetable(period1: change.period1, period2: change.period2, classData: hoge.classData))
-                        case 5:
-                            updateTimetable.thursday.append(DayTimetable(period1: change.period1, period2: change.period2, classData: hoge.classData))
-                        case 6:
-                            updateTimetable.friday.append(DayTimetable(period1: change.period1, period2: change.period2, classData: hoge.classData))
-                        default:
-                            break
-                        }
-                    }
-                }
-                return updateTimetable
+            .map { [weak self] timetable, changeClasses in
+                return self?.updateTimetableWithClassChanges(timetable, changeClasses)
             }
             .assign(to: \.timetableInWeek, on: self)
             .store(in: &cancellables)
@@ -275,6 +223,69 @@ final class TimetableViewModel: ObservableObject {
     
     func navigate(_ navigation: Navigation) {
         _navigationSubject.send(navigation)
+    }
+}
+
+extension TimetableViewModel {
+    /// タイムテーブルを更新するメインの関数
+    private func updateTimetableWithClassChanges(_ timetable: WeekTimetable?, _ changeClasses: [ClassChange]) -> WeekTimetable? {
+        guard let timetable = timetable else { return nil }
+
+        var updatedTimetable = timetable
+        let allDays = timetable.monday + timetable.tuesday + timetable.wednesday + timetable.thursday + timetable.friday
+
+        // 変更がある場合、授業情報を更新
+        if let changeClass = findFirstChangeClass(in: changeClasses, from: allDays) {
+            if let existingClass = findExistingClass(for: changeClass, in: allDays) {
+                removeExistingClassFromTimetable(&updatedTimetable, existingClass)
+                addUpdatedClassToTimetable(&updatedTimetable, changeClass, existingClass)
+            }
+        }
+
+        return updatedTimetable
+    }
+    /// 変更がある授業を検索する関数
+    private func findFirstChangeClass(in changeClasses: [ClassChange], from allDays: [DayTimetable]) -> ClassChange? {
+        return changeClasses.filter { changeClass in
+            allDays.contains { day in
+                changeClass.classId == day.classData.id
+            }
+        }.first
+    }
+    /// 変更がある授業に対応する元の授業を検索する関数
+    private func findExistingClass(for changeClass: ClassChange, in allDays: [DayTimetable]) -> DayTimetable? {
+        return allDays.filter { day in
+            changeClasses.contains { change in
+                day.classData.id == change.classId
+            }
+        }.first
+    }
+    /// タイムテーブルから授業を削除する関数
+    private func removeExistingClassFromTimetable(_ timetable: inout WeekTimetable, _ existingClass: DayTimetable) {
+        timetable.monday.removeAll(where: { $0.id == existingClass.id })
+        timetable.tuesday.removeAll(where: { $0.id == existingClass.id })
+        timetable.wednesday.removeAll(where: { $0.id == existingClass.id })
+        timetable.thursday.removeAll(where: { $0.id == existingClass.id })
+        timetable.friday.removeAll(where: { $0.id == existingClass.id })
+    }
+    /// タイムテーブルに新しい授業を追加する関数
+    private func addUpdatedClassToTimetable(_ timetable: inout WeekTimetable, _ changeClass: ClassChange, _ existingClass: DayTimetable) {
+        let weekDay = Calendar.current.component(.weekday, from: changeClass.afterDate)
+
+        switch weekDay {
+        case 2:
+            timetable.monday.append(DayTimetable(period1: changeClass.period1, period2: changeClass.period2, classData: existingClass.classData))
+        case 3:
+            timetable.tuesday.append(DayTimetable(period1: changeClass.period1, period2: changeClass.period2, classData: existingClass.classData))
+        case 4:
+            timetable.wednesday.append(DayTimetable(period1: changeClass.period1, period2: changeClass.period2, classData: existingClass.classData))
+        case 5:
+            timetable.thursday.append(DayTimetable(period1: changeClass.period1, period2: changeClass.period2, classData: existingClass.classData))
+        case 6:
+            timetable.friday.append(DayTimetable(period1: changeClass.period1, period2: changeClass.period2, classData: existingClass.classData))
+        default:
+            break
+        }
     }
 }
 
