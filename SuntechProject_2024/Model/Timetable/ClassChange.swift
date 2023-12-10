@@ -12,4 +12,6 @@ public struct ClassChange: Identifiable, Codable {
     public let classId: String
     public let beforeDate: Date
     public let afterDate: Date
+    public let period1: Int
+    public let period2: Int
 }

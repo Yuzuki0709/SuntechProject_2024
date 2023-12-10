@@ -9,11 +9,11 @@ import Foundation
 
 public struct WeekTimetable: Identifiable, Codable {
     public let id: UUID = UUID()
-    public let monday: [DayTimetable]
-    public let tuesday: [DayTimetable]
-    public let wednesday: [DayTimetable]
-    public let thursday: [DayTimetable]
-    public let friday: [DayTimetable]
+    public var monday: [DayTimetable]
+    public var tuesday: [DayTimetable]
+    public var wednesday: [DayTimetable]
+    public var thursday: [DayTimetable]
+    public var friday: [DayTimetable]
     
     enum CodingKeys: String, CodingKey {
         case monday = "Monday"
