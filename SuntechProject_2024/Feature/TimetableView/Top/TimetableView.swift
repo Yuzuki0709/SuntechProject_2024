@@ -30,8 +30,8 @@ struct TimetableView: View {
                     Spacer()
                     VacationView(name: vacation.name)
                     Spacer()
-                } else if let weekTimetable = viewModel.weekTimetable {
-                    weekTimetableRow(weekTimetable: weekTimetable)
+                } else if let timetableInWeek = viewModel.timetableInWeek {
+                    weekTimetableRow(weekTimetable: timetableInWeek)
                         .padding()
                         .loading(viewModel.isLoading)
                     Spacer()
@@ -63,12 +63,6 @@ struct TimetableView: View {
         .overlay(alignment: .bottom) {
             if viewModel.cancellClassesInWeek.contains(where: { $0.classId == classData.id }) {
                 cancellClassText
-                    .padding(.bottom, .app.space.spacingXXS)
-            }
-        }
-        .overlay(alignment: .bottom) {
-            if let changeClass = viewModel.changeClassesInWeek.filter({ $0.classId == classData.id }).first {
-                changeClassText(changeClass)
                     .padding(.bottom, .app.space.spacingXXS)
             }
         }
@@ -125,23 +119,6 @@ struct TimetableView: View {
                 }
                 .font(.caption)
                 .foregroundColor(.red)
-            }
-    }
-    
-    private func changeClassText(_ changeClass: ClassChange) -> some View {
-        RoundedRectangle(cornerRadius: .app.corner.radiusS)
-            .fill(.white)
-            .foregroundColor(.red)
-            .frame(width: 60, height: 15)
-            .overlay {
-                RoundedRectangle(cornerRadius: .app.corner.radiusS)
-                    .stroke(lineWidth: 2)
-                    .foregroundColor(.red)
-            }
-            .overlay {
-                Text("移動:" + DateHelper.formatToString(date: changeClass.afterDate, format: "MM/dd"))
-                    .font(.caption2)
-                    .foregroundColor(.red)
             }
     }
 }
