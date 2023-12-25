@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LoginView: View {
     @ObservedObject var viewModel: LoginViewModel
+    @State private var isWebViewPresented = false
     private let width: CGFloat = UIScreen.main.bounds.width
     
     init(viewModel: LoginViewModel) {
@@ -48,6 +49,14 @@ struct LoginView: View {
                 if viewModel.state == .wait {
                     screenLock()
                 }
+            }
+            .sheet(isPresented: $isWebViewPresented) {
+                WebView(
+                    viewModel: WebViewModel(
+                        url: URL(string: "https://sites.google.com/a/suntech.jp/campus-network")!,
+                        navigateionTitle: ""
+                    )
+                )
             }
         }
     }
@@ -115,7 +124,7 @@ struct LoginView: View {
     
     private func syllabusButton() -> some View {
         Button {
-            
+            isWebViewPresented = true
         } label: {
             Text("シラバスを見る")
                 .font(.system(size: 18, weight: .semibold))
