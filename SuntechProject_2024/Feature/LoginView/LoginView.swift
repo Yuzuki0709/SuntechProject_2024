@@ -21,6 +21,7 @@ struct LoginView: View {
             ZStack {
                 background()
                 VStack(spacing: .app.space.spacingL) {
+                    Spacer()
                     headerLogo()
                     appDescription()
                     
@@ -30,10 +31,10 @@ struct LoginView: View {
                     inputLoginInfo()
                     
                     Spacer()
-                        .frame(height: 100)
                     
                     loginButton()
-                    syllabusButton()
+                    canpusNetButton()
+                        .padding(.bottom, 50)
                 }
                 .padding()
             }
@@ -122,11 +123,11 @@ struct LoginView: View {
         .disabled(viewModel.state == .wait)
     }
     
-    private func syllabusButton() -> some View {
+    private func canpusNetButton() -> some View {
         Button {
             isWebViewPresented = true
         } label: {
-            Text("シラバスを見る")
+            Text("キャンパスネットを見る")
                 .font(.system(size: 18, weight: .semibold))
                 .frame(width: width * 0.8, height: 70)
                 .foregroundColor(Color(R.color.common.subColor))
