@@ -80,7 +80,7 @@ struct LoginView: View {
     }
     
     private func appDescription() -> some View {
-        Text("--- 学内生徒専用アプリ ---")
+        Text("--- サンテク学生専用アプリ ---")
             .foregroundColor(.white)
     }
     
