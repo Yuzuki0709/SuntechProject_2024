@@ -41,6 +41,15 @@ struct TimetableView: View {
         .backgroundColor(color: Color(R.color.common.backgroundColor))
         .navigationBarBackButtonHidden(true)
         .navigationTitle("時間割")
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button {
+                    viewModel.navigate(.campusNet)
+                } label: {
+                    Image(systemName: "doc.text")
+                }
+            }
+        }
     }
     
     private func classRow(classData: Class) -> some View {

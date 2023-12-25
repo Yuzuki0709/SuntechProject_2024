@@ -292,6 +292,7 @@ extension TimetableViewModel {
 extension TimetableViewModel {
     enum Navigation {
         case classDetail(Class, ClassChange?)
+        case campusNet
     }
 }
 

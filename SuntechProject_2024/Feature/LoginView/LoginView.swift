@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LoginView: View {
     @ObservedObject var viewModel: LoginViewModel
+    @State private var isWebViewPresented = false
     private let width: CGFloat = UIScreen.main.bounds.width
     
     init(viewModel: LoginViewModel) {
@@ -20,6 +21,7 @@ struct LoginView: View {
             ZStack {
                 background()
                 VStack(spacing: .app.space.spacingL) {
+                    Spacer()
                     headerLogo()
                     appDescription()
                     
@@ -29,9 +31,10 @@ struct LoginView: View {
                     inputLoginInfo()
                     
                     Spacer()
-                        .frame(height: 100)
                     
                     loginButton()
+                    canpusNetButton()
+                        .padding(.bottom, 50)
                 }
                 .padding()
             }
@@ -47,6 +50,14 @@ struct LoginView: View {
                 if viewModel.state == .wait {
                     screenLock()
                 }
+            }
+            .sheet(isPresented: $isWebViewPresented) {
+                WebView(
+                    viewModel: WebViewModel(
+                        url: URL(string: "https://sites.google.com/a/suntech.jp/campus-network")!,
+                        navigateionTitle: ""
+                    )
+                )
             }
         }
     }
@@ -110,6 +121,21 @@ struct LoginView: View {
                 .cornerRadius(.app.corner.radiusS)
         }
         .disabled(viewModel.state == .wait)
+    }
+    
+    private func canpusNetButton() -> some View {
+        Button {
+            isWebViewPresented = true
+        } label: {
+            Text("キャンパスネットを見る")
+                .font(.system(size: 18, weight: .semibold))
+                .frame(width: width * 0.8, height: 70)
+                .foregroundColor(Color(R.color.common.subColor))
+                .overlay {
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color(R.color.common.subColor), lineWidth: 2)
+                }
+        }
     }
     
     private func screenLock() -> some View {
