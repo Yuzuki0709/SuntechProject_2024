@@ -32,6 +32,7 @@ struct LoginView: View {
                         .frame(height: 100)
                     
                     loginButton()
+                    syllabusButton()
                 }
                 .padding()
             }
@@ -110,6 +111,21 @@ struct LoginView: View {
                 .cornerRadius(.app.corner.radiusS)
         }
         .disabled(viewModel.state == .wait)
+    }
+    
+    private func syllabusButton() -> some View {
+        Button {
+            
+        } label: {
+            Text("シラバスを見る")
+                .font(.system(size: 18, weight: .semibold))
+                .frame(width: width * 0.8, height: 70)
+                .foregroundColor(Color(R.color.common.subColor))
+                .overlay {
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color(R.color.common.subColor), lineWidth: 2)
+                }
+        }
     }
     
     private func screenLock() -> some View {
