@@ -52,7 +52,7 @@ private struct InternalTextView: UIViewRepresentable {
 
     func makeUIView(context: Context) -> UITextView {
         let textView = UITextView()
-        textView.backgroundColor = .white
+        textView.backgroundColor = UIColor(Color(R.color.timetable.backgroundColor))
         textView.delegate = context.coordinator
         textView.textContainerInset = .init(textContentInset)
         textView.textContainer.lineFragmentPadding = 0
