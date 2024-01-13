@@ -47,6 +47,7 @@ struct TimetableView: View {
                     viewModel.navigate(.campusNet)
                 } label: {
                     Image(systemName: "doc.text")
+                        .foregroundColor(.white)
                 }
             }
         }

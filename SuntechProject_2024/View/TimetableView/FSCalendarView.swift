@@ -27,6 +27,7 @@ final class FSCalendarView: UIView {
         fsCalendar.appearance.titleWeekendColor = .clear
         fsCalendar.appearance.todayColor = R.color.common.mainColor()
         fsCalendar.appearance.selectionColor = .clear
+        fsCalendar.appearance.titleDefaultColor = UIColor(Color(R.color.timetable.calendarTitleColor))
         fsCalendar.appearance.headerTitleColor = UIColor(Color(R.color.timetable.calendarTextColor))
         fsCalendar.appearance.weekdayTextColor = UIColor(Color(R.color.timetable.calendarTextColor))
         fsCalendar.allowsSelection = false
