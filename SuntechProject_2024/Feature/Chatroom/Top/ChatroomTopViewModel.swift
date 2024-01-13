@@ -15,7 +15,6 @@ final class ChatroomTopViewModel: ObservableObject {
         return chatrooms.filter { $0.partner.name.contains(searchText) }
     }
     @Published var searchText: String = ""
-    @Published var isLoading: Bool = false
     @Published var myAccount: ChatUser? = nil
     @Published var selectedImage: UIImage? = nil
     
@@ -58,8 +57,6 @@ final class ChatroomTopViewModel: ObservableObject {
     func fetchChatroomList() {
         guard let userId = LoginUserInfo.shared.currentUser?.user.id else { return }
         
-        isLoading = true
-        
         suntechAPIClient.fetchChatroomList(userId: userId) { [weak self] result in
             guard let self else { return }
             switch result {
@@ -69,8 +66,6 @@ final class ChatroomTopViewModel: ObservableObject {
             case .failure(let error):
                 print(error)
             }
-            
-            self.isLoading = false
         }
     }
     

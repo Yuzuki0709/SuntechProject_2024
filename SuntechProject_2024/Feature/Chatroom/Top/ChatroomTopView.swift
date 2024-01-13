@@ -27,7 +27,6 @@ struct ChatroomTopView: View {
         .onTapGesture {
             UIApplication.shared.closeKeyboard()
         }
-        .loading(viewModel.isLoading, disabled: true)
         .backgroundColor(color: Color(R.color.common.backgroundColor))
         .listStyle(.plain)
         .navigationTitle("チャット一覧")
