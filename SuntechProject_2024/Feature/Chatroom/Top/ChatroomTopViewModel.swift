@@ -17,6 +17,7 @@ final class ChatroomTopViewModel: ObservableObject {
     @Published var searchText: String = ""
     @Published var myAccount: ChatUser? = nil
     @Published var selectedImage: UIImage? = nil
+    @Published var isLoading: Bool = false
     
     private let suntechAPIClient: SuntechAPIClientProtocol
     private var myTimer: Timer!

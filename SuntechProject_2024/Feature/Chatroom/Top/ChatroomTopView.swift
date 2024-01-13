@@ -27,6 +27,7 @@ struct ChatroomTopView: View {
         .onTapGesture {
             UIApplication.shared.closeKeyboard()
         }
+        .loading(viewModel.isLoading, disabled: true)
         .backgroundColor(color: Color(R.color.common.backgroundColor))
         .listStyle(.plain)
         .navigationTitle("チャット一覧")
@@ -166,7 +167,7 @@ private extension ChatUser {
         case .student(let department):
             switch department {
             case .C:
-                return "コンピュータコミュニケーション科"
+                return "コンピュータ・コミュニケーション科"
             case .M:
                 return "マルチメディア科"
             case .S:
