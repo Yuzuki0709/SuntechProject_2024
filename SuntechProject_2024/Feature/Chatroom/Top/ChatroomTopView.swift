@@ -24,10 +24,6 @@ struct ChatroomTopView: View {
                 emptyView
             }
         }
-        .onAppear {
-            viewModel.fetchChatUser()
-            viewModel.fetchChatroomList()
-        }
         .onTapGesture {
             UIApplication.shared.closeKeyboard()
         }

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import Foundation
 
 final class ChatroomTopViewModel: ObservableObject {
     @Published var chatrooms: [Chatroom] = []
@@ -19,6 +20,7 @@ final class ChatroomTopViewModel: ObservableObject {
     @Published var selectedImage: UIImage? = nil
     
     private let suntechAPIClient: SuntechAPIClientProtocol
+    private var myTimer: Timer!
     
     private var cancellables = Set<AnyCancellable>()
     
@@ -30,6 +32,15 @@ final class ChatroomTopViewModel: ObservableObject {
     init(suntechAPIClient: SuntechAPIClientProtocol = SuntechAPIClient()) {
         self.suntechAPIClient = suntechAPIClient
         self.fetchChatUser()
+        self.fetchChatroomList()
+        // Timerを初期化し、5秒ごとにfetchChatroomListを呼び出す
+        self.myTimer = Timer.scheduledTimer(
+            timeInterval: 5.0, 
+            target: self,
+            selector: #selector(fetchChatroomListTimer),
+            userInfo: nil,
+            repeats: true
+        )
         
         self.$selectedImage
             .compactMap { $0 }
@@ -37,6 +48,11 @@ final class ChatroomTopViewModel: ObservableObject {
                 self?.sendUserIcon(userIcon: selectedImage)
             }
             .store(in: &cancellables)
+    }
+    
+    // Timerから呼び出される関数
+    @objc private func fetchChatroomListTimer() {
+        fetchChatroomList()
     }
     
     func fetchChatroomList() {
