@@ -26,7 +26,9 @@ struct AddChatroomView: View {
             viewModel.fetchAllChatUser()
         }
         .alert("確認", isPresented: .constant(viewModel.selectedUser != nil), actions: {
-            Button("No") {}
+            Button("No") {
+                viewModel.selectedUser = nil
+            }
             Button("Yes") {
                 viewModel.sendChatroom()
             }
@@ -55,19 +57,11 @@ struct AddChatroomView: View {
     private func chatUserListRow(_ user: ChatUser) -> some View {
         HStack(spacing: .app.space.spacingS) {
             UserIcon(iconUrlString: user.iconImageUrl, size: 35)
-                .onAppear {
-                    print(user.name)
-                    print(user.iconImageUrl)
-                }
-            
             Text(user.name)
                 .fontWeight(.bold)
-            
             Spacer()
-            
             Image(systemName: "chevron.right")
                 .foregroundColor(.gray)
-            
         }
         .padding(.vertical, .app.space.spacingXXS)
         .listRowBackground(Color.clear)

@@ -59,7 +59,6 @@ final class AddChatroomViewModel: ObservableObject {
             guard let self else { return }
             switch result {
             case .success(let chatroom):
-                print(chatroom)
                 self._navigationSubject.send(.chatMessage(chatroom))
             case .failure(let error):
                 self.apiError = error
