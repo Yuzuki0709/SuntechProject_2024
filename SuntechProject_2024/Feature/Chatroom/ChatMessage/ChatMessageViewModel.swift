@@ -15,10 +15,24 @@ final class ChatMessageViewModel: ObservableObject {
     
     let chatroom: Chatroom
     private let suntechAPIClient: SuntechAPIClientProtocol
+    private var myTimer: Timer!
     
     init(chatroom: Chatroom, suntechAPIClient: SuntechAPIClientProtocol = SuntechAPIClient()) {
         self.chatroom = chatroom
         self.suntechAPIClient = suntechAPIClient
+        self.myTimer = Timer.scheduledTimer(
+            timeInterval: 5,
+            target: self,
+            selector: #selector(fetchChatMessageTimer),
+            userInfo: nil,
+            repeats: true
+        )
+        self.fetchChatMessage()
+        
+    }
+    
+    @objc private func fetchChatMessageTimer() {
+        fetchChatMessage()
     }
     
     func fetchChatMessage() {

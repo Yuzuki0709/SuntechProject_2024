@@ -29,9 +29,6 @@ struct ChatMessageView: View {
             }
             MessageTextField(viewModel: viewModel)
         }
-        .onAppear {
-            viewModel.fetchChatMessage()
-        }
         .onTapGesture {
             UIApplication.shared.closeKeyboard()
         }

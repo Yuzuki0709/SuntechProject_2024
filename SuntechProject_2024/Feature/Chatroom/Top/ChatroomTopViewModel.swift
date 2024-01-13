@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import Foundation
 
 final class ChatroomTopViewModel: ObservableObject {
     @Published var chatrooms: [Chatroom] = []
@@ -14,11 +15,12 @@ final class ChatroomTopViewModel: ObservableObject {
         return chatrooms.filter { $0.partner.name.contains(searchText) }
     }
     @Published var searchText: String = ""
-    @Published var isLoading: Bool = false
     @Published var myAccount: ChatUser? = nil
     @Published var selectedImage: UIImage? = nil
+    @Published var isLoading: Bool = false
     
     private let suntechAPIClient: SuntechAPIClientProtocol
+    private var myTimer: Timer!
     
     private var cancellables = Set<AnyCancellable>()
     
@@ -30,6 +32,15 @@ final class ChatroomTopViewModel: ObservableObject {
     init(suntechAPIClient: SuntechAPIClientProtocol = SuntechAPIClient()) {
         self.suntechAPIClient = suntechAPIClient
         self.fetchChatUser()
+        self.fetchChatroomList()
+        // Timerを初期化し、5秒ごとにfetchChatroomListを呼び出す
+        self.myTimer = Timer.scheduledTimer(
+            timeInterval: 5.0, 
+            target: self,
+            selector: #selector(fetchChatroomListTimer),
+            userInfo: nil,
+            repeats: true
+        )
         
         self.$selectedImage
             .compactMap { $0 }
@@ -39,10 +50,13 @@ final class ChatroomTopViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
+    // Timerから呼び出される関数
+    @objc private func fetchChatroomListTimer() {
+        fetchChatroomList()
+    }
+    
     func fetchChatroomList() {
         guard let userId = LoginUserInfo.shared.currentUser?.user.id else { return }
-        
-        isLoading = true
         
         suntechAPIClient.fetchChatroomList(userId: userId) { [weak self] result in
             guard let self else { return }
@@ -53,8 +67,6 @@ final class ChatroomTopViewModel: ObservableObject {
             case .failure(let error):
                 print(error)
             }
-            
-            self.isLoading = false
         }
     }
     
