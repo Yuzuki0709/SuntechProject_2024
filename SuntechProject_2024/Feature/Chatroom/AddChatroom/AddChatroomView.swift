@@ -21,7 +21,8 @@ struct AddChatroomView: View {
         }
         .listStyle(.grouped)
         .loading(viewModel.isLoading)
-        .backgroundColor(color: Color(R.color.common.backgroundColor))
+        .scrollContentBackground(.hidden)
+        .background(Color(R.color.common.backgroundColor))
         .onAppear {
             viewModel.fetchAllChatUser()
         }

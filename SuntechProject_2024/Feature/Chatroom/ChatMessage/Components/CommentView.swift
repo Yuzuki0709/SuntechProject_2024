@@ -38,14 +38,13 @@ public struct CommentView<Content: View>: View {
     private var speechBubble: some View {
         HStack(alignment: .top, spacing: 0) {
             Triangle(to: .left)
+                .fill(Color(R.color.timetable.backgroundColor))
                 .frame(width: 8, height: 7)
-                .foregroundColor(.white)
                 .padding(.top, 8)
             
             content()
                 .padding(8)
-                .foregroundColor(.black)
-                .background(Color.white)
+                .background(Color(R.color.timetable.backgroundColor))
                 .cornerRadius(10)
                 .readSize(of: \.width, to: $contentWidth)
         }

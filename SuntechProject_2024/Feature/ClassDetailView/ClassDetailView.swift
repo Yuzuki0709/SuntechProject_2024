@@ -91,7 +91,7 @@ struct ClassDetailView: View {
         }
         .frame(width: contentWidth)
         .padding(.vertical, .app.space.spacingM)
-        .background(Color.white)
+        .background(Color(R.color.timetable.backgroundColor))
         .cornerRadius(.app.corner.radiusM)
     }
     
@@ -135,7 +135,7 @@ struct ClassDetailView: View {
         }
         .frame(width: contentWidth)
         .padding(.vertical, .app.space.spacingM)
-        .background(Color.white)
+        .background(Color(R.color.timetable.backgroundColor))
         .cornerRadius(.app.corner.radiusM)
     }
     
