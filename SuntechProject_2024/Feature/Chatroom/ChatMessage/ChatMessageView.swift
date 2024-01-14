@@ -29,6 +29,12 @@ struct ChatMessageView: View {
             }
             MessageTextField(viewModel: viewModel)
         }
+        .onAppear {
+            viewModel.startFetchChatMessageTimer()
+        }
+        .onDisappear {
+            viewModel.stopFetchChatMessageTimer()
+        }
         .onTapGesture {
             UIApplication.shared.closeKeyboard()
         }
